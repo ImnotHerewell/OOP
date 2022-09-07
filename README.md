@@ -1,2 +1,2 @@
 # OOP
-by NSU, 21215 group
+by NSU, 21215 group, Valikov Nikolay.
