@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.heapsort.MainHeapSortTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-09-08T06:40:12" hostname="COMPUTER" time="0.072">
+<testsuite name="com.example.heapsort.MainHeapSortTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-09-08T08:47:40" hostname="COMPUTER" time="0.047">
   <properties/>
-  <testcase name="heapSortListSimple()" classname="com.example.heapsort.MainHeapSortTest" time="0.063"/>
+  <testcase name="heapSortListSimple()" classname="com.example.heapsort.MainHeapSortTest" time="0.036"/>
   <testcase name="heapSortListRandom1()" classname="com.example.heapsort.MainHeapSortTest" time="0.002"/>
-  <testcase name="heapSortListRandom2()" classname="com.example.heapsort.MainHeapSortTest" time="0.002"/>
-  <testcase name="heapSortListRandom3()" classname="com.example.heapsort.MainHeapSortTest" time="0.001"/>
+  <testcase name="heapSortListRandom2()" classname="com.example.heapsort.MainHeapSortTest" time="0.001"/>
+  <testcase name="heapSortListRandom3()" classname="com.example.heapsort.MainHeapSortTest" time="0.002"/>
   <testcase name="heapSortListReverse()" classname="com.example.heapsort.MainHeapSortTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[java.lang.instrument.IllegalClassFormatException: Error while instrumenting com/example/heapsort/MainHeapSort.
