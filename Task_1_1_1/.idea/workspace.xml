@@ -185,10 +185,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.MainHeapSortTest" />
         <item itemvalue="Gradle.Task_1_1_1 [build]" />
         <item itemvalue="Gradle.MainTest" />
+        <item itemvalue="Gradle.MainHeapSortTest" />
         <item itemvalue="Application.com.example.heapsort.MainHeapSort" />
+        <item itemvalue="Gradle.MainHeapSortTest" />
       </list>
     </recent_temporary>
   </component>

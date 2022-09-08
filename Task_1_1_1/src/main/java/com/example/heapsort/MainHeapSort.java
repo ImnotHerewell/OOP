@@ -6,19 +6,6 @@ import java.util.List;
 import java.util.Scanner;
 /** Implementation of Heap Sort in Java by Nikolay Valikov, @nocarend. */
 public class MainHeapSort {
-  /** Main class. */
-//  public static void main(String[] args) {
-//    Scanner input = new Scanner(System.in);
-//    ArrayList<Integer> mainList = new ArrayList<>();
-//    String line =
-//        input.nextLine().replace("[", "").replace("]", "").replace(",", ""); // parsing input.
-//    String[] numbers = line.split(" ");
-//    for (String str : numbers) {
-//      mainList.add(Integer.parseInt(str));
-//    }
-//    heapSort(mainList);
-//    System.out.print(mainList);
-//  }
 
   /**
    * @param currentList - list with numbers.
