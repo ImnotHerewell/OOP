@@ -11,7 +11,7 @@ public class MainHeapSort {
    * @param currentList - list with numbers.
    * @param listSize - size of currentList.
    * @param indexI - index of element, which should be sifted down.
-   *     <p>If the indexI-th element is less than its children, the entire subtree is already a
+   *     If the indexI-th element is less than its children, the entire subtree is already a
    *     heap. Otherwise, we swap the indexI-th element with the smallest of its children, after
    *     which we perform siftDown for this son.
    */

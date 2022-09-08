@@ -26,7 +26,7 @@ public class MainHeapSortTest {
     Assertions.assertEquals(expectedResult, test);
   }
 
-  /** List with random numbers №1 */
+  /** List with random numbers №1. */
   @Test
   public void heapSortListRandom1() {
     ArrayList<Integer> test =
@@ -39,7 +39,7 @@ public class MainHeapSortTest {
     Assertions.assertEquals(expectedResult, test);
   }
 
-  /** * List with random numbers №2 */
+  /** * List with random numbers №2. */
   @Test
   public void heapSortListRandom2() {
     ArrayList<Integer> test =
@@ -52,7 +52,7 @@ public class MainHeapSortTest {
     Assertions.assertEquals(expectedResult, test);
   }
 
-  /** * List with random numbers №3 */
+  /** * List with random numbers №3. */
   @Test
   public void heapSortListRandom3() {
     ArrayList<Integer> test =
@@ -65,8 +65,8 @@ public class MainHeapSortTest {
     Assertions.assertEquals(expectedResult, test);
   }
 
+  /** List with repeating numbers. */
   @Test
-  /** List with repeating numbers */
   public void heapSortListWithRepeatingNumbers() {
     ArrayList<Integer> test =
         new ArrayList<>(Arrays.asList(1, 1, 1, 1, 1, 1, 1, -150, 1654, 145, 47, -356, 200, -698));
@@ -76,8 +76,8 @@ public class MainHeapSortTest {
     Assertions.assertEquals(expectedResult, test);
   }
 
+  /** Some random siftDown test. */
   @Test
-  /** Some random siftDown test */
   void siftDownTest() {
     ArrayList<Integer> test =
         new ArrayList<>(
