@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42a7dc72-402d-40ff-a0a5-4d55e1219be3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/heapsort/MainHeapSortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/heapsort/MainHeapSortTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +195,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="53aca3b3-83ce-4e27-b5c7-9d5464a15d26" name="Changes" comment="" />
+      <changelist id="42a7dc72-402d-40ff-a0a5-4d55e1219be3" name="Changes" comment="" />
       <created>1662347161430</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -212,6 +212,9 @@
       <workItem from="1662599514475" duration="1614000" />
       <workItem from="1662610023490" duration="1930000" />
       <workItem from="1662614420329" duration="5338000" />
+      <workItem from="1662635445744" duration="55000" />
+      <workItem from="1662636834235" duration="60000" />
+      <workItem from="1662637038559" duration="178000" />
     </task>
     <servers />
   </component>

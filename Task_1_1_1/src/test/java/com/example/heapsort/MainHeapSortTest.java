@@ -65,6 +65,7 @@ public class MainHeapSortTest {
     Assertions.assertEquals(expectedResult, test);
   }
 
+  @Test
   /** List with repeating numbers */
   public void heapSortListWithRepeatingNumbers() {
     ArrayList<Integer> test =
@@ -75,10 +76,16 @@ public class MainHeapSortTest {
     Assertions.assertEquals(expectedResult, test);
   }
 
-  //  public void heapSortList1() {
-  //    ArrayList<Integer> test = new ArrayList<>(Arrays.asList(0, 0, 0, 0, 0));
-  //    ArrayList<Integer> expectedResult = new ArrayList<>(Arrays.asList(0, 0, 0, 0, 0));
-  //    MainHeapSort.heapSort(test);
-  //    Assertions.assertEquals(expectedResult, test);
-  //  }
+  @Test
+  /** Some random siftDown test */
+  void siftDownTest() {
+    ArrayList<Integer> test =
+        new ArrayList<>(
+            Arrays.asList(12900, 3131, -3113, 64921, 3441, 45688, -2674, 45411, 91513, 6102));
+    ArrayList<Integer> expectedResult =
+        new ArrayList<>(
+            Arrays.asList(-3113, 3131, -2674, 64921, 3441, 45688, 12900, 45411, 91513, 6102));
+    MainHeapSort.siftDown(test, 10, 0);
+    Assertions.assertEquals(expectedResult, test);
+  }
 }
