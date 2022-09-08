@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42a7dc72-402d-40ff-a0a5-4d55e1219be3" name="Changes" comment="" />
+    <list default="true" id="42a7dc72-402d-40ff-a0a5-4d55e1219be3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/heapsort/MainHeapSortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/heapsort/MainHeapSortTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
