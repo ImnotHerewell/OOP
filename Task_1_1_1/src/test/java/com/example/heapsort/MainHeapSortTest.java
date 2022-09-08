@@ -9,22 +9,22 @@ import org.junit.jupiter.api.Test;
 public class MainHeapSortTest {
 
   /** Descending sorted list. */
-  @Test
-  public void heapSortListReverse() {
-    ArrayList<Integer> test = new ArrayList<>(Arrays.asList(5, 4, 3, 2, 1));
-    ArrayList<Integer> expectedResult = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
-    MainHeapSort.heapSort(test);
-    Assertions.assertEquals(expectedResult, test);
-  }
-
-  /** Ascending sorted list. */
-  @Test
-  public void heapSortListSimple() {
-    ArrayList<Integer> test = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
-    ArrayList<Integer> expectedResult = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
-    MainHeapSort.heapSort(test);
-    Assertions.assertEquals(expectedResult, test);
-  }
+//  @Test
+//  public void heapSortListReverse() {
+//    ArrayList<Integer> test = new ArrayList<>(Arrays.asList(5, 4, 3, 2, 1));
+//    ArrayList<Integer> expectedResult = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
+//    MainHeapSort.heapSort(test);
+//    Assertions.assertEquals(expectedResult, test);
+//  }
+//
+//  /** Ascending sorted list. */
+//  @Test
+//  public void heapSortListSimple() {
+//    ArrayList<Integer> test = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
+//    ArrayList<Integer> expectedResult = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
+//    MainHeapSort.heapSort(test);
+//    Assertions.assertEquals(expectedResult, test);
+//  }
 
   /** List with random numbers №1 */
   //  @Test
