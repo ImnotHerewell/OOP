@@ -73,4 +73,11 @@ public class MainHeapSortTest {
     MainHeapSort.heapSort(test);
     Assertions.assertEquals(expectedResult, test);
   }
+
+  public void heapSortList1() {
+    ArrayList<Integer> test = new ArrayList<>(Arrays.asList(0, 0, 0, 0, 0));
+    ArrayList<Integer> expectedResult = new ArrayList<>(Arrays.asList(0, 0, 0, 0, 0));
+    MainHeapSort.heapSort(test);
+    Assertions.assertEquals(expectedResult, test);
+  }
 }
