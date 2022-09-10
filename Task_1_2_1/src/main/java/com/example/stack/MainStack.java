@@ -1,7 +1,9 @@
 package com.example.stack;
 
 /**
- * @param <T>
+ * Implementation of Stack in Java by Nikolay Valikov, @nocarend.
+ *
+ * @param <T> - any Object.
  */
 public class MainStack<T> {
   int curSize = 0;
@@ -9,8 +11,8 @@ public class MainStack<T> {
   public T[] array = (T[]) new Object[MAX_SIZE];
 
   /**
-   * @param inputElem
-   * @return
+   * @param inputElem - Object for push.
+   * @return - checking that we push or not.
    */
   boolean push(T inputElem) {
     if (curSize == MAX_SIZE) return false;
@@ -19,7 +21,7 @@ public class MainStack<T> {
   }
 
   /**
-   * @return
+   * @return - checking that stack empty or not.
    */
   public T pop() {
     if (curSize == 0) return null;
@@ -27,8 +29,8 @@ public class MainStack<T> {
   }
 
   /**
-   * @param inputArray
-   * @return
+   * @param inputArray - array that should be pushed.
+   * @return - it is possible or not.
    */
   public boolean pushStack(T[] inputArray) {
     if (inputArray.length + curSize >= MAX_SIZE) return false;
@@ -39,8 +41,8 @@ public class MainStack<T> {
   }
 
   /**
-   * @param quantityOfElems
-   * @return
+   * @param quantityOfElems - how many elements we want to extract from stack.
+   * @return - null - impossible, notnull - possible.
    */
   public MainStack<T> popStack(int quantityOfElems) {
     MainStack<T> newStack = new MainStack<T>();
@@ -57,7 +59,7 @@ public class MainStack<T> {
   }
 
   /**
-   * @return
+   * @return - how many elements in stack.
    */
   public int count() {
     return curSize;

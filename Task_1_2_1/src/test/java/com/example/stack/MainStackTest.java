@@ -3,13 +3,12 @@ package com.example.stack;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-/** */
+/** Class with tests. */
 class MainStackTest {
 
-  /** */
+  /** Simple test on push. */
   @Test
   void pushTest() {
     MainStack<String> testStack = new MainStack<>();
@@ -20,7 +19,7 @@ class MainStackTest {
     assertArrayEquals(expectedResult, testStack.array);
   }
 
-  /** */
+  /** Simple test on pop. */
   @Test
   void popTest() {
     MainStack<String> testStack = new MainStack<>();
@@ -30,7 +29,7 @@ class MainStackTest {
     assertEquals(expectedResult, test);
   }
 
-  /** */
+  /** Simple test on pushStack. */
   @Test
   void pushStackTest() {
     MainStack<String> testStack = new MainStack<>();
@@ -45,7 +44,7 @@ class MainStackTest {
     assertArrayEquals(expectedResult, testStack.array);
   }
 
-  /** */
+  /** Simple test on popStack. */
   @Test
   void popStackTest() {
     MainStack<String> testStack = new MainStack<>();
@@ -60,7 +59,7 @@ class MainStackTest {
     assertArrayEquals(expectedResult, testResult.array);
   }
 
-  /** */
+  /** Simple test on count. */
   @Test
   void countTest() {
     MainStack<String> testStack = new MainStack<>();
