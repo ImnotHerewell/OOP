@@ -130,11 +130,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
-<dd><code>T</code> - </dd>
+<dd><code>T</code> - - any Object.</dd>
 </dl>
 <hr>
 <pre>public class <span class="typeNameLabel">MainStack&lt;T&gt;</span>
 extends java.lang.Object</pre>
+<div class="block">Implementation of Stack in Java by Nikolay Valikov, @nocarend.</div>
 </li>
 </ul>
 </div>
@@ -290,6 +291,7 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public&nbsp;<a href="MainStack.html" title="type parameter in MainStack">T</a>&nbsp;pop()</pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>- checking that stack empty or not.</dd>
 </dl>
 </li>
 </ul>
@@ -304,8 +306,9 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;pushStack&#8203;(<a href="MainStack.html" title="type parameter in MainStack">T</a>[]&nbsp;inputArray)</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>inputArray</code> - </dd>
+<dd><code>inputArray</code> - - array that should be pushed.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>- it is possible or not.</dd>
 </dl>
 </li>
 </ul>
@@ -318,8 +321,9 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public&nbsp;<a href="MainStack.html" title="class in com.example.stack">MainStack</a>&lt;<a href="MainStack.html" title="type parameter in MainStack">T</a>&gt;&nbsp;popStack&#8203;(int&nbsp;quantityOfElems)</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>quantityOfElems</code> - </dd>
+<dd><code>quantityOfElems</code> - - how many elements we want to extract from stack.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>- null - impossible, notnull - possible.</dd>
 </dl>
 </li>
 </ul>
@@ -332,6 +336,7 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public&nbsp;int&nbsp;count()</pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>- how many elements in stack.</dd>
 </dl>
 </li>
 </ul>
