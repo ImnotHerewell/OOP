@@ -6,8 +6,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+/** */
 class MainStackTest {
 
+  /** */
   @Test
   void pushTest() {
     MainStack<String> testStack = new MainStack<>();
@@ -18,6 +20,7 @@ class MainStackTest {
     assertArrayEquals(expectedResult, testStack.array);
   }
 
+  /** */
   @Test
   void popTest() {
     MainStack<String> testStack = new MainStack<>();
@@ -27,6 +30,7 @@ class MainStackTest {
     assertEquals(expectedResult, test);
   }
 
+  /** */
   @Test
   void pushStackTest() {
     MainStack<String> testStack = new MainStack<>();
@@ -41,6 +45,7 @@ class MainStackTest {
     assertArrayEquals(expectedResult, testStack.array);
   }
 
+  /** */
   @Test
   void popStackTest() {
     MainStack<String> testStack = new MainStack<>();
@@ -55,6 +60,7 @@ class MainStackTest {
     assertArrayEquals(expectedResult, testResult.array);
   }
 
+  /** */
   @Test
   void countTest() {
     MainStack<String> testStack = new MainStack<>();
