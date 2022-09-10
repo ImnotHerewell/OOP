@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.stack.MainStackTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-09-10T13:27:51" hostname="COMPUTER" time="0.037">
+<testsuite name="com.example.stack.MainStackTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-09-10T13:28:46" hostname="COMPUTER" time="0.042">
   <properties/>
-  <testcase name="popStackTest()" classname="com.example.stack.MainStackTest" time="0.024"/>
+  <testcase name="popStackTest()" classname="com.example.stack.MainStackTest" time="0.027"/>
   <testcase name="pushStackTest()" classname="com.example.stack.MainStackTest" time="0.003"/>
   <testcase name="popTest()" classname="com.example.stack.MainStackTest" time="0.004"/>
   <testcase name="countTest()" classname="com.example.stack.MainStackTest" time="0.001"/>
