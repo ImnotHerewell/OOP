@@ -19,7 +19,9 @@ public class MainHeapSort {
      *                    after which we perform siftDown for this son.
      */
     public static void siftDown(List<Integer> currentList, int listSize, int indexI) {
-        int left, right, indexJ;
+        int left;
+        int right;
+        int indexJ;
         while (2 * indexI + 1 < listSize) {
             left = 2 * indexI + 1;
             right = 2 * indexI + 2;
