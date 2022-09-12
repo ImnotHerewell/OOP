@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46bf6092-fc31-4c1d-8e50-88f6e655b235" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="46bf6092-fc31-4c1d-8e50-88f6e655b235" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,7 +63,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.sourceCode.Java"
+    "settings.editor.selected.configurable": "google-java-format.settings"
   }
 }]]></component>
   <component name="RunManager" selected="Gradle.MainHeapSortTest">
@@ -149,7 +147,7 @@
       <updated>1662984025637</updated>
       <workItem from="1662984026869" duration="341000" />
       <workItem from="1662985292451" duration="413000" />
-      <workItem from="1662985742700" duration="168000" />
+      <workItem from="1662985742700" duration="294000" />
     </task>
     <servers />
   </component>
