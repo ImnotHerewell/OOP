@@ -9,7 +9,7 @@ import java.util.List;
 public class MainHeapSort {
 
     /**
-     * aboba
+     * aboba.
      *
      * @param currentList - list with numbers.
      * @param listSize    - size of currentList.
