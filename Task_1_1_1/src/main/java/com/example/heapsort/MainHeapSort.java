@@ -40,7 +40,7 @@ public class MainHeapSort {
     }
 
     /**
-     * Default heap sort algorithm.
+     * Default heapsort algorithm.
      *
      * @param inputList - list with numbers.
      */
