@@ -26,7 +26,9 @@ public class MainStack<T> {
      * @return - checking that stack empty or not.
      */
     public T pop() {
-        if (curSize == 0) return null;
+        if (curSize == 0) {
+            return null;
+        }
         return this.array[--curSize];
     }
 
@@ -35,9 +37,11 @@ public class MainStack<T> {
      * @return - it is possible or not.
      */
     public boolean pushStack(T[] inputArray) {
-        if (inputArray.length + curSize >= MAX_SIZE) return false;
-        for (T Elem : inputArray) {
-            this.push(Elem);
+        if (inputArray.length + curSize >= MAX_SIZE) {
+            return false;
+        }
+        for (T elem : inputArray) {
+            this.push(elem);
         }
         return true;
     }
@@ -48,8 +52,9 @@ public class MainStack<T> {
      */
     public MainStack<T> popStack(int quantityOfElems) {
         MainStack<T> newStack = new MainStack<T>();
-        if (quantityOfElems > curSize) return null;
-        else {
+        if (quantityOfElems > curSize) {
+            return null;
+        } else {
             for (int indexArray = curSize - quantityOfElems; indexArray < curSize; indexArray++) {
                 newStack.push(this.array[indexArray]);
             }
