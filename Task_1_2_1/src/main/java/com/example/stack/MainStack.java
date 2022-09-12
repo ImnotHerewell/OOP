@@ -11,6 +11,8 @@ public class MainStack<T> {
     int curSize = 0;
 
     /**
+     * Default push in.
+     *
      * @param inputElem - Object for push.
      * @return - checking that we push or not.
      */
@@ -23,6 +25,8 @@ public class MainStack<T> {
     }
 
     /**
+     * Default pop out.
+     *
      * @return - checking that stack empty or not.
      */
     public T pop() {
@@ -47,6 +51,8 @@ public class MainStack<T> {
     }
 
     /**
+     * Pop quantityOfElems elements from stack.
+     *
      * @param quantityOfElems - how many elements we want to extract from stack.
      * @return - null - impossible, notnull - possible.
      */
@@ -66,6 +72,8 @@ public class MainStack<T> {
     }
 
     /**
+     * How many elements are in stack.
+     *
      * @return - how many elements in stack.
      */
     public int count() {
