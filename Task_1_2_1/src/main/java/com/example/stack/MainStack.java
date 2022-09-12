@@ -38,6 +38,7 @@ public class MainStack<T> {
 
     /**
      * Push elements from array in stack.
+     *
      * @param inputArray - array that should be pushed.
      * @return - it is possible or not.
      */
