@@ -11,9 +11,12 @@ public class MainHeapSort {
     /**
      * @param currentList - list with numbers.
      * @param listSize    - size of currentList.
-     * @param indexI      - index of element, which should be sifted down. If the indexI-th element is less
-     *                    than its children, the entire subtree is already a heap. Otherwise, we swap the indexI-th
-     *                    element with the smallest of its children, after which we perform siftDown for this son.
+     * @param indexI      - index of element, which should be sifted down.
+     *                    If the indexI-th element is less
+     *                    than its children, the entire subtree is already a heap.
+     *                    Otherwise, we swap the indexI-th
+     *                    element with the smallest of its children,
+     *                    after which we perform siftDown for this son.
      */
     public static void siftDown(List<Integer> currentList, int listSize, int indexI) {
         int left, right, indexJ;
@@ -24,7 +27,9 @@ public class MainHeapSort {
             if (right < listSize && currentList.get(right) < currentList.get(left)) {
                 indexJ = right;
             }
-            if (currentList.get(indexI) <= currentList.get(indexJ)) break;
+            if (currentList.get(indexI) <= currentList.get(indexJ)) {
+                break;
+            }
             Collections.swap(currentList, indexI, indexJ);
             indexI = indexJ;
         }
@@ -34,7 +39,8 @@ public class MainHeapSort {
      * @param inputList - list with numbers.
      */
     public static void heapSort(List<Integer> inputList) {
-        int curListSize = inputList.size(), mainListSize = curListSize;
+        int curListSize = inputList.size();
+        int mainListSize = curListSize;
         for (int indexI = mainListSize / 2 - 1; indexI >= 0; indexI--) { // building a heap
             siftDown(inputList, mainListSize, indexI);
         }
