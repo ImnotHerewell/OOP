@@ -9,16 +9,16 @@ import java.util.List;
 public class MainHeapSort {
 
     /**
-     * aboba.
+     * Algorithm for building a heap.
+     * If the indexI-th element is less
+     * than its children, the entire subtree is already a heap.
+     * Otherwise, we swap the indexI-th
+     * element with the smallest of its children,
+     * after which we perform siftDown for this son.
      *
      * @param currentList - list with numbers.
      * @param listSize    - size of currentList.
      * @param indexI      - index of element, which should be sifted down.
-     *                    If the indexI-th element is less
-     *                    than its children, the entire subtree is already a heap.
-     *                    Otherwise, we swap the indexI-th
-     *                    element with the smallest of its children,
-     *                    after which we perform siftDown for this son.
      */
     public static void siftDown(List<Integer> currentList, int listSize, int indexI) {
         int left;
@@ -40,6 +40,8 @@ public class MainHeapSort {
     }
 
     /**
+     * Default heap sort algorithm.
+     *
      * @param inputList - list with numbers.
      */
     public static void heapSort(List<Integer> inputList) {
