@@ -6,16 +6,18 @@ package com.example.stack;
  * @param <T> - any Object.
  */
 public class MainStack<T> {
-    int curSize = 0;
     static final int MAX_SIZE = 10000;
     public T[] array = (T[]) new Object[MAX_SIZE];
+    int curSize = 0;
 
     /**
      * @param inputElem - Object for push.
      * @return - checking that we push or not.
      */
     boolean push(T inputElem) {
-        if (curSize == MAX_SIZE) return false;
+        if (curSize == MAX_SIZE) {
+            return false;
+        }
         this.array[curSize++] = inputElem;
         return true;
     }

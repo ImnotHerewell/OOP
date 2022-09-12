@@ -1,9 +1,9 @@
 package com.example.stack;
 
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import org.junit.jupiter.api.Test;
 
 /**
  * Class with tests.
@@ -30,7 +30,7 @@ class MainStackTest {
     void popTest() {
         MainStack<String> testStack = new MainStack<>();
         testStack.push("baobab");
-        String expectedResult = "baobab";
+        final String expectedResult = "baobab";
         String test = testStack.pop();
         assertEquals(expectedResult, test);
     }
@@ -60,12 +60,12 @@ class MainStackTest {
         MainStack<String> testStack = new MainStack<>();
         String[] inputValues = new String[]{"a", "b", "c", "d", "e"};
         testStack.pushStack(inputValues);
-        MainStack<String> testResult = testStack.popStack(4);
         String[] expectedResult = new String[MainStack.MAX_SIZE];
         expectedResult[0] = "b";
         expectedResult[1] = "c";
         expectedResult[2] = "d";
         expectedResult[3] = "e";
+        MainStack<String> testResult = testStack.popStack(4);
         assertArrayEquals(expectedResult, testResult.array);
     }
 
