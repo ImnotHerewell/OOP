@@ -1,10 +1,10 @@
 package com.example.heapsort;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Main class with tests.
