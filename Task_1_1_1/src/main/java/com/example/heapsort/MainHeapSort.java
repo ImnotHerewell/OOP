@@ -1,19 +1,16 @@
 package com.example.heapsort;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Scanner;
 /** Implementation of Heap Sort in Java by Nikolay Valikov, @nocarend. */
 public class MainHeapSort {
 
   /**
    * @param currentList - list with numbers.
    * @param listSize - size of currentList.
-   * @param indexI - index of element, which should be sifted down.
-   *     If the indexI-th element is less than its children, the entire subtree is already a
-   *     heap. Otherwise, we swap the indexI-th element with the smallest of its children, after
-   *     which we perform siftDown for this son.
+   * @param indexI - index of element, which should be sifted down. If the indexI-th element is less
+   *     than its children, the entire subtree is already a heap. Otherwise, we swap the indexI-th
+   *     element with the smallest of its children, after which we perform siftDown for this son.
    */
   public static void siftDown(List<Integer> currentList, int listSize, int indexI) {
     int left, right, indexJ;
