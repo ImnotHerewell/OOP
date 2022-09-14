@@ -68,7 +68,7 @@
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.MainHeapSortTest">
+  <component name="RunManager" selected="Gradle.Task_1_1_1 [build]">
     <configuration name="MainHeapSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.heapsort.MainHeapSort" />
       <module name="Task_1_1_1.main" />
@@ -133,8 +133,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.MainHeapSortTest" />
         <item itemvalue="Gradle.Task_1_1_1 [build]" />
+        <item itemvalue="Gradle.MainHeapSortTest" />
         <item itemvalue="Application.MainHeapSort" />
       </list>
     </recent_temporary>
