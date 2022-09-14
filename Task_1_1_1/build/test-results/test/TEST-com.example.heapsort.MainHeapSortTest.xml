@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.heapsort.MainHeapSortTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2022-09-14T06:26:35" hostname="COMPUTER" time="0.036">
+  <properties/>
+  <testcase name="heapSortListSimple()" classname="com.example.heapsort.MainHeapSortTest" time="0.026"/>
+  <testcase name="heapSortListRandom1()" classname="com.example.heapsort.MainHeapSortTest" time="0.001"/>
+  <testcase name="heapSortListRandom2()" classname="com.example.heapsort.MainHeapSortTest" time="0.001"/>
+  <testcase name="heapSortListRandom3()" classname="com.example.heapsort.MainHeapSortTest" time="0.001"/>
+  <testcase name="heapSortListReverse()" classname="com.example.heapsort.MainHeapSortTest" time="0.001"/>
+  <testcase name="siftDownTest()" classname="com.example.heapsort.MainHeapSortTest" time="0.001"/>
+  <testcase name="heapSortListWithRepeatingNumbers()" classname="com.example.heapsort.MainHeapSortTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
