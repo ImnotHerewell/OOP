@@ -16,7 +16,7 @@ public class MainHeapSortTest {
      */
     @Test
     public void heapSortListReverse() {
-        List<Integer> test = new ArrayList<>(Arrays.asList(5, 4, 3, 2, 1));
+        ArrayList<Integer> test = new ArrayList<>(Arrays.asList(5, 4, 3, 2, 1));
         ArrayList<Integer> expectedResult = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
         MainHeapSort.heapSort(test);
         Assertions.assertEquals(expectedResult, test);
