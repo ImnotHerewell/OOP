@@ -7,6 +7,14 @@ import java.util.List;
  * Implementation of Heap Sort in Java by Nikolay Valikov, @nocarend.
  */
 public class MainHeapSort {
+    /**
+     * 4fun.
+     *
+     * @param args 4fun.
+     */
+    public static void main(String[] args) {
+        System.out.println("Hello sss!");
+    }
 
     /**
      * Algorithm for building a heap.
