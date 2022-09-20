@@ -7,6 +7,7 @@ package com.example.stack;
  */
 public class MainStack<T> {
     static final int MAX_SIZE = 10000;
+    @SuppressWarnings("unchecked")/* погуглить */
     public T[] array = (T[]) new Object[MAX_SIZE];
     int curSize = 0;
 
@@ -80,5 +81,13 @@ public class MainStack<T> {
      */
     public int count() {
         return curSize;
+    }
+
+    /**
+     * Hello, Stack.
+     * @param args ...
+     */
+    public static void main(String[] args) {
+        System.out.println("Hello, Stack!");
     }
 }
