@@ -3,7 +3,11 @@ package com.example.heapsort;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
+import java.util.Arrays;
 
 /**
  * Main class with tests.
