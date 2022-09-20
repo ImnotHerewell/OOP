@@ -1,5 +1,7 @@
 package com.example.heapsort;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -7,6 +9,14 @@ import java.util.List;
  * Implementation of Heap Sort in Java by Nikolay Valikov, @nocarend.
  */
 public class MainHeapSort {
+    /**
+     * Just a main method to write an output.
+     */
+    public static void main() {
+        ArrayList<Integer> mainList = new ArrayList<>(Arrays.asList(5, 34, 2, 432, 4, 2, 56, 765, 7, 65, 7, 65, 7, 5, 8, 56, 3, 7, 45, 7, 47));
+        heapSort(mainList);
+        System.out.print(mainList);
+    }
 
     /**
      * Algorithm for building a heap.
