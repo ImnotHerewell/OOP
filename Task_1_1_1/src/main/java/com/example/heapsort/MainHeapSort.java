@@ -8,15 +8,6 @@ import java.util.List;
  */
 public class MainHeapSort {
     /**
-     * 4fun.
-     *
-     * @param args 4fun.
-     */
-    public static void main(String[] args) {
-        System.out.println("Hello sss!");
-    }
-
-    /**
      * Algorithm for building a heap.
      * If the indexI-th element is less
      * than its children, the entire subtree is already a heap.
@@ -64,5 +55,14 @@ public class MainHeapSort {
             siftDown(inputList, curListSize, 0);
         }
         Collections.reverse(inputList);
+    }
+
+    /**
+     * Hello, HeapSort.
+     *
+     * @param args ...
+     */
+    public static void main(String[] args) {
+        System.out.println("Hello, HeapSort!");
     }
 }
