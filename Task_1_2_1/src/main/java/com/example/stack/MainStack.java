@@ -85,6 +85,7 @@ public class MainStack<T> {
 
     /**
      * Hello, Stack.
+     *
      * @param args ...
      */
     public static void main(String[] args) {
