@@ -8,7 +8,7 @@ package com.example.stack;
 public class MainStack<T> {
     static final int MAX_SIZE = 10000;
     @SuppressWarnings("unchecked")
-    private T[] array = (T[]) new Object[MAX_SIZE];
+    public T[] array = (T[]) new Object[MAX_SIZE];
     int curSize = 0;
 
     /**
