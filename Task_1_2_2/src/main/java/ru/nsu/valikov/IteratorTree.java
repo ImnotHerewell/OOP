@@ -18,9 +18,8 @@ public class IteratorTree<T> implements Iterator<T> {
     }
     @Override
     public boolean hasNext() {
-        return false;
+        return this.current!=null;
     }
-
     /**
      * Returns the next element in the iteration.
      *
@@ -29,7 +28,8 @@ public class IteratorTree<T> implements Iterator<T> {
      */
     @Override
     public T next() {
-        return null;
+        T value= current.getValue();
+        current=current.n
     }
 
     /**
