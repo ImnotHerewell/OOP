@@ -1,4 +1,5 @@
 package ru.nsu.valikov;
 
-public class Tree {
+public class Tree<T> implements Iterable<T> {
+
 }
