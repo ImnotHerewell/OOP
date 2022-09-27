@@ -15,8 +15,8 @@ public class TreeTest {
     void add() {
         Tree <String> kek=new Tree<>();
         Tree <String> tet=new Tree<>();
-        tet=kek.add("a)");
-        kek.add(tet,"B");
+//        tet=kek.add("a)");
+//        kek.add(tet,"B");
     }
 
     @Test
