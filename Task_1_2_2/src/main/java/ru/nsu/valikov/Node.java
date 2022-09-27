@@ -5,25 +5,29 @@ import java.util.List;
 
 public class Node<T> {
     private T value;
-    List<Node<T>> children= new ArrayList<>();
+    private List<Node<T>> children= new ArrayList<>();
 
-    public T get(){
-        return value;
+    public void setValue (T value){
+        this.value=value;
+    }
+    public T getValue(){
+        return this.value;
     }
 
-    public Node<T> add(T nodeInput){
-        Node<T> newNode = new Node<>();
-        newNode.value=nodeInput;
-        this.children.add(newNode);
-        return this;
+    public void addChild(Node<T> child){
+        this.children.add(child);
     }
 
-    public Node<T> add (Node<T> curNode, T childValue){
-        Node<T> newNode = new Node<>();
-        curNode.value=childValue;
-        curNode.children.add(newNode);
-        return newNode;
+    public void deleteChildren(){
+        for (Node<T> child : children){
+            child.deleteChildren();
+        }
+        this.children=null;
+        this.value=null;
     }
 
+    public List<Node<T>> getChildren(){
+        return this.children;
+    }
 
 }
