@@ -2,10 +2,12 @@ package ru.nsu.valikov;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+import java.util.Stack;
 import java.util.function.Consumer;
 
 public class IteratorTree<T> implements Iterator<T> {
-    Node<T> current;
+    private Node<T> current;
+    private Stack<Node<T>> dfsStack;
     /**
      * Returns {@code true} if the iteration has more elements.
      * (In other words, returns {@code true} if {@link #next} would
@@ -13,12 +15,14 @@ public class IteratorTree<T> implements Iterator<T> {
      *
      * @return {@code true} if the iteration has more elements
      */
-    public IteratorTree (Tree<T> tree){
-        current=tree.getRoot();
+    public IteratorTree(Tree<T> tree){
+        this.current=tree.getRoot();
+        this.dfsStack=new Stack<>();
+        this.dfsStack.add(this.current);
     }
     @Override
     public boolean hasNext() {
-        return this.current!=null;
+        return this.dfsStack.size()>1;
     }
     /**
      * Returns the next element in the iteration.
@@ -29,7 +33,7 @@ public class IteratorTree<T> implements Iterator<T> {
     @Override
     public T next() {
         T value= current.getValue();
-        current=current.n
+        return this.current.getValue();
     }
 
     /**
