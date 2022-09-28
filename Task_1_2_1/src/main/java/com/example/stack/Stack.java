@@ -10,7 +10,7 @@ public class Stack<T> {
     @SuppressWarnings("unchecked")
     public T[] array = (T[]) new Object[MAX_SIZE];
     int curSize = 0;
-    java.util.Stack<String> stack;
+//    java.util.Stack<String> stack;
     /**
      * Default push in.
      *
