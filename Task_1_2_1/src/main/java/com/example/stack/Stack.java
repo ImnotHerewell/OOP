@@ -1,16 +1,16 @@
 package com.example.stack;
 
 /**
- * Implementation of Stack in Java by Nikolay Valikov, @nocarend.
+ * Implementation of Stack in Java by Nikolay Valikov, @author nocarend.
  *
  * @param <T> - any Object.
  */
-public class MainStack<T> {
+public class Stack<T> {
     static final int MAX_SIZE = 10000;
     @SuppressWarnings("unchecked")
     public T[] array = (T[]) new Object[MAX_SIZE];
     int curSize = 0;
-
+    java.util.Stack<String> stack;
     /**
      * Default push in.
      *
@@ -59,8 +59,8 @@ public class MainStack<T> {
      * @param quantityOfElems - how many elements we want to extract from stack.
      * @return - null - impossible, notnull - possible.
      */
-    public MainStack<T> popStack(int quantityOfElems) {
-        MainStack<T> newStack = new MainStack<T>();
+    public Stack<T> popStack(int quantityOfElems) {
+        Stack<T> newStack = new Stack<>();
         if (quantityOfElems > curSize) {
             return null;
         } else {
