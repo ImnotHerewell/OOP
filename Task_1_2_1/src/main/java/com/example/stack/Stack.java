@@ -11,7 +11,7 @@ public class Stack<T> {
     public T[] array = (T[]) new Object[MAX_SIZE];
     int curSize = 0;
 //    java.util.Stack<String> stack;
-    /**
+    /**g
      * Default push in.
      *
      * @param inputElem - Object for push.

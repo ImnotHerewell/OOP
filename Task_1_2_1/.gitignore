@@ -168,5 +168,10 @@ gradle-app.setting
 *.hprof
 
 # End of https://www.toptal.com/developers/gitignore/api/java,gradle,intellij
+<<<<<<< HEAD:Task_1_2_1/.gitignore
 .mainjavadoc
 .idea/
+=======
+.mainjavadoc/
+.idea/
+>>>>>>> de4c0cad30d32dcdfbc9cdf75b6ebe6f79d6a9e3:.gitignore

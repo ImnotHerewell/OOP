@@ -1,7 +1,7 @@
 cd src/main/java
-javac com/example/stack/MainStack.java
-java com.example.stack.MainStack
-javadoc -d ./../../../mainjavadoc com.example.stack
-rm com/example/stack/MainStack.class
+javac com/example/heapsort/MainHeapSort.java
+java com.example.heapsort.MainHeapSort
+javadoc -d ./../../../mainjavadoc com.example.heapsort
+rm com/example/heapsort/MainHeapSort.class
 #cd ./../../test/java
-#javadoc -d ./../../../testjavadoc com.example.stack
+#javadoc -d ./../../../testjavadoc com.example.heapsort

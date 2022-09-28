@@ -7,17 +7,17 @@ import org.junit.jupiter.api.Test;
 /**
  * Class with tests.
  */
-class MainStackTest {
+class StackTest {
 
     /**
      * Simple test on push.
      */
     @Test
     void pushTest() {
-        MainStack<String> testStack = new MainStack<>();
+        Stack<String> testStack = new Stack<>();
         String test = "baobab";
         testStack.push(test);
-        String[] expectedResult = new String[MainStack.MAX_SIZE];
+        String[] expectedResult = new String[Stack.MAX_SIZE];
         expectedResult[0] = "baobab";
         Assertions.assertArrayEquals(expectedResult, testStack.array);
     }
@@ -27,7 +27,7 @@ class MainStackTest {
      */
     @Test
     void popTest() {
-        MainStack<String> testStack = new MainStack<>();
+        Stack<String> testStack = new Stack<>();
         testStack.push("baobab");
         final String expectedResult = "baobab";
         String test = testStack.pop();
@@ -39,10 +39,10 @@ class MainStackTest {
      */
     @Test
     void pushStackTest() {
-        MainStack<String> testStack = new MainStack<>();
+        Stack<String> testStack = new Stack<>();
         String[] inputValues = new String[]{"a", "b", "c", "d", "e"};
         testStack.pushStack(inputValues);
-        String[] expectedResult = new String[MainStack.MAX_SIZE];
+        String[] expectedResult = new String[Stack.MAX_SIZE];
         expectedResult[0] = "a";
         expectedResult[1] = "b";
         expectedResult[2] = "c";
@@ -56,15 +56,15 @@ class MainStackTest {
      */
     @Test
     void popStackTest() {
-        MainStack<String> testStack = new MainStack<>();
+        Stack<String> testStack = new Stack<>();
         String[] inputValues = new String[]{"a", "b", "c", "d", "e"};
         testStack.pushStack(inputValues);
-        String[] expectedResult = new String[MainStack.MAX_SIZE];
+        String[] expectedResult = new String[Stack.MAX_SIZE];
         expectedResult[0] = "b";
         expectedResult[1] = "c";
         expectedResult[2] = "d";
         expectedResult[3] = "e";
-        MainStack<String> testResult = testStack.popStack(4);
+        Stack<String> testResult = testStack.popStack(4);
         Assertions.assertArrayEquals(expectedResult, testResult.array);
     }
 
@@ -73,7 +73,7 @@ class MainStackTest {
      */
     @Test
     void countTest() {
-        MainStack<String> testStack = new MainStack<>();
+        Stack<String> testStack = new Stack<>();
         String[] inputValues = new String[]{"a", "b", "c", "d", "e"};
         testStack.pushStack(inputValues);
         int expectedResult = 5;
