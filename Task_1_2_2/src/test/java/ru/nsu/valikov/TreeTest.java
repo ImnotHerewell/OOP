@@ -22,6 +22,10 @@ public class TreeTest {
         kek.add("A");
         kek.add("C");
         Iterator<String> it=kek.iterator();
+//        it.next();
+        System.out.println(it.next());
+        it.remove();
+        System.out.println(it.next());
         while (it.hasNext()){
             String el = it.next();
             System.out.println(el);
