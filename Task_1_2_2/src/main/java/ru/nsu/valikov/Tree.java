@@ -8,6 +8,7 @@ public class Tree<T> implements Iterable<T> {
     public Tree() {
         root = new Node<>();
         root.setValue(null);
+        root.setParent(null);
     }
 
     public static void main(String[] args) {

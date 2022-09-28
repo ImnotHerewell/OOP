@@ -72,7 +72,7 @@ public class DFSIteratorTree<T> implements Iterator<T> {
      */
     @Override
     public void remove() {
-        this.current.deleteChildren();
+        this.current.delete();
     }
 
     /**

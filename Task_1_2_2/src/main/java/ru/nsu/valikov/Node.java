@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Node<T> {
     private T value;
-    private T parent;
+    private Node<T> parent;
     private List<Node<T>> children= new ArrayList<>();
 
     public void setValue (T value){
@@ -14,19 +14,21 @@ public class Node<T> {
     public T getValue(){
         return this.value;
     }
-    public T getParent(T parent){
+    public void setParent(Node<T> parent){
+        this.parent=parent;
+    }
+    public Node<T> getParent(T parent){
         return this.parent;
     }
     public void addChild(Node<T> child){
         this.children.add(child);
     }
 
-    public void deleteChildren(){
+    public void delete(){
         for (Node<T> child : children){
-            child.deleteChildren();
+            child.parent=this.parent;
         }
-        this.children=null;
-        this.setValue(null);
+        this.parent.children.remove(this);
     }
 
     public List<Node<T>> getChildren(){
