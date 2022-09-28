@@ -5,7 +5,20 @@ import java.util.Iterator;
 public class Tree<T> implements Iterable<T> {
     private Node<T> root;
 
+    public Tree() {
+        root=new Node<>();
+        root.setValue(null);
+    }
+
     public static void main(String[] args) {
+        Tree <String> kek=new Tree<>();
+        Tree <String> tet=new Tree<>();
+        kek.add("B");
+        kek.add("A");
+        Node<T> node1 = kek.add("C");
+        for (String string :kek){
+            System.out.println(string);
+        }
         System.out.println("Hello, Tree!");
     }
 
@@ -44,6 +57,6 @@ public class Tree<T> implements Iterable<T> {
      */
     @Override
     public Iterator<T> iterator() {
-        return new IteratorTree<T>(this);
+        return new DFSIteratorTree<T>(this);
     }
 }

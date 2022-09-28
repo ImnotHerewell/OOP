@@ -21,10 +21,12 @@ public class TreeTest {
         kek.add("B");
         kek.add("A");
         kek.add("C");
-        Collection<Tree<String>> collection = Collections.singleton(kek);
-        Stream<Tree<String>> stream = collection.stream();
-        Optional<Tree<String>> test= collection.stream().findFirst();
-        System.out.println(test);
+        Iterator<String> it=kek.iterator();
+        while (it.hasNext()){
+            String el = it.next();
+            System.out.println(el);
+        }
+
     }
 
     @Test

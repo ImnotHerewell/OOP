@@ -5,9 +5,10 @@ import java.util.NoSuchElementException;
 import java.util.Stack;
 import java.util.function.Consumer;
 
-public class IteratorTree<T> implements Iterator<T> {
+public class DFSIteratorTree<T> implements Iterator<T> {
     private Node<T> current;
-    private Stack<Node<T>> dfsStack;
+    private Stack<Node<T>> dfsStack = new Stack<>();
+
     /**
      * Returns {@code true} if the iteration has more elements.
      * (In other words, returns {@code true} if {@link #next} would
@@ -15,15 +16,18 @@ public class IteratorTree<T> implements Iterator<T> {
      *
      * @return {@code true} if the iteration has more elements
      */
-    public IteratorTree(Tree<T> tree){
-        this.current=tree.getRoot();
-        this.dfsStack=new Stack<>();
-        this.dfsStack.add(this.current);
+    public DFSIteratorTree(Tree<T> tree) {
+        this.current = tree.getRoot();
+        for (Node<T> autoIt : tree.getRoot().getChildren()) {
+            this.dfsStack.push(autoIt);
+        }
     }
+
     @Override
     public boolean hasNext() {
-        return this.dfsStack.size()>1;
+        return !this.dfsStack.empty();
     }
+
     /**
      * Returns the next element in the iteration.
      *
@@ -32,7 +36,15 @@ public class IteratorTree<T> implements Iterator<T> {
      */
     @Override
     public T next() {
-        T value= current.getValue();
+        if (this.current.getValue()!=null) {
+            for (Node<T> autoIt : this.current.getChildren()) {
+                this.dfsStack.push(autoIt);
+            }
+        }
+        if (!hasNext()) {
+            throw new NoSuchElementException();
+        }
+        this.current = dfsStack.pop();
         return this.current.getValue();
     }
 
@@ -60,7 +72,7 @@ public class IteratorTree<T> implements Iterator<T> {
      */
     @Override
     public void remove() {
-        Iterator.super.remove();
+        this.current=null;
     }
 
     /**
