@@ -10,9 +10,6 @@ public class Tree<T> implements Iterable<T> {
         this.root = new Node<>();
     }
 
-    public static void main(String[] args) {
-        System.out.println("Hello, Tree!");
-    }
 
     public Node<T> getRoot() {
         return root;
