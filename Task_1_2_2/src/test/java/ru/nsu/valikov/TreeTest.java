@@ -21,17 +21,17 @@ public class TreeTest {
 
         Tree<String> bambooExp = new Tree<>();
         bambooExp.add("1");
-        Node<String> nNode3 = bambooExp.add("3");
-        Node<String> nNode5 = bambooExp.add(nNode3, "5");
-        Node<String> nNode7 = bambooExp.add(nNode5, "7");
+        Node<String> expNode3 = bambooExp.add("3");
+        Node<String> expNode5 = bambooExp.add(expNode3, "5");
+        Node<String> expNode7 = bambooExp.add(expNode5, "7");
         Assertions.assertEquals(bambooExp.hashCode(), bambooTest.hashCode());
 
+        Node<String> expNode8 = bambooExp.add(expNode7, "8");
+        Node<String> expNode9 = bambooExp.add(expNode8, "9");
+        Node<String> expNode10 = bambooExp.add(expNode9, "10");
         Node<String> node8 = bambooTest.add(node7, "8");
         Node<String> node9 = bambooTest.add(node8, "9");
         Node<String> node10 = bambooTest.add(node9, "10");
-        Node<String> nNode8 = bambooExp.add(nNode7, "8");
-        Node<String> nNode9 = bambooExp.add(nNode8, "9");
-        Node<String> nNode10 = bambooExp.add(nNode9, "10");
         Assertions.assertEquals(bambooExp.hashCode(), bambooTest.hashCode());
 //
         Iterator<String> bfsIterator = bambooTest.iteratorBFS();
@@ -42,11 +42,11 @@ public class TreeTest {
         Tree<String> emptyTree = new Tree<>();
         Assertions.assertEquals(emptyTree.hashCode(), bambooTest.hashCode());
         //
-        Node<String> cNode1 = bambooTest.add("1");
-        Node<String> cNode2 = bambooTest.add(cNode1, "11");
-        Node<String> cNode3 = bambooTest.add(cNode2, "111");
-        Node<String> cNode4 = bambooTest.add(cNode3, "1111");
-        Node<String> cNode5 = bambooTest.add(cNode4, "11111");
+        Node<String> testNode1 = bambooTest.add("1");
+        Node<String> testNode2 = bambooTest.add(testNode1, "11");
+        Node<String> testNode3 = bambooTest.add(testNode2, "111");
+        Node<String> testNode4 = bambooTest.add(testNode3, "1111");
+        Node<String> testNode5 = bambooTest.add(testNode4, "11111");
         for (String str : bambooTest) {
             bambooTest.erase(str);
         }
