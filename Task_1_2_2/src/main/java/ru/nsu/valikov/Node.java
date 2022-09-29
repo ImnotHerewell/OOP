@@ -2,6 +2,7 @@ package ru.nsu.valikov;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Node<T> {
     private T value;
@@ -58,4 +59,12 @@ public class Node<T> {
         return this.children;
     }
 
+    public int hashCode(){
+        int p =239017;
+        int res= Objects.hashCode(this.value)+Objects.hashCode(getParent().value)*p;
+        for (Node<T> obj : this.getChildren()){
+            res+=obj.hashCode();
+        }
+        return res;
+    }
 }

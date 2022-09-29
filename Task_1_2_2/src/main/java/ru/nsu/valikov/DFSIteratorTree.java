@@ -7,7 +7,7 @@ import java.util.function.Consumer;
 
 public class DFSIteratorTree<T> implements Iterator<T> {
     private Node<T> current;
-    private Stack<Node<T>> dfsStack = new Stack<>();
+    private final Stack<Node<T>> dfsStack = new Stack<>();
 
     /**
      * Returns {@code true} if the iteration has more elements.
@@ -35,7 +35,7 @@ public class DFSIteratorTree<T> implements Iterator<T> {
      * @throws NoSuchElementException if the iteration has no more elements
      */
     @Override
-    public T next() {
+    public T next() throws NoSuchElementException {
         if (this.current.getValue() != null) {
             for (Node<T> autoIt : this.current.getChildren()) {
                 this.dfsStack.push(autoIt);

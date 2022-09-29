@@ -1,30 +1,16 @@
 package ru.nsu.valikov;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class Tree<T> implements Iterable<T> {
-    private Node<T> root;
+    private final Node<T> root;
 
     public Tree() {
         this.root = new Node<>();
     }
 
     public static void main(String[] args) {
-        Tree<String> kek = new Tree<>();
-        Node<String> node2 = kek.add("B");
-        Node<String> node3 = kek.add("A");
-        Node<String> node1 = kek.add("C");
-        kek.add(node2, "D");
-        Node<String> node4 = kek.add(node2, "F");
-        kek.add(node4, "E");
-        kek.add(node4, "R");
-        kek.add(node4, "O");
-        kek.add(node4, "T");
-        Iterator<String> it=kek.iterator();
-        while (it.hasNext()) {
-            System.out.println(it.next());
-            it.remove();
-        }
         System.out.println("Hello, Tree!");
     }
 
@@ -44,6 +30,16 @@ public class Tree<T> implements Iterable<T> {
         return add(root, childValue);
     }
 
+    public void erase(T value) {
+        Iterator<T> iterator = this.iterator();
+        while (iterator.hasNext()) {
+            if (iterator.next().equals(value)) {
+                iterator.remove();
+                return;
+            }
+        }
+//        throw new NoSuchElementException();
+    }
 
     /**
      * Returns an iterator over elements of type {@code T}.
@@ -55,7 +51,14 @@ public class Tree<T> implements Iterable<T> {
         return new DFSIteratorTree<>(this);
     }
 
-//    public Iterator<T> iteratorBFS() {
-//        return new BFSIteratorTree<>(this);
-//    }
+    public Iterator<T> iteratorBFS() {
+        return new BFSIteratorTree<>(this);
+    }
+    public int hashCode(){
+        int res=0;
+        for (Node<T> obj : root.getChildren()){
+            res+= obj.hashCode();
+        }
+        return res;
+    }
 }
