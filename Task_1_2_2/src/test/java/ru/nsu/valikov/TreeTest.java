@@ -3,6 +3,8 @@ package ru.nsu.valikov;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.Iterator;
+
 public class TreeTest {
     @Test
     public void graphBamboo() {
@@ -31,11 +33,23 @@ public class TreeTest {
         Node<String> nNode9 = bambooExp.add(nNode8, "9");
         Node<String> nNode10 = bambooExp.add(nNode9, "10");
         Assertions.assertEquals(bambooExp.hashCode(), bambooTest.hashCode());
-
+//
+        Iterator<String> bfsIterator = bambooTest.iteratorBFS();
+        while (bfsIterator.hasNext()) {
+            bfsIterator.next();
+            bfsIterator.remove();
+        }
+        Tree<String> emptyTree = new Tree<>();
+        Assertions.assertEquals(emptyTree.hashCode(), bambooTest.hashCode());
+        //
+        Node<String> cNode1 = bambooTest.add("1");
+        Node<String> cNode2 = bambooTest.add(cNode1, "11");
+        Node<String> cNode3 = bambooTest.add(cNode2, "111");
+        Node<String> cNode4 = bambooTest.add(cNode3, "1111");
+        Node<String> cNode5 = bambooTest.add(cNode4, "11111");
         for (String str : bambooTest) {
             bambooTest.erase(str);
         }
-        Tree<String> emptyTree = new Tree<>();
         Assertions.assertEquals(emptyTree.hashCode(), bambooTest.hashCode());
     }
 }
