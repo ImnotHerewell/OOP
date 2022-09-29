@@ -1,6 +1,7 @@
 package ru.nsu.valikov;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class BFSIteratorTree<T> implements Iterator<T> {
     private Node<T> current;
