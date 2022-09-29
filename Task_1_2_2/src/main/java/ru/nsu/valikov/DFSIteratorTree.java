@@ -6,12 +6,12 @@ import java.util.Stack;
 
 public class DFSIteratorTree<T> implements Iterator<T> {
     private Node<T> current;
-    private final Stack<Node<T>> dfsStack = new Stack<>();
+    private final Stack<Node<T>> stack = new Stack<>();
 
     public DFSIteratorTree(Tree<T> tree) {
         this.current = tree.getRoot();
         for (Node<T> autoIt : tree.getRoot().getChildren()) {
-            this.dfsStack.push(autoIt);
+            this.stack.push(autoIt);
         }
     }
 
@@ -24,7 +24,7 @@ public class DFSIteratorTree<T> implements Iterator<T> {
      */
     @Override
     public boolean hasNext() {
-        return !this.dfsStack.empty() || this.current.getChildCount() > 0;
+        return !this.stack.empty() || this.current.getChildCount() > 0;
     }
 
     /**
@@ -37,13 +37,13 @@ public class DFSIteratorTree<T> implements Iterator<T> {
     public T next() throws NoSuchElementException {
         if (this.current.getValue() != null) {
             for (Node<T> autoIt : this.current.getChildren()) {
-                this.dfsStack.push(autoIt);
+                this.stack.push(autoIt);
             }
         }
         if (!hasNext()) {
             throw new NoSuchElementException();
         }
-        this.current = dfsStack.pop();
+        this.current = stack.pop();
         return this.current.getValue();
     }
 
