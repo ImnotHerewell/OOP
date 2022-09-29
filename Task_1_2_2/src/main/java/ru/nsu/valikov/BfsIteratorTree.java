@@ -1,29 +1,27 @@
 package ru.nsu.valikov;
 
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.NoSuchElementException;
-import java.util.Stack;
-
+import java.util.Queue;
 
 /**
- * Iterator for DFS.
+ * Iterator for BFS.
  *
  * @param <T> non-primitive type.
  */
-public class DFSIteratorTree<T> implements Iterator<T> {
+public class BfsIteratorTree<T> implements Iterator<T> {
     private Node<T> current;
-    private final Stack<Node<T>> stack = new Stack<>(); // Stack where nodes are stored.
+    private final Queue<Node<T>> queue = new LinkedList<>();// Queue where nodes are stored.
 
     /**
      * Constructor for iterator, it adds adjacent with root nodes.
      *
      * @param tree our tree.
      */
-    public DFSIteratorTree(Tree<T> tree) {
-        this.current = tree.getRoot();
-        for (Node<T> autoIt : tree.getRoot().getChildren()) {
-            this.stack.push(autoIt);
-        }
+    public BfsIteratorTree(Tree<T> tree) {
+        current = tree.getRoot();
+        queue.addAll(tree.getRoot().getChildren());
     }
 
     /**
@@ -35,28 +33,26 @@ public class DFSIteratorTree<T> implements Iterator<T> {
      */
     @Override
     public boolean hasNext() {
-        return !this.stack.empty() || this.current.getChildCount() > 0;
+        return !queue.isEmpty() || current.getChildCount() > 0;
     }
 
     /**
-     * Returns the next element in the iteration. Method adds adjacent nodes if it needs.
-     * Abd pop last element to current.
+     * Returns the next element in the iteration.Method adds adjacent nodes if it needs.
+     * And remove first element to current.
      *
      * @return the next element in the iteration
      * @throws NoSuchElementException if the iteration has no more elements
      */
     @Override
     public T next() throws NoSuchElementException {
-        if (this.current.getValue() != null) {
-            for (Node<T> autoIt : this.current.getChildren()) {
-                this.stack.push(autoIt);
-            }
+        if (current.getValue() != null) {
+            queue.addAll(current.getChildren());
         }
         if (!hasNext()) {
             throw new NoSuchElementException();
         }
-        this.current = stack.pop();
-        return this.current.getValue();
+        current = queue.remove();
+        return current.getValue();
     }
 
     /**
@@ -69,7 +65,7 @@ public class DFSIteratorTree<T> implements Iterator<T> {
      */
     @Override
     public void remove() {
-        this.current.delete();
+        current.delete();
     }
 
 }

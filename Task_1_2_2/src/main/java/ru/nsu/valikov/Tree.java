@@ -67,7 +67,7 @@ public class Tree<T> implements Iterable<T> {
      */
     @Override
     public Iterator<T> iterator() {
-        return new DFSIteratorTree<>(this);
+        return new DfsIteratorTree<>(this);
     }
 
     /**
@@ -76,7 +76,7 @@ public class Tree<T> implements Iterable<T> {
      * @return an Iterator for BFS.
      */
     public Iterator<T> iteratorBfs() {
-        return new BFSIteratorTree<>(this);
+        return new BfsIteratorTree<>(this);
     }
 
     /**

@@ -1,17 +1,29 @@
 package ru.nsu.valikov;
 
 import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.NoSuchElementException;
-import java.util.Queue;
+import java.util.Stack;
 
-public class BFSIteratorTree<T> implements Iterator<T> {
+
+/**
+ * Iterator for DFS.
+ *
+ * @param <T> non-primitive type.
+ */
+public class DfsIteratorTree<T> implements Iterator<T> {
     private Node<T> current;
-    private final Queue<Node<T>> queue = new LinkedList<>();
+    private final Stack<Node<T>> stack = new Stack<>(); // Stack where nodes are stored.
 
-    public BFSIteratorTree(Tree<T> tree) {
-        this.current = tree.getRoot();
-        this.queue.addAll(tree.getRoot().getChildren());
+    /**
+     * Constructor for iterator, it adds adjacent with root nodes.
+     *
+     * @param tree our tree.
+     */
+    public DfsIteratorTree(Tree<T> tree) {
+        current = tree.getRoot();
+        for (Node<T> autoIt : tree.getRoot().getChildren()) {
+            stack.push(autoIt);
+        }
     }
 
     /**
@@ -23,25 +35,28 @@ public class BFSIteratorTree<T> implements Iterator<T> {
      */
     @Override
     public boolean hasNext() {
-        return !this.queue.isEmpty() || this.current.getChildCount() > 0;
+        return !stack.empty() || current.getChildCount() > 0;
     }
 
     /**
-     * Returns the next element in the iteration.
+     * Returns the next element in the iteration. Method adds adjacent nodes if it needs.
+     * And pop last element to current.
      *
      * @return the next element in the iteration
      * @throws NoSuchElementException if the iteration has no more elements
      */
     @Override
     public T next() throws NoSuchElementException {
-        if (this.current.getValue() != null) {
-            this.queue.addAll(this.current.getChildren());
+        if (current.getValue() != null) {
+            for (Node<T> autoIt : current.getChildren()) {
+                stack.push(autoIt);
+            }
         }
         if (!hasNext()) {
             throw new NoSuchElementException();
         }
-        this.current = queue.remove();
-        return this.current.getValue();
+        current = stack.pop();
+        return current.getValue();
     }
 
     /**
@@ -54,7 +69,7 @@ public class BFSIteratorTree<T> implements Iterator<T> {
      */
     @Override
     public void remove() {
-        this.current.delete();
+        current.delete();
     }
 
 }
