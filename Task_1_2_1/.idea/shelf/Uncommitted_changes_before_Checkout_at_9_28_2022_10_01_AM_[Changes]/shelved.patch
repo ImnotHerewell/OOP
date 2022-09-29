@@ -1,0 +1,81 @@
+Index: src/test/java/com/example/stack/StackTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.stack;\r\n\r\n\r\nimport org.junit.jupiter.api.Assertions;\r\nimport org.junit.jupiter.api.Test;\r\n\r\n/**\r\n * Class with tests.\r\n */\r\nclass MainStackTest {\r\n\r\n    /**\r\n     * Simple test on push.\r\n     */\r\n    @Test\r\n    void pushTest() {\r\n        MainStack<String> testStack = new MainStack<>();\r\n        String test = \"baobab\";\r\n        testStack.push(test);\r\n        String[] expectedResult = new String[MainStack.MAX_SIZE];\r\n        expectedResult[0] = \"baobab\";\r\n        Assertions.assertArrayEquals(expectedResult, testStack.array);\r\n    }\r\n\r\n    /**\r\n     * Simple test on pop.\r\n     */\r\n    @Test\r\n    void popTest() {\r\n        MainStack<String> testStack = new MainStack<>();\r\n        testStack.push(\"baobab\");\r\n        final String expectedResult = \"baobab\";\r\n        String test = testStack.pop();\r\n        Assertions.assertEquals(expectedResult, test);\r\n    }\r\n\r\n    /**\r\n     * Simple test on pushStack.\r\n     */\r\n    @Test\r\n    void pushStackTest() {\r\n        MainStack<String> testStack = new MainStack<>();\r\n        String[] inputValues = new String[]{\"a\", \"b\", \"c\", \"d\", \"e\"};\r\n        testStack.pushStack(inputValues);\r\n        String[] expectedResult = new String[MainStack.MAX_SIZE];\r\n        expectedResult[0] = \"a\";\r\n        expectedResult[1] = \"b\";\r\n        expectedResult[2] = \"c\";\r\n        expectedResult[3] = \"d\";\r\n        expectedResult[4] = \"e\";\r\n        Assertions.assertArrayEquals(expectedResult, testStack.array);\r\n    }\r\n\r\n    /**\r\n     * Simple test on popStack.\r\n     */\r\n    @Test\r\n    void popStackTest() {\r\n        MainStack<String> testStack = new MainStack<>();\r\n        String[] inputValues = new String[]{\"a\", \"b\", \"c\", \"d\", \"e\"};\r\n        testStack.pushStack(inputValues);\r\n        String[] expectedResult = new String[MainStack.MAX_SIZE];\r\n        expectedResult[0] = \"b\";\r\n        expectedResult[1] = \"c\";\r\n        expectedResult[2] = \"d\";\r\n        expectedResult[3] = \"e\";\r\n        MainStack<String> testResult = testStack.popStack(4);\r\n        Assertions.assertArrayEquals(expectedResult, testResult.array);\r\n    }\r\n\r\n    /**\r\n     * Simple test on count.\r\n     */\r\n    @Test\r\n    void countTest() {\r\n        MainStack<String> testStack = new MainStack<>();\r\n        String[] inputValues = new String[]{\"a\", \"b\", \"c\", \"d\", \"e\"};\r\n        testStack.pushStack(inputValues);\r\n        int expectedResult = 5;\r\n        int testResult = testStack.count();\r\n        Assertions.assertEquals(expectedResult, testResult);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/com/example/stack/StackTest.java b/src/test/java/com/example/stack/StackTest.java
+--- a/src/test/java/com/example/stack/StackTest.java	(revision fd93610713e4551316dd0a269f3272ed4ec06f13)
++++ b/src/test/java/com/example/stack/StackTest.java	(date 1664347990254)
+@@ -7,17 +7,17 @@
+ /**
+  * Class with tests.
+  */
+-class MainStackTest {
++class StackTest {
+ 
+     /**
+      * Simple test on push.
+      */
+     @Test
+     void pushTest() {
+-        MainStack<String> testStack = new MainStack<>();
++        Stack<String> testStack = new Stack<>();
+         String test = "baobab";
+         testStack.push(test);
+-        String[] expectedResult = new String[MainStack.MAX_SIZE];
++        String[] expectedResult = new String[Stack.MAX_SIZE];
+         expectedResult[0] = "baobab";
+         Assertions.assertArrayEquals(expectedResult, testStack.array);
+     }
+@@ -27,7 +27,7 @@
+      */
+     @Test
+     void popTest() {
+-        MainStack<String> testStack = new MainStack<>();
++        Stack<String> testStack = new Stack<>();
+         testStack.push("baobab");
+         final String expectedResult = "baobab";
+         String test = testStack.pop();
+@@ -39,10 +39,10 @@
+      */
+     @Test
+     void pushStackTest() {
+-        MainStack<String> testStack = new MainStack<>();
++        Stack<String> testStack = new Stack<>();
+         String[] inputValues = new String[]{"a", "b", "c", "d", "e"};
+         testStack.pushStack(inputValues);
+-        String[] expectedResult = new String[MainStack.MAX_SIZE];
++        String[] expectedResult = new String[Stack.MAX_SIZE];
+         expectedResult[0] = "a";
+         expectedResult[1] = "b";
+         expectedResult[2] = "c";
+@@ -56,15 +56,15 @@
+      */
+     @Test
+     void popStackTest() {
+-        MainStack<String> testStack = new MainStack<>();
++        Stack<String> testStack = new Stack<>();
+         String[] inputValues = new String[]{"a", "b", "c", "d", "e"};
+         testStack.pushStack(inputValues);
+-        String[] expectedResult = new String[MainStack.MAX_SIZE];
++        String[] expectedResult = new String[Stack.MAX_SIZE];
+         expectedResult[0] = "b";
+         expectedResult[1] = "c";
+         expectedResult[2] = "d";
+         expectedResult[3] = "e";
+-        MainStack<String> testResult = testStack.popStack(4);
++        Stack<String> testResult = testStack.popStack(4);
+         Assertions.assertArrayEquals(expectedResult, testResult.array);
+     }
+ 
+@@ -73,7 +73,7 @@
+      */
+     @Test
+     void countTest() {
+-        MainStack<String> testStack = new MainStack<>();
++        Stack<String> testStack = new Stack<>();
+         String[] inputValues = new String[]{"a", "b", "c", "d", "e"};
+         testStack.pushStack(inputValues);
+         int expectedResult = 5;
