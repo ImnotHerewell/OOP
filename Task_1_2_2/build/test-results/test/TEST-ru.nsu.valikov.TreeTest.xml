@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.nsu.valikov.TreeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-09-29T07:41:40" hostname="COMPUTER" time="0.021">
-  <properties/>
-  <testcase name="graphBamboo()" classname="ru.nsu.valikov.TreeTest" time="0.021"/>
-  <system-out><![CDATA[0 0
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
