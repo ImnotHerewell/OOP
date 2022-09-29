@@ -75,9 +75,9 @@ public class TreeTest {
         test.erase("6");
         Tree<String> exp = new Tree<>();
         exp.add("1");
-        Node<String> expNode5 = exp.add("5");
         exp.add("7");
         exp.add("3");
+        Node<String> expNode5 = exp.add("5");
         Assertions.assertEquals(exp.hashCode(), test.hashCode());
         //Testing only add.
         exp.add(expNode5, "8");
