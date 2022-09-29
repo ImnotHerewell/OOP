@@ -43,6 +43,7 @@ public class Node<T> {
 
     /**
      * Simple adding a child.
+     *
      * @param child to whom edge goes.
      */
     public void addChild(Node<T> child) {
@@ -73,6 +74,7 @@ public class Node<T> {
 
     /**
      * Calculate tree's hashCode.
+     *
      * @return hash.
      */
     public int hashCode() {

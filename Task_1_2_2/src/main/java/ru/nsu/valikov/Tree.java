@@ -75,12 +75,13 @@ public class Tree<T> implements Iterable<T> {
      *
      * @return an Iterator for BFS.
      */
-    public Iterator<T> iteratorBFS() {
+    public Iterator<T> iteratorBfs() {
         return new BFSIteratorTree<>(this);
     }
 
     /**
      * Trying to calculate tree's hash.
+     *
      * @return hash.
      */
     public int hashCode() {

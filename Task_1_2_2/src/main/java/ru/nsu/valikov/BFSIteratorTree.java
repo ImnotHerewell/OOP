@@ -7,7 +7,7 @@ import java.util.Queue;
 
 public class BFSIteratorTree<T> implements Iterator<T> {
     private Node<T> current;
-    private final Queue<Node<T>> queue =  new LinkedList<>();
+    private final Queue<Node<T>> queue = new LinkedList<>();
 
     public BFSIteratorTree(Tree<T> tree) {
         this.current = tree.getRoot();

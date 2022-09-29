@@ -34,7 +34,7 @@ public class TreeTest {
         bambooTest.add(node9, "10");
         Assertions.assertEquals(bambooExp.hashCode(), bambooTest.hashCode());
 //
-        Iterator<String> bfsIterator = bambooTest.iteratorBFS();
+        Iterator<String> bfsIterator = bambooTest.iteratorBfs();
         while (bfsIterator.hasNext()) {
             bfsIterator.next();
             bfsIterator.remove();
@@ -80,7 +80,7 @@ public class TreeTest {
         Node<String> node10 = test.add(node3, "10");
         Assertions.assertEquals(exp.hashCode(), test.hashCode());
 //
-        Iterator<String> bfsIterator = test.iteratorBFS();
+        Iterator<String> bfsIterator = test.iteratorBfs();
         while (bfsIterator.hasNext()) {
             bfsIterator.next();
             bfsIterator.remove();
