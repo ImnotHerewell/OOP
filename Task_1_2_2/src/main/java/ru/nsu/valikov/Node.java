@@ -6,32 +6,55 @@ import java.util.List;
 public class Node<T> {
     private T value;
     private Node<T> parent;
-    private List<Node<T>> children= new ArrayList<>();
+    private Integer childCount;
+    private final List<Node<T>> children;
 
-    public void setValue (T value){
-        this.value=value;
+    public Node() {
+        this.childCount = 0;
+        this.children = new ArrayList<>();
+        this.parent = null;
+        this.value = null;
     }
-    public T getValue(){
+
+    public void setValue(T value) {
+        this.value = value;
+    }
+
+    public T getValue() {
         return this.value;
     }
-    public void setParent(Node<T> parent){
-        this.parent=parent;
+
+    public void setParent(Node<T> parent) {
+        this.parent = parent;
     }
-    public Node<T> getParent(T parent){
+
+    public Node<T> getParent() {
         return this.parent;
     }
-    public void addChild(Node<T> child){
-        this.children.add(child);
+
+    public Integer getChildCount() {
+        return this.childCount;
     }
 
-    public void delete(){
-        for (Node<T> child : children){
-            child.parent=this.parent;
+    public void addChild(Node<T> child) {
+        if (child != null) {
+            this.childCount++;
+            this.children.add(child);
         }
-        this.parent.children.remove(this);
     }
 
-    public List<Node<T>> getChildren(){
+    public void delete() {
+        if (this.value != null) {
+            for (Node<T> child : this.children) {
+                child.parent = this.parent;
+                this.parent.addChild(child);
+            }
+            this.parent.childCount--;
+            this.parent.children.remove(this);
+        }
+    }
+
+    public List<Node<T>> getChildren() {
         return this.children;
     }
 

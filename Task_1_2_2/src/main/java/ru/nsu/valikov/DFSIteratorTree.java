@@ -25,7 +25,7 @@ public class DFSIteratorTree<T> implements Iterator<T> {
 
     @Override
     public boolean hasNext() {
-        return !this.dfsStack.empty();
+        return !this.dfsStack.empty() || this.current.getChildCount()>0;
     }
 
     /**
@@ -36,7 +36,7 @@ public class DFSIteratorTree<T> implements Iterator<T> {
      */
     @Override
     public T next() {
-        if (this.current.getValue()!=null) {
+        if (this.current.getValue() != null) {
             for (Node<T> autoIt : this.current.getChildren()) {
                 this.dfsStack.push(autoIt);
             }
@@ -75,31 +75,4 @@ public class DFSIteratorTree<T> implements Iterator<T> {
         this.current.delete();
     }
 
-    /**
-     * Performs the given action for each remaining element until all elements
-     * have been processed or the action throws an exception.  Actions are
-     * performed in the order of iteration, if that order is specified.
-     * Exceptions thrown by the action are relayed to the caller.
-     * <p>
-     * The behavior of an iterator is unspecified if the action modifies the
-     * collection in any way (even by calling the {@link #remove remove} method
-     * or other mutator methods of {@code Iterator} subtypes),
-     * unless an overriding class has specified a concurrent modification policy.
-     * <p>
-     * Subsequent behavior of an iterator is unspecified if the action throws an
-     * exception.
-     *
-     * @param action The action to be performed for each element
-     * @throws NullPointerException if the specified action is null
-     * @implSpec <p>The default implementation behaves as if:
-     * <pre>{@code
-     *     while (hasNext())
-     *         action.accept(next());
-     * }</pre>
-     * @since 1.8
-     */
-    @Override
-    public void forEachRemaining(Consumer action) {
-        Iterator.super.forEachRemaining(action);
-    }
 }

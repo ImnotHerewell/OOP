@@ -6,29 +6,24 @@ public class Tree<T> implements Iterable<T> {
     private Node<T> root;
 
     public Tree() {
-        root = new Node<>();
-        root.setValue(null);
-        root.setParent(null);
+        this.root = new Node<>();
     }
 
     public static void main(String[] args) {
         Tree<String> kek = new Tree<>();
-        Tree<String> tet = new Tree<>();
         Node<String> node2 = kek.add("B");
         Node<String> node3 = kek.add("A");
         Node<String> node1 = kek.add("C");
-        kek.add(node1, "D");
-        Node<String> node4 = kek.add(node1, "F");
-        kek.add(node2, "E");
-        kek.add(node3, "R");
+        kek.add(node2, "D");
+        Node<String> node4 = kek.add(node2, "F");
+        kek.add(node4, "E");
+        kek.add(node4, "R");
         kek.add(node4, "O");
+        kek.add(node4, "T");
         Iterator<String> it=kek.iterator();
-//        it.next();
-        System.out.println(it.next());
-        it.remove();
-        System.out.println(it.next());
-        for (String string : kek) {
-            System.out.println(string);
+        while (it.hasNext()) {
+            System.out.println(it.next());
+            it.remove();
         }
         System.out.println("Hello, Tree!");
     }
@@ -40,6 +35,7 @@ public class Tree<T> implements Iterable<T> {
     public Node<T> add(Node<T> curNode, T childValue) {
         Node<T> newNode = new Node<>();
         newNode.setValue(childValue);
+        newNode.setParent(curNode);
         curNode.addChild(newNode);
         return newNode;
     }
@@ -48,18 +44,6 @@ public class Tree<T> implements Iterable<T> {
         return add(root, childValue);
     }
 
-//    public boolean remove(T value) {
-//        Node<T> curNode = root;
-//        while (true) {
-//            if (curNode.getValue().equals(value)) {
-//                curNode.deleteChildren();
-//                return true;
-//            }
-//            for (Node<T> child : curNode.getChildren()) {
-//                if ()
-//            }
-//        }
-//    }
 
     /**
      * Returns an iterator over elements of type {@code T}.
@@ -68,7 +52,7 @@ public class Tree<T> implements Iterable<T> {
      */
     @Override
     public Iterator<T> iterator() {
-        return new DFSIteratorTree<T>(this);
+        return new DFSIteratorTree<>(this);
     }
 
 //    public Iterator<T> iteratorBFS() {
