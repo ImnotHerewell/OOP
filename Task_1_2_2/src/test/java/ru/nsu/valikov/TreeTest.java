@@ -66,26 +66,26 @@ public class TreeTest {
         //Testing add and erase.
         Tree<String> test = new Tree<>();
         test.add("1");
-        Node<String> node3 = test.add("3");
+        test.add("3");
         Node<String> node4 = test.add("4");
         Node<String> node5 = test.add("5");
         test.add(node5, "6");
-        Node<String> node7 = test.add(node4, "7");
+        test.add(node4, "7");
         test.erase("4");
         test.erase("6");
         Tree<String> exp = new Tree<>();
         exp.add("1");
-        Node<String> expNode3 = exp.add("3");
         Node<String> expNode5 = exp.add("5");
         Node<String> expNode7 = exp.add("7");
+        Node<String> expNode3 = exp.add("3");
         Assertions.assertEquals(exp.hashCode(), test.hashCode());
         //Testing only add.
-        exp.add(expNode7, "8");
+        exp.add(expNode5, "8");
         exp.add(expNode5, "9");
-        exp.add(expNode3, "10");
-        test.add(node7, "8");
+        exp.add(expNode5, "10");
+        test.add(node5, "8");
         test.add(node5, "9");
-        test.add(node3, "10");
+        test.add(node5, "10");
         Assertions.assertEquals(exp.hashCode(), test.hashCode());
         //Testing bfsIterator.
         Iterator<String> bfsIterator = test.iteratorBfs();
