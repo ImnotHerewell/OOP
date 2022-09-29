@@ -47,6 +47,10 @@ public class Node<T> {
         }
     }
 
+    public List<Node<T>> getChildren() {
+        return children;
+    }
+
     public void delete() {
         if (value != null) {
             for (Node<T> child : children) {
@@ -58,9 +62,6 @@ public class Node<T> {
         }
     }
 
-    public List<Node<T>> getChildren() {
-        return children;
-    }
 
     public int hashCode() {
         int p = 239017;

@@ -6,7 +6,7 @@ public class Tree<T> implements Iterable<T> {
     private final Node<T> root;
 
     public Tree() {
-        this.root = new Node<>();
+        root = new Node<>();
     }
 
 
@@ -34,7 +34,6 @@ public class Tree<T> implements Iterable<T> {
                 return;
             }
         }
-//        throw new NoSuchElementException();
     }
 
     /**
