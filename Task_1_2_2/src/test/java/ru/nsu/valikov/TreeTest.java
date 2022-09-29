@@ -26,9 +26,9 @@ public class TreeTest {
         Tree<String> bambooExp = new Tree<>();
         bambooExp.add("1");
         Node<String> expNode3 = bambooExp.add("3");
+        Node<String> node7 = bambooTest.add(node6, "7");
         Node<String> expNode5 = bambooExp.add(expNode3, "5");
         Node<String> expNode7 = bambooExp.add(expNode5, "7");
-        Node<String> node7 = bambooTest.add(node6, "7");
         Assertions.assertEquals(bambooExp.hashCode(), bambooTest.hashCode());
         //Testing only add.
         Node<String> expNode8 = bambooExp.add(expNode7, "8");
