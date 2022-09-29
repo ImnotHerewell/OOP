@@ -12,7 +12,7 @@ import java.util.Queue;
  */
 public class BfsIteratorTree<T> implements Iterator<T> {
     private Node<T> current;
-    private final Queue<Node<T>> queue = new LinkedList<>();// Queue where nodes are stored.
+    private final Queue<Node<T>> queue = new LinkedList<>(); // Queue where nodes are stored.
 
     /**
      * Constructor for iterator, it adds adjacent with root nodes.
@@ -59,7 +59,6 @@ public class BfsIteratorTree<T> implements Iterator<T> {
      * Removes from the underlying collection the last element returned
      * by this iterator (optional operation).  This method can be called
      * only once per call to {@link #next}.
-     * <p>
      * The behavior of an iterator is unspecified if this method is called
      * after a call to the {@link #forEachRemaining forEachRemaining} method.
      */

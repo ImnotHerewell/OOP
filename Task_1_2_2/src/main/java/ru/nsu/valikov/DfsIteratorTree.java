@@ -63,7 +63,6 @@ public class DfsIteratorTree<T> implements Iterator<T> {
      * Removes from the underlying collection the last element returned
      * by this iterator (optional operation).  This method can be called
      * only once per call to {@link #next}.
-     * <p>
      * The behavior of an iterator is unspecified if this method is called
      * after a call to the {@link #forEachRemaining forEachRemaining} method.
      */
