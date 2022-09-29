@@ -4,10 +4,21 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Stack;
 
+
+/**
+ * Iterator for DFS.
+ *
+ * @param <T> non-primitive type.
+ */
 public class DFSIteratorTree<T> implements Iterator<T> {
     private Node<T> current;
-    private final Stack<Node<T>> stack = new Stack<>();
+    private final Stack<Node<T>> stack = new Stack<>(); // Stack where nodes are stored.
 
+    /**
+     * Constructor for iterator, it adds adjacent with root nodes.
+     *
+     * @param tree our tree.
+     */
     public DFSIteratorTree(Tree<T> tree) {
         this.current = tree.getRoot();
         for (Node<T> autoIt : tree.getRoot().getChildren()) {
@@ -28,7 +39,8 @@ public class DFSIteratorTree<T> implements Iterator<T> {
     }
 
     /**
-     * Returns the next element in the iteration.
+     * Returns the next element in the iteration. Method adds adjacent nodes if it needs.
+     * Abd pop last element to current.
      *
      * @return the next element in the iteration
      * @throws NoSuchElementException if the iteration has no more elements
