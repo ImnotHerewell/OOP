@@ -59,11 +59,11 @@ public class Node<T> {
         return this.children;
     }
 
-    public int hashCode(){
-        int p =239017;
-        int res= Objects.hashCode(this.value)+Objects.hashCode(getParent().value)*p;
-        for (Node<T> obj : this.getChildren()){
-            res+=obj.hashCode();
+    public int hashCode() {
+        int p = 239017;
+        int res = Objects.hashCode(this.value) + Objects.hashCode(getParent().value) * p;
+        for (Node<T> obj : this.getChildren()) {
+            res += obj.hashCode();
         }
         return res;
     }

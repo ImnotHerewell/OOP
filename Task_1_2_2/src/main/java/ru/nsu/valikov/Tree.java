@@ -1,7 +1,6 @@
 package ru.nsu.valikov;
 
 import java.util.Iterator;
-import java.util.NoSuchElementException;
 
 public class Tree<T> implements Iterable<T> {
     private final Node<T> root;
@@ -51,10 +50,11 @@ public class Tree<T> implements Iterable<T> {
     public Iterator<T> iteratorBFS() {
         return new BFSIteratorTree<>(this);
     }
-    public int hashCode(){
-        int res=0;
-        for (Node<T> obj : root.getChildren()){
-            res+= obj.hashCode();
+
+    public int hashCode() {
+        int res = 0;
+        for (Node<T> obj : root.getChildren()) {
+            res += obj.hashCode();
         }
         return res;
     }
