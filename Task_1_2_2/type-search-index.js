@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"ru.nsu.valikov","l":"BFSIteratorTree"},{"p":"ru.nsu.valikov","l":"DFSIteratorTree"},{"p":"ru.nsu.valikov","l":"Node"},{"p":"ru.nsu.valikov","l":"Tree"}]
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"ru.nsu.valikov","l":"BfsIteratorTree"},{"p":"ru.nsu.valikov","l":"DfsIteratorTree"},{"p":"ru.nsu.valikov","l":"Node"},{"p":"ru.nsu.valikov","l":"Tree"}]
