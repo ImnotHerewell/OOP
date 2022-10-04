@@ -79,11 +79,22 @@ public class Tree<T> implements Iterable<T> {
         return new BfsIteratorTree<>(this);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        @SuppressWarnings("unchecked")
+        Tree<T> tree = (Tree<T>) o;
+        return o.hashCode() == this.hashCode();
+    }
+
     /**
      * Trying to calculate tree's hash.
      *
      * @return hash.
      */
+
+    @Override
     public int hashCode() {
         int res = 0;
         for (Node<T> obj : root.getChildren()) {
