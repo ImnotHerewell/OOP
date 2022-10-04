@@ -1,5 +1,5 @@
 package valikov.grlib;
 
-public abstract class GraphRepresentation<T> {
-    private Graph<T> graph;
+public abstract class GraphRepresentation<E, N> {
+    private Graph<E, N> graph;
 }

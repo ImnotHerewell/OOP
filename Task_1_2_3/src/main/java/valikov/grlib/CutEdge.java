@@ -1,28 +1,33 @@
 package valikov.grlib;
 
-class CutEdge<T> {
+class CutEdge<E, N> {
     private Integer weight;
-    private Node<T> end;
+    private Node<E, N> end;
+    private final E identifier;
 
-    CutEdge(Integer weight, Node<T> end) {
+    CutEdge(Integer weight, Node<E, N> end, E identifier) {
         this.weight = weight;
         this.end = end;
+        this.identifier = identifier;
     }
 
-    public Integer getWeight() {
-        return weight;
-    }
-
-    public Node<T> getEnd() {
-        return end;
-    }
-
-    public void setEnd(Node<T> newEnd) {
+    public void setEnd(Node<E, N> newEnd) {
         end = newEnd;
+    }
+
+    public Node<E, N> getEnd() {
+        return end;
     }
 
     public void setWeight(Integer newWeight) {
         weight = newWeight;
     }
 
+    public Integer getWeight() {
+        return weight;
+    }
+
+    public E getIdentifier() {
+        return identifier;
+    }
 }
