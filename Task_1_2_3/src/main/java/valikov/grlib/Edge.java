@@ -1,7 +1,10 @@
 package valikov.grlib;
 // nado
-public class Edge<T> {
+class Edge<T> extends CutEdge<T> {
     private Node<T> start;
-    private Node<T> end;
-    private Integer weight;
+
+    Edge(Integer weight, Node<T> end, Node<T> start) {
+        super(weight, end);
+        this.start=start;
+    }
 }
