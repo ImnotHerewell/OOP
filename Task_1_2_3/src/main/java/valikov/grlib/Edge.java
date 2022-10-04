@@ -1,6 +1,5 @@
 package valikov.grlib;
 
-import java.util.Objects;
 
 // nado
 class Edge<E, N> {
