@@ -80,11 +80,15 @@ public class Node<T> {
      */
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         @SuppressWarnings("unchecked")
         Node<T> node = (Node<T>) o;
-        return Objects.equals(value, node.value) && Objects.equals(parent, node.parent) && Objects.equals(childCount, node.childCount) && Objects.equals(children, node.children);
+        return node.hashCode() == this.hashCode();
     }
 
     /**

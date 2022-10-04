@@ -81,10 +81,12 @@ public class Tree<T> implements Iterable<T> {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        @SuppressWarnings("unchecked")
-        Tree<T> tree = (Tree<T>) o;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         return o.hashCode() == this.hashCode();
     }
 
