@@ -3,12 +3,21 @@ package valikov.grlib;
 import java.util.Objects;
 
 // nado
-class Edge<E, N> extends CutEdge<E, N> {
+class Edge<E, N> {
+    private final E identifier;
     private Node<E, N> start;
+    private Node<E, N> end;
+    private Integer weight;
 
-    Edge(Integer weight, Node<E, N> end, Node<E, N> start, E identifier) {
-        super(weight, end, identifier);
+    Edge(E identifier, Node<E, N> start, Node<E, N> end, Integer weight) {
+        this.identifier = identifier;
         this.start = start;
+        this.end = end;
+        this.weight = weight;
+    }
+
+    public E getIdentifier() {
+        return identifier;
     }
 
     public void setStart(Node<E, N> start) {
@@ -19,9 +28,25 @@ class Edge<E, N> extends CutEdge<E, N> {
         return start;
     }
 
+    public void setEnd(Node<E, N> newEnd) {
+        end = newEnd;
+    }
+
+    public Node<E, N> getEnd() {
+        return end;
+    }
+
+    public void setWeight(Integer newWeight) {
+        weight = newWeight;
+    }
+
+    public Integer getWeight() {
+        return weight;
+    }
+
 
     @Override
     public int hashCode() {
-        return Objects.hash(getIdentifier());
+        return identifier.hashCode();
     }
 }

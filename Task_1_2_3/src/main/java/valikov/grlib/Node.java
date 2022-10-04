@@ -10,11 +10,11 @@ class Node<E, N> {
     private List<Edge<E, N>> listOfEdges;
 
     Node(N identifier){
-        listOfEdges=new ArrayList<>();
+        listOfEdges =new ArrayList<>();
         this.identifier=identifier;
     }
-    public void pushEdge(){
-
+    public void addEdge(Edge<E, N> edge){
+        listOfEdges.add(edge);
     }
     public List<Edge<E, N>> getListOfEdges() {
         return listOfEdges;
@@ -26,6 +26,6 @@ class Node<E, N> {
 
     @Override
     public int hashCode() {
-        return Objects.hash(identifier);
+        return identifier.hashCode();
     }
 }
