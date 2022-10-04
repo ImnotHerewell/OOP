@@ -108,5 +108,31 @@ public class TreeTest {
         Assertions.assertEquals(emptyTree.hashCode(), test.hashCode());
     }
 
+    @Test
+    public void equalTest() {
+        Tree<Integer> expTree = new Tree<>();
+        expTree.add(1);
+        expTree.add(2);
+        expTree.add(3);
+        expTree.add(4);
+        expTree.add(5);
+        expTree.add(6);
+        expTree.add(7);
+        expTree.add(8);
+        expTree.add(9);
+        expTree.add(10);
+        Tree<Integer> testTree = new Tree<>();
+        testTree.add(2);
+        testTree.add(7);
+        testTree.add(5);
+        testTree.add(4);
+        testTree.add(1);
+        testTree.add(10);
+        testTree.add(8);
+        testTree.add(3);
+        testTree.add(6);
+        testTree.add(9);
+        Assertions.assertEquals(testTree, expTree);
+    }
 
 }
