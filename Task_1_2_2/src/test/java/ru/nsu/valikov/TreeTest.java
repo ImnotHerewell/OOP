@@ -1,6 +1,9 @@
 package ru.nsu.valikov;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -55,7 +58,7 @@ public class TreeTest {
         exp.add("7");
         exp.add("3");
         exp.add("5");
-        Assertions.assertEquals(exp.hashCode(), test.hashCode());
+        Assertions.assertEquals(exp, test);
     }
 
     /**
@@ -66,21 +69,27 @@ public class TreeTest {
         Tree<String> bambooTest = new Tree<>();
         setupBamboo(bambooTest);
         Iterator<String> bfsIterator = bambooTest.iteratorBfs();
+        List<String> listBamboo = new ArrayList<>();
         while (bfsIterator.hasNext()) {
-            bfsIterator.next();
-            bfsIterator.remove();
+            listBamboo.add(bfsIterator.next());
+        }
+        for (String stringErase : listBamboo){
+            bambooTest.erase(stringErase);
         }
         Tree<String> emptyTree = new Tree<>();
-        Assertions.assertEquals(emptyTree.hashCode(), bambooTest.hashCode());
+        Assertions.assertEquals(emptyTree, bambooTest);
         Tree<String> test = new Tree<>();
         setupGraphDefault(test);
         Iterator<String> bfsIteratorTree = test.iteratorBfs();
+        List<String> listDefault = new ArrayList<>();
         while (bfsIteratorTree.hasNext()) {
-            bfsIteratorTree.next();
-            bfsIteratorTree.remove();
+            listDefault.add(bfsIteratorTree.next());
+        }
+        for (String stringErase : listDefault){
+            test.erase(stringErase);
         }
         Tree<String> emptyTreeDef = new Tree<>();
-        Assertions.assertEquals(emptyTreeDef.hashCode(), test.hashCode());
+        Assertions.assertEquals(emptyTreeDef, test);
     }
 
     /**
@@ -90,17 +99,25 @@ public class TreeTest {
     public void testDfsIterator() {
         Tree<String> bambooTest = new Tree<>();
         setupBamboo(bambooTest);
-        for (String str : bambooTest) {
-            bambooTest.erase(str);
+        List<String> listBamboo = new ArrayList<>();
+        for (String dfsString : bambooTest) {
+            listBamboo.add(dfsString);
+        }
+        for (String stringErase : listBamboo){
+            bambooTest.erase(stringErase);
         }
         Tree<String> emptyTree = new Tree<>();
-        Assertions.assertEquals(emptyTree.hashCode(), bambooTest.hashCode());
+        Assertions.assertEquals(emptyTree, bambooTest);
         Tree<String> test = new Tree<>();
         setupGraphDefault(test);
-        for (String str : test) {
-            test.erase(str);
+        List<String> listDefault = new ArrayList<>();
+        for (String dfsString : test) {
+            listDefault.add(dfsString);
         }
-        Assertions.assertEquals(emptyTree.hashCode(), test.hashCode());
+        for (String stringErase : listDefault){
+            test.erase(stringErase);
+        }
+        Assertions.assertEquals(emptyTree, test);
     }
 
     /**

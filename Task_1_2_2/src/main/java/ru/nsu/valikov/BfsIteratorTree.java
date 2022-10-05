@@ -25,7 +25,7 @@ public class BfsIteratorTree<T extends Comparable<T>> implements Iterator<T> {
      */
     public BfsIteratorTree(Tree<T> tree) {
         this.tree = tree;
-        modCount = 0;
+        modCount = tree.getSize();
         current = tree.getRoot();
         queue.addAll(tree.getRoot().getChildren());
     }

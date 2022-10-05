@@ -10,6 +10,9 @@ import java.util.Objects;
  * @param <T> non-primitive type.
  */
 public class Node<T extends Comparable<T>> implements Comparable<T> {
+    public static void main(String[] args) {
+
+    }
     private T value;
     private Node<T> parent; // exists only for delete function.
     private final List<Node<T>> children;
