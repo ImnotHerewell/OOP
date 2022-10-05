@@ -78,7 +78,7 @@ public class Graph<E, N> {
         SortedSet<NodeValue<Node<E, N>, Integer>> set = new TreeSet<>();
         set.add(root);
         while (!set.isEmpty()) {
-            Pair<E, N> minNode = set.first();
+            NodeValue<Node<E, N>, Integer> minNode = set.first();
             set.remove(minNode);
         }
     }
