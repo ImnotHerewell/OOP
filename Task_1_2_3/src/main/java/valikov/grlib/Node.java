@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Objects;
 
 //nado
-class Node<E, N> {
+class Node<E, N>{
     private final N identifier;
     private List<Edge<E, N>> listOfEdges;
 
@@ -28,4 +28,5 @@ class Node<E, N> {
     public int hashCode() {
         return identifier.hashCode();
     }
+
 }

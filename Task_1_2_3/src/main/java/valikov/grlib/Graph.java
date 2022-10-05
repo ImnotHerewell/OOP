@@ -2,6 +2,8 @@ package valikov.grlib;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 // дженерики только для вершин, типа вершина может быть типа стринг дефолт или какой-то объект, с вэйлью не, хотя в теории да.
 public class Graph<E, N> {
@@ -37,13 +39,14 @@ public class Graph<E, N> {
 
     public Node<E, N> getNode(N identifier) throws IllegalArgumentException {
         if (identifier == null) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Null pointers are not supported.");
         }
         if (mapOfAllNodes.containsKey(identifier)) {
             return mapOfAllNodes.get(identifier);
         }
         return null;
     }
+
 
     public E addEdge(E identifier, N start, N end, Integer weight) throws IllegalArgumentException {
         if (identifier == null || start == null || end == null || weight == null) {
@@ -62,11 +65,21 @@ public class Graph<E, N> {
 
     public Edge<E, N> getEdge(E identifier) throws IllegalArgumentException {
         if (identifier == null) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Null pointers are not supported.");
         }
         if (mapOfALlEdges.containsKey(identifier)) {
             return mapOfALlEdges.get(identifier);
         }
         return null;
+    }
+
+    public List<Node<E, N>> Djikstra(N identifier) {
+        NodeValue<Node<E, N>, Integer> root = new NodeValue<>(getNode(identifier), 0);
+        SortedSet<NodeValue<Node<E, N>, Integer>> set = new TreeSet<>();
+        set.add(root);
+        while (!set.isEmpty()) {
+            Pair<E, N> minNode = set.first();
+            set.remove(minNode);
+        }
     }
 }
