@@ -3,7 +3,6 @@ package ru.nsu.valikov;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -73,7 +72,7 @@ public class TreeTest {
         while (bfsIterator.hasNext()) {
             listBamboo.add(bfsIterator.next());
         }
-        for (String stringErase : listBamboo){
+        for (String stringErase : listBamboo) {
             bambooTest.erase(stringErase);
         }
         Tree<String> emptyTree = new Tree<>();
@@ -85,7 +84,7 @@ public class TreeTest {
         while (bfsIteratorTree.hasNext()) {
             listDefault.add(bfsIteratorTree.next());
         }
-        for (String stringErase : listDefault){
+        for (String stringErase : listDefault) {
             test.erase(stringErase);
         }
         Tree<String> emptyTreeDef = new Tree<>();
@@ -103,7 +102,7 @@ public class TreeTest {
         for (String dfsString : bambooTest) {
             listBamboo.add(dfsString);
         }
-        for (String stringErase : listBamboo){
+        for (String stringErase : listBamboo) {
             bambooTest.erase(stringErase);
         }
         Tree<String> emptyTree = new Tree<>();
@@ -114,7 +113,7 @@ public class TreeTest {
         for (String dfsString : test) {
             listDefault.add(dfsString);
         }
-        for (String stringErase : listDefault){
+        for (String stringErase : listDefault) {
             test.erase(stringErase);
         }
         Assertions.assertEquals(emptyTree, test);
