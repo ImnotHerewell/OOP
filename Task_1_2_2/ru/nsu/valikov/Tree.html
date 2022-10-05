@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -114,7 +114,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <main role="main">
 <div class="header">
 <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">ru.nsu.valikov</a></div>
-<h2 title="Class Tree" class="title">Class Tree&lt;T&gt;</h2>
+<h2 title="Class Tree" class="title">Class Tree&lt;T extends java.lang.Comparable&lt;T&gt;&gt;</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
@@ -137,7 +137,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd><code>java.lang.Iterable&lt;T&gt;</code></dd>
 </dl>
 <hr>
-<pre>public class <span class="typeNameLabel">Tree&lt;T&gt;</span>
+<pre>public class <span class="typeNameLabel">Tree&lt;T extends java.lang.Comparable&lt;T&gt;&gt;</span>
 extends java.lang.Object
 implements java.lang.Iterable&lt;T&gt;</pre>
 <div class="block">Implementation of tree.</div>
@@ -235,6 +235,11 @@ implements java.lang.Iterable&lt;T&gt;</pre>
 <div class="block">Returns an iterator over elements of type <code>T</code>.</div>
 </td>
 </tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>java.util.List&lt;<a href="Node.html" title="class in ru.nsu.valikov">Node</a>&lt;<a href="Tree.html" title="type parameter in Tree">T</a>&gt;&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toList()">toList</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
 </table>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
@@ -294,7 +299,7 @@ implements java.lang.Iterable&lt;T&gt;</pre>
 <pre class="methodSignature">public&nbsp;<a href="Node.html" title="class in ru.nsu.valikov">Node</a>&lt;<a href="Tree.html" title="type parameter in Tree">T</a>&gt;&nbsp;getRoot()</pre>
 </li>
 </ul>
-<a id="add(ru.nsu.valikov.Node,java.lang.Object)">
+<a id="add(ru.nsu.valikov.Node,java.lang.Comparable)">
 <!--   -->
 </a><a id="add(ru.nsu.valikov.Node,T)">
 <!--   -->
@@ -314,7 +319,7 @@ implements java.lang.Iterable&lt;T&gt;</pre>
 </dl>
 </li>
 </ul>
-<a id="add(java.lang.Object)">
+<a id="add(java.lang.Comparable)">
 <!--   -->
 </a><a id="add(T)">
 <!--   -->
@@ -332,7 +337,7 @@ implements java.lang.Iterable&lt;T&gt;</pre>
 </dl>
 </li>
 </ul>
-<a id="erase(java.lang.Object)">
+<a id="erase(java.lang.Comparable)">
 <!--   -->
 </a><a id="erase(T)">
 <!--   -->
@@ -358,7 +363,7 @@ implements java.lang.Iterable&lt;T&gt;</pre>
 <div class="block">Returns an iterator over elements of type <code>T</code>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code>iterator</code>&nbsp;in interface&nbsp;<code>java.lang.Iterable&lt;<a href="Tree.html" title="type parameter in Tree">T</a>&gt;</code></dd>
+<dd><code>iterator</code>&nbsp;in interface&nbsp;<code>java.lang.Iterable&lt;<a href="Tree.html" title="type parameter in Tree">T</a> extends java.lang.Comparable&lt;<a href="Tree.html" title="type parameter in Tree">T</a>&gt;&gt;</code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>an Iterator for DFS.</dd>
 </dl>
@@ -376,6 +381,15 @@ implements java.lang.Iterable&lt;T&gt;</pre>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>an Iterator for BFS.</dd>
 </dl>
+</li>
+</ul>
+<a id="toList()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toList</h4>
+<pre class="methodSignature">public&nbsp;java.util.List&lt;<a href="Node.html" title="class in ru.nsu.valikov">Node</a>&lt;<a href="Tree.html" title="type parameter in Tree">T</a>&gt;&gt;&nbsp;toList()</pre>
 </li>
 </ul>
 <a id="equals(java.lang.Object)">
