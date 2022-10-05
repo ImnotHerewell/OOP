@@ -16,8 +16,8 @@ public class Tree<T extends Comparable<T>> implements Iterable<T> {
     private final Node<T> root; // it's imagine node.
 
     public Tree() {
+        size = 0;
         root = new Node<>();
-        size=0;
     }
 
     public Integer getSize() {
@@ -89,6 +89,11 @@ public class Tree<T extends Comparable<T>> implements Iterable<T> {
         return new BfsIteratorTree<>(this);
     }
 
+    /**
+     * Copy nodes from tree and put them into list.
+     *
+     * @return list with nodes.
+     */
     public List<Node<T>> toList() {
         List<Node<T>> list = new ArrayList<>();
         for (T value : this) {

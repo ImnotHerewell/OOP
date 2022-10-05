@@ -1,6 +1,11 @@
 package ru.nsu.valikov;
 
-import java.util.*;
+
+import java.util.ConcurrentModificationException;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.NoSuchElementException;
+import java.util.Queue;
 
 /**
  * Iterator for BFS.
