@@ -54,7 +54,7 @@ public class DfsIteratorTree<T extends Comparable<T>> implements Iterator<T> {
      * @throws NoSuchElementException if the iteration has no more elements
      */
     @Override
-    public T next() throws NoSuchElementException {
+    public T next() {
         if (current.getValue() != null) {
             for (Node<T> autoIt : current.getChildren()) {
                 stack.push(autoIt);
