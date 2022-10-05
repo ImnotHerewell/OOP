@@ -1,9 +1,9 @@
 package ru.nsu.valikov;
 
+import java.util.Iterator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.Iterator;
 
 
 /**
