@@ -106,7 +106,7 @@ public class Node<T extends Comparable<T>> implements Comparable<T> {
      * Check if o == value.
      *
      * @param o the object to be compared.
-     * @return n, n > 0 - value is more, n < 0 value is less, else equal.
+     * @return n, n more than 0 - value is more, n less than 0 value is less, else equal.
      */
     @Override
     public int compareTo(T o) {
