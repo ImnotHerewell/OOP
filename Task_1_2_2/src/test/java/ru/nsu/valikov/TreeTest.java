@@ -1,18 +1,20 @@
 package ru.nsu.valikov;
 
+import java.util.Iterator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.Iterator;
-
 
 /**
- * Just class with 2 tests.
+ * Just class with some tests.
  */
 public class TreeTest {
     private Tree<String> graphBamboo;
     private Tree<String> graphDefault;
 
+    /**
+     * Graph-bamboo.
+     */
     private void setupBamboo(Tree<String> bambooTest) {
         bambooTest.add("1");
         Node<String> node3 = bambooTest.add("3");
@@ -25,47 +27,7 @@ public class TreeTest {
         bambooTest.erase("2");
     }
 
-    /**
-     * Graph-bamboo.
-     */
-    @Test
-    public void testAddErase() {
-        //Testing add and erase.
-        Tree<String> bambooTest = new Tree<>();
-        setupBamboo(bambooTest);
-        Tree<String> bambooExp = new Tree<>();
-        bambooExp.add("1");
-        Node<String> expNode3 = bambooExp.add("3");
-        Node<String> expNode5 = bambooExp.add(expNode3, "5");
-        bambooExp.add(expNode5, "7");
-        Assertions.assertEquals(bambooExp.hashCode(), bambooTest.hashCode());
-        //Testing bfsIterator.
-        Iterator<String> bfsIterator = bambooTest.iteratorBfs();
-        while (bfsIterator.hasNext()) {
-            bfsIterator.next();
-            bfsIterator.remove();
-        }
-        Tree<String> emptyTree = new Tree<>();
-        Assertions.assertEquals(emptyTree.hashCode(), bambooTest.hashCode());
-        //Testing add and dfsIterator.
-        Node<String> testNode1 = bambooTest.add("1");
-        Node<String> testNode2 = bambooTest.add(testNode1, "11");
-        Node<String> testNode3 = bambooTest.add(testNode2, "111");
-        Node<String> testNode4 = bambooTest.add(testNode3, "1111");
-        bambooTest.add(testNode4, "11111");
-        for (String str : bambooTest) {
-            bambooTest.erase(str);
-        }
-        Assertions.assertEquals(emptyTree.hashCode(), bambooTest.hashCode());
-    }
-
-    /**
-     * Another tree, not a bamboo.
-     */
-    @Test
-    public void graphDefault() {
-        //Testing add and erase.
-        Tree<String> test = new Tree<>();
+    private void setupGraphDefault(Tree<String> test) {
         test.add("1");
         test.add("3");
         Node<String> node4 = test.add("4");
@@ -74,34 +36,68 @@ public class TreeTest {
         test.add(node4, "7");
         test.erase("4");
         test.erase("6");
+    }
+
+    /**
+     * Testing add and erase.
+     */
+    @Test
+    public void testAddErase() {
+        Tree<String> bambooTest = new Tree<>();
+        setupBamboo(bambooTest);
+        Tree<String> bambooExp = new Tree<>();
+        bambooExp.add("1");
+        Node<String> expNode3 = bambooExp.add("3");
+        Node<String> expNode5 = bambooExp.add(expNode3, "5");
+        bambooExp.add(expNode5, "7");
+        Assertions.assertEquals(bambooExp.hashCode(), bambooTest.hashCode());
+        Tree<String> test = new Tree<>();
+        setupGraphDefault(test);
         Tree<String> exp = new Tree<>();
         exp.add("1");
         exp.add("7");
         exp.add("3");
-        Node<String> expNode5 = exp.add("5");
+        exp.add("5");
         Assertions.assertEquals(exp.hashCode(), test.hashCode());
-        //Testing only add.
-        exp.add(expNode5, "8");
-        exp.add(expNode5, "9");
-        exp.add(expNode5, "10");
-        test.add(node5, "8");
-        test.add(node5, "9");
-        test.add(node5, "10");
-        Assertions.assertEquals(exp.hashCode(), test.hashCode());
-        //Testing bfsIterator.
-        Iterator<String> bfsIterator = test.iteratorBfs();
+    }
+
+    /**
+     * Testing bfsIterator.
+     */
+    public void testBfsIterator() {
+        Tree<String> bambooTest = new Tree<>();
+        setupBamboo(bambooTest);
+        Iterator<String> bfsIterator = bambooTest.iteratorBfs();
         while (bfsIterator.hasNext()) {
             bfsIterator.next();
             bfsIterator.remove();
         }
         Tree<String> emptyTree = new Tree<>();
-        Assertions.assertEquals(emptyTree.hashCode(), test.hashCode());
-        //Testing add and dfsIterator.
-        Node<String> testNode1 = test.add("1");
-        Node<String> testNode2 = test.add(testNode1, "11");
-        Node<String> testNode3 = test.add(testNode2, "111");
-        Node<String> testNode4 = test.add(testNode3, "1111");
-        test.add(testNode4, "11111");
+        Assertions.assertEquals(emptyTree.hashCode(), bambooTest.hashCode());
+        Tree<String> test = new Tree<>();
+        setupGraphDefault(test);
+        Iterator<String> bfsIteratorTree = test.iteratorBfs();
+        while (bfsIteratorTree.hasNext()) {
+            bfsIteratorTree.next();
+            bfsIteratorTree.remove();
+        }
+        Tree<String> emptyTreeDef = new Tree<>();
+        Assertions.assertEquals(emptyTreeDef.hashCode(), test.hashCode());
+    }
+
+    /**
+     * Testing dfsIterator.
+     */
+    public void testDfsIterator() {
+        Tree<String> bambooTest = new Tree<>();
+        setupBamboo(bambooTest);
+        for (String str : bambooTest) {
+            bambooTest.erase(str);
+        }
+        Tree<String> emptyTree = new Tree<>();
+        Assertions.assertEquals(emptyTree.hashCode(), bambooTest.hashCode());
+        Tree<String> test = new Tree<>();
+        setupGraphDefault(test);
         for (String str : test) {
             test.erase(str);
         }
