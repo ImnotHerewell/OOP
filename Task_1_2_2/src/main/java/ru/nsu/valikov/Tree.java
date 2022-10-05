@@ -1,6 +1,9 @@
 package ru.nsu.valikov;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * Implementation of tree.
@@ -8,7 +11,7 @@ import java.util.Iterator;
  * @param <T> non-primitive type.
  * @author Valikov Nikolay, nocarend.
  */
-public class Tree<T> implements Iterable<T> {
+public class Tree<T extends Comparable<T>> implements Iterable<T> {
     private final Node<T> root; // it's imagine node.
 
     public Tree() {
@@ -79,6 +82,16 @@ public class Tree<T> implements Iterable<T> {
         return new BfsIteratorTree<>(this);
     }
 
+    public List<Node<T>> toList() {
+        List<Node<T>> list = new ArrayList<>();
+        for (T value : this) {
+            Node<T> newNode = new Node<>();
+            newNode.setValue(value);
+            list.add(newNode);
+        }
+        return list;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -87,7 +100,13 @@ public class Tree<T> implements Iterable<T> {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        return o.hashCode() == this.hashCode();
+        List<Node<T>> listThis = toList();
+        @SuppressWarnings("unchecked")
+        Tree<T> obj = (Tree<T>) o;
+        List<Node<T>> listObj = obj.toList();
+        listThis.sort(Comparator.comparing(Node::getValue));
+        listObj.sort(Comparator.comparing(Node::getValue));
+        return listObj.equals(listThis);
     }
 
     /**
@@ -104,4 +123,5 @@ public class Tree<T> implements Iterable<T> {
         }
         return res;
     }
+
 }

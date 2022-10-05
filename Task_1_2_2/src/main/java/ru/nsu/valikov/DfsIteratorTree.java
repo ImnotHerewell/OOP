@@ -10,7 +10,7 @@ import java.util.Stack;
  *
  * @param <T> non-primitive type.
  */
-public class DfsIteratorTree<T> implements Iterator<T> {
+public class DfsIteratorTree<T extends Comparable<T>> implements Iterator<T> {
     private Node<T> current;
     private final Stack<Node<T>> stack = new Stack<>(); // Stack where nodes are stored.
 

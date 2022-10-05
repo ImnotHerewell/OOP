@@ -1,8 +1,9 @@
 package ru.nsu.valikov;
 
-import java.util.Iterator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.util.Iterator;
 
 
 /**
@@ -108,6 +109,9 @@ public class TreeTest {
         Assertions.assertEquals(emptyTree.hashCode(), test.hashCode());
     }
 
+    /**
+     * Test two equal tree on equality.
+     */
     @Test
     public void equalTest() {
         Tree<Integer> expTree = new Tree<>();

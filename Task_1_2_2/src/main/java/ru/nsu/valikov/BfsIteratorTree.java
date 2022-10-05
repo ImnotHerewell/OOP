@@ -10,7 +10,7 @@ import java.util.Queue;
  *
  * @param <T> non-primitive type.
  */
-public class BfsIteratorTree<T> implements Iterator<T> {
+public class BfsIteratorTree<T extends Comparable<T>> implements Iterator<T> {
     private Node<T> current;
     private final Queue<Node<T>> queue = new LinkedList<>(); // Queue where nodes are stored.
 
