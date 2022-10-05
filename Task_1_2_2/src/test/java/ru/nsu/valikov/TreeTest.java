@@ -9,9 +9,6 @@ import org.junit.jupiter.api.Test;
  * Just class with some tests.
  */
 public class TreeTest {
-    private Tree<String> graphBamboo;
-    private Tree<String> graphDefault;
-
     /**
      * Graph-bamboo.
      */
@@ -21,7 +18,7 @@ public class TreeTest {
         Node<String> node4 = bambooTest.add(node3, "4");
         Node<String> node5 = bambooTest.add(node4, "5");
         bambooTest.add(node5, "6");
-        Node<String> node7 = bambooTest.add(node5, "7");
+        bambooTest.add(node5, "7");
         bambooTest.erase("4");
         bambooTest.erase("6");
         bambooTest.erase("2");
@@ -64,6 +61,7 @@ public class TreeTest {
     /**
      * Testing bfsIterator.
      */
+    @Test
     public void testBfsIterator() {
         Tree<String> bambooTest = new Tree<>();
         setupBamboo(bambooTest);
@@ -88,6 +86,7 @@ public class TreeTest {
     /**
      * Testing dfsIterator.
      */
+    @Test
     public void testDfsIterator() {
         Tree<String> bambooTest = new Tree<>();
         setupBamboo(bambooTest);
