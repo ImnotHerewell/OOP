@@ -1,9 +1,6 @@
 package ru.nsu.valikov;
 
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.NoSuchElementException;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * Iterator for BFS.
@@ -11,6 +8,8 @@ import java.util.Queue;
  * @param <T> non-primitive type.
  */
 public class BfsIteratorTree<T extends Comparable<T>> implements Iterator<T> {
+    private Tree<T> tree;
+    private final int modCount;
     private Node<T> current;
     private final Queue<Node<T>> queue = new LinkedList<>(); // Queue where nodes are stored.
 
@@ -20,6 +19,8 @@ public class BfsIteratorTree<T extends Comparable<T>> implements Iterator<T> {
      * @param tree our tree.
      */
     public BfsIteratorTree(Tree<T> tree) {
+        this.tree = tree;
+        modCount = 0;
         current = tree.getRoot();
         queue.addAll(tree.getRoot().getChildren());
     }
@@ -33,6 +34,9 @@ public class BfsIteratorTree<T extends Comparable<T>> implements Iterator<T> {
      */
     @Override
     public boolean hasNext() {
+        if (tree.getSize() != modCount) {
+            throw new ConcurrentModificationException();
+        }
         return !queue.isEmpty() || current.getChildCount() > 0;
     }
 
@@ -47,6 +51,9 @@ public class BfsIteratorTree<T extends Comparable<T>> implements Iterator<T> {
     public T next() throws NoSuchElementException {
         if (current.getValue() != null) {
             queue.addAll(current.getChildren());
+        }
+        if (tree.getSize() != modCount) {
+            throw new ConcurrentModificationException();
         }
         if (!hasNext()) {
             throw new NoSuchElementException();

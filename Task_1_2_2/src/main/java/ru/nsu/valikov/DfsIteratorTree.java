@@ -1,5 +1,6 @@
 package ru.nsu.valikov;
 
+import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Stack;
@@ -11,7 +12,9 @@ import java.util.Stack;
  * @param <T> non-primitive type.
  */
 public class DfsIteratorTree<T extends Comparable<T>> implements Iterator<T> {
+    private Tree<T> tree;
     private Node<T> current;
+    private final int modCount;
     private final Stack<Node<T>> stack = new Stack<>(); // Stack where nodes are stored.
 
     /**
@@ -20,6 +23,8 @@ public class DfsIteratorTree<T extends Comparable<T>> implements Iterator<T> {
      * @param tree our tree.
      */
     public DfsIteratorTree(Tree<T> tree) {
+        this.tree = tree;
+        modCount = tree.getSize();
         current = tree.getRoot();
         for (Node<T> autoIt : tree.getRoot().getChildren()) {
             stack.push(autoIt);
@@ -35,6 +40,9 @@ public class DfsIteratorTree<T extends Comparable<T>> implements Iterator<T> {
      */
     @Override
     public boolean hasNext() {
+        if (tree.getSize() != modCount) {
+            throw new ConcurrentModificationException();
+        }
         return !stack.empty() || current.getChildCount() > 0;
     }
 
@@ -51,6 +59,9 @@ public class DfsIteratorTree<T extends Comparable<T>> implements Iterator<T> {
             for (Node<T> autoIt : current.getChildren()) {
                 stack.push(autoIt);
             }
+        }
+        if (tree.getSize() != modCount) {
+            throw new ConcurrentModificationException();
         }
         if (!hasNext()) {
             throw new NoSuchElementException();

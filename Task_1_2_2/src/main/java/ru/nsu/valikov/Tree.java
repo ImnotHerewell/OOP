@@ -12,12 +12,17 @@ import java.util.List;
  * @author Valikov Nikolay, nocarend.
  */
 public class Tree<T extends Comparable<T>> implements Iterable<T> {
+    private Integer size;
     private final Node<T> root; // it's imagine node.
 
     public Tree() {
         root = new Node<>();
+        size=0;
     }
 
+    public Integer getSize() {
+        return size;
+    }
 
     public Node<T> getRoot() {
         return root;
@@ -35,6 +40,7 @@ public class Tree<T extends Comparable<T>> implements Iterable<T> {
         newNode.setValue(childValue);
         newNode.setParent(curNode);
         curNode.addChild(newNode);
+        size++;
         return newNode;
     }
 
@@ -58,6 +64,7 @@ public class Tree<T extends Comparable<T>> implements Iterable<T> {
         while (iterator.hasNext()) {
             if (iterator.next().equals(value)) {
                 iterator.remove();
+                size--;
                 return;
             }
         }
