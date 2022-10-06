@@ -7,11 +7,12 @@ class NodeValue<N, Integer> extends Pair<N, Integer> implements Comparable<NodeV
 
     /**
      * Compares two NodeValues.
+     *
      * @param o the object to be compared.
      * @return positive if second is more, negative if second is less, else 0.
      */
     @Override
     public int compareTo(NodeValue<N, Integer> o) {
-        return getSecond() == o.getSecond() ? 0 : (int) getSecond() > (int) o.getSecond() ? 1 : -1;
+        return (int) getSecond() - (int) o.getSecond();
     }
 }

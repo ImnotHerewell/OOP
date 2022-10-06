@@ -80,6 +80,7 @@ public class Graph<E, N> {
         while (!set.isEmpty()) {
             NodeValue<Node<E, N>, Integer> minNode = set.first();
             set.remove(minNode);
+
         }
     }
 }
