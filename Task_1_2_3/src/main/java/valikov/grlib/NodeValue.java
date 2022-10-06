@@ -4,6 +4,7 @@ class NodeValue<N, Integer> extends Pair<N, Integer> implements Comparable<NodeV
     NodeValue(N first, Integer second) {
         super(first, second);
     }
+    
 
     /**
      * Compares two NodeValues.
@@ -15,4 +16,5 @@ class NodeValue<N, Integer> extends Pair<N, Integer> implements Comparable<NodeV
     public int compareTo(NodeValue<N, Integer> o) {
         return (int) getSecond() - (int) o.getSecond();
     }
+
 }

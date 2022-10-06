@@ -3,7 +3,7 @@ package valikov.grlib;
 
 // nado
 class Edge<E, N> {
-    private final E identifier;
+    private E identifier;
     private Node<E, N> start;
     private Node<E, N> end;
     private Integer weight;
@@ -15,34 +15,43 @@ class Edge<E, N> {
         this.weight = weight;
     }
 
-    public E getIdentifier() {
+    void setIdentifier(E identifier) {
+        this.identifier = identifier;
+    }
+
+    E getIdentifier() {
         return identifier;
     }
 
-    public void setStart(Node<E, N> start) {
+    void setStart(Node<E, N> start) {
         this.start = start;
     }
 
-    public Node<E, N> getStart() {
+    Node<E, N> getStart() {
         return start;
     }
 
-    public void setEnd(Node<E, N> newEnd) {
+    void setEnd(Node<E, N> newEnd) {
         end = newEnd;
     }
 
-    public Node<E, N> getEnd() {
+    Node<E, N> getEnd() {
         return end;
     }
 
-    public void setWeight(Integer newWeight) {
+    void setWeight(Integer newWeight) {
         weight = newWeight;
     }
 
-    public Integer getWeight() {
+    Integer getWeight() {
         return weight;
     }
-
+    void delete(){
+        setIdentifier(null);
+        setStart(null);
+        setEnd(null);
+        setWeight(null);
+    }
 
     @Override
     public int hashCode() {

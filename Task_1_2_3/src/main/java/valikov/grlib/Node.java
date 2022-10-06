@@ -2,26 +2,44 @@ package valikov.grlib;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 //nado
-class Node<E, N>{
-    private final N identifier;
+class Node<E, N> {
+    private N identifier;
     private List<Edge<E, N>> listOfEdges;
 
-    Node(N identifier){
-        listOfEdges =new ArrayList<>();
-        this.identifier=identifier;
+    Node(N identifier) {
+        listOfEdges = new ArrayList<>();
+        this.identifier = identifier;
     }
-    public void addEdge(Edge<E, N> edge){
-        listOfEdges.add(edge);
+
+    public void setIdentifier(N identifier) {
+        this.identifier = identifier;
     }
-    public List<Edge<E, N>> getListOfEdges() {
+
+    N getIdentifier() {
+        return identifier;
+    }
+
+    List<Edge<E, N>> getListOfEdges() {
         return listOfEdges;
     }
 
-    public N getIdentifier() {
-        return identifier;
+    void addEdge(Edge<E, N> edge) {
+        listOfEdges.add(edge);
+    }
+
+    void delete() {
+        setIdentifier(null);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        @SuppressWarnings("unchecked")
+        Node<E, N> node = (Node<E, N>) o;
+        return identifier.equals(node.identifier);
     }
 
     @Override

@@ -24,5 +24,4 @@ class Pair<E, N> {
     public N getSecond() {
         return second;
     }
-
 }
