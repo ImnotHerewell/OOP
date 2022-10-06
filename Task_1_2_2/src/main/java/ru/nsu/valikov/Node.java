@@ -1,6 +1,7 @@
 package ru.nsu.valikov;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 
@@ -82,16 +83,25 @@ public class Node<T extends Comparable<T>> implements Comparable<T> {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
+        List<Node<T>> listThis = getChildren();
         @SuppressWarnings("unchecked")
-        Node<T> node = (Node<T>) o;
-        if (node.value != this.value) {
+        Node<T> obj = (Node<T>) o;
+        List<Node<T>> listObj = obj.getChildren();
+        listThis.sort(Comparator.comparing(Node::getValue));
+        listObj.sort(Comparator.comparing(Node::getValue));
+        if (obj.value != this.value) {
             return false;
         }
-        if ((node.parent == null && this.parent == null)) {
-            return true;
+        if (!getChildCount().equals(obj.getChildCount())) {
+            return false;
         }
-        assert node.parent != null;
-        return node.parent.equals(this.parent);
+        for (int indexI = 0; indexI < getChildCount(); indexI++) {
+            if (!listObj.get(indexI).equals(listThis.get(indexI))) {
+                return false;
+            }
+        }
+        return true;
+
     }
 
     /**
