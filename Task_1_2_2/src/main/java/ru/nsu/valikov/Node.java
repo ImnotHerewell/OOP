@@ -84,8 +84,12 @@ public class Node<T extends Comparable<T>> implements Comparable<T> {
         }
         @SuppressWarnings("unchecked")
         Node<T> node = (Node<T>) o;
-        if (node.value != this.value) return false;
-        if ((node.parent == null && this.parent == null)) return true;
+        if (node.value != this.value) {
+            return false;
+        }
+        if ((node.parent == null && this.parent == null)) {
+            return true;
+        }
         assert node.parent != null;
         return node.parent.equals(this.parent);
     }
