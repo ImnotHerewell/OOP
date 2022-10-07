@@ -33,7 +33,7 @@ class Pair<E, N> {
         if (o == null || getClass() != o.getClass()) return false;
         @SuppressWarnings("unchecked")
         Pair<E, N> pair = (Pair<E, N>) o;
-        return Objects.equals(first, pair.first) && Objects.equals(second, pair.second);
+        return first == pair.first && second == pair.second;
     }
 
     @Override

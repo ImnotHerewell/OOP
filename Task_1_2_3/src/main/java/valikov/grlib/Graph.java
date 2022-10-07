@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
@@ -13,6 +14,10 @@ import java.util.TreeSet;
 public class Graph<E, N> {
     private HashMap<N, Node<E, N>> mapOfAllNodes;
     private HashMap<E, Edge<E, N>> mapOfAllEdges;
+
+    public Graph() {
+        buildMap();
+    }
 
     public Graph(List<N> nodeIdentifiers, List<E> edgeIdentifiers, List<List<Integer>> adjacencyMatrix) {
         int matrixEdgeCount = 0;
@@ -26,10 +31,8 @@ public class Graph<E, N> {
                 }
             }
         }
-//        System.out.println(edgeCount());
         if (matrixEdgeCount != edgeIdentifiers.size()) {
             throw new UnsupportedOperationException
-//                    (String.valueOf(matrixEdgeCount));
                     ("Quantity of edges in matrix and in list of edges must be equal.");
         }
         if (nodeIdentifiers.size() != adjacencyMatrix.size()) {
@@ -115,36 +118,40 @@ public class Graph<E, N> {
         return identifier;
     }
 
-    public boolean removeNode(N identifier) {
+    public Graph<E, N> removeNode(N identifier) {
         if (identifier == null) {
             throw new IllegalArgumentException("Null pointers are not supported.");
         }
         if (!mapOfAllNodes.containsKey(identifier)) {
-            return false;
+            throw new IllegalArgumentException("Graph does not contain given node's identifier.");
         }
         Node<E, N> node = mapOfAllNodes.get(identifier);
         mapOfAllNodes.remove(identifier);
         for (int indexEdge = 0; indexEdge < node.getListOfEdges().size(); indexEdge++) {
             Edge<E, N> edgeForDelete = node.getListOfEdges().get(indexEdge);
-            edgeForDelete.delete();
+            mapOfAllEdges.remove(edgeForDelete.getIdentifier());
+//            edgeForDelete.delete();
         }
-        node.delete();
-        return true;
+//        node.delete();
+        return this;
     }
 
-    public boolean setNodeIdentifier(N identifier, N newIdentifier) {
+    public Graph<E, N> setNodeIdentifier(N identifier, N newIdentifier) {
         if (identifier == null || newIdentifier == null) {
             throw new IllegalArgumentException("Null pointers are not supported.");
         }
         if (mapOfAllNodes.containsKey(newIdentifier)) {
-            return false;
+            throw new IllegalArgumentException("New identifier is not available.");
         }
         if (!mapOfAllNodes.containsKey(identifier)) {
             addNode(newIdentifier);
         } else {
-            mapOfAllNodes.get(identifier).setIdentifier(newIdentifier);
+            Node<E, N> node = mapOfAllNodes.get(identifier);
+            node.setIdentifier(newIdentifier);
+            mapOfAllNodes.remove(identifier);
+            mapOfAllNodes.put(newIdentifier, node);
         }
-        return true;
+        return this;
     }
 
     public N getNodeIdentifier(N identifier) {
@@ -192,7 +199,7 @@ public class Graph<E, N> {
         Edge<E, N> edge = mapOfAllEdges.get(identifier);
         mapOfAllEdges.remove(identifier);
         edge.getStart().getListOfEdges().remove(edge);
-        edge.delete();
+//        edge.delete();
         return true;
     }
 
@@ -268,5 +275,19 @@ public class Graph<E, N> {
         }
         Collections.sort(listRes);
         return listRes;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        @SuppressWarnings("unchecked")
+        Graph<E, N> graph = (Graph<E, N>) o;
+        return mapOfAllNodes.equals(graph.mapOfAllNodes) && mapOfAllEdges.equals(graph.mapOfAllEdges);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(mapOfAllNodes, mapOfAllEdges);
     }
 }

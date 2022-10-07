@@ -7,6 +7,7 @@ package valikov.grlib;
  */
 public class Triple<E, N, K> extends Pair<E, N> {
     private K third;
+
     Triple(E first, N second, K third) {
         super(first, second);
         setThird(third);

@@ -54,6 +54,15 @@ class Edge<E, N> {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        @SuppressWarnings("unchecked")
+        Edge<E, N> edge = (Edge<E, N>) o;
+        return identifier.equals(edge.identifier) && start.equals(edge.start) && end.equals(edge.end) && weight.equals(edge.weight);
+    }
+
+    @Override
     public int hashCode() {
         return identifier.hashCode();
     }

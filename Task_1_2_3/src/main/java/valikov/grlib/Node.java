@@ -39,7 +39,7 @@ class Node<E, N> {
         if (o == null || getClass() != o.getClass()) return false;
         @SuppressWarnings("unchecked")
         Node<E, N> node = (Node<E, N>) o;
-        return identifier.equals(node.identifier);
+        return identifier == node.identifier;
     }
 
     @Override
