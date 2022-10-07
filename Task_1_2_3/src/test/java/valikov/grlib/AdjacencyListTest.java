@@ -24,7 +24,7 @@ public class AdjacencyListTest {
 
     @BeforeEach
     void readAdjacencyList() throws FileNotFoundException {
-        file = new File("./txt/AdjacencyMatrixTxt.txt");
+        file = new File("AdjacencyMatrixTxt.txt");
         scan = new Scanner(file);
         nodeCount = scan.nextInt();
         edgeCount = scan.nextInt();
