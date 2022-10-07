@@ -22,33 +22,33 @@ public class AdjacencyListTest {
     private List<String> edgeIdentifiers;
     private List<List<Integer>> adjacencyMatrix;
 
-    @BeforeEach
-    void readAdjacencyList() throws FileNotFoundException {
-        file = new File("AdjacencyMatrixTxt.txt");
-        scan = new Scanner(file);
-        nodeCount = scan.nextInt();
-        edgeCount = scan.nextInt();
-        nodeIdentifiers = new ArrayList<>();
-        edgeIdentifiers = new ArrayList<>();
-        adjacencyMatrix = new ArrayList<>();
-        for (int indexNode = 0; indexNode < nodeCount; indexNode++) {
-            adjacencyMatrix.add(new ArrayList<>());
-            for (int indexList = 0; indexList < 5; indexList++) {
-                adjacencyMatrix.get(indexNode).add(Integer.MIN_VALUE);
-            }
-            nodeIdentifiers.add(scan.nextInt());
-        }
-        scan.nextLine();
-        for (int indexEdge = 0; indexEdge < edgeCount; indexEdge++) {
-            edgeIdentifiers.add(scan.nextLine());
-        }
-        for (int indexRow = 0; indexRow < nodeCount; indexRow++) {
-            for (int indexColumn = 0; indexColumn < nodeCount; indexColumn++) {
-                adjacencyMatrix.get(indexRow).set(indexColumn, scan.nextInt());
-            }
-        }
-        graph = new Graph<>(nodeIdentifiers, edgeIdentifiers, adjacencyMatrix);
-    }
+//    @BeforeEach
+//    void readAdjacencyList() throws FileNotFoundException {
+//        file = new File("./AdjacencyMatrix.txt");
+//        scan = new Scanner(file);
+//        nodeCount = scan.nextInt();
+//        edgeCount = scan.nextInt();
+//        nodeIdentifiers = new ArrayList<>();
+//        edgeIdentifiers = new ArrayList<>();
+//        adjacencyMatrix = new ArrayList<>();
+//        for (int indexNode = 0; indexNode < nodeCount; indexNode++) {
+//            adjacencyMatrix.add(new ArrayList<>());
+//            for (int indexList = 0; indexList < 5; indexList++) {
+//                adjacencyMatrix.get(indexNode).add(Integer.MIN_VALUE);
+//            }
+//            nodeIdentifiers.add(scan.nextInt());
+//        }
+//        scan.nextLine();
+//        for (int indexEdge = 0; indexEdge < edgeCount; indexEdge++) {
+//            edgeIdentifiers.add(scan.nextLine());
+//        }
+//        for (int indexRow = 0; indexRow < nodeCount; indexRow++) {
+//            for (int indexColumn = 0; indexColumn < nodeCount; indexColumn++) {
+//                adjacencyMatrix.get(indexRow).set(indexColumn, scan.nextInt());
+//            }
+//        }
+//        graph = new Graph<>(nodeIdentifiers, edgeIdentifiers, adjacencyMatrix);
+//    }
 
     @Test
     void getNode() {
