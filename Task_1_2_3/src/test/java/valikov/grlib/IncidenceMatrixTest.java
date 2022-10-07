@@ -1,9 +1,7 @@
 package valikov.grlib;
-//n городов, m ребер
-// a : 1 2 3 4
-//...
-// 1 10
-// 2 20
-//...
+//n cities
+//m edges
+//list of nodeIdentifiers
+//incidence matrix (edgeidentifier, weight)
 public class IncidenceMatrixTest {
 }

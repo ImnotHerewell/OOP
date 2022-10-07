@@ -1,10 +1,14 @@
 package valikov.grlib;
 
+/**
+ * @param <N>
+ * @param <Integer>
+ */
 class NodeValue<N, Integer> extends Pair<N, Integer> implements Comparable<NodeValue<N, Integer>> {
     NodeValue(N first, Integer second) {
         super(first, second);
     }
-    
+
 
     /**
      * Compares two NodeValues.

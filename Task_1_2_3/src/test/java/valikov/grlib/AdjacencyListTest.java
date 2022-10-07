@@ -1,7 +1,7 @@
 package valikov.grlib;
-//n городов
-// a : b 10 c 20 d 30
-// b : a 10 c 20 d 30
+//n cities
+// m edges for every node
+// adjacency list (first identifier of curNode, identifier of edge, identifier of anotherNode, weight)
 //...
 public class AdjacencyListTest {
 }

@@ -1,5 +1,7 @@
 package valikov.grlib;
 
+import java.util.Objects;
+
 class Pair<E, N> {
     private E first;
     private N second;
@@ -23,5 +25,19 @@ class Pair<E, N> {
 
     public N getSecond() {
         return second;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        @SuppressWarnings("unchecked")
+        Pair<E, N> pair = (Pair<E, N>) o;
+        return Objects.equals(first, pair.first) && Objects.equals(second, pair.second);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(first, second);
     }
 }

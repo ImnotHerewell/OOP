@@ -13,7 +13,7 @@ class Node<E, N> {
         this.identifier = identifier;
     }
 
-    public void setIdentifier(N identifier) {
+    void setIdentifier(N identifier) {
         this.identifier = identifier;
     }
 
