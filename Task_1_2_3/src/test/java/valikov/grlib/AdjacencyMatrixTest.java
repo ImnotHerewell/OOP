@@ -18,24 +18,17 @@ import org.junit.jupiter.api.Test;
 //...
 public class AdjacencyMatrixTest {
 
-    private File file;
-    private Scanner scan;
     private Graph<String, Integer> graph;
-    private int nodeCount;
-    private int edgeCount;
-    private List<Integer> nodeIdentifiers;
-    private List<String> edgeIdentifiers;
-    private List<List<Integer>> adjacencyMatrix;
 
     @BeforeEach
     void readAdjacencyMatrix() throws FileNotFoundException {
-        file = new File("./txt/AdjacencyMatrix.txt");
-        scan = new Scanner(file);
-        nodeCount = scan.nextInt();
-        edgeCount = scan.nextInt();
-        nodeIdentifiers = new ArrayList<>();
-        edgeIdentifiers = new ArrayList<>();
-        adjacencyMatrix = new ArrayList<>();
+        File file = new File("./txt/AdjacencyMatrix.txt");
+        Scanner scan = new Scanner(file);
+        int nodeCount = scan.nextInt();
+        int edgeCount = scan.nextInt();
+        List<Integer> nodeIdentifiers = new ArrayList<>();
+        List<String> edgeIdentifiers = new ArrayList<>();
+        List<List<Integer>> adjacencyMatrix = new ArrayList<>();
         for (int indexNode = 0; indexNode < nodeCount; indexNode++) {
             adjacencyMatrix.add(new ArrayList<>());
             for (int indexList = 0; indexList < 5; indexList++) {
@@ -58,7 +51,8 @@ public class AdjacencyMatrixTest {
 
     @Test
     void addNode() {
-        HashMap<Integer, Node<String, Integer>> expNodeMap = graph.getMapOfAllNodes();
+        @SuppressWarnings("unchecked")
+        HashMap<Integer, Node<String, Integer>> expNodeMap = (HashMap<Integer, Node<String, Integer>>) graph.getMapOfAllNodes().clone();
         Integer newIdentifier = 123;
         graph.addNode(newIdentifier);
         expNodeMap.put(newIdentifier, new Node<>(newIdentifier));

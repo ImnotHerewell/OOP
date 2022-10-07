@@ -210,7 +210,10 @@ public class Graph<E, N> {
         if (mapOfAllEdges.containsKey(newIdentifier) || !mapOfAllEdges.containsKey(identifier)) {
             return false;
         }
-        mapOfAllEdges.get(identifier).setIdentifier(newIdentifier);
+        Edge<E, N> edge=mapOfAllEdges.get(identifier);
+        mapOfAllEdges.remove(identifier);
+        edge.setIdentifier(newIdentifier);
+        mapOfAllEdges.put(newIdentifier,edge);
         return true;
     }
 
