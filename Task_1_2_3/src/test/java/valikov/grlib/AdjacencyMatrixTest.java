@@ -29,7 +29,7 @@ public class AdjacencyMatrixTest {
 
     @BeforeEach
     void readAdjacencyMatrix() throws FileNotFoundException {
-        file = new File("./txt/AdjacencyMatrixTxt.txt");
+        file = new File("./txt/AdjacencyMatrix.txt");
         scan = new Scanner(file);
         nodeCount = scan.nextInt();
         edgeCount = scan.nextInt();
