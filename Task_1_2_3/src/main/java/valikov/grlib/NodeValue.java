@@ -21,4 +21,10 @@ class NodeValue<N, Integer> extends Pair<N, Integer> implements Comparable<NodeV
         return (int) getSecond() - (int) o.getSecond();
     }
 
+    @Override
+    public boolean equals(Object o) {
+        @SuppressWarnings("unchecked")
+        NodeValue<N, Integer> obj = (NodeValue<N, Integer>) o;
+        return obj.getSecond() == getSecond();
+    }
 }

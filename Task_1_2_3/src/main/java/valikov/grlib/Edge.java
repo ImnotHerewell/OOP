@@ -46,7 +46,8 @@ class Edge<E, N> {
     Integer getWeight() {
         return weight;
     }
-    void delete(){
+
+    void delete() {
         setIdentifier(null);
         setStart(null);
         setEnd(null);

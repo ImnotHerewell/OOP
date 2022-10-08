@@ -26,26 +26,24 @@ public class AdjacencyMatrixTest {
         Scanner scan = new Scanner(file);
         int nodeCount = scan.nextInt();
         int edgeCount = scan.nextInt();
-        List<Integer> nodeIdentifiers = new ArrayList<>();
-        List<String> edgeIdentifiers = new ArrayList<>();
+        Pair<List<String>, List<Integer>> edgeNodeIdentifiers = new Pair<>(new ArrayList<>(), new ArrayList<>());
         List<List<Integer>> adjacencyMatrix = new ArrayList<>();
         for (int indexNode = 0; indexNode < nodeCount; indexNode++) {
             adjacencyMatrix.add(new ArrayList<>());
-            for (int indexList = 0; indexList < 5; indexList++) {
+            for (int indexList = 0; indexList < nodeCount; indexList++) {
                 adjacencyMatrix.get(indexNode).add(Integer.MIN_VALUE);
             }
-            nodeIdentifiers.add(scan.nextInt());
+            edgeNodeIdentifiers.getSecond().add(scan.nextInt());
         }
-        scan.nextLine();
         for (int indexEdge = 0; indexEdge < edgeCount; indexEdge++) {
-            edgeIdentifiers.add(scan.nextLine());
+            edgeNodeIdentifiers.getFirst().add(scan.next());
         }
         for (int indexRow = 0; indexRow < nodeCount; indexRow++) {
             for (int indexColumn = 0; indexColumn < nodeCount; indexColumn++) {
                 adjacencyMatrix.get(indexRow).set(indexColumn, scan.nextInt());
             }
         }
-        graph = new Graph<>(nodeIdentifiers, edgeIdentifiers, adjacencyMatrix);
+        graph = new Graph<>(edgeNodeIdentifiers, adjacencyMatrix);
     }
 
 
