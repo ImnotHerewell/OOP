@@ -156,17 +156,17 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="rowColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.util.List,java.util.List,java.util.List)">Graph</a></span>&#8203;(java.util.List&lt;<a href="Graph.html" title="type parameter in Graph">N</a>&gt;&nbsp;nodeIdentifiers,
-     java.util.List&lt;<a href="Graph.html" title="type parameter in Graph">E</a>&gt;&nbsp;edgeIdentifiers,
-     java.util.List&lt;java.util.List&lt;java.lang.Integer&gt;&gt;&nbsp;adjacencyMatrix)</code></th>
+     java.util.List&lt;valikov.grlib.Pair&lt;<a href="Graph.html" title="type parameter in Graph">E</a>,&#8203;<a href="Graph.html" title="type parameter in Graph">N</a>&gt;&gt;&nbsp;edgeAndNodeList,
+     java.util.List&lt;java.util.List&lt;java.lang.Integer&gt;&gt;&nbsp;incidenceMatrix)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.util.List,java.util.List)">Graph</a></span>&#8203;(java.util.List&lt;<a href="Graph.html" title="type parameter in Graph">N</a>&gt;&nbsp;nodeIdentifiers,
-     java.util.List&lt;java.util.List&lt;valikov.grlib.Pair&lt;<a href="Graph.html" title="type parameter in Graph">E</a>,&#8203;java.lang.Integer&gt;&gt;&gt;&nbsp;incidenceMatrix)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.util.List)">Graph</a></span>&#8203;(java.util.List&lt;valikov.grlib.Pair&lt;<a href="Graph.html" title="type parameter in Graph">N</a>,&#8203;java.util.List&lt;<a href="Triple.html" title="class in valikov.grlib">Triple</a>&lt;<a href="Graph.html" title="type parameter in Graph">N</a>,&#8203;<a href="Graph.html" title="type parameter in Graph">E</a>,&#8203;java.lang.Integer&gt;&gt;&gt;&gt;&nbsp;adjacencyList)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.util.List)">Graph</a></span>&#8203;(java.util.List&lt;valikov.grlib.Pair&lt;<a href="Graph.html" title="type parameter in Graph">N</a>,&#8203;java.util.List&lt;<a href="Triple.html" title="class in valikov.grlib">Triple</a>&lt;<a href="Graph.html" title="type parameter in Graph">N</a>,&#8203;<a href="Graph.html" title="type parameter in Graph">E</a>,&#8203;java.lang.Integer&gt;&gt;&gt;&gt;&nbsp;adjacencyList)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(valikov.grlib.Pair,java.util.List)">Graph</a></span>&#8203;(valikov.grlib.Pair&lt;java.util.List&lt;<a href="Graph.html" title="type parameter in Graph">E</a>&gt;,&#8203;java.util.List&lt;<a href="Graph.html" title="type parameter in Graph">N</a>&gt;&gt;&nbsp;edgeNodeIdentifiers,
+     java.util.List&lt;java.util.List&lt;java.lang.Integer&gt;&gt;&nbsp;adjacencyMatrix)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 </table>
@@ -310,6 +310,16 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;Graph()</pre>
 </li>
 </ul>
+<a id="&lt;init&gt;(valikov.grlib.Pair,java.util.List)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>Graph</h4>
+<pre>public&nbsp;Graph&#8203;(valikov.grlib.Pair&lt;java.util.List&lt;<a href="Graph.html" title="type parameter in Graph">E</a>&gt;,&#8203;java.util.List&lt;<a href="Graph.html" title="type parameter in Graph">N</a>&gt;&gt;&nbsp;edgeNodeIdentifiers,
+             java.util.List&lt;java.util.List&lt;java.lang.Integer&gt;&gt;&nbsp;adjacencyMatrix)</pre>
+</li>
+</ul>
 <a id="&lt;init&gt;(java.util.List,java.util.List,java.util.List)">
 <!--   -->
 </a>
@@ -317,18 +327,8 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>Graph</h4>
 <pre>public&nbsp;Graph&#8203;(java.util.List&lt;<a href="Graph.html" title="type parameter in Graph">N</a>&gt;&nbsp;nodeIdentifiers,
-             java.util.List&lt;<a href="Graph.html" title="type parameter in Graph">E</a>&gt;&nbsp;edgeIdentifiers,
-             java.util.List&lt;java.util.List&lt;java.lang.Integer&gt;&gt;&nbsp;adjacencyMatrix)</pre>
-</li>
-</ul>
-<a id="&lt;init&gt;(java.util.List,java.util.List)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>Graph</h4>
-<pre>public&nbsp;Graph&#8203;(java.util.List&lt;<a href="Graph.html" title="type parameter in Graph">N</a>&gt;&nbsp;nodeIdentifiers,
-             java.util.List&lt;java.util.List&lt;valikov.grlib.Pair&lt;<a href="Graph.html" title="type parameter in Graph">E</a>,&#8203;java.lang.Integer&gt;&gt;&gt;&nbsp;incidenceMatrix)</pre>
+             java.util.List&lt;valikov.grlib.Pair&lt;<a href="Graph.html" title="type parameter in Graph">E</a>,&#8203;<a href="Graph.html" title="type parameter in Graph">N</a>&gt;&gt;&nbsp;edgeAndNodeList,
+             java.util.List&lt;java.util.List&lt;java.lang.Integer&gt;&gt;&nbsp;incidenceMatrix)</pre>
 </li>
 </ul>
 <a id="&lt;init&gt;(java.util.List)">
