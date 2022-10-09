@@ -305,6 +305,12 @@ public class Graph<E, N> {
         return true;
     }
 
+    /**
+     * Get edge's identifier.
+     *
+     * @param identifier edge's identifier
+     * @return identifier if exists
+     */
     public E getEdgeIdentifier(E identifier) {
         if (identifier == null) {
             throw new IllegalArgumentException("Null pointers are not supported.");
