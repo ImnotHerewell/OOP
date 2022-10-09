@@ -29,8 +29,12 @@ class Pair<E, N> {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         @SuppressWarnings("unchecked")
         Pair<E, N> pair = (Pair<E, N>) o;
         return first == pair.first && second == pair.second;

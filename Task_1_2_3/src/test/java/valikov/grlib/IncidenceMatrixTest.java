@@ -65,26 +65,23 @@ public class IncidenceMatrixTest {
 
     @Test
     void nodeCount() {
-        Assertions.assertEquals(graph.nodeCount(),5);
+        Assertions.assertEquals(graph.nodeCount(), 5);
     }
 
     @Test
     void edgeCount() {
-        Assertions.assertEquals(graph.edgeCount(),7);
+        Assertions.assertEquals(graph.edgeCount(), 7);
     }
 
     @Test
     void dijkstra() {
-        List<NodeValue<Node<String, Integer>, Integer>> dijkstraList=graph.Dijkstra(1);
-        List<NodeValue<Node<String, Integer>, Integer>> expList=new ArrayList<>();
-        expList.add(new NodeValue<>(new Node<>(1),0));
-        expList.add(new NodeValue<>(new Node<>(2),7));
-        expList.add(new NodeValue<>(new Node<>(4),7));
-        expList.add(new NodeValue<>(new Node<>(3),8));
-        expList.add(new NodeValue<>(new Node<>(5),103));
-        for (NodeValue<Node<String, Integer>, Integer> nd : dijkstraList){
-            System.out.println(nd.getSecond());
-        }
-        Assertions.assertEquals(expList,dijkstraList);
+        List<NodeValue<Node<String, Integer>>> expList = new ArrayList<>();
+        expList.add(new NodeValue<>(new Node<>(1), 0));
+        expList.add(new NodeValue<>(new Node<>(2), 7));
+        expList.add(new NodeValue<>(new Node<>(4), 7));
+        expList.add(new NodeValue<>(new Node<>(3), 8));
+        expList.add(new NodeValue<>(new Node<>(5), 103));
+        List<NodeValue<Node<String, Integer>>> dijkstraList = graph.dijkstra(1);
+        Assertions.assertEquals(expList, dijkstraList);
     }
 }

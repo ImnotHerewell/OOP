@@ -10,12 +10,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-// n cities
-// m edges
-// list of nodes identifers
-// list of edges identifiers
-// adjacencyMatrix
-//...
 public class AdjacencyMatrixTest {
 
     private Graph<String, Integer> graph;
@@ -26,7 +20,8 @@ public class AdjacencyMatrixTest {
         Scanner scan = new Scanner(file);
         int nodeCount = scan.nextInt();
         int edgeCount = scan.nextInt();
-        Pair<List<String>, List<Integer>> edgeNodeIdentifiers = new Pair<>(new ArrayList<>(), new ArrayList<>());
+        Pair<List<String>, List<Integer>> edgeNodeIdentifiers =
+                new Pair<>(new ArrayList<>(), new ArrayList<>());
         List<List<Integer>> adjacencyMatrix = new ArrayList<>();
         for (int indexNode = 0; indexNode < nodeCount; indexNode++) {
             adjacencyMatrix.add(new ArrayList<>());
@@ -50,7 +45,8 @@ public class AdjacencyMatrixTest {
     @Test
     void addNode() {
         @SuppressWarnings("unchecked")
-        HashMap<Integer, Node<String, Integer>> expNodeMap = (HashMap<Integer, Node<String, Integer>>) graph.getMapOfAllNodes().clone();
+        HashMap<Integer, Node<String, Integer>> expNodeMap = (HashMap<Integer,
+                Node<String, Integer>>) graph.getMapOfAllNodes().clone();
         Integer newIdentifier = 123;
         graph.addNode(newIdentifier);
         expNodeMap.put(newIdentifier, new Node<>(newIdentifier));

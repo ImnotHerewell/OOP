@@ -1,10 +1,11 @@
 package valikov.grlib;
 
+import java.util.Objects;
+
 /**
  * @param <N>
- * @param <Integer>
  */
-class NodeValue<N, Integer> extends Pair<N, Integer> implements Comparable<NodeValue<N, Integer>> {
+class NodeValue<N> extends Pair<N, Integer> implements Comparable<NodeValue<N>> {
     NodeValue(N first, Integer second) {
         super(first, second);
     }
@@ -17,14 +18,14 @@ class NodeValue<N, Integer> extends Pair<N, Integer> implements Comparable<NodeV
      * @return positive if second is more, negative if second is less, else 0.
      */
     @Override
-    public int compareTo(NodeValue<N, Integer> o) {
-        return (int) getSecond() - (int) o.getSecond();
+    public int compareTo(NodeValue<N> o) {
+        return getSecond() - o.getSecond();
     }
 
     @Override
     public boolean equals(Object o) {
         @SuppressWarnings("unchecked")
-        NodeValue<N, Integer> obj = (NodeValue<N, Integer>) o;
-        return obj.getSecond() == getSecond();
+        NodeValue<N> obj = (NodeValue<N>) o;
+        return Objects.equals(obj.getSecond(), getSecond());
     }
 }

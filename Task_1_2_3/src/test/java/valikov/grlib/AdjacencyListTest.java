@@ -10,10 +10,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-//n cities
-// m edges for every node
-// adjacency list (first identifier of curNode, identifier of edge, identifier of anotherNode, weight)
-//...
 public class AdjacencyListTest {
     private Graph<String, Integer> graph;
 
@@ -22,12 +18,14 @@ public class AdjacencyListTest {
         File file = new File("./txt/AdjacencyList.txt");
         Scanner scan = new Scanner(file);
         int nodeCount = scan.nextInt();
-        List<Pair<Integer, List<Triple<Integer, String, Integer>>>> adjacencyList = new ArrayList<>();
+        List<Pair<Integer, List<Triple<Integer, String, Integer>>>> adjacencyList
+                = new ArrayList<>();
         for (int indexNode = 0; indexNode < nodeCount; indexNode++) {
             adjacencyList.add(new Pair<>(scan.nextInt(), new ArrayList<>()));
             int edgeCount = scan.nextInt();
             for (int indexEdge = 0; indexEdge < edgeCount; indexEdge++) {
-                adjacencyList.get(indexNode).getSecond().add(new Triple<>(scan.nextInt(), scan.next(), scan.nextInt()));
+                adjacencyList.get(indexNode).getSecond().add(new Triple<>
+                        (scan.nextInt(), scan.next(), scan.nextInt()));
             }
         }
         graph = new Graph<>(adjacencyList);
@@ -43,9 +41,11 @@ public class AdjacencyListTest {
     @Test
     void addEdge() {
         @SuppressWarnings("unchecked")
-        HashMap<String, Edge<String, Integer>> expEdgeMap = (HashMap<String, Edge<String, Integer>>) graph.getMapOfAllEdges().clone();
+        HashMap<String, Edge<String, Integer>> expEdgeMap = (HashMap<String,
+                Edge<String, Integer>>) graph.getMapOfAllEdges().clone();
         graph.addEdge("k", 1, 2, 0);
-        expEdgeMap.put("k", new Edge<>("k", graph.getNode(1), graph.getNode(2), 0));
+        expEdgeMap.put("k", new Edge<>("k", graph.getNode(1),
+                graph.getNode(2), 0));
         Assertions.assertEquals(graph.getMapOfAllEdges(), expEdgeMap);
     }
 

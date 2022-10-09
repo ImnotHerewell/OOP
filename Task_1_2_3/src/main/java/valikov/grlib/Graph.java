@@ -10,7 +10,13 @@ import java.util.Objects;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-//мб setNode & setEdge - useless
+/**
+ * Graph is a structure amounting to a set of objects in which some pairs of
+ * the objects are in some sense "related"
+ *
+ * @param <E> Edge's object (identifier)
+ * @param <N> Node's object (identifier)
+ */
 public class Graph<E, N> {
     private HashMap<N, Node<E, N>> mapOfAllNodes;
     private HashMap<E, Edge<E, N>> mapOfAllEdges;
@@ -19,9 +25,11 @@ public class Graph<E, N> {
         buildMap();
     }
 
-    public Graph(Pair<List<E>, List<N>> edgeNodeIdentifiers, List<List<Integer>> adjacencyMatrix) {
+    public Graph(Pair<List<E>, List<N>> edgeNodeIdentifiers,
+                 List<List<Integer>> adjacencyMatrix) {
         if (edgeNodeIdentifiers.getSecond().size() != adjacencyMatrix.size()) {
-            throw new UnsupportedOperationException("Quantity of nodes in matrix and in list of nodes must be equal.");
+            throw new UnsupportedOperationException("Quantity of nodes in matrix and" +
+                    " in list of nodes must be equal.");
         }
         int matrixEdgeCount = 0;
         for (List<Integer> list : adjacencyMatrix) {
@@ -38,18 +46,22 @@ public class Graph<E, N> {
         buildMap();
         Iterator<E> it = edgeNodeIdentifiers.getFirst().listIterator();
         for (int indexRow = 0; indexRow < adjacencyMatrix.size(); indexRow++) {
-            for (int indexColumn = 0; indexColumn < adjacencyMatrix.get(indexRow).size(); indexColumn++) {
+            for (int indexColumn = 0; indexColumn < adjacencyMatrix.get(indexRow).size();
+                 indexColumn++) {
                 Integer weight = adjacencyMatrix.get(indexRow).get(indexColumn);
                 if (weight != Integer.MIN_VALUE) {
-                    addEdge(it.next(), edgeNodeIdentifiers.getSecond().get(indexRow), edgeNodeIdentifiers.getSecond().get(indexColumn), weight);
+                    addEdge(it.next(), edgeNodeIdentifiers.getSecond().get(indexRow),
+                            edgeNodeIdentifiers.getSecond().get(indexColumn), weight);
                 }
             }
         }
     }
 
-    public Graph(List<N> nodeIdentifiers, List<Pair<E, N>> edgeAndNodeList, List<List<Integer>> incidenceMatrix) {
+    public Graph(List<N> nodeIdentifiers, List<Pair<E, N>> edgeAndNodeList,
+                 List<List<Integer>> incidenceMatrix) {
         if (nodeIdentifiers.size() != incidenceMatrix.size()) {
-            throw new UnsupportedOperationException("Quantity of nodes in matrix and in list of nodes must be equal.");
+            throw new UnsupportedOperationException("Quantity of nodes in matrix and" +
+                    " in list of nodes must be equal.");
         }
         int matrixEdgeCount = 0;
         for (List<Integer> list : incidenceMatrix) {
@@ -66,10 +78,13 @@ public class Graph<E, N> {
         edgeCheck(matrixEdgeCount, edgeAndNodeList.size());
         buildMap();
         for (int indexRow = 0; indexRow < incidenceMatrix.size(); indexRow++) {
-            for (int indexColumn = 0; indexColumn < incidenceMatrix.get(indexRow).size(); indexColumn++) {
+            for (int indexColumn = 0; indexColumn < incidenceMatrix.get(indexRow).size();
+                 indexColumn++) {
                 Integer weight = incidenceMatrix.get(indexRow).get(indexColumn);
                 if (weight != Integer.MIN_VALUE) {
-                    addEdge(edgeAndNodeList.get(indexColumn).getFirst(), nodeIdentifiers.get(indexRow), edgeAndNodeList.get(indexColumn).getSecond(), weight);
+                    addEdge(edgeAndNodeList.get(indexColumn).getFirst(),
+                            nodeIdentifiers.get(indexRow),
+                            edgeAndNodeList.get(indexColumn).getSecond(), weight);
                 }
             }
         }
@@ -133,9 +148,7 @@ public class Graph<E, N> {
         for (int indexEdge = 0; indexEdge < node.getListOfEdges().size(); indexEdge++) {
             Edge<E, N> edgeForDelete = node.getListOfEdges().get(indexEdge);
             mapOfAllEdges.remove(edgeForDelete.getIdentifier());
-//            edgeForDelete.delete();
         }
-//        node.delete();
         return this;
     }
 
@@ -202,7 +215,6 @@ public class Graph<E, N> {
         Edge<E, N> edge = mapOfAllEdges.get(identifier);
         mapOfAllEdges.remove(identifier);
         edge.getStart().getListOfEdges().remove(edge);
-//        edge.delete();
         return true;
     }
 
@@ -245,32 +257,30 @@ public class Graph<E, N> {
         return mapOfAllEdges.size();
     }
 
-    public List<NodeValue<Node<E, N>, Integer>> Dijkstra(N identifier) {
+    public List<NodeValue<Node<E, N>>> dijkstra(N identifier) {
         for (Map.Entry<E, Edge<E, N>> hashEdge : mapOfAllEdges.entrySet()) {
             if (hashEdge.getValue().getWeight() < 0) {
-                throw new UnsupportedOperationException("Edges with negative weights are not supported.");
+                throw new UnsupportedOperationException("Edges with negative weights" +
+                        " are not supported.");
             }
         }
         HashMap<Node<E, N>, Integer> mapWeights = new HashMap<>();
         for (Map.Entry<N, Node<E, N>> hashNode : mapOfAllNodes.entrySet()) {
             mapWeights.put(hashNode.getValue(), Integer.MAX_VALUE);
         }
-        SortedSet<NodeValue<Node<E, N>, Integer>> set = new TreeSet<>();
-        NodeValue<Node<E, N>, Integer> root = new NodeValue<>(getNode(identifier), 0);
+        SortedSet<NodeValue<Node<E, N>>> set = new TreeSet<>();
+        NodeValue<Node<E, N>> root = new NodeValue<>(getNode(identifier), 0);
         mapWeights.replace(root.getFirst(), 0);
         set.add(root);
         while (!set.isEmpty()) {
             Node<E, N> minNode = set.first().getFirst();
             set.remove(set.first());
-            System.out.println(mapWeights);
-//            System.out.println(minNode.getListOfEdges());
             for (Edge<E, N> edge : minNode.getListOfEdges()) {
                 Node<E, N> to = edge.getEnd();
                 int weight = edge.getWeight();
-                System.out.print(weight);
-                System.out.println(to);
                 if (mapWeights.get(minNode) + weight < mapWeights.get(to)) {
-                    NodeValue<Node<E, N>, Integer> toNodeValue = new NodeValue<>(to, mapWeights.get(to));
+                    NodeValue<Node<E, N>> toNodeValue =
+                            new NodeValue<>(to, mapWeights.get(to));
                     set.remove(toNodeValue);
                     toNodeValue.setSecond(mapWeights.get(minNode) + weight);
                     mapWeights.replace(to, toNodeValue.getSecond());
@@ -278,22 +288,25 @@ public class Graph<E, N> {
                 }
             }
         }
-        System.out.println(mapWeights);
-        List<NodeValue<Node<E, N>, Integer>> listRes = new ArrayList<>();
+        List<NodeValue<Node<E, N>>> listRes = new ArrayList<>();
         for (Map.Entry<Node<E, N>, Integer> hashNode : mapWeights.entrySet()) {
             listRes.add(new NodeValue<>(hashNode.getKey(), hashNode.getValue()));
         }
         Collections.sort(listRes);
-        System.out.println(listRes);
         return listRes;
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         @SuppressWarnings("unchecked") Graph<E, N> graph = (Graph<E, N>) o;
-        return mapOfAllNodes.equals(graph.mapOfAllNodes) && mapOfAllEdges.equals(graph.mapOfAllEdges);
+        return mapOfAllNodes.equals(graph.mapOfAllNodes) &&
+                mapOfAllEdges.equals(graph.mapOfAllEdges);
     }
 
     @Override

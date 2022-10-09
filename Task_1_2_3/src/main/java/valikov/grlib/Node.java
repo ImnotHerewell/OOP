@@ -3,7 +3,6 @@ package valikov.grlib;
 import java.util.ArrayList;
 import java.util.List;
 
-//nado
 class Node<E, N> {
     private N identifier;
     private List<Edge<E, N>> listOfEdges;
@@ -35,8 +34,12 @@ class Node<E, N> {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         @SuppressWarnings("unchecked")
         Node<E, N> node = (Node<E, N>) o;
         return identifier == node.identifier;
