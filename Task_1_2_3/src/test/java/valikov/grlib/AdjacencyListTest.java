@@ -10,6 +10,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Test with adjacency list graph representation.
+ */
 public class AdjacencyListTest {
     private Graph<String, Integer> graph;
 
@@ -24,8 +27,8 @@ public class AdjacencyListTest {
             adjacencyList.add(new Pair<>(scan.nextInt(), new ArrayList<>()));
             int edgeCount = scan.nextInt();
             for (int indexEdge = 0; indexEdge < edgeCount; indexEdge++) {
-                adjacencyList.get(indexNode).getSecond().add(new Triple<>
-                        (scan.nextInt(), scan.next(), scan.nextInt()));
+                adjacencyList.get(indexNode).getSecond().add(
+                        new Triple<>(scan.nextInt(), scan.next(), scan.nextInt()));
             }
         }
         graph = new Graph<>(adjacencyList);

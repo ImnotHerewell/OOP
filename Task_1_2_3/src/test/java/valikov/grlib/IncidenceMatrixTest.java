@@ -9,10 +9,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-//n cities
-//m edges
-//list of nodeIdentifiers
-//incidence matrix (weight, edgeidentifier)
+/**
+ * Test with incidence matrix graph representation.
+ */
 public class IncidenceMatrixTest {
     private Graph<String, Integer> graph;
 

@@ -1,9 +1,11 @@
 package valikov.grlib;
 
 /**
- * @param <E>
- * @param <N>
- * @param <K>
+ * Class for adjacency list representation.
+ *
+ * @param <E> edge's identifier type
+ * @param <N> node's identifier type
+ * @param <K> third param's identifier
  */
 public class Triple<E, N, K> extends Pair<E, N> {
     private K third;

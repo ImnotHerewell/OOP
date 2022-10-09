@@ -3,7 +3,9 @@ package valikov.grlib;
 import java.util.Objects;
 
 /**
- * @param <N>
+ * Class fo Dijkstra algorithm.
+ *
+ * @param <N> - node's identifier type
  */
 class NodeValue<N> extends Pair<N, Integer> implements Comparable<NodeValue<N>> {
     NodeValue(N first, Integer second) {

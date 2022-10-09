@@ -10,6 +10,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Test with adjacency matrix graph representation.
+ */
 public class AdjacencyMatrixTest {
 
     private Graph<String, Integer> graph;

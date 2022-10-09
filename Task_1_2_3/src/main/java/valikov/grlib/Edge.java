@@ -63,9 +63,9 @@ class Edge<E, N> {
         }
         @SuppressWarnings("unchecked")
         Edge<E, N> edge = (Edge<E, N>) o;
-        return identifier.equals(edge.identifier) &&
-                start.equals(edge.start) && end.equals(edge.end) &&
-                weight.equals(edge.weight);
+        return identifier.equals(edge.identifier)
+                && start.equals(edge.start) && end.equals(edge.end)
+                && weight.equals(edge.weight);
     }
 
     @Override
