@@ -128,9 +128,16 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="description">
 <ul class="blockList">
 <li class="blockList">
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>E</code> - Edge's object (identifier)</dd>
+<dd><code>N</code> - Node's object (identifier)</dd>
+</dl>
 <hr>
 <pre>public class <span class="typeNameLabel">Graph&lt;E,&#8203;N&gt;</span>
 extends java.lang.Object</pre>
+<div class="block">Graph is a structure amounting to a set of objects in which some pairs of
+ the objects are in some sense "related"</div>
 </li>
 </ul>
 </div>
@@ -201,8 +208,8 @@ extends java.lang.Object</pre>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code>java.util.List&lt;valikov.grlib.NodeValue&lt;valikov.grlib.Node&lt;<a href="Graph.html" title="type parameter in Graph">E</a>,&#8203;<a href="Graph.html" title="type parameter in Graph">N</a>&gt;,&#8203;java.lang.Integer&gt;&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#Dijkstra(N)">Dijkstra</a></span>&#8203;(<a href="Graph.html" title="type parameter in Graph">N</a>&nbsp;identifier)</code></th>
+<td class="colFirst"><code>java.util.List&lt;valikov.grlib.NodeValue&lt;valikov.grlib.Node&lt;<a href="Graph.html" title="type parameter in Graph">E</a>,&#8203;<a href="Graph.html" title="type parameter in Graph">N</a>&gt;&gt;&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#dijkstra(N)">dijkstra</a></span>&#8203;(<a href="Graph.html" title="type parameter in Graph">N</a>&nbsp;identifier)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
@@ -501,15 +508,15 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public&nbsp;int&nbsp;edgeCount()</pre>
 </li>
 </ul>
-<a id="Dijkstra(java.lang.Object)">
+<a id="dijkstra(java.lang.Object)">
 <!--   -->
-</a><a id="Dijkstra(N)">
+</a><a id="dijkstra(N)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>Dijkstra</h4>
-<pre class="methodSignature">public&nbsp;java.util.List&lt;valikov.grlib.NodeValue&lt;valikov.grlib.Node&lt;<a href="Graph.html" title="type parameter in Graph">E</a>,&#8203;<a href="Graph.html" title="type parameter in Graph">N</a>&gt;,&#8203;java.lang.Integer&gt;&gt;&nbsp;Dijkstra&#8203;(<a href="Graph.html" title="type parameter in Graph">N</a>&nbsp;identifier)</pre>
+<h4>dijkstra</h4>
+<pre class="methodSignature">public&nbsp;java.util.List&lt;valikov.grlib.NodeValue&lt;valikov.grlib.Node&lt;<a href="Graph.html" title="type parameter in Graph">E</a>,&#8203;<a href="Graph.html" title="type parameter in Graph">N</a>&gt;&gt;&gt;&nbsp;dijkstra&#8203;(<a href="Graph.html" title="type parameter in Graph">N</a>&nbsp;identifier)</pre>
 </li>
 </ul>
 <a id="equals(java.lang.Object)">
