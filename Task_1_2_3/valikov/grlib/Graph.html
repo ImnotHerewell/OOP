@@ -137,7 +137,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre>public class <span class="typeNameLabel">Graph&lt;E,&#8203;N&gt;</span>
 extends java.lang.Object</pre>
 <div class="block">Graph is a structure amounting to a set of objects in which some pairs of
- the objects are in some sense "related"</div>
+ the objects are in some sense "related".</div>
 </li>
 </ul>
 </div>
@@ -165,16 +165,22 @@ extends java.lang.Object</pre>
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.util.List,java.util.List,java.util.List)">Graph</a></span>&#8203;(java.util.List&lt;<a href="Graph.html" title="type parameter in Graph">N</a>&gt;&nbsp;nodeIdentifiers,
      java.util.List&lt;valikov.grlib.Pair&lt;<a href="Graph.html" title="type parameter in Graph">E</a>,&#8203;<a href="Graph.html" title="type parameter in Graph">N</a>&gt;&gt;&nbsp;edgeAndNodeList,
      java.util.List&lt;java.util.List&lt;java.lang.Integer&gt;&gt;&nbsp;incidenceMatrix)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Constructor of graph from incidence matrix.</div>
+</td>
 </tr>
 <tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.util.List)">Graph</a></span>&#8203;(java.util.List&lt;valikov.grlib.Pair&lt;<a href="Graph.html" title="type parameter in Graph">N</a>,&#8203;java.util.List&lt;<a href="Triple.html" title="class in valikov.grlib">Triple</a>&lt;<a href="Graph.html" title="type parameter in Graph">N</a>,&#8203;<a href="Graph.html" title="type parameter in Graph">E</a>,&#8203;java.lang.Integer&gt;&gt;&gt;&gt;&nbsp;adjacencyList)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Constructor of graph from adjacency list.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(valikov.grlib.Pair,java.util.List)">Graph</a></span>&#8203;(valikov.grlib.Pair&lt;java.util.List&lt;<a href="Graph.html" title="type parameter in Graph">E</a>&gt;,&#8203;java.util.List&lt;<a href="Graph.html" title="type parameter in Graph">N</a>&gt;&gt;&nbsp;edgeNodeIdentifiers,
      java.util.List&lt;java.util.List&lt;java.lang.Integer&gt;&gt;&nbsp;adjacencyMatrix)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Constructor of graph from adjacency matrix.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -200,17 +206,23 @@ extends java.lang.Object</pre>
        <a href="Graph.html" title="type parameter in Graph">N</a>&nbsp;start,
        <a href="Graph.html" title="type parameter in Graph">N</a>&nbsp;end,
        java.lang.Integer&nbsp;weight)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Add new edge to graph.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="Graph.html" title="type parameter in Graph">N</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addNode(N)">addNode</a></span>&#8203;(<a href="Graph.html" title="type parameter in Graph">N</a>&nbsp;identifier)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Add node to graph.</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>java.util.List&lt;valikov.grlib.NodeValue&lt;valikov.grlib.Node&lt;<a href="Graph.html" title="type parameter in Graph">E</a>,&#8203;<a href="Graph.html" title="type parameter in Graph">N</a>&gt;&gt;&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#dijkstra(N)">dijkstra</a></span>&#8203;(<a href="Graph.html" title="type parameter in Graph">N</a>&nbsp;identifier)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Dijkstra algorithm for searching minimal paths to other nodes.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>int</code></td>
@@ -225,7 +237,9 @@ extends java.lang.Object</pre>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>valikov.grlib.Edge&lt;<a href="Graph.html" title="type parameter in Graph">E</a>,&#8203;<a href="Graph.html" title="type parameter in Graph">N</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getEdge(E)">getEdge</a></span>&#8203;(<a href="Graph.html" title="type parameter in Graph">E</a>&nbsp;identifier)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Get edge from graph.</div>
+</td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="Graph.html" title="type parameter in Graph">E</a></code></td>
@@ -245,12 +259,16 @@ extends java.lang.Object</pre>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>valikov.grlib.Node&lt;<a href="Graph.html" title="type parameter in Graph">E</a>,&#8203;<a href="Graph.html" title="type parameter in Graph">N</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getNode(N)">getNode</a></span>&#8203;(<a href="Graph.html" title="type parameter in Graph">N</a>&nbsp;identifier)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Get node from graph.</div>
+</td>
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="Graph.html" title="type parameter in Graph">N</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getNodeIdentifier(N)">getNodeIdentifier</a></span>&#8203;(<a href="Graph.html" title="type parameter in Graph">N</a>&nbsp;identifier)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Get node's identifier, lol.</div>
+</td>
 </tr>
 <tr id="i11" class="rowColor">
 <td class="colFirst"><code>int</code></td>
@@ -265,24 +283,32 @@ extends java.lang.Object</pre>
 <tr id="i13" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeEdge(E)">removeEdge</a></span>&#8203;(<a href="Graph.html" title="type parameter in Graph">E</a>&nbsp;identifier)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Remove an edge from graph.</div>
+</td>
 </tr>
 <tr id="i14" class="altColor">
 <td class="colFirst"><code><a href="Graph.html" title="class in valikov.grlib">Graph</a>&lt;<a href="Graph.html" title="type parameter in Graph">E</a>,&#8203;<a href="Graph.html" title="type parameter in Graph">N</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeNode(N)">removeNode</a></span>&#8203;(<a href="Graph.html" title="type parameter in Graph">N</a>&nbsp;identifier)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Remove node from graph.</div>
+</td>
 </tr>
 <tr id="i15" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setEdgeIdentifier(E,E)">setEdgeIdentifier</a></span>&#8203;(<a href="Graph.html" title="type parameter in Graph">E</a>&nbsp;identifier,
                  <a href="Graph.html" title="type parameter in Graph">E</a>&nbsp;newIdentifier)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Set new identifier for edge.</div>
+</td>
 </tr>
 <tr id="i16" class="altColor">
 <td class="colFirst"><code><a href="Graph.html" title="class in valikov.grlib">Graph</a>&lt;<a href="Graph.html" title="type parameter in Graph">E</a>,&#8203;<a href="Graph.html" title="type parameter in Graph">N</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setNodeIdentifier(N,N)">setNodeIdentifier</a></span>&#8203;(<a href="Graph.html" title="type parameter in Graph">N</a>&nbsp;identifier,
                  <a href="Graph.html" title="type parameter in Graph">N</a>&nbsp;newIdentifier)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Set new identifier for node.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -325,6 +351,12 @@ extends java.lang.Object</pre>
 <h4>Graph</h4>
 <pre>public&nbsp;Graph&#8203;(valikov.grlib.Pair&lt;java.util.List&lt;<a href="Graph.html" title="type parameter in Graph">E</a>&gt;,&#8203;java.util.List&lt;<a href="Graph.html" title="type parameter in Graph">N</a>&gt;&gt;&nbsp;edgeNodeIdentifiers,
              java.util.List&lt;java.util.List&lt;java.lang.Integer&gt;&gt;&nbsp;adjacencyMatrix)</pre>
+<div class="block">Constructor of graph from adjacency matrix.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>edgeNodeIdentifiers</code> - pair of lists with identifiers of edge and node</dd>
+<dd><code>adjacencyMatrix</code> - adjacency matrix with weights</dd>
+</dl>
 </li>
 </ul>
 <a id="&lt;init&gt;(java.util.List,java.util.List,java.util.List)">
@@ -336,6 +368,13 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;Graph&#8203;(java.util.List&lt;<a href="Graph.html" title="type parameter in Graph">N</a>&gt;&nbsp;nodeIdentifiers,
              java.util.List&lt;valikov.grlib.Pair&lt;<a href="Graph.html" title="type parameter in Graph">E</a>,&#8203;<a href="Graph.html" title="type parameter in Graph">N</a>&gt;&gt;&nbsp;edgeAndNodeList,
              java.util.List&lt;java.util.List&lt;java.lang.Integer&gt;&gt;&nbsp;incidenceMatrix)</pre>
+<div class="block">Constructor of graph from incidence matrix.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>nodeIdentifiers</code> - list with node's identifiers</dd>
+<dd><code>edgeAndNodeList</code> - list of pairs with identifier of edge, and it's end</dd>
+<dd><code>incidenceMatrix</code> - incidence matrix with weights</dd>
+</dl>
 </li>
 </ul>
 <a id="&lt;init&gt;(java.util.List)">
@@ -345,6 +384,13 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>Graph</h4>
 <pre>public&nbsp;Graph&#8203;(java.util.List&lt;valikov.grlib.Pair&lt;<a href="Graph.html" title="type parameter in Graph">N</a>,&#8203;java.util.List&lt;<a href="Triple.html" title="class in valikov.grlib">Triple</a>&lt;<a href="Graph.html" title="type parameter in Graph">N</a>,&#8203;<a href="Graph.html" title="type parameter in Graph">E</a>,&#8203;java.lang.Integer&gt;&gt;&gt;&gt;&nbsp;adjacencyList)</pre>
+<div class="block">Constructor of graph from adjacency list.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>adjacencyList</code> - list with nodes,
+                      and it's triple of adjacency node identifier,
+                      edge identifier and weight</dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -384,6 +430,13 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>addNode</h4>
 <pre class="methodSignature">public&nbsp;<a href="Graph.html" title="type parameter in Graph">N</a>&nbsp;addNode&#8203;(<a href="Graph.html" title="type parameter in Graph">N</a>&nbsp;identifier)</pre>
+<div class="block">Add node to graph.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>identifier</code> - node's identifier</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>node's identifier if identifier doesn't exist</dd>
+</dl>
 </li>
 </ul>
 <a id="removeNode(java.lang.Object)">
@@ -395,6 +448,13 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>removeNode</h4>
 <pre class="methodSignature">public&nbsp;<a href="Graph.html" title="class in valikov.grlib">Graph</a>&lt;<a href="Graph.html" title="type parameter in Graph">E</a>,&#8203;<a href="Graph.html" title="type parameter in Graph">N</a>&gt;&nbsp;removeNode&#8203;(<a href="Graph.html" title="type parameter in Graph">N</a>&nbsp;identifier)</pre>
+<div class="block">Remove node from graph.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>identifier</code> - of node which should be removed</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>graph if node exists</dd>
+</dl>
 </li>
 </ul>
 <a id="setNodeIdentifier(java.lang.Object,java.lang.Object)">
@@ -407,6 +467,14 @@ extends java.lang.Object</pre>
 <h4>setNodeIdentifier</h4>
 <pre class="methodSignature">public&nbsp;<a href="Graph.html" title="class in valikov.grlib">Graph</a>&lt;<a href="Graph.html" title="type parameter in Graph">E</a>,&#8203;<a href="Graph.html" title="type parameter in Graph">N</a>&gt;&nbsp;setNodeIdentifier&#8203;(<a href="Graph.html" title="type parameter in Graph">N</a>&nbsp;identifier,
                                           <a href="Graph.html" title="type parameter in Graph">N</a>&nbsp;newIdentifier)</pre>
+<div class="block">Set new identifier for node.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>identifier</code> - old identifier</dd>
+<dd><code>newIdentifier</code> - new identifier</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>graph if success</dd>
+</dl>
 </li>
 </ul>
 <a id="getNodeIdentifier(java.lang.Object)">
@@ -418,6 +486,13 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getNodeIdentifier</h4>
 <pre class="methodSignature">public&nbsp;<a href="Graph.html" title="type parameter in Graph">N</a>&nbsp;getNodeIdentifier&#8203;(<a href="Graph.html" title="type parameter in Graph">N</a>&nbsp;identifier)</pre>
+<div class="block">Get node's identifier, lol.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>identifier</code> - node's identifier</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>identifier if exists</dd>
+</dl>
 </li>
 </ul>
 <a id="getNode(java.lang.Object)">
@@ -429,6 +504,13 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getNode</h4>
 <pre class="methodSignature">public&nbsp;valikov.grlib.Node&lt;<a href="Graph.html" title="type parameter in Graph">E</a>,&#8203;<a href="Graph.html" title="type parameter in Graph">N</a>&gt;&nbsp;getNode&#8203;(<a href="Graph.html" title="type parameter in Graph">N</a>&nbsp;identifier)</pre>
+<div class="block">Get node from graph.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>identifier</code> - node's identifier</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>node if identifier exists else null.</dd>
+</dl>
 </li>
 </ul>
 <a id="addEdge(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Integer)">
@@ -443,6 +525,16 @@ extends java.lang.Object</pre>
                  <a href="Graph.html" title="type parameter in Graph">N</a>&nbsp;start,
                  <a href="Graph.html" title="type parameter in Graph">N</a>&nbsp;end,
                  java.lang.Integer&nbsp;weight)</pre>
+<div class="block">Add new edge to graph.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>identifier</code> - edge's identifier</dd>
+<dd><code>start</code> - identifier of edge's begin</dd>
+<dd><code>end</code> - identifier of edge's end</dd>
+<dd><code>weight</code> - of edge</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>edge's identifier if success</dd>
+</dl>
 </li>
 </ul>
 <a id="removeEdge(java.lang.Object)">
@@ -454,6 +546,13 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>removeEdge</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;removeEdge&#8203;(<a href="Graph.html" title="type parameter in Graph">E</a>&nbsp;identifier)</pre>
+<div class="block">Remove an edge from graph.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>identifier</code> - edge's identifier</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if edge exists</dd>
+</dl>
 </li>
 </ul>
 <a id="setEdgeIdentifier(java.lang.Object,java.lang.Object)">
@@ -466,6 +565,14 @@ extends java.lang.Object</pre>
 <h4>setEdgeIdentifier</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;setEdgeIdentifier&#8203;(<a href="Graph.html" title="type parameter in Graph">E</a>&nbsp;identifier,
                                  <a href="Graph.html" title="type parameter in Graph">E</a>&nbsp;newIdentifier)</pre>
+<div class="block">Set new identifier for edge.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>identifier</code> - old identifier</dd>
+<dd><code>newIdentifier</code> - new identifier</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if success</dd>
+</dl>
 </li>
 </ul>
 <a id="getEdgeIdentifier(java.lang.Object)">
@@ -488,6 +595,13 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getEdge</h4>
 <pre class="methodSignature">public&nbsp;valikov.grlib.Edge&lt;<a href="Graph.html" title="type parameter in Graph">E</a>,&#8203;<a href="Graph.html" title="type parameter in Graph">N</a>&gt;&nbsp;getEdge&#8203;(<a href="Graph.html" title="type parameter in Graph">E</a>&nbsp;identifier)</pre>
+<div class="block">Get edge from graph.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>identifier</code> - edge's identifier</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>edge if identifier exists</dd>
+</dl>
 </li>
 </ul>
 <a id="nodeCount()">
@@ -517,6 +631,13 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>dijkstra</h4>
 <pre class="methodSignature">public&nbsp;java.util.List&lt;valikov.grlib.NodeValue&lt;valikov.grlib.Node&lt;<a href="Graph.html" title="type parameter in Graph">E</a>,&#8203;<a href="Graph.html" title="type parameter in Graph">N</a>&gt;&gt;&gt;&nbsp;dijkstra&#8203;(<a href="Graph.html" title="type parameter in Graph">N</a>&nbsp;identifier)</pre>
+<div class="block">Dijkstra algorithm for searching minimal paths to other nodes.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>identifier</code> - node's identifier, where algorithm starts working</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>list with node and it's minimal weights path</dd>
+</dl>
 </li>
 </ul>
 <a id="equals(java.lang.Object)">
