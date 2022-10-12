@@ -15,7 +15,7 @@ import java.util.NoSuchElementException;
 public class DfsIteratorTree<T extends Comparable<T>> implements Iterator<T> {
     private Tree<T> tree;
     private Node<T> current;
-    private final int modCount;
+    private int modCount;
     private final Deque<Node<T>> deque = new ArrayDeque<>(); // Stack where nodes are stored.
 
     /**
@@ -80,6 +80,7 @@ public class DfsIteratorTree<T extends Comparable<T>> implements Iterator<T> {
      */
     @Override
     public void remove() {
+        modCount++;
         current.delete();
     }
 

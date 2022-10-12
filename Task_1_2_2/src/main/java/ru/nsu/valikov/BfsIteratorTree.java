@@ -14,7 +14,7 @@ import java.util.Queue;
  */
 public class BfsIteratorTree<T extends Comparable<T>> implements Iterator<T> {
     private Tree<T> tree;
-    private final int modCount;
+    private int modCount;
     private Node<T> current;
     private final Queue<Node<T>> queue = new LinkedList<>(); // Queue where nodes are stored.
 
@@ -76,6 +76,7 @@ public class BfsIteratorTree<T extends Comparable<T>> implements Iterator<T> {
      */
     @Override
     public void remove() {
+        modCount++;
         current.delete();
     }
 

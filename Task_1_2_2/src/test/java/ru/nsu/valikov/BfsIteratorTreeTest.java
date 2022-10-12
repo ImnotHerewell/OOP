@@ -4,10 +4,8 @@ import java.util.Iterator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class DfsIteratorTreeTest {
-
+class BfsIteratorTreeTest {
     Tree<String> testGraph = new Tree<>();
     Iterator<String> itTest;
 
@@ -19,24 +17,24 @@ class DfsIteratorTreeTest {
         Node<String> node5 = testGraph.add(node3, "5");
         testGraph.add(node5, "6");
         testGraph.add(node4, "7");
-        itTest = testGraph.iterator();
+        itTest = testGraph.iteratorBfs();
     }
 
     @Test
     void hasNext() {
-        assertTrue(itTest.hasNext());
+        Assertions.assertTrue(itTest.hasNext());
     }
 
     @Test
     void next() {
-        Assertions.assertEquals(itTest.next(), "3");
+        Assertions.assertEquals(itTest.next(), "1");
     }
 
     @Test
     void remove() {
         itTest.next();
         itTest.remove();
-        Iterator<String> newIterator = testGraph.iterator();
-        Assertions.assertEquals(newIterator.next(), "5");
+        Iterator<String> newIterator = testGraph.iteratorBfs();
+        Assertions.assertEquals(newIterator.next(), "3");
     }
 }
