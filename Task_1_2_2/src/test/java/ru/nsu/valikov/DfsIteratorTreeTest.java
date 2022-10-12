@@ -4,7 +4,6 @@ import java.util.Iterator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class DfsIteratorTreeTest {
 
@@ -24,7 +23,7 @@ class DfsIteratorTreeTest {
 
     @Test
     void hasNext() {
-        assertTrue(itTest.hasNext());
+        Assertions.assertTrue(itTest.hasNext());
     }
 
     @Test
