@@ -36,6 +36,10 @@ public class Node<T extends Comparable<T>> implements Comparable<T> {
         this.parent = parent;
     }
 
+    public Node<T> getParent() {
+        return parent;
+    }
+
     public Integer getChildCount() {
         return children.size();
     }

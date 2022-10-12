@@ -1,9 +1,10 @@
 package ru.nsu.valikov;
 
+import java.util.ArrayDeque;
 import java.util.ConcurrentModificationException;
+import java.util.Deque;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-import java.util.Stack;
 
 
 /**
@@ -15,7 +16,7 @@ public class DfsIteratorTree<T extends Comparable<T>> implements Iterator<T> {
     private Tree<T> tree;
     private Node<T> current;
     private final int modCount;
-    private final Stack<Node<T>> stack = new Stack<>(); // Stack where nodes are stored.
+    private final Deque<Node<T>> deque = new ArrayDeque<>(); // Stack where nodes are stored.
 
     /**
      * Constructor for iterator, it adds adjacent with root nodes.
@@ -27,7 +28,7 @@ public class DfsIteratorTree<T extends Comparable<T>> implements Iterator<T> {
         modCount = tree.getSize();
         current = tree.getRoot();
         for (Node<T> autoIt : tree.getRoot().getChildren()) {
-            stack.push(autoIt);
+            deque.push(autoIt);
         }
     }
 
@@ -43,7 +44,7 @@ public class DfsIteratorTree<T extends Comparable<T>> implements Iterator<T> {
         if (tree.getSize() != modCount) {
             throw new ConcurrentModificationException();
         }
-        return !stack.empty() || current.getChildCount() > 0;
+        return !deque.isEmpty() || current.getChildCount() > 0;
     }
 
     /**
@@ -57,7 +58,7 @@ public class DfsIteratorTree<T extends Comparable<T>> implements Iterator<T> {
     public T next() {
         if (current.getValue() != null) {
             for (Node<T> autoIt : current.getChildren()) {
-                stack.push(autoIt);
+                deque.push(autoIt);
             }
         }
         if (tree.getSize() != modCount) {
@@ -66,7 +67,7 @@ public class DfsIteratorTree<T extends Comparable<T>> implements Iterator<T> {
         if (!hasNext()) {
             throw new NoSuchElementException();
         }
-        current = stack.pop();
+        current = deque.pop();
         return current.getValue();
     }
 
