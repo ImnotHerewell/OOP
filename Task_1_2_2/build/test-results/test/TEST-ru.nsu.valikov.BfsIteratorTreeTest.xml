@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.nsu.valikov.BfsIteratorTreeTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-10-12T04:16:51" hostname="COMPUTER" time="0.04">
-  <properties/>
-  <testcase name="remove()" classname="ru.nsu.valikov.BfsIteratorTreeTest" time="0.035"/>
-  <testcase name="next()" classname="ru.nsu.valikov.BfsIteratorTreeTest" time="0.002"/>
-  <testcase name="hasNext()" classname="ru.nsu.valikov.BfsIteratorTreeTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
