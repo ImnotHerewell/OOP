@@ -26,92 +26,57 @@ public class Graph<E, N> {
     }
 
     /**
-     * Constructor of graph from adjacency matrix.
+     * Constructor for adjacency and incidence matrices.
      *
-     * @param edgeNodeIdentifiers pair of lists with identifiers of edge and node
-     * @param adjacencyMatrix     adjacency matrix with weights
+     * @param edgeIdentifiers - list with edge identifier and its weight
+     * @param nodeIdentifiers - list with node identifier
+     * @param matrix          - adjacency or incidence matrix
+     * @param type            if 0 - incidence else adjacency
      */
-    public Graph(Pair<List<E>, List<N>> edgeNodeIdentifiers,
-                 List<List<Integer>> adjacencyMatrix) {
-        if (edgeNodeIdentifiers.getSecond().size() != adjacencyMatrix.size()) {
+    public Graph(List<Pair<E, Integer>> edgeIdentifiers, List<N> nodeIdentifiers,
+                 List<List<Integer>> matrix, Integer type) {
+        if (nodeIdentifiers.size() != matrix.size()) {
             throw new UnsupportedOperationException("Quantity of nodes in matrix and"
                     + " in list of nodes must be equal.");
         }
-        int matrixEdgeCount = 0;
-        for (List<Integer> list : adjacencyMatrix) {
-            if (list.size() != adjacencyMatrix.size()) {
-                throw new UnsupportedOperationException("Rows and columns must be equal.");
-            }
-            for (Integer weight : list) {
-                if (weight != Integer.MIN_VALUE) {
-                    matrixEdgeCount++;
-                }
-            }
-        }
-        edgeCheck(matrixEdgeCount, edgeNodeIdentifiers.getFirst().size());
         buildMap();
-        Iterator<E> it = edgeNodeIdentifiers.getFirst().listIterator();
-        for (int indexRow = 0; indexRow < adjacencyMatrix.size(); indexRow++) {
-            for (int indexColumn = 0; indexColumn < adjacencyMatrix.get(indexRow).size();
+        Iterator<Pair<E, Integer>> it = null;
+        if (type == 1) {
+            it = edgeIdentifiers.listIterator();
+        }
+        for (int indexRow = 0; indexRow < matrix.size(); indexRow++) {
+            for (int indexColumn = 0; indexColumn < matrix.get(indexRow).size();
                  indexColumn++) {
-                Integer weight = adjacencyMatrix.get(indexRow).get(indexColumn);
-                if (weight != Integer.MIN_VALUE) {
-                    addEdge(it.next(), edgeNodeIdentifiers.getSecond().get(indexRow),
-                            edgeNodeIdentifiers.getSecond().get(indexColumn), weight);
+                Integer edgeCheck = matrix.get(indexRow).get(indexColumn);
+                if (type == 1 && edgeCheck == 1) {
+                    Pair<E, Integer> edgeWeight = it.next();
+                    addEdge(edgeWeight.getFirst(), nodeIdentifiers.get(indexRow),
+                            nodeIdentifiers.get(indexColumn), edgeWeight.getSecond());
+                } else if (type == 0 && edgeCheck != Integer.MIN_VALUE) {
+                    E edgeIdentifier = edgeIdentifiers.get(indexColumn).getFirst();
+                    @SuppressWarnings("unchecked")
+                    N nodeToIdentifier = (N) edgeIdentifiers.get(indexColumn).getSecond();
+                    Integer weight = matrix.get(indexRow).get(indexColumn);
+                    N nodeStartIdentifier = nodeIdentifiers.get(indexRow);
+                    addEdge(edgeIdentifier, nodeStartIdentifier, nodeToIdentifier, weight);
                 }
             }
         }
     }
-
-    /**
-     * Constructor of graph from incidence matrix.
-     *
-     * @param nodeIdentifiers list with node's identifiers
-     * @param edgeAndNodeList list of pairs with identifier of edge, and it's end
-     * @param incidenceMatrix incidence matrix with weights
-     */
-    public Graph(List<N> nodeIdentifiers, List<Pair<E, N>> edgeAndNodeList,
-                 List<List<Integer>> incidenceMatrix) {
-        if (nodeIdentifiers.size() != incidenceMatrix.size()) {
-            throw new UnsupportedOperationException("Quantity of nodes in matrix and"
-                    + " in list of nodes must be equal.");
-        }
-        int matrixEdgeCount = 0;
-        for (List<Integer> list : incidenceMatrix) {
-            if (list.size() != edgeAndNodeList.size()) {
-                throw new UnsupportedOperationException("Wrong matrix.");
-            }
-            for (Integer weight : list) {
-                if (weight != Integer.MIN_VALUE) {
-                    matrixEdgeCount++;
-                }
-            }
-        }
-        System.out.println(incidenceMatrix);
-        edgeCheck(matrixEdgeCount, edgeAndNodeList.size());
-        buildMap();
-        for (int indexRow = 0; indexRow < incidenceMatrix.size(); indexRow++) {
-            for (int indexColumn = 0; indexColumn < incidenceMatrix.get(indexRow).size();
-                 indexColumn++) {
-                Integer weight = incidenceMatrix.get(indexRow).get(indexColumn);
-                if (weight != Integer.MIN_VALUE) {
-                    addEdge(edgeAndNodeList.get(indexColumn).getFirst(),
-                            nodeIdentifiers.get(indexRow),
-                            edgeAndNodeList.get(indexColumn).getSecond(), weight);
-                }
-            }
-        }
-    }
-
 
     /**
      * Constructor of graph from adjacency list.
+     * <p>
+     * <Triple<N, E, Integer>>>
+     * N - node identifier,
+     * E - edge identifier,
+     * Integer - node weight.
      *
      * @param adjacencyList list with nodes,
      *                      and it's triple of adjacency node identifier,
      *                      edge identifier and weight
      */
-    public Graph(List<Pair<N, List<Triple<N, E, Integer>>>> adjacencyList) {
+    public Graph(List<NodeAndListOfAdjacencyEdges<N, List<Triple<N, E, Integer>>>> adjacencyList) {
         buildMap();
         for (Pair<N, List<Triple<N, E, Integer>>> nodeEdge : adjacencyList) {
             N startIdentifier = nodeEdge.getFirst();
@@ -130,11 +95,6 @@ public class Graph<E, N> {
         this.mapOfAllEdges = new HashMap<>();
     }
 
-    private void edgeCheck(int edgeCount, int identifierCount) {
-        if (edgeCount != identifierCount) {
-            throw new UnsupportedOperationException("Wrong matrix.");
-        }
-    }
 
     public HashMap<N, Node<E, N>> getMapOfAllNodes() {
         return mapOfAllNodes;
