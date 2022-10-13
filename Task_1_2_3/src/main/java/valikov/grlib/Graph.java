@@ -66,7 +66,7 @@ public class Graph<E, N> {
 
     /**
      * Constructor of graph from adjacency list.
-     * Triple<N, E, Integer>>
+     * Triple
      * N - node identifier,
      * E - edge identifier,
      * Integer - node weight.
