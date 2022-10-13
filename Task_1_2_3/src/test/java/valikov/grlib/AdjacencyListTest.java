@@ -21,10 +21,10 @@ public class AdjacencyListTest {
         File file = new File("./txt/AdjacencyList.txt");
         Scanner scan = new Scanner(file);
         int nodeCount = scan.nextInt();
-        List<Pair<Integer, List<Triple<Integer, String, Integer>>>> adjacencyList
+        List<NodeAndListOfAdjacencyEdges<Integer, List<Triple<Integer, String, Integer>>>> adjacencyList
                 = new ArrayList<>();
         for (int indexNode = 0; indexNode < nodeCount; indexNode++) {
-            adjacencyList.add(new Pair<>(scan.nextInt(), new ArrayList<>()));
+            adjacencyList.add(new NodeAndListOfAdjacencyEdges<>(scan.nextInt(), new ArrayList<>()));
             int edgeCount = scan.nextInt();
             for (int indexEdge = 0; indexEdge < edgeCount; indexEdge++) {
                 adjacencyList.get(indexNode).getSecond().add(

@@ -40,7 +40,7 @@ public class IncidenceMatrixTest {
                 incidenceMatrix.get(indexRow).set(indexColumn, weight);
             }
         }
-        graph = new Graph<>(nodeIdentifiers, edgeAndNodeList, incidenceMatrix);
+        graph = new Graph<>(edgeAndNodeList, nodeIdentifiers, incidenceMatrix, 0);
     }
 
     @Test
