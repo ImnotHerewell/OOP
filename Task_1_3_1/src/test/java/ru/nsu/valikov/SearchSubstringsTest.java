@@ -7,8 +7,16 @@ import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Default class with tests.
+ */
 class SearchSubstringsTest {
 
+    /**
+     * Random test with 12 kb file.
+     *
+     * @throws IOException if file doesn't exist
+     */
     @Test
     void twelveKbTest() throws IOException {
         File file = new File("./src/test/java/resources/12kb.txt");
@@ -23,6 +31,11 @@ class SearchSubstringsTest {
         Assertions.assertEquals(expectedList, testList);
     }
 
+    /**
+     * Test with empty file.
+     *
+     * @throws IOException if file doesn't exist
+     */
     @Test
     void emptyFileTest() throws IOException {
         File file = new File("./src/test/java/resources/empty.txt");
@@ -31,6 +44,11 @@ class SearchSubstringsTest {
         Assertions.assertEquals(expectedList, testList);
     }
 
+    /**
+     * Test with empty pattern-substring.
+     *
+     * @throws IOException if file doesn't exist
+     */
     @Test
     void emptyPatternTest() throws IOException {
         File file = new File("./src/test/java/resources/12kb.txt");
@@ -39,6 +57,11 @@ class SearchSubstringsTest {
         Assertions.assertEquals(expectedList, testList);
     }
 
+    /**
+     * Random test with 10 mb file.
+     *
+     * @throws IOException if file doesn't exist
+     */
     @Test
     void tenMbTest() throws IOException {
         File file = new File("./src/test/java/resources/10mb.txt");
@@ -48,6 +71,11 @@ class SearchSubstringsTest {
         Assertions.assertEquals(expectedList, testList);
     }
 
+    /**
+     * Random test with 23 kb file.
+     *
+     * @throws IOException if file doesn't exist
+     */
     @Test
     void twentyThreeKbTest() throws IOException {
         File file = new File("./src/test/java/resources/23kb.txt");
