@@ -21,14 +21,12 @@ class SearchSubstringsTest {
     void twelveKbTest() throws IOException {
         File file = new File("./src/test/java/resources/12kb.txt");
         List<Integer> expectedList = new ArrayList<>();
-        expectedList.add(0);
-        expectedList.add(7);
-//        expectedList.add(3937);
-//        expectedList.add(4962);
-//        expectedList.add(7631);
-//        expectedList.add(8680);
-//        expectedList.add(10180);
-//        expectedList.add(10763);
+        expectedList.add(3937);
+        expectedList.add(4962);
+        expectedList.add(7631);
+        expectedList.add(8680);
+        expectedList.add(10180);
+        expectedList.add(10763);
         List<Integer> testList = new SearchSubstrings(file, "Podrick").getResult();
         Assertions.assertEquals(expectedList, testList);
     }
