@@ -56,8 +56,8 @@ public class SearchSubstrings {
             zlist[indexI] = Math.max(0, Math.min(lengthR - indexI, zlist[indexI - lengthL]));
             while (zlist[indexI] < lengthOfNeededString
                     && indexI + zlist[indexI] < inputString.length()
-                    && patternString.charAt(zlist[indexI]) ==
-                    inputString.charAt(indexI + zlist[indexI])) {
+                    && patternString.charAt(zlist[indexI])
+                    == inputString.charAt(indexI + zlist[indexI])) {
                 zlist[indexI]++;
             }
             if (indexI + zlist[indexI] > lengthR) {
