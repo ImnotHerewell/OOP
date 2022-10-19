@@ -3,7 +3,7 @@ package valikov.grlib;
 import java.util.ArrayList;
 import java.util.List;
 
-class Node<E, N> {
+public class Node<E, N> {
     private N identifier;
     private final List<Edge<E, N>> listOfEdges;
 

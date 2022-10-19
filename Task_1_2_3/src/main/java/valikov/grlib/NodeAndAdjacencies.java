@@ -25,10 +25,16 @@ public class NodeAndAdjacencies<E, N> {
     public void add(NodeEdgeWeight<E, N> noew) {
         adjacencyNodes.add(noew);
     }
-    public record NodeEdgeWeight<E, N>(N node, E edge, Integer weight){
-        public static void main(String[] args) {
-            ;
-        }
-    }
 }
 
+/**
+ * Record for adjacency node, its edge and edge's weight.
+ *
+ * @param node   node's identifier.
+ * @param edge   edge's identifier.
+ * @param weight edge's weight.
+ * @param <E>    edge's identifier type.
+ * @param <N>    node's identifier type.
+ */
+record NodeEdgeWeight<E, N>(N node, E edge, Integer weight) {
+}

@@ -1,4 +1,4 @@
-package valikov.grlib;
+package valikov.grlib.representation;
 
 import java.util.ArrayList;
 import java.util.List;

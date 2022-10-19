@@ -12,20 +12,21 @@ import java.util.Scanner;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import valikov.grlib.representation.Matrix;
 
 /**
  * Test with incidence matrix graph representation.
  */
 public class IncidenceMatrixTest {
-    private Graph<String, Integer> graph;
+    private DefaultGraph<String, Integer> graph;
 
     @BeforeEach
     void readIncidenceMatrix() {
         String fileName = "./txt/IncidenceMatrix.txt";
         ClassLoader classLoader = getClass().getClassLoader();
         try (InputStream inputStream = classLoader.getResourceAsStream(fileName);
-             InputStreamReader streamReader = new InputStreamReader
-                     (Objects.requireNonNull(inputStream), StandardCharsets.UTF_8);
+             InputStreamReader streamReader = new InputStreamReader(
+                     Objects.requireNonNull(inputStream), StandardCharsets.UTF_8);
              BufferedReader reader = new BufferedReader(streamReader);
              Scanner scan = new Scanner(reader)) {
             int nodeCount = scan.nextInt();
@@ -45,7 +46,7 @@ public class IncidenceMatrixTest {
                     incidenceMatrix.set(indexRow, indexColumn, weight);
                 }
             }
-            graph = new Graph<>(edgeAndNodeList, nodeIdentifiers, incidenceMatrix, 0);
+            graph = new DefaultGraph<>(edgeAndNodeList, nodeIdentifiers, incidenceMatrix, 0);
         } catch (IOException e) {
             e.printStackTrace();
         }
