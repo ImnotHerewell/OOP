@@ -26,7 +26,8 @@ public class AdjacencyMatrixTest {
         String fileName = "./txt/AdjacencyMatrix.txt";
         ClassLoader classLoader = getClass().getClassLoader();
         try (InputStream inputStream = classLoader.getResourceAsStream(fileName);
-             InputStreamReader streamReader = new InputStreamReader(Objects.requireNonNull(inputStream), StandardCharsets.UTF_8);
+             InputStreamReader streamReader = new InputStreamReader
+                     (Objects.requireNonNull(inputStream), StandardCharsets.UTF_8);
              BufferedReader reader = new BufferedReader(streamReader);
              Scanner scan = new Scanner(reader)) {
             int nodeCount = scan.nextInt();
@@ -34,7 +35,7 @@ public class AdjacencyMatrixTest {
             EdgesAndTos<String, Integer> edgeIdentifiers =
                     new EdgesAndTos<>();
             List<Integer> nodeIdentifiers = new ArrayList<>();
-            Matrix adjacencyMatrix = new Matrix(nodeCount,edgeCount);
+            Matrix adjacencyMatrix = new Matrix(nodeCount, edgeCount);
             for (int indexNode = 0; indexNode < nodeCount; indexNode++) {
                 nodeIdentifiers.add(scan.nextInt());
             }

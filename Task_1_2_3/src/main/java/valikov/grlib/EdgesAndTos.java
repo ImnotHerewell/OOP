@@ -9,7 +9,8 @@ class EdgesAndTos<E, N> {
     public void add(E identifier, N to) {
         list.add(new EdgeTo<>(identifier, to));
     }
-    public EdgeTo<E, N> get(Integer index){
+
+    public EdgeTo<E, N> get(Integer index) {
         return list.get(index);
     }
 }

@@ -24,7 +24,8 @@ public class IncidenceMatrixTest {
         String fileName = "./txt/IncidenceMatrix.txt";
         ClassLoader classLoader = getClass().getClassLoader();
         try (InputStream inputStream = classLoader.getResourceAsStream(fileName);
-             InputStreamReader streamReader = new InputStreamReader(Objects.requireNonNull(inputStream), StandardCharsets.UTF_8);
+             InputStreamReader streamReader = new InputStreamReader
+                     (Objects.requireNonNull(inputStream), StandardCharsets.UTF_8);
              BufferedReader reader = new BufferedReader(streamReader);
              Scanner scan = new Scanner(reader)) {
             int nodeCount = scan.nextInt();

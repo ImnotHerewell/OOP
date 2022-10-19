@@ -23,7 +23,8 @@ public class AdjacencyListTest {
         String fileName = "./txt/AdjacencyList.txt";
         ClassLoader classLoader = getClass().getClassLoader();
         try (InputStream inputStream = classLoader.getResourceAsStream(fileName);
-             InputStreamReader streamReader = new InputStreamReader(Objects.requireNonNull(inputStream), StandardCharsets.UTF_8);
+             InputStreamReader streamReader = new InputStreamReader
+                     (Objects.requireNonNull(inputStream), StandardCharsets.UTF_8);
              BufferedReader reader = new BufferedReader(streamReader);
              Scanner scan = new Scanner(reader)) {
             int nodeCount = scan.nextInt();
@@ -32,9 +33,11 @@ public class AdjacencyListTest {
             for (int indexNode = 0; indexNode < nodeCount; indexNode++) {
                 Integer startNode = scan.nextInt();
                 int edgeCount = scan.nextInt();
-                NodeAndAdjacencies<String, Integer> adjacencies = new NodeAndAdjacencies<>(startNode);
+                NodeAndAdjacencies<String, Integer> adjacencies
+                        = new NodeAndAdjacencies<>(startNode);
                 for (int indexEdge = 0; indexEdge < edgeCount; indexEdge++) {
-                    NodeEdgeWeight<String, Integer> noew = new NodeEdgeWeight<>(scan.nextInt(), scan.next(), scan.nextInt());
+                    NodeAndAdjacencies.NodeEdgeWeight<String, Integer> noew = new NodeAndAdjacencies.NodeEdgeWeight<>(scan.nextInt(),
+                            scan.next(), scan.nextInt());
                     adjacencies.add(noew);
                 }
                 adjacencyList.addEdge(startNode, adjacencies);
