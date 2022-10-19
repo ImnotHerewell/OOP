@@ -13,21 +13,22 @@ import java.util.Scanner;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import valikov.grlib.representation.Matrix;
 
 /**
  * Test with adjacency matrix graph representation.
  */
 public class AdjacencyMatrixTest {
 
-    private Graph<String, Integer> graph;
+    private DefaultGraph<String, Integer> graph;
 
     @BeforeEach
     void readAdjacencyMatrix() {
         String fileName = "./txt/AdjacencyMatrix.txt";
         ClassLoader classLoader = getClass().getClassLoader();
         try (InputStream inputStream = classLoader.getResourceAsStream(fileName);
-             InputStreamReader streamReader = new InputStreamReader
-                     (Objects.requireNonNull(inputStream), StandardCharsets.UTF_8);
+             InputStreamReader streamReader = new InputStreamReader(
+                     Objects.requireNonNull(inputStream), StandardCharsets.UTF_8);
              BufferedReader reader = new BufferedReader(streamReader);
              Scanner scan = new Scanner(reader)) {
             int nodeCount = scan.nextInt();
@@ -47,7 +48,7 @@ public class AdjacencyMatrixTest {
                     adjacencyMatrix.set(indexRow, indexColumn, scan.nextInt());
                 }
             }
-            graph = new Graph<>(edgeIdentifiers, nodeIdentifiers, adjacencyMatrix, 1);
+            graph = new DefaultGraph<>(edgeIdentifiers, nodeIdentifiers, adjacencyMatrix, 1);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -72,7 +73,7 @@ public class AdjacencyMatrixTest {
         graph.removeNode(3);
         graph.removeNode(2);
         graph.removeNode(1);
-        Graph<String, Integer> secondGraph = new Graph<>();
+        DefaultGraph<String, Integer> secondGraph = new DefaultGraph<>();
         Assertions.assertEquals(secondGraph, graph);
     }
 

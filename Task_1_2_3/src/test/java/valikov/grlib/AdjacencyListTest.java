@@ -11,20 +11,21 @@ import java.util.Scanner;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import valikov.grlib.representation.AdjacencyList;
 
 /**
  * Test with adjacency list graph representation.
  */
 public class AdjacencyListTest {
-    private Graph<String, Integer> graph;
+    private DefaultGraph<String, Integer> graph;
 
     @BeforeEach
     void readAdjacencyList() {
         String fileName = "./txt/AdjacencyList.txt";
         ClassLoader classLoader = getClass().getClassLoader();
         try (InputStream inputStream = classLoader.getResourceAsStream(fileName);
-             InputStreamReader streamReader = new InputStreamReader
-                     (Objects.requireNonNull(inputStream), StandardCharsets.UTF_8);
+             InputStreamReader streamReader = new InputStreamReader(
+                     Objects.requireNonNull(inputStream), StandardCharsets.UTF_8);
              BufferedReader reader = new BufferedReader(streamReader);
              Scanner scan = new Scanner(reader)) {
             int nodeCount = scan.nextInt();
@@ -36,13 +37,13 @@ public class AdjacencyListTest {
                 NodeAndAdjacencies<String, Integer> adjacencies
                         = new NodeAndAdjacencies<>(startNode);
                 for (int indexEdge = 0; indexEdge < edgeCount; indexEdge++) {
-                    NodeAndAdjacencies.NodeEdgeWeight<String, Integer> noew = new NodeAndAdjacencies.NodeEdgeWeight<>(scan.nextInt(),
-                            scan.next(), scan.nextInt());
+                    NodeEdgeWeight<String, Integer> noew
+                            = new NodeEdgeWeight<>(scan.nextInt(), scan.next(), scan.nextInt());
                     adjacencies.add(noew);
                 }
                 adjacencyList.addEdge(startNode, adjacencies);
             }
-            graph = new Graph<>(adjacencyList);
+            graph = new DefaultGraph<>(adjacencyList);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -77,7 +78,7 @@ public class AdjacencyListTest {
         graph.removeEdge("h");
         graph.removeEdge("i");
         graph.removeEdge("j");
-        Graph<String, Integer> secondGraph = new Graph<>();
+        DefaultGraph<String, Integer> secondGraph = new DefaultGraph<>();
         secondGraph.addNode(1);
         secondGraph.addNode(2);
         secondGraph.addNode(3);
