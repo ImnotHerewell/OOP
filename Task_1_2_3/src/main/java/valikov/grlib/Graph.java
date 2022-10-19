@@ -9,6 +9,10 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.SortedSet;
 import java.util.TreeSet;
+import valikov.grlib.records.EdgeTo;
+import valikov.grlib.records.NodeValue;
+import valikov.grlib.representation.AdjacencyList;
+import valikov.grlib.representation.Matrix;
 
 /**
  * Graph is a structure amounting to a set of objects in which some pairs of
@@ -18,72 +22,36 @@ import java.util.TreeSet;
  * @param <N> Node's object (identifier)
  */
 public class Graph<E, N> {
-    private HashMap<N, Node<E, N>> mapOfAllNodes;
-    private HashMap<E, Edge<E, N>> mapOfAllEdges;
+    private Map<N, Node<E, N>> mapOfAllNodes;
+    private Map<E, Edge<E, N>> mapOfAllEdges;
 
     public Graph() {
         buildMap();
     }
 
-    /**
-     * Constructor for adjacency and incidence matrices.
-     *
-     * @param edgeIdentifiers - list with edge identifier and its weight
-     * @param nodeIdentifiers - list with node identifier
-     * @param matrix          - adjacency or incidence matrix
-     * @param type            if 0 - incidence else adjacency
-     */
-    public Graph(List<Pair<E, Integer>> edgeIdentifiers, List<N> nodeIdentifiers,
-                 List<List<Integer>> matrix, Integer type) {
-        if (nodeIdentifiers.size() != matrix.size()) {
-            throw new UnsupportedOperationException("Quantity of nodes in matrix and"
-                    + " in list of nodes must be equal.");
+    public Graph(EdgesAndTos<E, N> edges, List<N> nodes,
+                 Matrix matrix, Integer type) {
+        if (nodes.size() != matrix.matrixRowCount()) {
+            throw new UnsupportedOperationException();
         }
         buildMap();
-        Iterator<Pair<E, Integer>> it = null;
-        if (type == 1) {
-            it = edgeIdentifiers.listIterator();
-        }
-        for (int indexRow = 0; indexRow < matrix.size(); indexRow++) {
-            for (int indexColumn = 0; indexColumn < matrix.get(indexRow).size();
+        Iterator<EdgeTo<E, N>> edgeIterator = type == 1 ? edges.list.iterator() : null;
+        for (int indexRow = 0; indexRow < matrix.matrixRowCount(); indexRow++) {
+            for (int indexColumn = 0; indexColumn < matrix.matrixColumnCount();
                  indexColumn++) {
-                Integer edgeCheck = matrix.get(indexRow).get(indexColumn);
-                if (type == 1 && edgeCheck == 1) {
-                    Pair<E, Integer> edgeWeight = it.next();
-                    addEdge(edgeWeight.getFirst(), nodeIdentifiers.get(indexRow),
-                            nodeIdentifiers.get(indexColumn), edgeWeight.getSecond());
-                } else if (type == 0 && edgeCheck != Integer.MIN_VALUE) {
-                    E edgeIdentifier = edgeIdentifiers.get(indexColumn).getFirst();
-                    @SuppressWarnings("unchecked")
-                    N nodeToIdentifier = (N) edgeIdentifiers.get(indexColumn).getSecond();
-                    Integer weight = matrix.get(indexRow).get(indexColumn);
-                    N nodeStartIdentifier = nodeIdentifiers.get(indexRow);
-                    addEdge(edgeIdentifier, nodeStartIdentifier, nodeToIdentifier, weight);
-                }
+                addInMatrix(matrix, indexRow, indexColumn, nodes, edges, type, edgeIterator);
             }
         }
     }
 
-    /**
-     * Constructor of graph from adjacency list.
-     * Triple
-     * N - node identifier,
-     * E - edge identifier,
-     * Integer - node weight.
-     *
-     * @param adjacencyList list with nodes,
-     *                      and it's triple of adjacency node identifier,
-     *                      edge identifier and weight
-     */
-    public Graph(List<NodeAndListOfAdjacencyEdges<N, List<Triple<N, E, Integer>>>> adjacencyList) {
+    public Graph(AdjacencyList<E, N> adjacencyList) {
         buildMap();
-        for (Pair<N, List<Triple<N, E, Integer>>> nodeEdge : adjacencyList) {
-            N startIdentifier = nodeEdge.getFirst();
-            for (Triple<N, E, Integer> edge : nodeEdge.getSecond()) {
-                E edgeIdentifier = edge.getSecond();
-                N nodeIdentifier = edge.getFirst();
-                Integer weight = edge.getThird();
-                addEdge(edgeIdentifier, startIdentifier, nodeIdentifier, weight);
+        for (var nodeEdges : adjacencyList.getMap().keySet()) {
+            for (var edge : adjacencyList.getMap().get(nodeEdges).getAdjacencyNodes()) {
+                E edgeIdentifier = edge.edge();
+                N nodeIdentifier = edge.node();
+                Integer weight = edge.weight();
+                addEdge(edgeIdentifier, nodeEdges, nodeIdentifier, weight);
             }
         }
     }
@@ -94,12 +62,58 @@ public class Graph<E, N> {
         this.mapOfAllEdges = new HashMap<>();
     }
 
+    private void addInMatrix(Matrix matrix, Integer indexRow, Integer indexColumn,
+                             List<N> nodes, EdgesAndTos<E, N> edges, Integer type,
+                             Iterator<EdgeTo<E, N>> edgeIterator) {
+        Integer edgeCheck = matrix.get(indexRow, indexColumn);
+        N nodeToIdentifier;
+        N nodeStartIdentifier = nodes.get(indexRow);
+        if (type == 1 && edgeCheck == 1) {
+            EdgeTo<E, N> edgeTo = edgeIterator.next();
+            nodeToIdentifier = nodes.get(indexColumn);
+            addEdge(edgeTo.edge(), nodeStartIdentifier,
+                    nodeToIdentifier, (Integer) edgeTo.to());
+        } else if (type == 0 && edgeCheck != Integer.MIN_VALUE) {
+            E edgeIdentifier = edges.get(indexColumn).edge();
+            nodeToIdentifier = edges.get(indexColumn).to();
+            addEdge(edgeIdentifier, nodeStartIdentifier, nodeToIdentifier, edgeCheck);
+        }
+    }
 
-    public HashMap<N, Node<E, N>> getMapOfAllNodes() {
+    private void dijkstraInit(Map<Node<E, N>, Integer> mapWeights,
+                              SortedSet<NodeValue<N>> set,
+                              NodeValue<N> root) {
+        for (var hashNode : mapOfAllNodes.entrySet()) {
+            mapWeights.put(hashNode.getValue(), Integer.MAX_VALUE);
+        }
+        mapWeights.replace(mapOfAllNodes.get(root.first()), 0);
+        set.add(root);
+    }
+
+    private void dijkstraStep(Node<E, N> minNode,
+                              Map<Node<E, N>, Integer> mapWeights,
+                              SortedSet<NodeValue<N>> set) {
+        set.remove(set.first());
+        for (var edge : minNode.getListOfEdges()) {
+            Node<E, N> to = edge.getEnd();
+            int weight = edge.getWeight();
+            if (mapWeights.get(minNode) + weight < mapWeights.get(to)) {
+                NodeValue<N> toNodeValue =
+                        new NodeValue<>(to.getIdentifier(), mapWeights.get(to));
+                set.remove(toNodeValue);
+                toNodeValue = new NodeValue<>(toNodeValue.first(), mapWeights.get(minNode) + weight);
+                mapWeights.replace(to, toNodeValue.second());
+                set.add(toNodeValue);
+            }
+        }
+    }
+
+
+    public Map<N, Node<E, N>> getMapOfAllNodes() {
         return mapOfAllNodes;
     }
 
-    public HashMap<E, Edge<E, N>> getMapOfAllEdges() {
+    public Map<E, Edge<E, N>> getMapOfAllEdges() {
         return mapOfAllEdges;
     }
 
@@ -307,40 +321,24 @@ public class Graph<E, N> {
      * @param identifier node's identifier, where algorithm starts working
      * @return list with node and it's minimal weights path
      */
-    public List<NodeValue<Node<E, N>>> dijkstra(N identifier) {
-        for (Map.Entry<E, Edge<E, N>> hashEdge : mapOfAllEdges.entrySet()) {
+    public List<NodeValue<N>> dijkstraAlgo(N identifier) {
+        for (var hashEdge : mapOfAllEdges.entrySet()) {
             if (hashEdge.getValue().getWeight() < 0) {
                 throw new UnsupportedOperationException("Edges with negative weights"
                         + " are not supported.");
             }
         }
-        HashMap<Node<E, N>, Integer> mapWeights = new HashMap<>();
-        for (Map.Entry<N, Node<E, N>> hashNode : mapOfAllNodes.entrySet()) {
-            mapWeights.put(hashNode.getValue(), Integer.MAX_VALUE);
-        }
-        SortedSet<NodeValue<Node<E, N>>> set = new TreeSet<>();
-        NodeValue<Node<E, N>> root = new NodeValue<>(getNode(identifier), 0);
-        mapWeights.replace(root.getFirst(), 0);
-        set.add(root);
+        Map<Node<E, N>, Integer> mapWeights = new HashMap<>();
+        SortedSet<NodeValue<N>> set = new TreeSet<>();
+        NodeValue<N> root = new NodeValue<>(getNode(identifier).getIdentifier(), 0);
+        dijkstraInit(mapWeights, set, root);
         while (!set.isEmpty()) {
-            Node<E, N> minNode = set.first().getFirst();
-            set.remove(set.first());
-            for (Edge<E, N> edge : minNode.getListOfEdges()) {
-                Node<E, N> to = edge.getEnd();
-                int weight = edge.getWeight();
-                if (mapWeights.get(minNode) + weight < mapWeights.get(to)) {
-                    NodeValue<Node<E, N>> toNodeValue =
-                            new NodeValue<>(to, mapWeights.get(to));
-                    set.remove(toNodeValue);
-                    toNodeValue.setSecond(mapWeights.get(minNode) + weight);
-                    mapWeights.replace(to, toNodeValue.getSecond());
-                    set.add(toNodeValue);
-                }
-            }
+            Node<E, N> minNode = mapOfAllNodes.get(set.first().first());
+            dijkstraStep(minNode, mapWeights, set);
         }
-        List<NodeValue<Node<E, N>>> listRes = new ArrayList<>();
-        for (Map.Entry<Node<E, N>, Integer> hashNode : mapWeights.entrySet()) {
-            listRes.add(new NodeValue<>(hashNode.getKey(), hashNode.getValue()));
+        List<NodeValue<N>> listRes = new ArrayList<>();
+        for (var hashNode : mapWeights.entrySet()) {
+            listRes.add(new NodeValue<>(hashNode.getKey().getIdentifier(), hashNode.getValue()));
         }
         Collections.sort(listRes);
         return listRes;
@@ -363,4 +361,5 @@ public class Graph<E, N> {
     public int hashCode() {
         return Objects.hash(mapOfAllNodes, mapOfAllEdges);
     }
+
 }

@@ -1,14 +1,18 @@
 package valikov.grlib;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
-import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import valikov.grlib.records.NodeEdgeWeight;
+import valikov.grlib.representation.AdjacencyList;
 
 /**
  * Test with adjacency list graph representation.
@@ -17,22 +21,30 @@ public class AdjacencyListTest {
     private Graph<String, Integer> graph;
 
     @BeforeEach
-    void readAdjacencyList() throws FileNotFoundException {
-        File file = new File("./txt/AdjacencyList.txt");
-        Scanner scan = new Scanner(file);
-        int nodeCount = scan.nextInt();
-        List<NodeAndListOfAdjacencyEdges<Integer,
-                List<Triple<Integer, String, Integer>>>> adjacencyList
-                = new ArrayList<>();
-        for (int indexNode = 0; indexNode < nodeCount; indexNode++) {
-            adjacencyList.add(new NodeAndListOfAdjacencyEdges<>(scan.nextInt(), new ArrayList<>()));
-            int edgeCount = scan.nextInt();
-            for (int indexEdge = 0; indexEdge < edgeCount; indexEdge++) {
-                adjacencyList.get(indexNode).getSecond().add(
-                        new Triple<>(scan.nextInt(), scan.next(), scan.nextInt()));
+    void readAdjacencyList() {
+        String fileName = "./txt/AdjacencyList.txt";
+        ClassLoader classLoader = getClass().getClassLoader();
+        try (InputStream inputStream = classLoader.getResourceAsStream(fileName);
+             InputStreamReader streamReader = new InputStreamReader(Objects.requireNonNull(inputStream), StandardCharsets.UTF_8);
+             BufferedReader reader = new BufferedReader(streamReader);
+             Scanner scan = new Scanner(reader)) {
+            int nodeCount = scan.nextInt();
+            AdjacencyList<String, Integer> adjacencyList
+                    = new AdjacencyList<>();
+            for (int indexNode = 0; indexNode < nodeCount; indexNode++) {
+                Integer startNode = scan.nextInt();
+                int edgeCount = scan.nextInt();
+                NodeAndAdjacencies<String, Integer> adjacencies = new NodeAndAdjacencies<>(startNode);
+                for (int indexEdge = 0; indexEdge < edgeCount; indexEdge++) {
+                    NodeEdgeWeight<String, Integer> noew = new NodeEdgeWeight<>(scan.nextInt(), scan.next(), scan.nextInt());
+                    adjacencies.add(noew);
+                }
+                adjacencyList.addEdge(startNode, adjacencies);
             }
+            graph = new Graph<>(adjacencyList);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        graph = new Graph<>(adjacencyList);
     }
 
     @Test
@@ -44,9 +56,8 @@ public class AdjacencyListTest {
 
     @Test
     void addEdge() {
-        @SuppressWarnings("unchecked")
         HashMap<String, Edge<String, Integer>> expEdgeMap = (HashMap<String,
-                Edge<String, Integer>>) graph.getMapOfAllEdges().clone();
+                Edge<String, Integer>>) graph.getMapOfAllEdges();
         graph.addEdge("k", 1, 2, 0);
         expEdgeMap.put("k", new Edge<>("k", graph.getNode(1),
                 graph.getNode(2), 0));
