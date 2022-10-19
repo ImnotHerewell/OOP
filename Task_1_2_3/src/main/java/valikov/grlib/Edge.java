@@ -46,13 +46,6 @@ class Edge<E, N> {
         return weight;
     }
 
-    void delete() {
-        setIdentifier(null);
-        setStart(null);
-        setEnd(null);
-        setWeight(null);
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {

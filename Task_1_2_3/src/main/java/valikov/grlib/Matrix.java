@@ -1,6 +1,5 @@
 package valikov.grlib;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -21,7 +20,7 @@ public class Matrix {
         this.listOfLists = listOfLists;
     }
 
-    public void init(Scanner scanner, Integer nodeCount, Integer edgeCount) throws IOException {
+    public void init(Scanner scanner, Integer nodeCount, Integer edgeCount) {
         for (int indexRow = 0; indexRow < nodeCount; indexRow++) {
             for (int indexColumn = 0; indexColumn < edgeCount; indexColumn++) {
                 Integer value = scanner.nextInt();
