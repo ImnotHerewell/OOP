@@ -25,7 +25,10 @@ public class NodeAndAdjacencies<E, N> {
     public void add(NodeEdgeWeight<E, N> noew) {
         adjacencyNodes.add(noew);
     }
-    public record NodeEdgeWeight<E, N>(N node, E edge, Integer weight) {
+    public record NodeEdgeWeight<E, N>(N node, E edge, Integer weight){
+        public static void main(String[] args) {
+            ;
+        }
     }
 }
 
