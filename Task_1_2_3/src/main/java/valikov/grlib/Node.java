@@ -5,7 +5,7 @@ import java.util.List;
 
 class Node<E, N> {
     private N identifier;
-    private List<Edge<E, N>> listOfEdges;
+    private final List<Edge<E, N>> listOfEdges;
 
     Node(N identifier) {
         listOfEdges = new ArrayList<>();
