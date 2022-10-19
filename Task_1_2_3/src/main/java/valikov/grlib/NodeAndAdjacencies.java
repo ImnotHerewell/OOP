@@ -7,9 +7,9 @@ public class NodeAndAdjacencies<E, N> {
     private N currentNode;
     private List<NodeEdgeWeight<E, N>> adjacencyNodes;
 
-    NodeAndAdjacencies(N currentNode){
-        this.currentNode=currentNode;
-        adjacencyNodes=new ArrayList<>();
+    NodeAndAdjacencies(N currentNode) {
+        this.currentNode = currentNode;
+        adjacencyNodes = new ArrayList<>();
     }
 
     public N getCurrentNode() {
@@ -19,7 +19,11 @@ public class NodeAndAdjacencies<E, N> {
     public List<NodeEdgeWeight<E, N>> getAdjacencyNodes() {
         return adjacencyNodes;
     }
-    public void add(NodeEdgeWeight<E, N> noew){
+
+    public void add(NodeEdgeWeight<E, N> noew) {
         adjacencyNodes.add(noew);
     }
+}
+
+record NodeEdgeWeight<E, N>(N node, E edge, Integer weight) {
 }
