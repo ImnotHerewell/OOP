@@ -12,8 +12,6 @@ import java.util.Scanner;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import valikov.grlib.records.NodeValue;
-import valikov.grlib.representation.Matrix;
 
 /**
  * Test with incidence matrix graph representation.

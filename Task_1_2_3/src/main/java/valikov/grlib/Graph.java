@@ -9,10 +9,6 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.SortedSet;
 import java.util.TreeSet;
-import valikov.grlib.records.EdgeTo;
-import valikov.grlib.records.NodeValue;
-import valikov.grlib.representation.AdjacencyList;
-import valikov.grlib.representation.Matrix;
 
 /**
  * Graph is a structure amounting to a set of objects in which some pairs of

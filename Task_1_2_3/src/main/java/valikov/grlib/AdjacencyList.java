@@ -1,8 +1,7 @@
-package valikov.grlib.representation;
+package valikov.grlib;
 
 import java.util.HashMap;
 import java.util.Map;
-import valikov.grlib.NodeAndAdjacencies;
 
 public class AdjacencyList<E, N> {
     private final Map<N, NodeAndAdjacencies<E, N>> map=new HashMap<>();

@@ -2,7 +2,6 @@ package valikov.grlib;
 
 import java.util.ArrayList;
 import java.util.List;
-import valikov.grlib.records.NodeEdgeWeight;
 
 public class NodeAndAdjacencies<E, N> {
     private N currentNode;
