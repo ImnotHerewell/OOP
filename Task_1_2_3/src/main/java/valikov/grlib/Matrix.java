@@ -1,4 +1,4 @@
-package valikov.grlib.representation;
+package valikov.grlib;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Matrix {
     private List<List<Integer>> listOfLists = new ArrayList<>();
 
-    public Matrix(int rowCount, int columnCount) {
+    Matrix(int rowCount, int columnCount) {
         for (int indexRow = 0; indexRow < rowCount; indexRow++) {
             listOfLists.add(new ArrayList<>());
             for (int indexColumn = 0; indexColumn < columnCount; indexColumn++) {

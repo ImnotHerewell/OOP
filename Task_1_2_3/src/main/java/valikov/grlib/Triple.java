@@ -1,4 +1,4 @@
-package valikov.grlib.records;
+package valikov.grlib;
 
 /**
  * Class for adjacency list representation.

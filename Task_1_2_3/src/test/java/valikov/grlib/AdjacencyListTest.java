@@ -11,8 +11,6 @@ import java.util.Scanner;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import valikov.grlib.records.NodeEdgeWeight;
-import valikov.grlib.representation.AdjacencyList;
 
 /**
  * Test with adjacency list graph representation.
