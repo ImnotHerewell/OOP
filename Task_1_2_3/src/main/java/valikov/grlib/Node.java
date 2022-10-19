@@ -3,6 +3,12 @@ package valikov.grlib;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Node class for Graph.
+ *
+ * @param <E> edge's identifier.
+ * @param <N> node's identifier.
+ */
 public class Node<E, N> {
     private N identifier;
     private final List<Edge<E, N>> listOfEdges;

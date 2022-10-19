@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Matrix class for graph.
+ */
 public class Matrix {
     private List<List<Integer>> listOfLists = new ArrayList<>();
 
@@ -20,6 +23,13 @@ public class Matrix {
         this.listOfLists = listOfLists;
     }
 
+    /**
+     * Matrix's initialization.
+     *
+     * @param scanner   from where we should read data.
+     * @param nodeCount node's count in graph.
+     * @param edgeCount edge's count in graph.
+     */
     public void init(Scanner scanner, Integer nodeCount, Integer edgeCount) {
         for (int indexRow = 0; indexRow < nodeCount; indexRow++) {
             for (int indexColumn = 0; indexColumn < edgeCount; indexColumn++) {
