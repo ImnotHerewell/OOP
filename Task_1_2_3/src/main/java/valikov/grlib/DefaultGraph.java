@@ -31,10 +31,10 @@ public class DefaultGraph<E, N> implements Graph<E, N> {
     /**
      * Constructor for matrices.
      *
-     * @param edges list of edges.
-     * @param nodes list of nodes.
+     * @param edges  list of edges.
+     * @param nodes  list of nodes.
      * @param matrix adjacency or incidence matrix.
-     * @param type flag to determine is it adjacency or incidence type.
+     * @param type   flag to determine is it adjacency or incidence type.
      */
     public DefaultGraph(EdgesAndTos<E, N> edges, List<N> nodes,
                         Matrix matrix, Integer type) {
@@ -50,6 +50,11 @@ public class DefaultGraph<E, N> implements Graph<E, N> {
         }
     }
 
+    /**
+     * Constructor for lists.
+     *
+     * @param adjacencyList https://en.wikipedia.org/wiki/Adjacency_list.
+     */
     public DefaultGraph(AdjacencyList<E, N> adjacencyList) {
         for (var nodeEdges : adjacencyList.getMap().keySet()) {
             for (var edge : adjacencyList.getMap().get(nodeEdges).getAdjacencyNodes()) {
