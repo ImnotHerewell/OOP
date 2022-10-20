@@ -12,6 +12,11 @@ import java.util.Scanner;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import valikov.grlib.defgraph.DefaultGraph;
+import valikov.grlib.defgraph.NodeValue;
+import valikov.grlib.intgraph.Edge;
+import valikov.grlib.intgraph.EdgesAndTos;
+import valikov.grlib.intgraph.Node;
 import valikov.grlib.representation.Matrix;
 
 /**

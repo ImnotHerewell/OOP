@@ -1,7 +1,8 @@
-package valikov.grlib;
+package valikov.grlib.intgraph;
 
 import java.util.ArrayList;
 import java.util.List;
+import valikov.grlib.intgraph.NodeEdgeWeight;
 
 /**
  * Node and its adjacency nodes.
@@ -13,7 +14,7 @@ public class NodeAndAdjacencies<E, N> {
     private final N currentNode;
     private final List<NodeEdgeWeight<E, N>> adjacencyNodes;
 
-    NodeAndAdjacencies(N currentNode) {
+    public NodeAndAdjacencies(N currentNode) {
         this.currentNode = currentNode;
         adjacencyNodes = new ArrayList<>();
     }
@@ -27,14 +28,3 @@ public class NodeAndAdjacencies<E, N> {
     }
 }
 
-/**
- * Record for adjacency node, its edge and edge's weight.
- *
- * @param node   node's identifier.
- * @param edge   edge's identifier.
- * @param weight edge's weight.
- * @param <E>    edge's identifier type.
- * @param <N>    node's identifier type.
- */
-record NodeEdgeWeight<E, N>(N node, E edge, Integer weight) {
-}

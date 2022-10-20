@@ -1,4 +1,4 @@
-package valikov.grlib;
+package valikov.grlib.defgraph;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -9,6 +9,10 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.SortedSet;
 import java.util.TreeSet;
+import valikov.grlib.intgraph.Edge;
+import valikov.grlib.intgraph.EdgesAndTos;
+import valikov.grlib.intgraph.Graph;
+import valikov.grlib.intgraph.Node;
 import valikov.grlib.representation.AdjacencyList;
 import valikov.grlib.representation.Matrix;
 
@@ -24,7 +28,7 @@ public class DefaultGraph<E, N> implements Graph<E, N> {
     private Map<E, Edge<E, N>> mapOfAllEdges = new HashMap<>();
 
 
-    DefaultGraph() {
+    public DefaultGraph() {
 
     }
 
@@ -369,20 +373,4 @@ public class DefaultGraph<E, N> implements Graph<E, N> {
 
 }
 
-record EdgeTo<E, N>(E edge, N to) {
-}
 
-record NodeValue<N>(N first, Integer second) implements Comparable<NodeValue<N>> {
-
-
-    /**
-     * Compares two NodeValues.
-     *
-     * @param o the object to be compared.
-     * @return positive if second is more, negative if second is less, else 0.
-     */
-    @Override
-    public int compareTo(NodeValue<N> o) {
-        return second - o.second;
-    }
-}

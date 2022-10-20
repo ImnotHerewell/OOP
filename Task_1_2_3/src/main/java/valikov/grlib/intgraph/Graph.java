@@ -1,4 +1,4 @@
-package valikov.grlib;
+package valikov.grlib.intgraph;
 
 import java.util.Map;
 

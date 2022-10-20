@@ -1,48 +1,48 @@
-package valikov.grlib;
+package valikov.grlib.intgraph;
 
 
-class Edge<E, N> {
+public class Edge<E, N> {
     private E identifier;
     private Node<E, N> start;
     private Node<E, N> end;
     private Integer weight;
 
-    Edge(E identifier, Node<E, N> start, Node<E, N> end, Integer weight) {
+    public Edge(E identifier, Node<E, N> start, Node<E, N> end, Integer weight) {
         this.identifier = identifier;
         this.start = start;
         this.end = end;
         this.weight = weight;
     }
 
-    void setIdentifier(E identifier) {
+    public void setIdentifier(E identifier) {
         this.identifier = identifier;
     }
 
-    E getIdentifier() {
+    public E getIdentifier() {
         return identifier;
     }
 
-    void setStart(Node<E, N> start) {
+    public void setStart(Node<E, N> start) {
         this.start = start;
     }
 
-    Node<E, N> getStart() {
+    public Node<E, N> getStart() {
         return start;
     }
 
-    void setEnd(Node<E, N> newEnd) {
+    public void setEnd(Node<E, N> newEnd) {
         end = newEnd;
     }
 
-    Node<E, N> getEnd() {
+    public Node<E, N> getEnd() {
         return end;
     }
 
-    void setWeight(Integer newWeight) {
+    public void setWeight(Integer newWeight) {
         weight = newWeight;
     }
 
-    Integer getWeight() {
+    public Integer getWeight() {
         return weight;
     }
 
