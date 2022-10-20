@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import valikov.grlib.defgraph.EdgeTo;
 
+/**
+ * Class represents list of incidence edges for node.
+ *
+ * @param <E> edge's identifier.
+ * @param <N> node's identifier.
+ */
 public class EdgesAndTos<E, N> {
     public List<EdgeTo<E, N>> list = new ArrayList<>();
 

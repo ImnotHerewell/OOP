@@ -1,12 +1,26 @@
 package valikov.grlib.intgraph;
 
 
+/**
+ * Edge class for graph.
+ *
+ * @param <E> edge's identifier.
+ * @param <N> node's identifier.
+ */
 public class Edge<E, N> {
     private E identifier;
     private Node<E, N> start;
     private Node<E, N> end;
     private Integer weight;
 
+    /**
+     * Default constructor for creating edge.
+     *
+     * @param identifier edge's identifier.
+     * @param start node.
+     * @param end node.
+     * @param weight number parameter for edge.
+     */
     public Edge(E identifier, Node<E, N> start, Node<E, N> end, Integer weight) {
         this.identifier = identifier;
         this.start = start;
