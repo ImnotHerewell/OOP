@@ -55,6 +55,9 @@ public class SearchSubstrings {
         int lengthL = 0;
         int lengthR = 0;
         for (int indexI = 0; indexI < inputString.length() / 2; indexI++) {
+            if (indexI + zlist[indexI] < lengthOfNeededString)
+                if (inputString.charAt(indexI + zlist[indexI]) == '\r' || inputString.charAt(indexI + zlist[indexI]) == '\n')
+                    continue;
             zlist[indexI] = Math.max(0, Math.min(lengthR - indexI, zlist[indexI - lengthL]));
             while (zlist[indexI] < lengthOfNeededString
                     && indexI + zlist[indexI] < inputString.length()
@@ -89,7 +92,6 @@ public class SearchSubstrings {
             getResult();
             return;
         }
-        System.out.println(inputFile);
         ClassLoader classLoader = getClass().getClassLoader();
         try (InputStream inputStream = classLoader.getResourceAsStream(inputFile);
              InputStreamReader streamReader = new InputStreamReader(
