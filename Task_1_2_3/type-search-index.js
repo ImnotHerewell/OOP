@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"valikov.grlib","l":"Graph"},{"p":"valikov.grlib","l":"NodeAndListOfAdjacencyEdges"},{"p":"valikov.grlib","l":"Triple"}]
+typeSearchIndex = [{"p":"valikov.grlib.representation","l":"AdjacencyList"},{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"valikov.grlib","l":"DefaultGraph"},{"p":"valikov.grlib","l":"Graph"},{"p":"valikov.grlib.representation","l":"Matrix"},{"p":"valikov.grlib","l":"Node"},{"p":"valikov.grlib","l":"NodeAndAdjacencies"}];updateSearchResults();

@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"valikov.grlib"}]
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"valikov.grlib"},{"l":"valikov.grlib.representation"}];updateSearchResults();
