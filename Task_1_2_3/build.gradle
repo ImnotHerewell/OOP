@@ -3,6 +3,9 @@ plugins {
     id 'jacoco'
 }
 
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
+
 group 'valikov.grlib'
 version '1.0-SNAPSHOT'
 
