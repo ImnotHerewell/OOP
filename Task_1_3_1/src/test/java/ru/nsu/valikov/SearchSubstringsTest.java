@@ -23,6 +23,7 @@ class SearchSubstringsTest {
         expectedList.add(10180);
         expectedList.add(10763);
         List<Integer> testList = new SearchSubstrings(file, "Podrick").getResult();
+        testList.sort(Integer::compareTo);
         Assertions.assertEquals(expectedList, testList);
     }
 
