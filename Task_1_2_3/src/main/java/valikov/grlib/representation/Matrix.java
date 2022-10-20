@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class Matrix {
     private List<List<Integer>> listOfLists = new ArrayList<>();
 
-    Matrix(int rowCount, int columnCount) {
+    public Matrix(int rowCount, int columnCount) {
         for (int indexRow = 0; indexRow < rowCount; indexRow++) {
             listOfLists.add(new ArrayList<>());
             for (int indexColumn = 0; indexColumn < columnCount; indexColumn++) {
