@@ -1,4 +1,4 @@
-package valikov.grlib;
+package valikov.grlib.intgraph;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,28 +13,28 @@ public class Node<E, N> {
     private N identifier;
     private final List<Edge<E, N>> listOfEdges;
 
-    Node(N identifier) {
+    public Node(N identifier) {
         listOfEdges = new ArrayList<>();
         this.identifier = identifier;
     }
 
-    void setIdentifier(N identifier) {
+    public void setIdentifier(N identifier) {
         this.identifier = identifier;
     }
 
-    N getIdentifier() {
+    public N getIdentifier() {
         return identifier;
     }
 
-    List<Edge<E, N>> getListOfEdges() {
+    public List<Edge<E, N>> getListOfEdges() {
         return listOfEdges;
     }
 
-    void addEdge(Edge<E, N> edge) {
+    public void addEdge(Edge<E, N> edge) {
         listOfEdges.add(edge);
     }
 
-    void delete() {
+    public void delete() {
         setIdentifier(null);
     }
 

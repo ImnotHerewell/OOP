@@ -11,6 +11,11 @@ import java.util.Scanner;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import valikov.grlib.defgraph.DefaultGraph;
+import valikov.grlib.intgraph.Edge;
+import valikov.grlib.intgraph.Node;
+import valikov.grlib.intgraph.NodeAndAdjacencies;
+import valikov.grlib.intgraph.NodeEdgeWeight;
 import valikov.grlib.representation.AdjacencyList;
 
 /**

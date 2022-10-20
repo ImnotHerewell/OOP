@@ -1,10 +1,11 @@
-package valikov.grlib;
+package valikov.grlib.intgraph;
 
 import java.util.ArrayList;
 import java.util.List;
+import valikov.grlib.defgraph.EdgeTo;
 
-class EdgesAndTos<E, N> {
-    List<EdgeTo<E, N>> list = new ArrayList<>();
+public class EdgesAndTos<E, N> {
+    public List<EdgeTo<E, N>> list = new ArrayList<>();
 
     public void add(E identifier, N to) {
         list.add(new EdgeTo<>(identifier, to));

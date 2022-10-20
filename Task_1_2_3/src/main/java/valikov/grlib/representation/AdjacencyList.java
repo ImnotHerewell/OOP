@@ -2,7 +2,7 @@ package valikov.grlib.representation;
 
 import java.util.HashMap;
 import java.util.Map;
-import valikov.grlib.NodeAndAdjacencies;
+import valikov.grlib.intgraph.NodeAndAdjacencies;
 
 /**
  * Adjacency list graph's representation.

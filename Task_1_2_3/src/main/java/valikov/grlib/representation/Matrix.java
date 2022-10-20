@@ -10,6 +10,12 @@ import java.util.Scanner;
 public class Matrix {
     private List<List<Integer>> listOfLists = new ArrayList<>();
 
+    /**
+     * Construct an empty matrix with rowCount rows and columnCount columns.
+     *
+     * @param rowCount - quantity of rows in matrix.
+     * @param columnCount quantity of columns in matrix.
+     */
     public Matrix(int rowCount, int columnCount) {
         for (int indexRow = 0; indexRow < rowCount; indexRow++) {
             listOfLists.add(new ArrayList<>());
