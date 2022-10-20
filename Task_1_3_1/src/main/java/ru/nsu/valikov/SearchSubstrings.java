@@ -26,7 +26,8 @@ public class SearchSubstrings {
      * @return false if file ended
      * @throws IOException if file doesn't exist
      */
-    private String readExactNumberOfCharacters(BufferedReader input, String fileString, int quantity)
+    private String readExactNumberOfCharacters(BufferedReader input,
+                                               String fileString, int quantity)
             throws IOException {
         char[] charArray = new char[quantity];
         if (input.read(charArray) == -1) {
@@ -58,10 +59,10 @@ public class SearchSubstrings {
     /**
      * Aad index of occurrence to result list.
      *
-     * @param zlist list with maximal prefix, each index its start of prefix's string
-     * @param indexI zlist's index
+     * @param zlist                list with maximal prefix, each index its start of prefix's string
+     * @param indexI               zlist's index
      * @param lengthOfNeededString length of string, what we are looking for
-     * @param result resulting list
+     * @param result               resulting list
      */
     private void addIndex(int[] zlist, int indexI, int lengthOfNeededString,
                           List<Integer> result) {
@@ -123,7 +124,8 @@ public class SearchSubstrings {
                 return new ArrayList<>();
             }
             inputString = zfunction(patternString, inputString, lengthOfNeededString, result);
-            while ((inputString = readExactNumberOfCharacters(input, inputString, lengthOfNeededString)) != null) {
+            while ((inputString = readExactNumberOfCharacters(input, inputString,
+                    lengthOfNeededString)) != null) {
                 inputString = zfunction(patternString, inputString, lengthOfNeededString, result);
             }
         } catch (IOException e) {

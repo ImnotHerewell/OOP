@@ -61,7 +61,8 @@ class SearchSubstringsTest {
     @Test
     void twentyThreeKbTest() {
         String file = "./23kb.txt";
-        List<Integer> expectedList = Arrays.asList(5568, 7060, 9727, 10423, 11196, 11260, 14056, 18184, 19106, 19511);
+        List<Integer> expectedList = Arrays.asList(5568, 7060, 9727,
+                10423, 11196, 11260, 14056, 18184, 19106, 19511);
         List<Integer> testList = new SearchSubstrings().find(file, "Maester");
         Assertions.assertEquals(expectedList, testList);
     }
