@@ -50,7 +50,8 @@ loadScripts(document, 'script');</script>
 <h1 class="title">Hierarchy For All Packages</h1>
 <span class="package-hierarchy-label">Package Hierarchies:</span>
 <ul class="horizontal">
-<li><a href="valikov/grlib/package-tree.html">valikov.grlib</a>, </li>
+<li><a href="valikov/grlib/defgraph/package-tree.html">valikov.grlib.defgraph</a>, </li>
+<li><a href="valikov/grlib/intgraph/package-tree.html">valikov.grlib.intgraph</a>, </li>
 <li><a href="valikov/grlib/representation/package-tree.html">valikov.grlib.representation</a></li>
 </ul>
 </div>
@@ -60,10 +61,19 @@ loadScripts(document, 'script');</script>
 <li class="circle">java.lang.<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" class="type-name-link external-link" title="class or interface in java.lang">Object</a>
 <ul>
 <li class="circle">valikov.grlib.representation.<a href="valikov/grlib/representation/AdjacencyList.html" class="type-name-link" title="class in valikov.grlib.representation">AdjacencyList</a>&lt;E,<wbr>N&gt;</li>
-<li class="circle">valikov.grlib.<a href="valikov/grlib/DefaultGraph.html" class="type-name-link" title="class in valikov.grlib">DefaultGraph</a>&lt;E,<wbr>N&gt; (implements valikov.grlib.<a href="valikov/grlib/Graph.html" title="interface in valikov.grlib">Graph</a>&lt;E,<wbr>N&gt;)</li>
+<li class="circle">valikov.grlib.defgraph.<a href="valikov/grlib/defgraph/DefaultGraph.html" class="type-name-link" title="class in valikov.grlib.defgraph">DefaultGraph</a>&lt;E,<wbr>N&gt; (implements valikov.grlib.intgraph.<a href="valikov/grlib/intgraph/Graph.html" title="interface in valikov.grlib.intgraph">Graph</a>&lt;E,<wbr>N&gt;)</li>
+<li class="circle">valikov.grlib.intgraph.<a href="valikov/grlib/intgraph/Edge.html" class="type-name-link" title="class in valikov.grlib.intgraph">Edge</a>&lt;E,<wbr>N&gt;</li>
+<li class="circle">valikov.grlib.intgraph.<a href="valikov/grlib/intgraph/EdgesAndTos.html" class="type-name-link" title="class in valikov.grlib.intgraph">EdgesAndTos</a>&lt;E,<wbr>N&gt;</li>
 <li class="circle">valikov.grlib.representation.<a href="valikov/grlib/representation/Matrix.html" class="type-name-link" title="class in valikov.grlib.representation">Matrix</a></li>
-<li class="circle">valikov.grlib.<a href="valikov/grlib/Node.html" class="type-name-link" title="class in valikov.grlib">Node</a>&lt;E,<wbr>N&gt;</li>
-<li class="circle">valikov.grlib.<a href="valikov/grlib/NodeAndAdjacencies.html" class="type-name-link" title="class in valikov.grlib">NodeAndAdjacencies</a>&lt;E,<wbr>N&gt;</li>
+<li class="circle">valikov.grlib.intgraph.<a href="valikov/grlib/intgraph/Node.html" class="type-name-link" title="class in valikov.grlib.intgraph">Node</a>&lt;E,<wbr>N&gt;</li>
+<li class="circle">valikov.grlib.intgraph.<a href="valikov/grlib/intgraph/NodeAndAdjacencies.html" class="type-name-link" title="class in valikov.grlib.intgraph">NodeAndAdjacencies</a>&lt;E,<wbr>N&gt;</li>
+<li class="circle">java.lang.<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Record.html" class="type-name-link external-link" title="class or interface in java.lang">Record</a>
+<ul>
+<li class="circle">valikov.grlib.defgraph.<a href="valikov/grlib/defgraph/EdgeTo.html" class="type-name-link" title="class in valikov.grlib.defgraph">EdgeTo</a>&lt;E,<wbr>N&gt;</li>
+<li class="circle">valikov.grlib.intgraph.<a href="valikov/grlib/intgraph/NodeEdgeWeight.html" class="type-name-link" title="class in valikov.grlib.intgraph">NodeEdgeWeight</a>&lt;E,<wbr>N&gt;</li>
+<li class="circle">valikov.grlib.defgraph.<a href="valikov/grlib/defgraph/NodeValue.html" class="type-name-link" title="class in valikov.grlib.defgraph">NodeValue</a>&lt;N&gt; (implements java.lang.<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a>&lt;T&gt;)</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -71,7 +81,7 @@ loadScripts(document, 'script');</script>
 <section class="hierarchy">
 <h2 title="Interface Hierarchy">Interface Hierarchy</h2>
 <ul>
-<li class="circle">valikov.grlib.<a href="valikov/grlib/Graph.html" class="type-name-link" title="interface in valikov.grlib">Graph</a>&lt;E,<wbr>N&gt;</li>
+<li class="circle">valikov.grlib.intgraph.<a href="valikov/grlib/intgraph/Graph.html" class="type-name-link" title="interface in valikov.grlib.intgraph">Graph</a>&lt;E,<wbr>N&gt;</li>
 </ul>
 </section>
 </main>
