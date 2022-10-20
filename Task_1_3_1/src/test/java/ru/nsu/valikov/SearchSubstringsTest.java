@@ -1,6 +1,5 @@
 package ru.nsu.valikov;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +10,6 @@ import org.junit.jupiter.api.Test;
  * Default class with tests.
  */
 class SearchSubstringsTest {
-
     /**
      * Random test with 12 kb file.
      *
@@ -19,7 +17,7 @@ class SearchSubstringsTest {
      */
     @Test
     void twelveKbTest() throws IOException {
-        File file = new File("./src/test/java/resources/12kb.txt");
+        String file = "./12kb.txt";
         List<Integer> expectedList = new ArrayList<>();
         expectedList.add(3937);
         expectedList.add(4962);
@@ -38,7 +36,7 @@ class SearchSubstringsTest {
      */
     @Test
     void emptyFileTest() throws IOException {
-        File file = new File("./src/test/java/resources/empty.txt");
+        String file = "./empty.txt";
         List<Integer> testList = new SearchSubstrings(file, "zeleeboba").getResult();
         List<Integer> expectedList = new ArrayList<>();
         Assertions.assertEquals(expectedList, testList);
@@ -51,7 +49,7 @@ class SearchSubstringsTest {
      */
     @Test
     void emptyPatternTest() throws IOException {
-        File file = new File("./src/test/java/resources/12kb.txt");
+        String file = "./12kb.txt";
         List<Integer> testList = new SearchSubstrings(file, "").getResult();
         List<Integer> expectedList = new ArrayList<>();
         Assertions.assertEquals(expectedList, testList);
@@ -64,7 +62,7 @@ class SearchSubstringsTest {
      */
     @Test
     void tenMbTest() throws IOException {
-        File file = new File("./src/test/java/resources/10mb.txt");
+        String file = "./10mb.txt";
         List<Integer> testList = new SearchSubstrings(file, "aboba").getResult();
         List<Integer> expectedList = new ArrayList<>();
         expectedList.add(3455370);
@@ -78,7 +76,7 @@ class SearchSubstringsTest {
      */
     @Test
     void twentyThreeKbTest() throws IOException {
-        File file = new File("./src/test/java/resources/23kb.txt");
+        String file = "./23kb.txt";
         List<Integer> expectedList = new ArrayList<>();
         expectedList.add(5600);
         expectedList.add(7108);
