@@ -1,6 +1,5 @@
 package ru.nsu.valikov;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.Assertions;
@@ -12,12 +11,10 @@ import org.junit.jupiter.api.Test;
 class SearchSubstringsTest {
     /**
      * Random test with 12 kb file.
-     *
-     * @throws IOException if file doesn't exist
      */
     @Test
-    void twelveKbTest() throws IOException {
-        String file = "./12kb.txt";
+    void twelveKbTest() {
+        String file = "12kb.txt";
         List<Integer> expectedList = new ArrayList<>();
         expectedList.add(3937);
         expectedList.add(4962);
@@ -31,11 +28,9 @@ class SearchSubstringsTest {
 
     /**
      * Test with empty file.
-     *
-     * @throws IOException if file doesn't exist
      */
     @Test
-    void emptyFileTest() throws IOException {
+    void emptyFileTest() {
         String file = "./empty.txt";
         List<Integer> testList = new SearchSubstrings(file, "zeleeboba").getResult();
         List<Integer> expectedList = new ArrayList<>();
@@ -44,11 +39,9 @@ class SearchSubstringsTest {
 
     /**
      * Test with empty pattern-substring.
-     *
-     * @throws IOException if file doesn't exist
      */
     @Test
-    void emptyPatternTest() throws IOException {
+    void emptyPatternTest() {
         String file = "./12kb.txt";
         List<Integer> testList = new SearchSubstrings(file, "").getResult();
         List<Integer> expectedList = new ArrayList<>();
@@ -57,12 +50,10 @@ class SearchSubstringsTest {
 
     /**
      * Random test with 10 mb file.
-     *
-     * @throws IOException if file doesn't exist
      */
     @Test
-    void tenMbTest() throws IOException {
-        String file = "./10mb.txt";
+    void tenMbTest() {
+        String file = "./tenmb.txt";
         List<Integer> testList = new SearchSubstrings(file, "aboba").getResult();
         List<Integer> expectedList = new ArrayList<>();
         expectedList.add(3455370);
@@ -71,11 +62,9 @@ class SearchSubstringsTest {
 
     /**
      * Random test with 23 kb file.
-     *
-     * @throws IOException if file doesn't exist
      */
     @Test
-    void twentyThreeKbTest() throws IOException {
+    void twentyThreeKbTest() {
         String file = "./23kb.txt";
         List<Integer> expectedList = new ArrayList<>();
         expectedList.add(5600);

@@ -1,8 +1,6 @@
 package ru.nsu.valikov;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -10,7 +8,6 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.Scanner;
 
 /**
  * Class for finding substrings.
@@ -86,28 +83,26 @@ public class SearchSubstrings {
      *
      * @param inputFile     read from this file
      * @param patternString substring
-     * @throws IOException if file doesn't exist
      */
-    public SearchSubstrings(String inputFile, String patternString) throws IOException {
+    SearchSubstrings(String inputFile, String patternString) {
         if (patternString.length() == 0) {
             getResult();
             return;
         }
+        System.out.println(inputFile);
         ClassLoader classLoader = getClass().getClassLoader();
-        BufferedReader input = null;
         try (InputStream inputStream = classLoader.getResourceAsStream(inputFile);
              InputStreamReader streamReader = new InputStreamReader(
-                     Objects.requireNonNull(inputStream), StandardCharsets.UTF_8)){
-            input = new BufferedReader(streamReader);
-             }
-        catch (IOException e){
-            e.printStackTrace();
-        }
-        lengthOfNeededString = patternString.length();
-        readExactNumberOfCharacters(Objects.requireNonNull(input), 2 * lengthOfNeededString);
-        zfunction(patternString);
-        while (readExactNumberOfCharacters(input, lengthOfNeededString)) {
+                     Objects.requireNonNull(inputStream), StandardCharsets.UTF_8);
+             BufferedReader input = new BufferedReader(streamReader)) {
+            lengthOfNeededString = patternString.length();
+            readExactNumberOfCharacters(input, 2 * lengthOfNeededString);
             zfunction(patternString);
+            while (readExactNumberOfCharacters(input, lengthOfNeededString)) {
+                zfunction(patternString);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
