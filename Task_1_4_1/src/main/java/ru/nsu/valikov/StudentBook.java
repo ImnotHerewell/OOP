@@ -19,6 +19,8 @@ import java.util.stream.Stream;
  * Квалификационная работа защищена на «отлично»
  */
 public class StudentBook implements RecordBook {
+    private static final int BORDER = 20;
+    private static final double EPS = 0.000000001;
     private final Map<Semester, SubjectMark> bookGrades;
     private final SubjectMark diplomaGrades = new SubjectMark(new HashMap<>());
     private int status;
@@ -80,8 +82,8 @@ public class StudentBook implements RecordBook {
         for (var subject : bookGrades.entrySet()) {
             Stream<Map.Entry<String, Mark>> bookStream =
                     subject.getValue().subjectMark().entrySet().stream();
-            badMarks += bookStream.filter(f -> f.getValue() == Mark.C
-                                               || f.getValue() == Mark.D).count();
+            badMarks += bookStream.filter(f -> f.getValue() == Mark.C || f.getValue() == Mark.D)
+                                  .count();
         }
         return badMarks;
     }
@@ -137,8 +139,8 @@ public class StudentBook implements RecordBook {
         }
         semesterGrades.put(subject, mark);
         sumBookMark += mark.getMark();
-        if (diplomaGrades.subjectMark().containsKey(subject)
-            && diplomaGrades.subjectMark().get(subject) != Mark.Z) {
+        if (diplomaGrades.subjectMark().containsKey(subject) && diplomaGrades.subjectMark().get(
+                subject) != Mark.Z) {
             sumDiplomaMark -= diplomaGrades.subjectMark().get(subject).getMark();
             countDiplomaNoZsubjects--;
         }
@@ -151,15 +153,14 @@ public class StudentBook implements RecordBook {
     }
 
     public Mark getBookMark(Semester semester, String subject) {
-        if (!bookGrades.containsKey(semester)
-            || !bookGrades.get(semester).subjectMark().containsKey(subject)) {
+        if (!bookGrades.containsKey(semester) || !bookGrades.get(semester).subjectMark()
+                                                            .containsKey(subject)) {
             throw new NoSuchElementException();
         }
         return bookGrades.get(semester).subjectMark().get(subject);
     }
 
     public boolean isRedDiploma() {
-        final double EPS = 0.000000001;
         Stream<Map.Entry<String, Mark>> diplomaStream =
                 diplomaGrades.subjectMark().entrySet().stream();
         double marksA = diplomaStream.filter(f -> f.getValue() == Mark.A).count();
@@ -169,7 +170,6 @@ public class StudentBook implements RecordBook {
     }
 
     public boolean isIncreasedScholarship(int points) {
-        final int BORDER = 20;
         long badMarks = noBadMarks();
         Semester semesterNumber = new Semester(-1);
         for (int semester = 20; semester > 0; semester--) {
