@@ -194,6 +194,13 @@ public class StudentBook implements RecordBook {
         }
     }
 
+    /**
+     * Get mark from student book.
+     *
+     * @param semester semester number
+     * @param subject  subject name
+     * @return mark
+     */
     public Mark getBookMark(Semester semester, String subject) {
         if (!bookGrades.containsKey(semester) || !bookGrades.get(semester).subjectMark()
                                                             .containsKey(subject)) {
