@@ -2,6 +2,7 @@ package ru.nsu.valikov;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.stream.Stream;
 
 /**
@@ -20,11 +21,13 @@ import java.util.stream.Stream;
 public class StudentBook implements RecordBook {
     private final Map<Semester, SubjectMark> bookGrades;
     private final SubjectMark diplomaGrades = new SubjectMark(new HashMap<>());
-    private final int status;
+    private int status;
     private int bookId;
     private String specialization;
     private int sumDiplomaMark;
+    private int countDiplomaNoZsubjects;
     private int sumBookMark;
+    private int countBookNoZsubjects;
     private Mark qualifyingWorkMark;
 
     private StudentBook(int bookId, String specialization, int status, Mark qualifyingWorkMark,
@@ -37,17 +40,38 @@ public class StudentBook implements RecordBook {
         constructAverageGrades();
     }
 
+    public static StudentBook build(int bookId, String specialization, int status,
+                                    Mark qualifyingWorkMark, Map<Semester, SubjectMark> grades) {
+        return new StudentBook(bookId, specialization, status, qualifyingWorkMark, grades);
+    }
+
+    public static StudentBook build(int bookId, String specialization, int status,
+                                    Mark qualifyingWorkMark) {
+        return new StudentBook(bookId, specialization, status, qualifyingWorkMark, new HashMap<>());
+    }
+
+    public static StudentBook build(int bookId, String specialization, int status) {
+        return new StudentBook(bookId, specialization, status, Mark.NULL, new HashMap<>());
+    }
+
     private void constructAverageGrades() {
         for (var semester : bookGrades.keySet()) {
             Map<String, Mark> subjectMark = bookGrades.get(semester).subjectMark();
             for (var subject : subjectMark.keySet()) {
                 Mark mark = subjectMark.get(subject);
-                sumBookMark += mark.getMark();
+                if (mark != Mark.Z) {
+                    sumBookMark += mark.getMark();
+                    countBookNoZsubjects++;
+                }
                 diplomaGrades.subjectMark().put(subject, mark);
             }
         }
         for (var subject : diplomaGrades.subjectMark().keySet()) {
-            sumDiplomaMark += diplomaGrades.subjectMark().get(subject).getMark();
+            Mark mark = diplomaGrades.subjectMark().get(subject);
+            sumDiplomaMark += mark.getMark();
+            if (mark != Mark.Z) {
+                countDiplomaNoZsubjects++;
+            }
         }
     }
 
@@ -62,17 +86,12 @@ public class StudentBook implements RecordBook {
         return badMarks;
     }
 
-    public void build(int bookId, String specialization, int status, Mark qualifyingWorkMark,
-                      Map<Semester, SubjectMark> grades) {
-        new StudentBook(bookId, specialization, status, qualifyingWorkMark, grades);
+    public int getStatus() {
+        return status;
     }
 
-    public void build(int bookId, String specialization, int status, Mark qualifyingWorkMark) {
-        new StudentBook(bookId, specialization, status, qualifyingWorkMark, new HashMap<>());
-    }
-
-    public void build(int bookId, String specialization, int status) {
-        new StudentBook(bookId, specialization, status, Mark.NULL, new HashMap<>());
+    public void setStatus(int status) {
+        this.status = status;
     }
 
     public String getSpecialization() {
@@ -100,11 +119,43 @@ public class StudentBook implements RecordBook {
     }
 
     public double getAverageBookMark() {
-        return (double) sumBookMark / bookGrades.size();
+        return (double) sumBookMark / countBookNoZsubjects;
     }
 
     public double getAverageDiplomaMark() {
-        return (double) sumDiplomaMark / diplomaGrades.subjectMark().size();
+        return (double) sumDiplomaMark / countDiplomaNoZsubjects;
+    }
+
+    public void addMark(Semester semester, String subject, Mark mark) {
+        if (!bookGrades.containsKey(semester)) {
+            bookGrades.put(semester, new SubjectMark(new HashMap<>()));
+        }
+        Map<String, Mark> semesterGrades = bookGrades.get(semester).subjectMark();
+        if (semesterGrades.containsKey(subject) && semesterGrades.get(subject) != Mark.Z) {
+            sumBookMark -= semesterGrades.get(subject).getMark();
+            countBookNoZsubjects--;
+        }
+        semesterGrades.put(subject, mark);
+        sumBookMark += mark.getMark();
+        if (diplomaGrades.subjectMark().containsKey(subject) &&
+            diplomaGrades.subjectMark().get(subject) != Mark.Z) {
+            sumDiplomaMark -= diplomaGrades.subjectMark().get(subject).getMark();
+            countDiplomaNoZsubjects--;
+        }
+        diplomaGrades.subjectMark().put(subject, mark);
+        sumDiplomaMark += mark.getMark();
+        if (mark != Mark.Z) {
+            countDiplomaNoZsubjects++;
+            countBookNoZsubjects++;
+        }
+    }
+
+    public Mark getBookMark(Semester semester, String subject) {
+        if (!bookGrades.containsKey(semester) ||
+            !bookGrades.get(semester).subjectMark().containsKey(subject)) {
+            throw new NoSuchElementException();
+        }
+        return bookGrades.get(semester).subjectMark().get(subject);
     }
 
     public boolean isRedDiploma() {
