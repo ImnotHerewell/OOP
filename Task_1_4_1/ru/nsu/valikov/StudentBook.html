@@ -81,17 +81,7 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">StudentBook</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="RecordBook.html" title="interface in ru.nsu.valikov">RecordBook</a></span></div>
-<div class="block">Зачетная книжка
- Реализовать класс электронная зачетной книжки студента ФИТ и обеспечить следующие
- функции:
- текущий средний бал за все время обучения;
- может ли студент получить «красный» диплом с отличием;
- будет ли повышенная стипендия в этом семестре.
- Для первого теста используйте данные из Вашей зачётной книжки
- Требования для диплома с отличием:
- 75% оценок в приложении к диплому(последняя оценка) – «отлично»
- Нет в зачетной книжке итоговых оценок «удовлетворительно»
- Квалификационная работа защищена на «отлично»</div>
+<div class="block">Student book class, where grades are stored.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -110,7 +100,9 @@ implements <a href="RecordBook.html" title="interface in ru.nsu.valikov">RecordB
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addMark(ru.nsu.valikov.Semester,java.lang.String,ru.nsu.valikov.Mark)" class="member-name-link">addMark</a><wbr>(<a href="Semester.html" title="class in ru.nsu.valikov">Semester</a>&nbsp;semester,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;subject,
  <a href="Mark.html" title="enum class in ru.nsu.valikov">Mark</a>&nbsp;mark)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Add new mark to book.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="StudentBook.html" title="class in ru.nsu.valikov">StudentBook</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#build(int,java.lang.String,int)" class="member-name-link">build</a><wbr>(int&nbsp;bookId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;specialization,
@@ -153,10 +145,14 @@ implements <a href="RecordBook.html" title="interface in ru.nsu.valikov">RecordB
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isIncreasedScholarship(int)" class="member-name-link">isIncreasedScholarship</a><wbr>(int&nbsp;points)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Check if student can pretend on increased scholarship.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isRedDiploma()" class="member-name-link">isRedDiploma</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Check if student can pretend on red diploma.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBookId(int)" class="member-name-link">setBookId</a><wbr>(int&nbsp;bookId)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -279,6 +275,13 @@ implements <a href="RecordBook.html" title="interface in ru.nsu.valikov">RecordB
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addMark</span><wbr><span class="parameters">(<a href="Semester.html" title="class in ru.nsu.valikov">Semester</a>&nbsp;semester,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;subject,
  <a href="Mark.html" title="enum class in ru.nsu.valikov">Mark</a>&nbsp;mark)</span></div>
+<div class="block">Add new mark to book.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>semester</code> - semester's number</dd>
+<dd><code>subject</code> - subject's name</dd>
+<dd><code>mark</code> - mark</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -292,12 +295,25 @@ implements <a href="RecordBook.html" title="interface in ru.nsu.valikov">RecordB
 <section class="detail" id="isRedDiploma()">
 <h3>isRedDiploma</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isRedDiploma</span>()</div>
+<div class="block">Check if student can pretend on red diploma.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if all red diploma (task) conditions are satisfied, else false</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="isIncreasedScholarship(int)">
 <h3>isIncreasedScholarship</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isIncreasedScholarship</span><wbr><span class="parameters">(int&nbsp;points)</span></div>
+<div class="block">Check if student can pretend on increased scholarship.
+ <a href="https://www.nsu.ru/n/education/stipendii.php#ID_999">...</a></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>points</code> - how many bonus points student has</dd>
+<dt>Returns:</dt>
+<dd>true if all nsu conditions are satisfied, else false</dd>
+</dl>
 </section>
 </li>
 </ul>
