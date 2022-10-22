@@ -80,8 +80,8 @@ public class StudentBook implements RecordBook {
         for (var subject : bookGrades.entrySet()) {
             Stream<Map.Entry<String, Mark>> bookStream =
                     subject.getValue().subjectMark().entrySet().stream();
-            badMarks += bookStream.filter(f -> f.getValue() == Mark.C ||
-                                               f.getValue() == Mark.D).count();
+            badMarks += bookStream.filter(f -> f.getValue() == Mark.C
+                                               || f.getValue() == Mark.D).count();
         }
         return badMarks;
     }
@@ -137,8 +137,8 @@ public class StudentBook implements RecordBook {
         }
         semesterGrades.put(subject, mark);
         sumBookMark += mark.getMark();
-        if (diplomaGrades.subjectMark().containsKey(subject) &&
-            diplomaGrades.subjectMark().get(subject) != Mark.Z) {
+        if (diplomaGrades.subjectMark().containsKey(subject)
+            && diplomaGrades.subjectMark().get(subject) != Mark.Z) {
             sumDiplomaMark -= diplomaGrades.subjectMark().get(subject).getMark();
             countDiplomaNoZsubjects--;
         }
@@ -151,8 +151,8 @@ public class StudentBook implements RecordBook {
     }
 
     public Mark getBookMark(Semester semester, String subject) {
-        if (!bookGrades.containsKey(semester) ||
-            !bookGrades.get(semester).subjectMark().containsKey(subject)) {
+        if (!bookGrades.containsKey(semester)
+            || !bookGrades.get(semester).subjectMark().containsKey(subject)) {
             throw new NoSuchElementException();
         }
         return bookGrades.get(semester).subjectMark().get(subject);
@@ -164,8 +164,8 @@ public class StudentBook implements RecordBook {
                 diplomaGrades.subjectMark().entrySet().stream();
         double marksA = diplomaStream.filter(f -> f.getValue() == Mark.A).count();
         long marksBad = noBadMarks();
-        return status == 0 && (Math.abs(marksA / diplomaGrades.subjectMark().size() - 0.75) < EPS &&
-                               marksBad == 0 && qualifyingWorkMark == Mark.A);
+        return status == 0 && (Math.abs(marksA / diplomaGrades.subjectMark().size() - 0.75) < EPS
+                               && marksBad == 0 && qualifyingWorkMark == Mark.A);
     }
 
     public boolean isIncreasedScholarship(int points) {
@@ -184,8 +184,8 @@ public class StudentBook implements RecordBook {
                 return false;
             }
         }
-        return badMarks == 0 && ((status == 0 && semesterNumber.semesterNumber() >= 3) ||
-                                 (status == 1 && semesterNumber.semesterNumber() >= 10) &&
-                                 points > BORDER);
+        return badMarks == 0 && ((status == 0 && semesterNumber.semesterNumber() >= 3)
+                                 || (status == 1 && semesterNumber.semesterNumber() >= 10)
+                                    && points > BORDER);
     }
 }
