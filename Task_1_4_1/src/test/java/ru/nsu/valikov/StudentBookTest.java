@@ -9,6 +9,8 @@ import org.junit.jupiter.api.Test;
 
 class StudentBookTest {
     private static final double EPS = 0.0000000001;
+    private final Semester semesterOne = new Semester(1);
+    private final Semester semesterTwo = new Semester(2);
     private StudentBook testBook;
 
     @BeforeEach
@@ -31,7 +33,7 @@ class StudentBookTest {
             {
                 put("Introduction to Algebra and Analysis", Mark.C);
                 put("Introduction to Discrete Mathematics and Mathematical Logic", Mark.B);
-                put("Declarative programming", Mark.A);
+                put("Declarative Programming", Mark.A);
                 put("Measurement practice", Mark.Z);
                 put("Imperative Programming", Mark.A);
                 put("Physical Culture and sport", Mark.Z);
@@ -42,8 +44,8 @@ class StudentBookTest {
         };
         Map<Semester, SubjectMark> grades = new HashMap<>() {
             {
-                put(new Semester(1), new SubjectMark(firstSemesterGrades));
-                put(new Semester(2), new SubjectMark(secondSemesterGrades));
+                put(semesterOne, new SubjectMark(firstSemesterGrades));
+                put(semesterTwo, new SubjectMark(secondSemesterGrades));
             }
         };
         testBook = StudentBook.build(210638, "Computer Science and Engineering", 0, Mark.NULL,
@@ -96,6 +98,13 @@ class StudentBookTest {
         Assertions.assertEquals(210748, field.get(testBook));
     }
 
+    @Test
+    void setStatusTest() throws NoSuchFieldException, IllegalAccessException {
+        testBook.setStatus(1);
+        Field field = testBook.getClass().getDeclaredField("status");
+        field.setAccessible(true);
+        Assertions.assertEquals(1, field.get(testBook));
+    }
 
     @Test
     void setQualifyingWorkMark() throws IllegalAccessException, NoSuchFieldException {
@@ -132,5 +141,12 @@ class StudentBookTest {
 
         Assertions.assertEquals(testBook.getBookMark(semesterThree, "Object Oriented Programming"),
                                 Mark.A);
+    }
+
+    @Test
+    void setNewMark() {
+        testBook.addMark(semesterTwo, "Imperative Programming", Mark.B);
+        Assertions.assertEquals(testBook.getBookMark(semesterTwo, "Imperative Programming"),
+                                Mark.B);
     }
 }
