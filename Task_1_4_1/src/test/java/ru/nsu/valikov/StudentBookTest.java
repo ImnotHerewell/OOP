@@ -7,12 +7,21 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Test for StudentBook class.
+ */
 class StudentBookTest {
+    /**
+     * To compare two doubles.
+     */
     private static final double EPS = 0.0000000001;
     private final Semester semesterOne = new Semester(1);
     private final Semester semesterTwo = new Semester(2);
     private StudentBook testBook;
 
+    /**
+     * Initialize student book.
+     */
     @BeforeEach
     void init() {
         Map<String, Mark> firstSemesterGrades = new HashMap<>() {
@@ -52,6 +61,9 @@ class StudentBookTest {
                                      grades);
     }
 
+    /**
+     * Test builder without grades and qualifying work.
+     */
     @Test
     void build() {
         StudentBook testBookNew;
@@ -62,6 +74,9 @@ class StudentBookTest {
         Assertions.assertEquals(testBookNew.getStatus(), 0);
     }
 
+    /**
+     * Test builder without grades.
+     */
     @Test
     void testBuild() {
         StudentBook testBookNew;
@@ -69,6 +84,9 @@ class StudentBookTest {
         Assertions.assertEquals(testBookNew.getQualifyingWorkMark(), Mark.NULL);
     }
 
+    /**
+     * Another builder test without grades.
+     */
     @Test
     void testBuild1() {
         StudentBook testBookNew;

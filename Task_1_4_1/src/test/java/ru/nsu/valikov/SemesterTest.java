@@ -4,6 +4,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Tests for Semester class.
+ */
 class SemesterTest {
     Semester semesterTest;
 
@@ -12,6 +15,9 @@ class SemesterTest {
         semesterTest = new Semester(7);
     }
 
+    /**
+     * Comparing two semesters.
+     */
     @Test
     void compareTo() {
         Semester anotherSemester = new Semester(1);
