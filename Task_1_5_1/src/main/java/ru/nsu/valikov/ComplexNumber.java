@@ -1,36 +1,40 @@
 package ru.nsu.valikov;
 
-public class ComplexNumber implements Expr {
+public class ComplexNumber extends Expr {
     private double re;
     private double i;
 
-    @Override
-    public void plus(DoubleNum number) {
+    ComplexNumber(double re, double i) {
+        this.re = re;
+        this.i = i;
+    }
 
+    public double getValue() {
+        return re;
+    }
+
+    public double getSecond() {
+        return i;
     }
 
     @Override
-    public void plus(ComplexNumber number) {
-
+    public void plus(Pair number) {
+        if (number.b() == 0) {
+            re += number.a().getValue();
+            i += number.a().getSecond();
+        } else {
+            throw new IllegalArgumentException("Cannot perform operations with different types.");
+        }
     }
 
     @Override
-    public void plus(Degree number) {
-
+    public void minus(Pair number) {
+        if (number.b() == 0) {
+            re -= number.a().getValue();
+            i -= number.a().getSecond();
+        } else {
+            throw new IllegalArgumentException("Cannot perform operations with different types.");
+        }
     }
 
-    @Override
-    public void minus(DoubleNum number) {
-
-    }
-
-    @Override
-    public void minus(ComplexNumber number) {
-
-    }
-
-    @Override
-    public void minus(Degree number) {
-
-    }
 }

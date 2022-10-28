@@ -8,6 +8,6 @@ class CalculatorTest {
     @Test
     void parserTest() {
         Calculator calc=new Calculator();
-        calc.parser("example.txt");
+        System.out.println(calc.parser("example.txt").getValue());
     }
 }

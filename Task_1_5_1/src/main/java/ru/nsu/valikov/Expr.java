@@ -1,9 +1,9 @@
 package ru.nsu.valikov;
 
-interface Expr {
-    void plus(ComplexNumber number);
-    void plus(Degree number);
-    void minus(ComplexNumber number);
-    void minus(Degree number);
+abstract class Expr {
+    abstract double getValue();
+    abstract double getSecond();
+    abstract void plus(Pair expNumber);
+    abstract void minus(Pair expNumber);
 
 }

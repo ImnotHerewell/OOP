@@ -7,15 +7,15 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Deque;
 import java.util.List;
+import java.util.Locale;
 import java.util.MissingFormatArgumentException;
 import java.util.Objects;
 import java.util.Scanner;
 
 public class Calculator {
-    private final Deque<Expr> arguments = new ArrayDeque<>();
+    private final Deque<Pair> arguments = new ArrayDeque<>();
     private final List<String> expressions = new ArrayList<>();
 
     //    public static void main(String[] args) {
@@ -91,95 +91,93 @@ public class Calculator {
 
     private void addParseElem(String s) {
         if (isDouble(s)) {
-            arguments.addLast(new DoubleNum(Double.parseDouble(s)));
-
+            arguments.addLast(new Pair(new ComplexNumber(Double.parseDouble(s), 0), 0));
         } else if (isComplex(s)) {
             if (s.matches("([-]?\\d+(.\\d+)?)([-|+](\\d+(.\\d+)?))[i$]")) {
                 s = s.replace("i", "");
                 s = s.replace("-", " -");
                 s = s.replace("+", " ");
-                s = Arrays.toString(s.split(" "));
-                Scanner scan = new Scanner(s);
-                arguments.addLast(new ComplexNumber(scan.nextDouble(), scan.nextDouble()));
+                Scanner scan = new Scanner(s).useLocale(Locale.US);
+                arguments.addLast(
+                        new Pair(new ComplexNumber(scan.nextDouble(), scan.nextDouble()), 0));
+                //                                                                             .getSecond());
             } else if (s.matches("[-]?\\d+(.\\d+)?[$]")) {
-                arguments.addLast(new ComplexNumber(Double.parseDouble(s), 0));
+                arguments.addLast(new Pair(new ComplexNumber(Double.parseDouble(s), 0), 0));
             } else if (s.matches("([-]?(\\d+(.\\d+)?))[i$]")) {
                 s = s.replace("i", "");
-                arguments.addLast(new ComplexNumber(0, Double.parseDouble(s)));
+                arguments.addLast(new Pair(new ComplexNumber(0, Double.parseDouble(s)), 0));
             }
         } else if (isDegree(s)) {
-            arguments.addLast(new Degree(Double.parseDouble(s.replace("%", ""))));
+            arguments.addLast(new Pair(new Degree(Double.parseDouble(s.replace("%", ""))), 1));
         }
     }
 
     private void detectFunction(String function) {
-        if (function.matches("[+]|[-]|[*]|[/]|pow|log")){
+        if (function.matches("[+]|[-]|[*]|[/]|pow|log")) {
 
-        }
-        else if (function.matches("sin|cos|sqrt")){
+        } else if (function.matches("sin|cos|sqrt")) {
             singleFunctionExecution(function);
         }
     }
 
     private void singleFunctionExecution(String function) {
         if (isSin(function)) {
-
+            Pair arg=arguments.peekLast();
+//            arg.a().
         }
     }
-    private void doubleFunctionExecution(String function){
-        if (arguments.size()<2){
+
+    private void doubleFunctionExecution(String function) {
+        if (arguments.size() < 2) {
             throw new MissingFormatArgumentException("Wrong arguments format!");
         }
-        Expr numberA=arguments.pop();
-        if (numberA instanceof DoubleNum){
-            DoubleNum numberB=(DoubleNum) numberA;
-        }
-        else if (numberA instanceof ComplexNumber){
-            ComplexNumber numberB=(ComplexNumber)numberA;
-        }
-        else{
-            Degree numberB=(Degree)numberA;
-        }
-        if (isPlus(function)){
-
-            Expr result=Expression.plus(numberB, numberB);
+        Pair firstArg = arguments.pop();
+        Pair secondArg = arguments.peekLast();
+        if (isPlus(function)) {
+            Objects.requireNonNull(secondArg).a().plus(firstArg);
+        } else if (isMinus(function)) {
+            Objects.requireNonNull(secondArg).a().minus(firstArg);
         }
     }
 
-    // useDelimiter(");
-    // комплексные слитно a-bi
-    // грады с %
-    // можно побитовыми операциями проверять оверфлоу
-    // стек операций и стек чисел, счетчик от 0 до 2?  когда достигаем знака или функции типа
-    // пов
-    // лог, обнуляем счётчик, счетчик == 2 производим операцию с начала стека и поп фром стек,
-    // счетчик ставим на 1.
     // храним распаршенный массив, и указатель на текущий элемент.
     //
-    private void numberExe(int counter) {
-        if (predicats.size() > 0) {
-            String predicat = predicats.getLast();
-            if (counter == 1 && isSinglePredicat(predicat)) {
+    //    private void numberExe(int counter) {
+    //        if (predicats.size() > 0) {
+    //            String predicat = predicats.getLast();
+    //            if (counter == 1 && isSinglePredicat(predicat)) {
+    //
+    //            }
+    //        }
+    //    }
 
-            }
-        }
-    }
-
-    private void calculation() {
-        int pointer = arguments.size() - 1;
+    private Pair calculation() {
+        int pointer = expressions.size() - 1;
         String parseElem;
         while (pointer >= 0) {
-
             parseElem = expressions.get(pointer--);
             if (isNumber(parseElem)) {
                 addParseElem(parseElem);
+                //                System.out.println(
+                //                        arguments.peekLast().a().getValue() + "+" + arguments
+                //                        .peekLast().a()
+                //                                                                             .getSecond());
             } else if (isPredicat(parseElem)) {
-
+                if (isSinglePredicat(parseElem)){
+                    singleFunctionExecution(parseElem);
+                }
+                else if (isDoublePredicat(parseElem)){
+                    doubleFunctionExecution(parseElem);
+                }
             }
         }
+        if (arguments.size()!=1){
+            throw new MissingFormatArgumentException("Wrong format!");
+        }
+        return arguments.pop();
     }
 
-    public void parser(String file) {
+    public Expr parser(String file) {
         ClassLoader classLoader = getClass().getClassLoader();
         try (InputStream inputStream = classLoader.getResourceAsStream(file);
              InputStreamReader streamReader = new InputStreamReader(
@@ -188,18 +186,18 @@ public class Calculator {
                 input).useDelimiter("\\s+")) {
             while (scanner.hasNext()) {
                 String s = scanner.next();
-                //                System.out.println(s);
+                //                                System.out.println(s);
                 if (isPredicat(s) || isNumber(s)) {
                     expressions.add(s);
                 } else {
                     throw new MissingFormatArgumentException("Wrong expression format!");
                 }
             }
+            Pair res=calculation();
+            return res.a();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        calculation();
-        //        System.out.println(predicats);
-        //        System.out.println(arguments);
+        return null;
     }
 }
