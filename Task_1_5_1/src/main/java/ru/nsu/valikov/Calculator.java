@@ -59,11 +59,11 @@ public class Calculator {
     }
 
     private boolean isSinglePredicat(String s) {
-        return isSin(s) || isCos(s) || isSqrt(s);
+        return isSin(s) || isCos(s) || isSqrt(s) || isLog(s);
     }
 
     private boolean isDoublePredicat(String s) {
-        return isPlus(s) || isMinus(s) || isMult(s) || isDiv(s) || isLog(s) || isPow(s);
+        return isPlus(s) || isMinus(s) || isMult(s) || isDiv(s) || isPow(s);
     }
 
     private boolean isPredicat(String s) {
@@ -71,7 +71,7 @@ public class Calculator {
     }
 
     private boolean isDouble(String s) {
-        String pattern = "(\\d+)(.\\d+)?";//double
+        String pattern = "[-]?(\\d+)(.\\d+)?";//double
         return s.matches(pattern);
     }
 
@@ -100,9 +100,6 @@ public class Calculator {
                 Scanner scan = new Scanner(s).useLocale(Locale.US);
                 arguments.addLast(
                         new Pair(new ComplexNumber(scan.nextDouble(), scan.nextDouble()), 0));
-                //                                                                             .getSecond());
-            } else if (s.matches("[-]?\\d+(.\\d+)?[$]")) {
-                arguments.addLast(new Pair(new ComplexNumber(Double.parseDouble(s), 0), 0));
             } else if (s.matches("([-]?(\\d+(.\\d+)?))[i$]")) {
                 s = s.replace("i", "");
                 arguments.addLast(new Pair(new ComplexNumber(0, Double.parseDouble(s)), 0));
@@ -112,66 +109,65 @@ public class Calculator {
         }
     }
 
-    private void detectFunction(String function) {
-        if (function.matches("[+]|[-]|[*]|[/]|pow|log")) {
-
-        } else if (function.matches("sin|cos|sqrt")) {
-            singleFunctionExecution(function);
-        }
-    }
-
     private void singleFunctionExecution(String function) {
-        if (isSin(function)) {
-            Pair arg=arguments.peekLast();
-//            arg.a().
+        if (arguments.size() < 1) {
+            throw new MissingFormatArgumentException("Wrong arguments format!");
         }
+        Pair arg = arguments.pollLast();
+        if (isSin(function)) {
+            arg = new Pair(Objects.requireNonNull(arg).a().sin(), 0);
+        } else if (isCos(function)) {
+            arg = new Pair(Objects.requireNonNull(arg).a().cos(), 0);
+        } else if (isLog(function)) {
+            Objects.requireNonNull(arg).a().log();
+        } else if (isSqrt(function)) {
+            Objects.requireNonNull(arg).a().sqrt();
+        }
+        arguments.addLast(arg);
     }
 
     private void doubleFunctionExecution(String function) {
+        System.out.println(function);
         if (arguments.size() < 2) {
             throw new MissingFormatArgumentException("Wrong arguments format!");
         }
-        Pair firstArg = arguments.pop();
-        Pair secondArg = arguments.peekLast();
+        Pair firstArg = arguments.pollLast();
+        Pair secondArg = arguments.pollLast();
         if (isPlus(function)) {
-            Objects.requireNonNull(secondArg).a().plus(firstArg);
+            Objects.requireNonNull(firstArg).a().plus(secondArg);
         } else if (isMinus(function)) {
-            Objects.requireNonNull(secondArg).a().minus(firstArg);
+            Objects.requireNonNull(firstArg).a().minus(secondArg);
+        } else if (isMult(function)) {
+            Objects.requireNonNull(firstArg).a().multiplication(secondArg);
+        } else if (isDiv(function)) {
+            Objects.requireNonNull(firstArg).a().division(secondArg);
+        } else if (isPow(function)) {
+            try {
+                Objects.requireNonNull(firstArg).a().pow(secondArg);
+            } catch (CloneNotSupportedException e) {
+                throw new RuntimeException(e);
+            }
         }
+        arguments.addLast(firstArg);
     }
-
-    // храним распаршенный массив, и указатель на текущий элемент.
-    //
-    //    private void numberExe(int counter) {
-    //        if (predicats.size() > 0) {
-    //            String predicat = predicats.getLast();
-    //            if (counter == 1 && isSinglePredicat(predicat)) {
-    //
-    //            }
-    //        }
-    //    }
 
     private Pair calculation() {
         int pointer = expressions.size() - 1;
         String parseElem;
         while (pointer >= 0) {
             parseElem = expressions.get(pointer--);
+            System.out.println(parseElem);
             if (isNumber(parseElem)) {
                 addParseElem(parseElem);
-                //                System.out.println(
-                //                        arguments.peekLast().a().getValue() + "+" + arguments
-                //                        .peekLast().a()
-                //                                                                             .getSecond());
             } else if (isPredicat(parseElem)) {
-                if (isSinglePredicat(parseElem)){
+                if (isSinglePredicat(parseElem)) {
                     singleFunctionExecution(parseElem);
-                }
-                else if (isDoublePredicat(parseElem)){
+                } else if (isDoublePredicat(parseElem)) {
                     doubleFunctionExecution(parseElem);
                 }
             }
         }
-        if (arguments.size()!=1){
+        if (arguments.size() != 1) {
             throw new MissingFormatArgumentException("Wrong format!");
         }
         return arguments.pop();
@@ -186,18 +182,18 @@ public class Calculator {
                 input).useDelimiter("\\s+")) {
             while (scanner.hasNext()) {
                 String s = scanner.next();
-                //                                System.out.println(s);
                 if (isPredicat(s) || isNumber(s)) {
                     expressions.add(s);
                 } else {
+                    System.out.println(s);
                     throw new MissingFormatArgumentException("Wrong expression format!");
                 }
             }
-            Pair res=calculation();
+            Pair res = calculation();
             return res.a();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return null;
+        throw new RuntimeException();
     }
 }
