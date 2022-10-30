@@ -79,6 +79,9 @@ public class ComplexNumber extends Expr {
     @Override
     void log() {
         double r = Math.sqrt(Math.pow(re, 2) + Math.pow(im, 2));
+        if (r == 0 || re == 0) {
+            throw new ArithmeticException();
+        }
         im = Math.atan(im / re);
         re = Math.log(r);
     }

@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 class ComplexNumberTest {
 
-    private final static double EPS = 1e-7;
+    public static final double EPS = 1e-7;
     Calculator calc = new Calculator();
     Scanner scanner;
     String res;

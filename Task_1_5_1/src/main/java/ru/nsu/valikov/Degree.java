@@ -89,11 +89,17 @@ public class Degree extends Expr {
 
     @Override
     ComplexNumber sin() {
+        if (value % 180 == 0) {
+            return new ComplexNumber(0, 0);
+        }
         return new ComplexNumber(Math.sin(Math.toRadians(value % 360)), 0);
     }
 
     @Override
     ComplexNumber cos() {
+        if (value % 180 == 90) {
+            return new ComplexNumber(0, 0);
+        }
         return new ComplexNumber(Math.cos(Math.toRadians(value % 360)), 0);
     }
 
