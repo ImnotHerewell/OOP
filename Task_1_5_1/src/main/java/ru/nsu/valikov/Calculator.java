@@ -67,7 +67,7 @@ public class Calculator {
     }
 
     private boolean isDouble(String s) {
-        String pattern = "[-]?(\\d+)(.\\d+)?";
+        String pattern = "[-]?\\d+(.\\d+)?";
         return s.matches(pattern);
     }
 
@@ -175,7 +175,7 @@ public class Calculator {
             return String.valueOf(res.a().getValue());
         }
         String f = res.a().getSecond() < 0 ? "" : "+";
-        return res.a().getValue() + f + res.a().getSecond();
+        return res.a().getValue() + f + res.a().getSecond()+"i";
     }
 
     public String parser(String file) {

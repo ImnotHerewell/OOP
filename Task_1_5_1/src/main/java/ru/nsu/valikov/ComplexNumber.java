@@ -94,12 +94,20 @@ public class ComplexNumber extends Expr {
 
     @Override
     ComplexNumber sin() {
-        return Math.sin()
+        if (im != 0) {
+            throw new ArithmeticException();
+        }
+        re = Math.sin(re);
+        return this;
     }
 
     @Override
     ComplexNumber cos() {
-        return null;
+        if (im != 0) {
+            throw new ArithmeticException();
+        }
+        re = Math.cos(re);
+        return this;
     }
 
 }
