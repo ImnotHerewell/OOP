@@ -19,6 +19,10 @@ public class Calculator {
     private final Deque<Pair> arguments = new ArrayDeque<>();
     private final List<String> expressions = new ArrayList<>();
 
+    public List<String> getExpressions() {
+        return expressions;
+    }
+
     private boolean isPlus(String s) {
         return s.equals("+");
     }

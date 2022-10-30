@@ -45,7 +45,8 @@ public class Degree extends Expr {
     @Override
     void multiplication(Pair number) {
         if (number.b() == 1 || number.a().getSecond() != 0) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(
+                    "Cannot multiply degrees with degrees or complex numbers.");
         }
         value *= number.a().getValue();
         checkCorrectness();
@@ -53,8 +54,9 @@ public class Degree extends Expr {
 
     @Override
     void division(Pair number) {
-        if (number.b() == 1 && number.a().getValue() == 0) {
-            throw new IllegalArgumentException();
+        if (number.b() == 1 || number.a().getSecond() != 0) {
+            throw new IllegalArgumentException(
+                    "Cannot divide degrees by degrees or complex numbers.");
         }
         value /= number.a().getValue();
         checkCorrectness();
@@ -63,7 +65,8 @@ public class Degree extends Expr {
     @Override
     void pow(Pair number) {
         if (number.b() == 1 || number.a().getSecond() != 0) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(
+                    "Cannot raising degrees to degrees degree or complex number degree.");
         }
         value = Math.pow(value, number.a().getValue());
         checkCorrectness();
@@ -71,18 +74,12 @@ public class Degree extends Expr {
 
     @Override
     void log() {
-        if (value < 0) {
-            throw new ArithmeticException();
-        }
         value = Math.log(value);
         checkCorrectness();
     }
 
     @Override
     void sqrt() {
-        if (value < 0) {
-            throw new ArithmeticException();
-        }
         value = Math.sqrt(value);
         checkCorrectness();
     }
