@@ -2,8 +2,10 @@ package ru.nsu.valikov;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
+/**
+ * Tests with degrees.
+ */
 class DegreeTest {
     private static final double EPS = 1e-7;
     Calculator calc = new Calculator();
@@ -20,10 +22,10 @@ class DegreeTest {
 
     @Test
     void plusExc() {
-        Exception exception = assertThrows(IllegalArgumentException.class,
-                                           () -> calc.parser("./degree/plusExc.txt"));
+        Exception exception = Assertions.assertThrows(IllegalArgumentException.class,
+                () -> calc.parser("./degree/plusExc.txt"));
         Assertions.assertEquals("Cannot perform operations with different types.",
-                                exception.getMessage());
+                exception.getMessage());
     }
 
     @Test
@@ -35,10 +37,10 @@ class DegreeTest {
 
     @Test
     void minusExc() {
-        Exception exception = assertThrows(IllegalArgumentException.class,
-                                           () -> calc.parser("./degree/minusExc.txt"));
+        Exception exception = Assertions.assertThrows(IllegalArgumentException.class,
+                () -> calc.parser("./degree/minusExc.txt"));
         Assertions.assertEquals("Cannot perform operations with different types.",
-                                exception.getMessage());
+                exception.getMessage());
     }
 
     @Test
@@ -51,10 +53,10 @@ class DegreeTest {
 
     @Test
     void multExc() {
-        Exception exception = assertThrows(IllegalArgumentException.class,
-                                           () -> calc.parser("./degree/multExc.txt"));
+        Exception exception = Assertions.assertThrows(IllegalArgumentException.class,
+                () -> calc.parser("./degree/multExc.txt"));
         Assertions.assertEquals("Cannot multiply degrees with degrees or complex numbers.",
-                                exception.getMessage());
+                exception.getMessage());
     }
 
     @Test
@@ -67,10 +69,10 @@ class DegreeTest {
 
     @Test
     void divExc() {
-        Exception exception = assertThrows(IllegalArgumentException.class,
-                                           () -> calc.parser("./degree/divExc.txt"));
+        Exception exception = Assertions.assertThrows(IllegalArgumentException.class,
+                () -> calc.parser("./degree/divExc.txt"));
         Assertions.assertEquals("Cannot divide degrees by degrees or complex numbers.",
-                                exception.getMessage());
+                exception.getMessage());
     }
 
     @Test
@@ -83,8 +85,8 @@ class DegreeTest {
 
     @Test
     void powExc() {
-        Exception exception = assertThrows(IllegalArgumentException.class,
-                                           () -> calc.parser("./degree/powExc.txt"));
+        Exception exception = Assertions.assertThrows(IllegalArgumentException.class,
+                () -> calc.parser("./degree/powExc.txt"));
         Assertions.assertEquals(
                 "Cannot raising degrees to degrees degree or complex number degree.",
                 exception.getMessage());

@@ -5,6 +5,9 @@ import java.util.Scanner;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Tests with complex numbers.
+ */
 class ComplexNumberTest {
 
     public static final double EPS = 1e-7;
@@ -14,8 +17,8 @@ class ComplexNumberTest {
 
     @Test
     void plus() {
-        res = calc.parser("./complex/plus.txt").replace("i", "").replace("-", " -").replace("+",
-                                                                                            " +");
+        res = calc.parser("./complex/plus.txt").replace("i", "").replace("-", " -")
+                  .replace("+", " +");
         scanner = new Scanner(res).useLocale(Locale.US);
         double resRe = scanner.nextDouble();
         double resIm = scanner.nextDouble();
@@ -27,8 +30,8 @@ class ComplexNumberTest {
 
     @Test
     void minus() {
-        res = calc.parser("./complex/minus.txt").replace("i", "").replace("-", " -").replace("+",
-                                                                                             " +");
+        res = calc.parser("./complex/minus.txt").replace("i", "").replace("-", " -")
+                  .replace("+", " +");
         scanner = new Scanner(res).useLocale(Locale.US);
         double resRe = scanner.nextDouble();
         double resIm = scanner.nextDouble();
@@ -53,9 +56,8 @@ class ComplexNumberTest {
 
     @Test
     void division() {
-        res = calc.parser("./complex/division.txt").replace("i", "").replace("-", " -").replace("+",
-                                                                                                " +")
-                  .replace("E -", "E-");
+        res = calc.parser("./complex/division.txt").replace("i", "").replace("-", " -")
+                  .replace("+", " +").replace("E -", "E-");
         scanner = new Scanner(res).useLocale(Locale.US);
         double resRe = scanner.nextDouble();
         double resIm = scanner.nextDouble();
@@ -65,12 +67,10 @@ class ComplexNumberTest {
         Assertions.assertEquals(expIm, resIm, EPS);
     }
 
-    //Спасибо папашка за тфкп
     @Test
     void pow() {
-        res = calc.parser("./complex/pow.txt").replace("i", "").replace("-", " -").replace("+",
-                                                                                           " +")
-                  .replace("E -", "E-");
+        res = calc.parser("./complex/pow.txt").replace("i", "").replace("-", " -")
+                  .replace("+", " +").replace("E -", "E-");
         scanner = new Scanner(res).useLocale(Locale.US);
         double resRe = scanner.nextDouble();
         double resIm = scanner.nextDouble();
@@ -82,9 +82,8 @@ class ComplexNumberTest {
 
     @Test
     void log() {
-        res = calc.parser("./complex/log.txt").replace("i", "").replace("-", " -").replace("+",
-                                                                                           " +")
-                  .replace("E -", "E-");
+        res = calc.parser("./complex/log.txt").replace("i", "").replace("-", " -")
+                  .replace("+", " +").replace("E -", "E-");
         scanner = new Scanner(res).useLocale(Locale.US);
         double resRe = scanner.nextDouble();
         double resIm = scanner.nextDouble();
@@ -96,9 +95,8 @@ class ComplexNumberTest {
 
     @Test
     void sqrt() {
-        res = calc.parser("./complex/sqrt.txt").replace("i", "").replace("-", " -").replace("+",
-                                                                                            " +")
-                  .replace("E -", "E-");
+        res = calc.parser("./complex/sqrt.txt").replace("i", "").replace("-", " -")
+                  .replace("+", " +").replace("E -", "E-");
         scanner = new Scanner(res).useLocale(Locale.US);
         double resRe = scanner.nextDouble();
         double resIm = scanner.nextDouble();

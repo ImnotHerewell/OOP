@@ -15,13 +15,12 @@ import java.util.MissingFormatArgumentException;
 import java.util.Objects;
 import java.util.Scanner;
 
+/**
+ * Main class, reads data, do checks, calculate from others.
+ */
 public class Calculator {
-    private final Deque<Pair> arguments = new ArrayDeque<>();
-    private final List<String> expressions = new ArrayList<>();
-
-    public List<String> getExpressions() {
-        return expressions;
-    }
+    private final Deque<Pair> arguments = new ArrayDeque<>(); // numeric data
+    private final List<String> expressions = new ArrayList<>(); // list with parse data
 
     private boolean isPlus(String s) {
         return s.equals("+");
@@ -31,7 +30,7 @@ public class Calculator {
         return s.equals("-");
     }
 
-    private boolean isMult(String s) {
+    private boolean isMultiplication(String s) {
         return s.equals("*");
     }
 
@@ -59,28 +58,46 @@ public class Calculator {
         return s.equals("cos");
     }
 
-    private boolean isSinglePredicat(String s) {
+    private boolean isSingleFunction(String s) {
         return isSin(s) || isCos(s) || isSqrt(s) || isLog(s);
     }
 
-    private boolean isDoublePredicat(String s) {
-        return isPlus(s) || isMinus(s) || isMult(s) || isDiv(s) || isPow(s);
+    private boolean isDoubleFunction(String s) {
+        return isPlus(s) || isMinus(s) || isMultiplication(s) || isDiv(s) || isPow(s);
     }
 
-    private boolean isPredicat(String s) {
-        return isSinglePredicat(s) || isDoublePredicat(s);
+    private boolean isFunction(String s) {
+        return isSingleFunction(s) || isDoubleFunction(s);
     }
 
+    /**
+     * Is data double or not.
+     *
+     * @param s unparse data.
+     * @return true if it is double else false.
+     */
     private boolean isDouble(String s) {
-        String pattern = "[-]?\\d+(.\\d+)?";
+        String pattern = "-?\\d+(.\\d+)?";
         return s.matches(pattern);
     }
 
+    /**
+     * Is data complex number or not.
+     *
+     * @param s unparse data.
+     * @return true if it is complex number else false.
+     */
     private boolean isComplex(String s) {
-        String pattern = "([-]?\\d+(.\\d+)?)?([-|+](\\d+(.\\d+)?))?[i$]";
+        String pattern = "(-?\\d+(.\\d+)?)?([-|+](\\d+(.\\d+)?))?[i$]";
         return s.matches(pattern);
     }
 
+    /**
+     * Is data degree or not.
+     *
+     * @param s unparse data.
+     * @return true if it is degree else false.
+     */
     private boolean isDegree(String s) {
         String pattern = "(\\d+)(.\\d+)?%";
         return s.matches(pattern);
@@ -90,18 +107,26 @@ public class Calculator {
         return isComplex(s) || isDegree(s) || isDouble(s);
     }
 
+    /**
+     * Adding parse element to expressions list.
+     *
+     * @param s unparse element.
+     */
     private void addParseElem(String s) {
         if (isDouble(s)) {
             arguments.addLast(new Pair(new ComplexNumber(Double.parseDouble(s), 0), 0));
         } else if (isComplex(s)) {
-            if (s.matches("([-]?\\d+(.\\d+)?)([-|+](\\d+(.\\d+)?))[i$]")) {
+            if (s.matches("(-?\\d+(.\\d+)?)([-|+](\\d+(.\\d+)?))[i$]")) {
+                /*
+                  For simplifying process.
+                 */
                 s = s.replace("i", "");
                 s = s.replace("-", " -");
                 s = s.replace("+", " ");
                 Scanner scan = new Scanner(s).useLocale(Locale.US);
                 arguments.addLast(
                         new Pair(new ComplexNumber(scan.nextDouble(), scan.nextDouble()), 0));
-            } else if (s.matches("([-]?(\\d+(.\\d+)?))[i$]")) {
+            } else if (s.matches("(-?(\\d+(.\\d+)?))[i$]")) {
                 s = s.replace("i", "");
                 arguments.addLast(new Pair(new ComplexNumber(0, Double.parseDouble(s)), 0));
             }
@@ -110,6 +135,11 @@ public class Calculator {
         }
     }
 
+    /**
+     * Execute single function like log, sqrt, sin, cos.
+     *
+     * @param function function's name.
+     */
     private void singleFunctionExecution(String function) {
         if (arguments.size() < 1) {
             throw new MissingFormatArgumentException("Wrong arguments format!");
@@ -127,6 +157,11 @@ public class Calculator {
         arguments.addLast(arg);
     }
 
+    /**
+     * Execute double function like pow, +, -, *, /.
+     *
+     * @param function function's name.
+     */
     private void doubleFunctionExecution(String function) {
         if (arguments.size() < 2) {
             throw new MissingFormatArgumentException("Wrong arguments format!");
@@ -137,20 +172,21 @@ public class Calculator {
             Objects.requireNonNull(firstArg).a().plus(secondArg);
         } else if (isMinus(function)) {
             Objects.requireNonNull(firstArg).a().minus(secondArg);
-        } else if (isMult(function)) {
+        } else if (isMultiplication(function)) {
             Objects.requireNonNull(firstArg).a().multiplication(secondArg);
         } else if (isDiv(function)) {
             Objects.requireNonNull(firstArg).a().division(secondArg);
         } else if (isPow(function)) {
-            try {
-                Objects.requireNonNull(firstArg).a().pow(secondArg);
-            } catch (CloneNotSupportedException e) {
-                throw new RuntimeException(e);
-            }
+            Objects.requireNonNull(firstArg).a().pow(secondArg);
         }
         arguments.addLast(firstArg);
     }
 
+    /**
+     * Default algorithm for polish notation.
+     *
+     * @return result.
+     */
     private Pair calculation() {
         int pointer = expressions.size() - 1;
         String parseElem;
@@ -158,10 +194,10 @@ public class Calculator {
             parseElem = expressions.get(pointer--);
             if (isNumber(parseElem)) {
                 addParseElem(parseElem);
-            } else if (isPredicat(parseElem)) {
-                if (isSinglePredicat(parseElem)) {
+            } else if (isFunction(parseElem)) {
+                if (isSingleFunction(parseElem)) {
                     singleFunctionExecution(parseElem);
-                } else if (isDoublePredicat(parseElem)) {
+                } else if (isDoubleFunction(parseElem)) {
                     doubleFunctionExecution(parseElem);
                 }
             }
@@ -172,6 +208,12 @@ public class Calculator {
         return arguments.pop();
     }
 
+    /**
+     * Makes result to normal output value.
+     *
+     * @param res result from calculation().
+     * @return normal output value.
+     */
     private String outputFormat(Pair res) {
         if (res.b() == 1) {
             return BigDecimal.valueOf(res.a().getValue()).doubleValue() + "%";
@@ -184,16 +226,22 @@ public class Calculator {
                 res.a().getSecond()).doubleValue() + "i";
     }
 
+    /**
+     * Reads data from file.
+     *
+     * @param file file's name.
+     * @return user's output.
+     */
     public String parser(String file) {
         ClassLoader classLoader = getClass().getClassLoader();
         try (InputStream inputStream = classLoader.getResourceAsStream(file);
              InputStreamReader streamReader = new InputStreamReader(
                      Objects.requireNonNull(inputStream), StandardCharsets.UTF_8);
-             BufferedReader input = new BufferedReader(streamReader); Scanner scanner = new Scanner(
-                input).useDelimiter("\\s+")) {
+             BufferedReader input = new BufferedReader(streamReader);
+             Scanner scanner = new Scanner(input).useDelimiter("\\s+")) {
             while (scanner.hasNext()) {
                 String s = scanner.next();
-                if (isPredicat(s) || isNumber(s)) {
+                if (isFunction(s) || isNumber(s)) {
                     expressions.add(s);
                 } else {
                     throw new MissingFormatArgumentException("Wrong expression format!");
@@ -203,6 +251,6 @@ public class Calculator {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        throw new RuntimeException();
+        throw new RuntimeException("What are you doing, bro?");
     }
 }

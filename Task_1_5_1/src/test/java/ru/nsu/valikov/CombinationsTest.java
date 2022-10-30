@@ -5,6 +5,9 @@ import java.util.Scanner;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Combinations with degree and numbers.
+ */
 public class CombinationsTest {
     public static final double EPS = 1e-7;
     Calculator calc = new Calculator();
@@ -13,9 +16,8 @@ public class CombinationsTest {
 
     @Test
     void randomYtubeTest() {
-        res = calc.parser("./combination/randomYtubeExample.txt").replace("i", "").replace("-",
-                                                                                           " -")
-                  .replace("+", " +");
+        res = calc.parser("./combination/randomYtubeExample.txt").replace("i", "")
+                  .replace("-", " -").replace("+", " +");
         scanner = new Scanner(res).useLocale(Locale.US);
         double resD = scanner.nextDouble();
         double expD = 28;

@@ -2,6 +2,13 @@ package ru.nsu.valikov;
 
 import static java.lang.Double.NaN;
 
+/**
+ * Degree (% not a percentage).
+ * Cannot perform some operations between degrees and complex numbers.
+ * Examples:
+ * 1) 3%
+ * 2) 3.13%
+ */
 public class Degree extends Expr {
     private double value;
 
@@ -9,6 +16,9 @@ public class Degree extends Expr {
         this.value = value;
     }
 
+    /**
+     * Degree cannot have negative value.
+     */
     private void checkCorrectness() {
         if (value < 0) {
             throw new RuntimeException("Degrees cannot be negative!");
@@ -24,6 +34,11 @@ public class Degree extends Expr {
         return NaN;
     }
 
+    /**
+     * Adding one degree to another, default.
+     *
+     * @param number another numeric data.
+     */
     @Override
     void plus(Pair number) {
         if (number.b() == 0) {
@@ -33,6 +48,11 @@ public class Degree extends Expr {
         checkCorrectness();
     }
 
+    /**
+     * Subtract one degree from another, default.
+     *
+     * @param number another numeric data.
+     */
     @Override
     void minus(Pair number) {
         if (number.b() == 0) {
@@ -42,6 +62,11 @@ public class Degree extends Expr {
         checkCorrectness();
     }
 
+    /**
+     * Multiply one degree by another double number.
+     *
+     * @param number another numeric data.
+     */
     @Override
     void multiplication(Pair number) {
         if (number.b() == 1 || number.a().getSecond() != 0) {
@@ -52,6 +77,11 @@ public class Degree extends Expr {
         checkCorrectness();
     }
 
+    /**
+     * Divide one degree by another double number.
+     *
+     * @param number another numeric data.
+     */
     @Override
     void division(Pair number) {
         if (number.b() == 1 || number.a().getSecond() != 0) {
@@ -62,6 +92,11 @@ public class Degree extends Expr {
         checkCorrectness();
     }
 
+    /**
+     * Raising one degree to a double number.
+     *
+     * @param number number another numeric data.
+     */
     @Override
     void pow(Pair number) {
         if (number.b() == 1 || number.a().getSecond() != 0) {
@@ -72,18 +107,29 @@ public class Degree extends Expr {
         checkCorrectness();
     }
 
+    /**
+     * Take log function from degree.
+     */
     @Override
     void log() {
         value = Math.log(value);
         checkCorrectness();
     }
 
+    /**
+     * Take square root from degree.
+     */
     @Override
     void sqrt() {
         value = Math.sqrt(value);
         checkCorrectness();
     }
 
+    /**
+     * Take sin function from degree, default.
+     *
+     * @return new double number.
+     */
     @Override
     ComplexNumber sin() {
         if (value % 180 == 0) {
@@ -92,6 +138,11 @@ public class Degree extends Expr {
         return new ComplexNumber(Math.sin(Math.toRadians(value % 360)), 0);
     }
 
+    /**
+     * Take cos function from degree, default.
+     *
+     * @return new double number.
+     */
     @Override
     ComplexNumber cos() {
         if (value % 180 == 90) {

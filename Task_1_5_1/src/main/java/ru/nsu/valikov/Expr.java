@@ -1,5 +1,8 @@
 package ru.nsu.valikov;
 
+/**
+ * Interface-like class for any numeric data.
+ */
 abstract class Expr {
     abstract double getValue();
 
@@ -13,7 +16,7 @@ abstract class Expr {
 
     abstract void division(Pair expNumber);
 
-    abstract void pow(Pair expNumber) throws CloneNotSupportedException;
+    abstract void pow(Pair expNumber);
 
     abstract void log();
 
