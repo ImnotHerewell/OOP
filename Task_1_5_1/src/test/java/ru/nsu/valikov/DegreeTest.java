@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class DegreeTest {
-    private final static double EPS = 1e-7;
+    private static final double EPS = 1e-7;
     Calculator calc = new Calculator();
     String res;
     String exp;

@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -169,13 +170,14 @@ public class Calculator {
 
     private String outputFormat(Pair res) {
         if (res.b() == 1) {
-            return res.a().getValue() + "%";
+            return BigDecimal.valueOf(res.a().getValue()).doubleValue() + "%";
         }
         if (res.a().getSecond() == 0) {
-            return String.valueOf(res.a().getValue());
+            return String.valueOf(BigDecimal.valueOf(res.a().getValue()).doubleValue());
         }
         String f = res.a().getSecond() < 0 ? "" : "+";
-        return res.a().getValue() + f + res.a().getSecond()+"i";
+        return BigDecimal.valueOf(res.a().getValue()).doubleValue() + f + BigDecimal.valueOf(
+                res.a().getSecond()).doubleValue() + "i";
     }
 
     public String parser(String file) {
