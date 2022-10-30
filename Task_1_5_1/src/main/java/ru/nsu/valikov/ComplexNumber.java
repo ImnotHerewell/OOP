@@ -51,7 +51,6 @@ public class ComplexNumber extends Expr {
         if (number.b() == 1 || Math.pow(number.a().getValue(), 2) + Math.pow(number.a().getSecond(),
                                                                              2) == 0) {
             throw new IllegalArgumentException("Cannot perform operations with different types.");
-
         }
         double denominator = Math.pow(number.a().getValue(), 2) + Math.pow(number.a().getSecond(),
                                                                            2);

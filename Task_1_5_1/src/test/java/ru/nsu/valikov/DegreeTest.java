@@ -79,4 +79,20 @@ class DegreeTest {
         double expD = 0.39073112848927375506208458888909;
         Assertions.assertEquals(expD, resD, EPS);
     }
+
+    @Test
+    void cos90() {
+        res = calc.parser("./degree/cos90.txt");
+        double resD = Double.parseDouble(res.replace("%", ""));
+        double expD = 0;
+        Assertions.assertEquals(expD, resD, EPS);
+    }
+
+    @Test
+    void sin180() {
+        res = calc.parser("./degree/sin180.txt");
+        double resD = Double.parseDouble(res.replace("%", ""));
+        double expD = 0;
+        Assertions.assertEquals(expD, resD, EPS);
+    }
 }

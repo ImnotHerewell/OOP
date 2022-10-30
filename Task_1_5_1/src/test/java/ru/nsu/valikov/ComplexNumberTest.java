@@ -123,4 +123,20 @@ class ComplexNumberTest {
         double expD = -0.41614683654714238699756822950076;
         Assertions.assertEquals(expD, resD, EPS);
     }
+
+    @Test
+    void powDoubleTest() {
+        res = calc.parser("./complex/powDouble.txt");
+        double resD = Double.parseDouble(res);
+        double expD = 8;
+        Assertions.assertEquals(expD, resD, EPS);
+    }
+
+    @Test
+    void sqrtReTest() {
+        res = calc.parser("./complex/sqrtRe.txt");
+        double resD = Double.parseDouble(res);
+        double expD = 12;
+        Assertions.assertEquals(expD, resD, EPS);
+    }
 }
