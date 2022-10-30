@@ -9,6 +9,12 @@ public class Degree extends Expr {
         this.value = value;
     }
 
+    private void checkCorrectness() {
+        if (value < 0) {
+            throw new RuntimeException("Degrees cannot be negative!");
+        }
+    }
+
     double getValue() {
         return value;
     }
@@ -20,57 +26,65 @@ public class Degree extends Expr {
 
     @Override
     void plus(Pair number) {
-        if (number.b() == 1) {
-            value += number.a().getValue();
-        } else {
+        if (number.b() == 0) {
             throw new IllegalArgumentException("Cannot perform operations with different types.");
         }
+        value += number.a().getValue();
+        checkCorrectness();
     }
 
     @Override
     void minus(Pair number) {
-        if (number.b() == 1) {
-            value -= number.a().getValue();
-        } else {
+        if (number.b() == 0) {
             throw new IllegalArgumentException("Cannot perform operations with different types.");
         }
+        value -= number.a().getValue();
+        checkCorrectness();
     }
 
     @Override
     void multiplication(Pair number) {
-        if (number.b() == 1) {
-            value *= number.a().getValue();
-        } else {
-            throw new IllegalArgumentException("Cannot perform operations with different types.");
+        if (number.b() == 1 || number.a().getSecond() != 0) {
+            throw new IllegalArgumentException();
         }
+        value *= number.a().getValue();
+        checkCorrectness();
     }
 
     @Override
     void division(Pair number) {
-        if (number.b() == 1 && number.a().getValue() != 0) {
-            value /= number.a().getValue();
-        } else {
-            throw new IllegalArgumentException("Cannot perform operations with different types.");
+        if (number.b() == 1 && number.a().getValue() == 0) {
+            throw new IllegalArgumentException();
         }
+        value /= number.a().getValue();
+        checkCorrectness();
     }
 
     @Override
     void pow(Pair number) {
-        if (number.b() == 0 && number.a().getSecond() == 0) {
-            value = Math.pow(value, number.a().getValue());
-        } else {
+        if (number.b() == 1 || number.a().getSecond() != 0) {
             throw new IllegalArgumentException();
         }
+        value = Math.pow(value, number.a().getValue());
+        checkCorrectness();
     }
 
     @Override
     void log() {
+        if (value < 0) {
+            throw new ArithmeticException();
+        }
         value = Math.log(value);
+        checkCorrectness();
     }
 
     @Override
     void sqrt() {
+        if (value < 0) {
+            throw new ArithmeticException();
+        }
         value = Math.sqrt(value);
+        checkCorrectness();
     }
 
     @Override

@@ -18,10 +18,6 @@ public class Calculator {
     private final Deque<Pair> arguments = new ArrayDeque<>();
     private final List<String> expressions = new ArrayList<>();
 
-    //    public static void main(String[] args) {
-    //        double a = 1e+5;// дабл не имеет оверфлоу, кек какой-то
-    //        System.out.println(a);
-    //    }
     private boolean isPlus(String s) {
         return s.equals("+");
     }
@@ -71,17 +67,17 @@ public class Calculator {
     }
 
     private boolean isDouble(String s) {
-        String pattern = "[-]?(\\d+)(.\\d+)?";//double
+        String pattern = "[-]?(\\d+)(.\\d+)?";
         return s.matches(pattern);
     }
 
     private boolean isComplex(String s) {
-        String pattern = "([-]?\\d+(.\\d+)?)?([-|+](\\d+(.\\d+)?))?[i$]";// complex num, вроде
+        String pattern = "([-]?\\d+(.\\d+)?)?([-|+](\\d+(.\\d+)?))?[i$]";
         return s.matches(pattern);
     }
 
     private boolean isDegree(String s) {
-        String pattern = "(\\d+)(.\\d+)?%";//degrees
+        String pattern = "(\\d+)(.\\d+)?%";
         return s.matches(pattern);
     }
 
@@ -127,7 +123,6 @@ public class Calculator {
     }
 
     private void doubleFunctionExecution(String function) {
-        System.out.println(function);
         if (arguments.size() < 2) {
             throw new MissingFormatArgumentException("Wrong arguments format!");
         }
@@ -156,7 +151,6 @@ public class Calculator {
         String parseElem;
         while (pointer >= 0) {
             parseElem = expressions.get(pointer--);
-            System.out.println(parseElem);
             if (isNumber(parseElem)) {
                 addParseElem(parseElem);
             } else if (isPredicat(parseElem)) {
@@ -173,7 +167,18 @@ public class Calculator {
         return arguments.pop();
     }
 
-    public Expr parser(String file) {
+    private String outputFormat(Pair res) {
+        if (res.b() == 1) {
+            return res.a().getValue() + "%";
+        }
+        if (res.a().getSecond() == 0) {
+            return String.valueOf(res.a().getValue());
+        }
+        String f = res.a().getSecond() < 0 ? "" : "+";
+        return res.a().getValue() + f + res.a().getSecond();
+    }
+
+    public String parser(String file) {
         ClassLoader classLoader = getClass().getClassLoader();
         try (InputStream inputStream = classLoader.getResourceAsStream(file);
              InputStreamReader streamReader = new InputStreamReader(
@@ -185,12 +190,10 @@ public class Calculator {
                 if (isPredicat(s) || isNumber(s)) {
                     expressions.add(s);
                 } else {
-                    System.out.println(s);
                     throw new MissingFormatArgumentException("Wrong expression format!");
                 }
             }
-            Pair res = calculation();
-            return res.a();
+            return outputFormat(calculation());
         } catch (IOException e) {
             e.printStackTrace();
         }
