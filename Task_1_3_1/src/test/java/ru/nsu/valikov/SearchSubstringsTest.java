@@ -71,8 +71,8 @@ class SearchSubstringsTest {
         try (PrintWriter writer = new PrintWriter(
                 Objects.requireNonNull(classLoader.getResource(path)).getPath())) {
             Random rand = new Random();
-            for (int i = 0; i < 10; i++) {
-                if (i == 6) {
+            for (Long i = 0L; i < Long.parseLong("21474836480"); i++) {
+                if (i == 1234567890) {
                     writer.write("NSU{f1nDM3}");
                 }
                 writer.write(rand.nextInt(60) + 'A');
@@ -86,7 +86,7 @@ class SearchSubstringsTest {
     void bigTest() {
         createBigFile();
         String file = "sok.txt";
-        List<Integer> expectedList = List.of(6);
+        List<Integer> expectedList = List.of(1234567890);
         List<Integer> testList = new SearchSubstrings().find(file, "NSU{f1nDM3}");
         System.out.println(testList);
         Assertions.assertEquals(expectedList, testList);
