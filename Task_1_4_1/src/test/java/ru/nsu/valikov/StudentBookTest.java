@@ -3,6 +3,8 @@ package ru.nsu.valikov;
 import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.SortedMap;
+import java.util.TreeMap;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -51,14 +53,14 @@ class StudentBookTest {
                 put("Digital platforms", Mark.B);
             }
         };
-        Map<Semester, SubjectMark> grades = new HashMap<>() {
+        SortedMap<Semester, SubjectMark> grades = new TreeMap<>() {
             {
                 put(semesterOne, new SubjectMark(firstSemesterGrades));
                 put(semesterTwo, new SubjectMark(secondSemesterGrades));
             }
         };
-        testBook = StudentBook.build(210638, "Computer Science and Engineering", 0, Mark.NULL,
-                                     grades);
+        testBook = StudentBook.build(210638, "Computer Science and Engineering", Degree.Bachelor,
+                Mark.NULL, grades);
     }
 
     /**
@@ -67,11 +69,12 @@ class StudentBookTest {
     @Test
     void build() {
         StudentBook testBookNew;
-        testBookNew = StudentBook.build(210638, "Computer Science and Engineering", 0);
+        testBookNew =
+                StudentBook.build(210638, "Computer Science and Engineering", Degree.Bachelor);
         Assertions.assertEquals(testBookNew.getBookId(), 210638);
         Assertions.assertEquals(testBookNew.getSpecialization(),
-                                "Computer Science and " + "Engineering");
-        Assertions.assertEquals(testBookNew.getStatus(), 0);
+                "Computer Science and " + "Engineering");
+        Assertions.assertEquals(testBookNew.getStatus(), Degree.Bachelor);
     }
 
     /**
@@ -80,7 +83,8 @@ class StudentBookTest {
     @Test
     void testBuild() {
         StudentBook testBookNew;
-        testBookNew = StudentBook.build(210638, "Computer Science and Engineering", 0, Mark.NULL);
+        testBookNew = StudentBook.build(210638, "Computer Science and Engineering", Degree.Bachelor,
+                Mark.NULL);
         Assertions.assertEquals(testBookNew.getQualifyingWorkMark(), Mark.NULL);
     }
 
@@ -90,11 +94,12 @@ class StudentBookTest {
     @Test
     void testBuild1() {
         StudentBook testBookNew;
-        testBookNew = StudentBook.build(210638, "Computer Science and Engineering", 0, Mark.NULL);
+        testBookNew = StudentBook.build(210638, "Computer Science and Engineering", Degree.Bachelor,
+                Mark.NULL);
         Assertions.assertEquals(testBookNew.getBookId(), 210638);
         Assertions.assertEquals(testBookNew.getSpecialization(),
-                                "Computer Science and " + "Engineering");
-        Assertions.assertEquals(testBookNew.getStatus(), 0);
+                "Computer Science and " + "Engineering");
+        Assertions.assertEquals(testBookNew.getStatus(), Degree.Bachelor);
         Assertions.assertEquals(testBookNew.getQualifyingWorkMark(), Mark.NULL);
     }
 
@@ -118,10 +123,10 @@ class StudentBookTest {
 
     @Test
     void setStatusTest() throws NoSuchFieldException, IllegalAccessException {
-        testBook.setStatus(1);
+        testBook.setStatus(Degree.Master);
         Field field = testBook.getClass().getDeclaredField("status");
         field.setAccessible(true);
-        Assertions.assertEquals(1, field.get(testBook));
+        Assertions.assertEquals(Degree.Master, field.get(testBook));
     }
 
     @Test
@@ -158,13 +163,13 @@ class StudentBookTest {
         testBook.addMark(semesterThree, "Object Oriented Programming", Mark.A);
 
         Assertions.assertEquals(testBook.getBookMark(semesterThree, "Object Oriented Programming"),
-                                Mark.A);
+                Mark.A);
     }
 
     @Test
     void setNewMark() {
         testBook.addMark(semesterTwo, "Imperative Programming", Mark.B);
         Assertions.assertEquals(testBook.getBookMark(semesterTwo, "Imperative Programming"),
-                                Mark.B);
+                Mark.B);
     }
 }

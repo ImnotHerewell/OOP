@@ -1,9 +1,9 @@
 package ru.nsu.valikov;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.NoSuchElementException;
-import java.util.stream.Stream;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 /**
  * Student book class, where grades are stored.
@@ -20,33 +20,20 @@ public class StudentBook implements RecordBook {
     /**
      * For easily usability, stores every mark in book.
      */
-    private final Map<Semester, SubjectMark> bookGrades;
+    private final SortedMap<Semester, SubjectMark> bookGrades;
     /**
      * For easily usability, stores every final mark in diploma.
      */
-    private final SubjectMark diplomaGrades = new SubjectMark(new HashMap<>());
+    private final SubjectMark diplomaGrades = new SubjectMark(new TreeMap<>());
     /**
-     * 0 if bachelor,
-     * 1 if master.
+     * Bachelor or Master.
      */
-    private int status;
+    private Degree status;
     private int bookId;
     private String specialization;
-    /**
-     * Sum of all marks in diploma.
-     */
     private int sumDiplomaMark;
-    /**
-     * Count of all subjects in diploma with no Mark.Z value.
-     */
     private int countDiplomaNoZsubjects;
-    /**
-     * Sum of all marks in book.
-     */
     private int sumBookMark;
-    /**
-     * Count of all subjects in book with no Mark.Z value.
-     */
     private int countBookNoZsubjects;
     private Mark qualifyingWorkMark;
 
@@ -59,8 +46,8 @@ public class StudentBook implements RecordBook {
      * @param qualifyingWorkMark qualifying work mark
      * @param bookGrades         map with all marks
      */
-    private StudentBook(int bookId, String specialization, int status, Mark qualifyingWorkMark,
-                        Map<Semester, SubjectMark> bookGrades) {
+    private StudentBook(int bookId, String specialization, Degree status, Mark qualifyingWorkMark
+            , SortedMap<Semester, SubjectMark> bookGrades) {
         this.bookId = bookId;
         this.status = status;
         this.specialization = specialization;
@@ -69,23 +56,21 @@ public class StudentBook implements RecordBook {
         constructAverageGrades();
     }
 
-    public static StudentBook build(int bookId, String specialization, int status,
-                                    Mark qualifyingWorkMark, Map<Semester, SubjectMark> grades) {
+    public static StudentBook build(int bookId, String specialization, Degree status,
+                                    Mark qualifyingWorkMark,
+                                    SortedMap<Semester, SubjectMark> grades) {
         return new StudentBook(bookId, specialization, status, qualifyingWorkMark, grades);
     }
 
-    public static StudentBook build(int bookId, String specialization, int status,
+    public static StudentBook build(int bookId, String specialization, Degree status,
                                     Mark qualifyingWorkMark) {
-        return new StudentBook(bookId, specialization, status, qualifyingWorkMark, new HashMap<>());
+        return new StudentBook(bookId, specialization, status, qualifyingWorkMark, new TreeMap<>());
     }
 
-    public static StudentBook build(int bookId, String specialization, int status) {
-        return new StudentBook(bookId, specialization, status, Mark.NULL, new HashMap<>());
+    public static StudentBook build(int bookId, String specialization, Degree status) {
+        return new StudentBook(bookId, specialization, status, Mark.NULL, new TreeMap<>());
     }
 
-    /**
-     * Get average grades from constructor.
-     */
     private void constructAverageGrades() {
         for (var semester : bookGrades.keySet()) {
             Map<String, Mark> subjectMark = bookGrades.get(semester).subjectMark();
@@ -115,19 +100,18 @@ public class StudentBook implements RecordBook {
     private boolean noBadMarks() {
         long badMarks = 0;
         for (var subject : bookGrades.entrySet()) {
-            Stream<Map.Entry<String, Mark>> bookStream =
-                    subject.getValue().subjectMark().entrySet().stream();
+            var bookStream = subject.getValue().subjectMark().entrySet().stream();
             badMarks += bookStream.filter(f -> f.getValue() == Mark.C || f.getValue() == Mark.D)
                                   .count();
         }
         return badMarks == 0;
     }
 
-    public int getStatus() {
+    public Degree getStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(Degree status) {
         this.status = status;
     }
 
@@ -172,7 +156,7 @@ public class StudentBook implements RecordBook {
      */
     public void addMark(Semester semester, String subject, Mark mark) {
         if (!bookGrades.containsKey(semester)) {
-            bookGrades.put(semester, new SubjectMark(new HashMap<>()));
+            bookGrades.put(semester, new SubjectMark(new TreeMap<>()));
         }
         Map<String, Mark> semesterGrades = bookGrades.get(semester).subjectMark();
         if (semesterGrades.containsKey(subject) && semesterGrades.get(subject) != Mark.Z) {
@@ -181,8 +165,8 @@ public class StudentBook implements RecordBook {
         }
         semesterGrades.put(subject, mark);
         sumBookMark += mark.getMark();
-        if (diplomaGrades.subjectMark().containsKey(subject) && diplomaGrades.subjectMark().get(
-                subject) != Mark.Z) {
+        if (diplomaGrades.subjectMark().containsKey(subject)
+            && diplomaGrades.subjectMark().get(subject) != Mark.Z) {
             sumDiplomaMark -= diplomaGrades.subjectMark().get(subject).getMark();
             countDiplomaNoZsubjects--;
         }
@@ -215,11 +199,11 @@ public class StudentBook implements RecordBook {
      * @return true if all red diploma (task) conditions are satisfied, else false
      */
     public boolean isRedDiploma() {
-        Stream<Map.Entry<String, Mark>> diplomaStream =
-                diplomaGrades.subjectMark().entrySet().stream();
+        var diplomaStream = diplomaGrades.subjectMark().entrySet().stream();
         double marksA = diplomaStream.filter(f -> f.getValue() == Mark.A).count();
-        return status == 0 && (Math.abs(marksA / diplomaGrades.subjectMark().size() - 0.75) < EPS
-                               && noBadMarks() && qualifyingWorkMark == Mark.A);
+        return status == Degree.Bachelor && (
+                Math.abs(marksA / diplomaGrades.subjectMark().size() - 0.75) < EPS && noBadMarks()
+                && qualifyingWorkMark == Mark.A);
     }
 
     /**
@@ -230,21 +214,16 @@ public class StudentBook implements RecordBook {
      * @return true if all nsu conditions are satisfied, else false
      */
     public boolean isIncreasedScholarship(int points) {
-        Semester semesterNumber = new Semester(-1);
-        for (int semester = 20; semester > 0; semester--) {
-            semesterNumber = new Semester(semester);
-            if (bookGrades.containsKey(semesterNumber)) {
-                break;
-            }
-        }
+        Semester semesterNumber = bookGrades.lastKey();
         Map<String, Mark> semesterMarks = bookGrades.get(semesterNumber).subjectMark();
         for (var subject : semesterMarks.entrySet()) {
             if (subject.getValue().getRetakeCount() > 0) {
                 return false;
             }
         }
-        return noBadMarks() && ((status == 0 && semesterNumber.semesterNumber() >= 3)
-                                || (status == 1 && semesterNumber.semesterNumber() >= 10)
-                                   && points > BORDER);
+        return noBadMarks() && ((status == Degree.Bachelor && semesterNumber.semesterNumber() >= 3)
+                                ||
+                                (status == Degree.Master && semesterNumber.semesterNumber() >= 10)
+                                && points > BORDER);
     }
 }
