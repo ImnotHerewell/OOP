@@ -27,8 +27,7 @@ public class SearchSubstrings {
      * @throws IOException if file doesn't exist
      */
     private String readExactNumberOfCharacters(BufferedReader input, String fileString,
-                                               int quantity)
-            throws IOException {
+                                               int quantity) throws IOException {
         char[] charArray = new char[quantity];
         if (input.read(charArray) == -1) {
             return null;

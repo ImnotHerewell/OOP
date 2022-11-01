@@ -1,13 +1,11 @@
 package ru.nsu.valikov;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Writer;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -66,14 +64,15 @@ class SearchSubstringsTest {
         Assertions.assertEquals(expectedList, testList);
     }
 
-    private void createBigFile() throws IOException {
-        File file = new File("src/test/resources/big.txt");
-        file.createNewFile();
-        try (Writer writer1 = new FileWriter(file.getAbsoluteFile());
-             BufferedWriter writer = new BufferedWriter(writer1)) {
+
+    private void createBigFile() {
+        String path = "./sok.txt";
+        ClassLoader classLoader = getClass().getClassLoader();
+        try (PrintWriter writer = new PrintWriter(
+                Objects.requireNonNull(classLoader.getResource(path)).getPath())) {
             Random rand = new Random();
             for (int i = 0; i < 10; i++) {
-                if (i == 5) {
+                if (i == 6) {
                     writer.write("NSU{f1nDM3}");
                 }
                 writer.write(rand.nextInt(60) + 'A');
@@ -84,10 +83,10 @@ class SearchSubstringsTest {
     }
 
     @Test
-    void bigTest() throws IOException {
+    void bigTest() {
         createBigFile();
-        String file = "big.txt";
-        List<Integer> expectedList = List.of(5);
+        String file = "sok.txt";
+        List<Integer> expectedList = List.of(6);
         List<Integer> testList = new SearchSubstrings().find(file, "NSU{f1nDM3}");
         System.out.println(testList);
         Assertions.assertEquals(expectedList, testList);
