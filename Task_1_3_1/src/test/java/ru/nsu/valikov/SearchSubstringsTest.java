@@ -1,18 +1,21 @@
 package ru.nsu.valikov;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 /**
- * Default class with tests.
+ * Class for testing code.
  */
 class SearchSubstringsTest {
-    /**
-     * Random test with 12 kb file.
-     */
     @Test
     void twelveKbTest() {
         String file = "12kb.txt";
@@ -21,9 +24,6 @@ class SearchSubstringsTest {
         Assertions.assertEquals(expectedList, testList);
     }
 
-    /**
-     * Test with empty file.
-     */
     @Test
     void emptyFileTest() {
         String file = "./empty.txt";
@@ -32,9 +32,6 @@ class SearchSubstringsTest {
         Assertions.assertEquals(expectedList, testList);
     }
 
-    /**
-     * Test with empty pattern-substring.
-     */
     @Test
     void emptyPatternTest() {
         String file = "./12kb.txt";
@@ -43,9 +40,6 @@ class SearchSubstringsTest {
         Assertions.assertEquals(expectedList, testList);
     }
 
-    /**
-     * Random test with 10 mb file.
-     */
     @Test
     void tenMbTest() {
         String file = "./tenmb.txt";
@@ -55,26 +49,47 @@ class SearchSubstringsTest {
         Assertions.assertEquals(expectedList, testList);
     }
 
-    /**
-     * Random test with 23 kb file.
-     */
     @Test
     void twentyThreeKbTest() {
         String file = "./23kb.txt";
-        List<Integer> expectedList = Arrays.asList(5568, 7060, 9727, 10423, 11196, 11260, 14056,
-                                                   18184, 19106, 19511);
+        List<Integer> expectedList =
+                Arrays.asList(5568, 7060, 9727, 10423, 11196, 11260, 14056, 18184, 19106, 19511);
         List<Integer> testList = new SearchSubstrings().find(file, "Maester");
         Assertions.assertEquals(expectedList, testList);
     }
 
-    /**
-     * Example pirog test.
-     */
     @Test
     void pirogTest() {
         String file = "./sok.txt";
         List<Integer> expectedList = List.of(7);
         List<Integer> testList = new SearchSubstrings().find(file, "пирог");
+        Assertions.assertEquals(expectedList, testList);
+    }
+
+    private void createBigFile() throws IOException {
+        File file = new File("src/test/resources/big.txt");
+        file.createNewFile();
+        try (Writer writer1 = new FileWriter(file.getAbsoluteFile());
+             BufferedWriter writer = new BufferedWriter(writer1)) {
+            Random rand = new Random();
+            for (int i = 0; i < 10; i++) {
+                if (i == 5) {
+                    writer.write("NSU{f1nDM3}");
+                }
+                writer.write(rand.nextInt(60) + 'A');
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    void bigTest() throws IOException {
+        createBigFile();
+        String file = "big.txt";
+        List<Integer> expectedList = List.of(5);
+        List<Integer> testList = new SearchSubstrings().find(file, "NSU{f1nDM3}");
+        System.out.println(testList);
         Assertions.assertEquals(expectedList, testList);
     }
 

@@ -26,8 +26,8 @@ public class SearchSubstrings {
      * @return false if file ended
      * @throws IOException if file doesn't exist
      */
-    private String readExactNumberOfCharacters(BufferedReader input,
-                                               String fileString, int quantity)
+    private String readExactNumberOfCharacters(BufferedReader input, String fileString,
+                                               int quantity)
             throws IOException {
         char[] charArray = new char[quantity];
         if (input.read(charArray) == -1) {
@@ -46,12 +46,11 @@ public class SearchSubstrings {
      * @param fileString           state of reading file
      * @param patternString        what we are looking for
      */
-    private void trivialZ(int[] zlist, int indexI, int lengthOfNeededString,
-                          String fileString, String patternString) {
-        while (zlist[indexI] < lengthOfNeededString
-                && indexI + zlist[indexI] < fileString.length()
-                && patternString.charAt(zlist[indexI])
-                == fileString.charAt(indexI + zlist[indexI])) {
+    private void trivialZ(int[] zlist, int indexI, int lengthOfNeededString, String fileString,
+                          String patternString) {
+        while (zlist[indexI] < lengthOfNeededString && indexI + zlist[indexI] < fileString.length()
+               && patternString.charAt(zlist[indexI]) == fileString.charAt(
+                indexI + zlist[indexI])) {
             zlist[indexI]++;
         }
     }
@@ -64,8 +63,7 @@ public class SearchSubstrings {
      * @param lengthOfNeededString length of string, what we are looking for
      * @param result               resulting list
      */
-    private void addIndex(int[] zlist, int indexI, int lengthOfNeededString,
-                          List<Integer> result) {
+    private void addIndex(int[] zlist, int indexI, int lengthOfNeededString, List<Integer> result) {
         if (zlist[indexI] == lengthOfNeededString) {
             result.add(charCounter);
         }
@@ -77,8 +75,8 @@ public class SearchSubstrings {
      *
      * @param patternString substring
      */
-    private String zfunction(String patternString, String fileString,
-                             int lengthOfNeededString, List<Integer> result) {
+    private String zfunction(String patternString, String fileString, int lengthOfNeededString,
+                             List<Integer> result) {
         int[] zlist = new int[fileString.length() / 2];
         int lengthL = 0;
         int lengthR = 0;
@@ -124,8 +122,9 @@ public class SearchSubstrings {
                 return new ArrayList<>();
             }
             inputString = zfunction(patternString, inputString, lengthOfNeededString, result);
-            while ((inputString = readExactNumberOfCharacters(input, inputString,
-                    lengthOfNeededString)) != null) {
+            while ((inputString =
+                            readExactNumberOfCharacters(input, inputString, lengthOfNeededString))
+                   != null) {
                 inputString = zfunction(patternString, inputString, lengthOfNeededString, result);
             }
         } catch (IOException e) {
