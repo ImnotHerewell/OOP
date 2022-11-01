@@ -46,11 +46,11 @@ public class StudentBook implements RecordBook {
      * @param qualifyingWorkMark qualifying work mark
      * @param bookGrades         map with all marks
      */
-    private StudentBook(int bookId, String specialization, Degree status, Mark qualifyingWorkMark
-            , SortedMap<Semester, SubjectMark> bookGrades) {
+    private StudentBook(int bookId, String specialization, Degree status, Mark qualifyingWorkMark,
+                        SortedMap<Semester, SubjectMark> bookGrades) {
         this.bookId = bookId;
-        this.status = status;
         this.specialization = specialization;
+        this.status = status;
         this.qualifyingWorkMark = qualifyingWorkMark;
         this.bookGrades = bookGrades;
         constructAverageGrades();
@@ -165,8 +165,8 @@ public class StudentBook implements RecordBook {
         }
         semesterGrades.put(subject, mark);
         sumBookMark += mark.getMark();
-        if (diplomaGrades.subjectMark().containsKey(subject)
-            && diplomaGrades.subjectMark().get(subject) != Mark.Z) {
+        if (diplomaGrades.subjectMark().containsKey(subject) &&
+            diplomaGrades.subjectMark().get(subject) != Mark.Z) {
             sumDiplomaMark -= diplomaGrades.subjectMark().get(subject).getMark();
             countDiplomaNoZsubjects--;
         }
@@ -186,8 +186,8 @@ public class StudentBook implements RecordBook {
      * @return mark
      */
     public Mark getBookMark(Semester semester, String subject) {
-        if (!bookGrades.containsKey(semester) || !bookGrades.get(semester).subjectMark()
-                                                            .containsKey(subject)) {
+        if (!bookGrades.containsKey(semester) ||
+            !bookGrades.get(semester).subjectMark().containsKey(subject)) {
             throw new NoSuchElementException();
         }
         return bookGrades.get(semester).subjectMark().get(subject);
@@ -201,9 +201,9 @@ public class StudentBook implements RecordBook {
     public boolean isRedDiploma() {
         var diplomaStream = diplomaGrades.subjectMark().entrySet().stream();
         double marksA = diplomaStream.filter(f -> f.getValue() == Mark.A).count();
-        return status == Degree.Bachelor && (
-                Math.abs(marksA / diplomaGrades.subjectMark().size() - 0.75) < EPS && noBadMarks()
-                && qualifyingWorkMark == Mark.A);
+        return status == Degree.Bachelor &&
+               (Math.abs(marksA / diplomaGrades.subjectMark().size() - 0.75) < EPS &&
+                noBadMarks() && qualifyingWorkMark == Mark.A);
     }
 
     /**
@@ -221,9 +221,9 @@ public class StudentBook implements RecordBook {
                 return false;
             }
         }
-        return noBadMarks() && ((status == Degree.Bachelor && semesterNumber.semesterNumber() >= 3)
-                                ||
-                                (status == Degree.Master && semesterNumber.semesterNumber() >= 10)
-                                && points > BORDER);
+        return noBadMarks() &&
+               ((status == Degree.Bachelor && semesterNumber.semesterNumber() >= 3) ||
+                (status == Degree.Master && semesterNumber.semesterNumber() >= 10) &&
+                points > BORDER);
     }
 }

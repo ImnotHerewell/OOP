@@ -7,6 +7,11 @@ package ru.nsu.valikov;
  */
 public record Semester(int semesterNumber) implements Comparable<Semester> {
 
+    /**
+     * Constructor for any Semester record.
+     *
+     * @param semesterNumber ...
+     */
     public Semester(int semesterNumber) {
         this.semesterNumber = semesterNumber > 0 && semesterNumber < 13 ? semesterNumber : -1;
         if (this.semesterNumber == -1) {
