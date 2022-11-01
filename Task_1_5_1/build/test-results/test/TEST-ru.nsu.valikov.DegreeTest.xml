@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.nsu.valikov.DegreeTest" tests="16" skipped="0" failures="0" errors="0" timestamp="2022-10-30T14:49:13" hostname="COMPUTER" time="0.086">
+  <properties/>
+  <testcase name="minusExc()" classname="ru.nsu.valikov.DegreeTest" time="0.029"/>
+  <testcase name="divExc()" classname="ru.nsu.valikov.DegreeTest" time="0.004"/>
+  <testcase name="powExc()" classname="ru.nsu.valikov.DegreeTest" time="0.003"/>
+  <testcase name="sin180()" classname="ru.nsu.valikov.DegreeTest" time="0.002"/>
+  <testcase name="plusExc()" classname="ru.nsu.valikov.DegreeTest" time="0.003"/>
+  <testcase name="cos()" classname="ru.nsu.valikov.DegreeTest" time="0.004"/>
+  <testcase name="log()" classname="ru.nsu.valikov.DegreeTest" time="0.007"/>
+  <testcase name="pow()" classname="ru.nsu.valikov.DegreeTest" time="0.004"/>
+  <testcase name="sin()" classname="ru.nsu.valikov.DegreeTest" time="0.002"/>
+  <testcase name="plus()" classname="ru.nsu.valikov.DegreeTest" time="0.003"/>
+  <testcase name="sqrt()" classname="ru.nsu.valikov.DegreeTest" time="0.002"/>
+  <testcase name="cos90()" classname="ru.nsu.valikov.DegreeTest" time="0.001"/>
+  <testcase name="minus()" classname="ru.nsu.valikov.DegreeTest" time="0.002"/>
+  <testcase name="division()" classname="ru.nsu.valikov.DegreeTest" time="0.001"/>
+  <testcase name="multiplication()" classname="ru.nsu.valikov.DegreeTest" time="0.002"/>
+  <testcase name="multExc()" classname="ru.nsu.valikov.DegreeTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
