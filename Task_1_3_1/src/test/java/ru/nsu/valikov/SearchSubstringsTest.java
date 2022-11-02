@@ -71,7 +71,7 @@ class SearchSubstringsTest {
         try (PrintWriter writer = new PrintWriter(
                 Objects.requireNonNull(classLoader.getResource(path)).getPath())) {
             Random rand = new Random();
-            for (Long i = 0L; i < Long.parseLong("21474836480"); i++) {
+            for (long i = 0L; i < Long.parseLong("21474836480"); i++) {
                 if (i == 1234567890) {
                     writer.write("NSU{f1nDM3}");
                 }
