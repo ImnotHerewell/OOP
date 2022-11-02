@@ -1,7 +1,7 @@
 package ru.nsu.valikov;
 
 /**
- * Interface-like class for any numeric data.
+ * Interface-like class for any numeric data, marker.
  */
 abstract class Expr {
     abstract double getValue();

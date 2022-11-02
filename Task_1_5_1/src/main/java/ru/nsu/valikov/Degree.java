@@ -107,18 +107,14 @@ public class Degree extends Expr {
         checkCorrectness();
     }
 
-    /**
-     * Take log function from degree.
-     */
+
     @Override
     void log() {
         value = Math.log(value);
         checkCorrectness();
     }
 
-    /**
-     * Take square root from degree.
-     */
+
     @Override
     void sqrt() {
         value = Math.sqrt(value);

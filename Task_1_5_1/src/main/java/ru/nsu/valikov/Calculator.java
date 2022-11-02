@@ -228,6 +228,8 @@ public class Calculator {
 
     /**
      * Reads data from file.
+     * File data example:
+     * 1) + - * 2.13 -315 7 sin 30%
      *
      * @param file file's name.
      * @return user's output.

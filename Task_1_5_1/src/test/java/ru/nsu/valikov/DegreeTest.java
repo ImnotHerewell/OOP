@@ -8,9 +8,9 @@ import org.junit.jupiter.api.Test;
  */
 class DegreeTest {
     private static final double EPS = 1e-7;
-    Calculator calc = new Calculator();
-    String res;
-    String exp;
+    private final Calculator calc = new Calculator();
+    private String res;
+    private String exp;
 
     @Test
     void plus() {
