@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"ru.nsu.valikov","c":"RecordBook","l":"main(String[])","u":"main(java.lang.String[])"},{"p":"ru.nsu.valikov","c":"RecordBook","l":"RecordBook()","u":"%3Cinit%3E()"},{"p":"ru.nsu.valikov","c":"RecordBook","l":"showHelp()"},{"p":"ru.nsu.valikov","c":"RecordBook","l":"stock"}];updateSearchResults();
