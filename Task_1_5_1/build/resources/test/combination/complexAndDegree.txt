@@ -1,1 +1,0 @@
-+ 3.14+70i log sqrt * cos 46% sin 850%
