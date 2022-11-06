@@ -21,9 +21,12 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 
 /**
- *
+ * Notebook class for adding and removing notes.
  */
 public class RecordBook implements Book {
+    /*
+    Notes are stored here.
+     */
     public static final File stock = new File("stock.json");
     private static final Options parserOptions = new Options();
     private static final TreeMap<LocalDateTime, Record> records;
@@ -38,6 +41,9 @@ public class RecordBook implements Book {
                 Option.UNLIMITED_VALUES);
         ObjectMapper mapper = new ObjectMapper();
         mapper.registerModule(new JavaTimeModule());
+        /*
+          To read start values from json.
+         */
         TypeReference<TreeMap<LocalDateTime, Record>> typeRef = new TypeReference<>() {
         };
         try {
@@ -45,7 +51,6 @@ public class RecordBook implements Book {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        System.gc();
     }
 
     private static void addOpt(String nameOpt, String description, int countArgs) {
@@ -85,13 +90,22 @@ public class RecordBook implements Book {
             arguments = cmd.getOptionValues("show");
         }
         if (arguments.length == 1) {
+            /*
+             Illegal using.
+             */
             showHelp();
             return;
         }
         if (arguments.length == 0) {
+            /*
+            Show all records.
+             */
             System.out.println(jsonRecordsGetter());
             return;
         }
+        /*
+        Show records with matching titles.
+         */
         List<String> titles =
                 new ArrayList<>(Arrays.asList(arguments).subList(2, arguments.length));
         System.out.println(jsonRecordsGetter(LocalDateTime.parse(arguments[0]),
@@ -103,12 +117,27 @@ public class RecordBook implements Book {
         formatter.printHelp("notebook", parserOptions);
     }
 
+    /**
+     * Return all records in notebook.
+     *
+     * @return records in json format.
+     * @throws JsonProcessingException problem with parsing.
+     */
     @JsonAnyGetter
     private static String jsonRecordsGetter() throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
         return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(records);
     }
 
+    /**
+     * Return all records with matching titles.
+     *
+     * @param from   begin datetime
+     * @param to     end datetime
+     * @param titles what titles we are looking for
+     * @return records with matching titles in json format.
+     * @throws JsonProcessingException problem with parsing.
+     */
     @JsonAnyGetter
     private static String jsonRecordsGetter(LocalDateTime from, LocalDateTime to,
                                             List<String> titles) throws JsonProcessingException {

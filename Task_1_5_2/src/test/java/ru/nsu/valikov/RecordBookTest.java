@@ -1,13 +1,30 @@
 package ru.nsu.valikov;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.time.LocalDateTime;
-import java.util.Collections;
 import java.util.TreeMap;
-import java.util.TreeSet;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Tests.
+ */
 class RecordBookTest {
+    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
+    private final PrintStream originalOut = System.out;
+    private final PrintStream originalErr = System.err;
+
+    public void setUpStreams() {
+        System.setOut(new PrintStream(outContent));
+        System.setErr(new PrintStream(errContent));
+    }
+
+    public void restoreStreams() {
+        System.setOut(originalOut);
+        System.setErr(originalErr);
+    }
 
     @Test
     void addRecordTest() throws NoSuchFieldException, IllegalAccessException {
@@ -15,11 +32,32 @@ class RecordBookTest {
 
         var map = RecordBook.class.getDeclaredField("records");
         map.setAccessible(true);
-        TreeMap<LocalDateTime, Record> testMap = (TreeMap<LocalDateTime, Record>) map.get(map);
-        Assertions.assertTrue(testMap.containsValue(new Record("Моя заметка", "Очень важная заметка")));
+        @SuppressWarnings("unchecked") TreeMap<LocalDateTime, Record> testMap =
+                (TreeMap<LocalDateTime, Record>) map.get(map);
+        Assertions.assertTrue(
+                testMap.containsValue(new Record("Моя заметка", "Очень важная заметка")));
     }
 
     @Test
-    void mainTest() {
+    void removeRecordTest() throws NoSuchFieldException, IllegalAccessException {
+        RecordBook.main(new String[]{"-add", "Моя заметка2", "Очень важная заметка2"});
+        var map = RecordBook.class.getDeclaredField("records");
+        map.setAccessible(true);
+        @SuppressWarnings("unchecked") TreeMap<LocalDateTime, Record> testMap =
+                (TreeMap<LocalDateTime, Record>) map.get(map);
+        Assertions.assertTrue(
+                testMap.containsValue(new Record("Моя заметка2", "Очень важная заметка2")));
+
+        RecordBook.main(new String[]{"-rm", "Моя заметка2"});
+        map = RecordBook.class.getDeclaredField("records");
+        map.setAccessible(true);
+        @SuppressWarnings("unchecked") TreeMap<LocalDateTime, Record> testMap2 =
+                (TreeMap<LocalDateTime, Record>) map.get(map);
+        Assertions.assertFalse(
+                testMap2.containsValue(new Record("Моя заметка2", "Очень важная заметка2")));
+    }
+
+    @Test
+    void showTest() {
     }
 }
