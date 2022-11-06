@@ -16,16 +16,6 @@ class RecordBookTest {
     private final PrintStream originalOut = System.out;
     private final PrintStream originalErr = System.err;
 
-    public void setUpStreams() {
-        System.setOut(new PrintStream(outContent));
-        System.setErr(new PrintStream(errContent));
-    }
-
-    public void restoreStreams() {
-        System.setOut(originalOut);
-        System.setErr(originalErr);
-    }
-
     @Test
     void addRecordTest() throws NoSuchFieldException, IllegalAccessException {
         RecordBook.main(new String[]{"-add", "Моя заметка", "Очень важная заметка"});

@@ -153,6 +153,11 @@ public class RecordBook implements Book {
         return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(newRecords);
     }
 
+    /**
+     * Entry point.
+     *
+     * @param args arguments from command line.
+     */
     public static void main(String[] args) {
         try {
             CommandLineParser parser = new DefaultParser();
