@@ -21,7 +21,7 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 
 /**
- * {datetime: {title : description}}
+ *
  */
 public class RecordBook implements Book {
     public static final File stock = new File("stock.json");
@@ -37,7 +37,7 @@ public class RecordBook implements Book {
                 + " .. <'title i'>\nTitles and datetime segment are optional. ",
                 Option.UNLIMITED_VALUES);
         ObjectMapper mapper = new ObjectMapper();
-        mapper.registerModule(new JavaTimeModule()); // niggers faggots
+        mapper.registerModule(new JavaTimeModule());
         TypeReference<TreeMap<LocalDateTime, Record>> typeRef = new TypeReference<>() {
         };
         try {
@@ -98,7 +98,7 @@ public class RecordBook implements Book {
                 LocalDateTime.parse(arguments[1]), titles));
     }
 
-    public static void showHelp() {
+    private static void showHelp() {
         HelpFormatter formatter = new HelpFormatter();
         formatter.printHelp("notebook", parserOptions);
     }
