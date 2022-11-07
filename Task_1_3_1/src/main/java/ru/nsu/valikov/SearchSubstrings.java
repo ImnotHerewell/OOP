@@ -15,9 +15,6 @@ import java.util.Objects;
 public class SearchSubstrings {
     private int charCounter = 0;
 
-    SearchSubstrings() {
-    }
-
     /**
      * Read quantity characters from file.
      *
@@ -26,7 +23,7 @@ public class SearchSubstrings {
      * @return false if file ended
      * @throws IOException if file doesn't exist
      */
-    private String readExactNumberOfCharacters(BufferedReader input, String fileString,
+    private static String readExactNumberOfCharacters(BufferedReader input, String fileString,
                                                int quantity) throws IOException {
         char[] charArray = new char[quantity];
         if (input.read(charArray) == -1) {
@@ -45,7 +42,7 @@ public class SearchSubstrings {
      * @param fileString           state of reading file
      * @param patternString        what we are looking for
      */
-    private void trivialZ(int[] zlist, int indexI, int lengthOfNeededString, String fileString,
+    private static void trivialZ(int[] zlist, int indexI, int lengthOfNeededString, String fileString,
                           String patternString) {
         while (zlist[indexI] < lengthOfNeededString && indexI + zlist[indexI] < fileString.length()
                && patternString.charAt(zlist[indexI]) == fileString.charAt(
