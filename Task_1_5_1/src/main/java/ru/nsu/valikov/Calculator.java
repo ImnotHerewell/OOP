@@ -22,51 +22,51 @@ public class Calculator {
     private final Deque<Pair> arguments = new ArrayDeque<>(); // numeric data
     private final List<String> expressions = new ArrayList<>(); // list with parse data
 
-    private boolean isPlus(String s) {
+    private static boolean isPlus(String s) {
         return s.equals("+");
     }
 
-    private boolean isMinus(String s) {
+    private static boolean isMinus(String s) {
         return s.equals("-");
     }
 
-    private boolean isMultiplication(String s) {
+    private static boolean isMultiplication(String s) {
         return s.equals("*");
     }
 
-    private boolean isDiv(String s) {
+    private static boolean isDiv(String s) {
         return s.equals("/");
     }
 
-    private boolean isLog(String s) {
+    private static boolean isLog(String s) {
         return s.equals("log");
     }
 
-    private boolean isPow(String s) {
+    private static boolean isPow(String s) {
         return s.equals("pow");
     }
 
-    private boolean isSqrt(String s) {
+    private static boolean isSqrt(String s) {
         return s.equals("sqrt");
     }
 
-    private boolean isSin(String s) {
+    private static boolean isSin(String s) {
         return s.equals("sin");
     }
 
-    private boolean isCos(String s) {
+    private static boolean isCos(String s) {
         return s.equals("cos");
     }
 
-    private boolean isSingleFunction(String s) {
+    private static boolean isSingleFunction(String s) {
         return isSin(s) || isCos(s) || isSqrt(s) || isLog(s);
     }
 
-    private boolean isDoubleFunction(String s) {
+    private static boolean isDoubleFunction(String s) {
         return isPlus(s) || isMinus(s) || isMultiplication(s) || isDiv(s) || isPow(s);
     }
 
-    private boolean isFunction(String s) {
+    private static boolean isFunction(String s) {
         return isSingleFunction(s) || isDoubleFunction(s);
     }
 
@@ -76,7 +76,7 @@ public class Calculator {
      * @param s unparse data.
      * @return true if it is double else false.
      */
-    private boolean isDouble(String s) {
+    private static boolean isDouble(String s) {
         String pattern = "-?\\d+(.\\d+)?";
         return s.matches(pattern);
     }
@@ -87,7 +87,7 @@ public class Calculator {
      * @param s unparse data.
      * @return true if it is complex number else false.
      */
-    private boolean isComplex(String s) {
+    private static boolean isComplex(String s) {
         String pattern = "(-?\\d+(.\\d+)?)?([-|+](\\d+(.\\d+)?))?[i$]";
         return s.matches(pattern);
     }
@@ -98,13 +98,31 @@ public class Calculator {
      * @param s unparse data.
      * @return true if it is degree else false.
      */
-    private boolean isDegree(String s) {
+    private static boolean isDegree(String s) {
         String pattern = "(\\d+)(.\\d+)?%";
         return s.matches(pattern);
     }
 
-    private boolean isNumber(String s) {
+    private static boolean isNumber(String s) {
         return isComplex(s) || isDegree(s) || isDouble(s);
+    }
+
+    /**
+     * Makes result to normal output value.
+     *
+     * @param res result from calculation().
+     * @return normal output value.
+     */
+    private static String outputFormat(Pair res) {
+        if (res.b() == 1) {
+            return BigDecimal.valueOf(res.a().getValue()).doubleValue() + "%";
+        }
+        if (res.a().getSecond() == 0) {
+            return String.valueOf(BigDecimal.valueOf(res.a().getValue()).doubleValue());
+        }
+        String f = res.a().getSecond() < 0 ? "" : "+";
+        return BigDecimal.valueOf(res.a().getValue()).doubleValue() + f + BigDecimal.valueOf(
+                res.a().getSecond()).doubleValue() + "i";
     }
 
     /**
@@ -206,24 +224,6 @@ public class Calculator {
             throw new MissingFormatArgumentException("Wrong format!");
         }
         return arguments.pop();
-    }
-
-    /**
-     * Makes result to normal output value.
-     *
-     * @param res result from calculation().
-     * @return normal output value.
-     */
-    private String outputFormat(Pair res) {
-        if (res.b() == 1) {
-            return BigDecimal.valueOf(res.a().getValue()).doubleValue() + "%";
-        }
-        if (res.a().getSecond() == 0) {
-            return String.valueOf(BigDecimal.valueOf(res.a().getValue()).doubleValue());
-        }
-        String f = res.a().getSecond() < 0 ? "" : "+";
-        return BigDecimal.valueOf(res.a().getValue()).doubleValue() + f + BigDecimal.valueOf(
-                res.a().getSecond()).doubleValue() + "i";
     }
 
     /**
