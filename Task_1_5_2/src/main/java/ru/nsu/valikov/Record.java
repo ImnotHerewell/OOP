@@ -3,7 +3,7 @@ package ru.nsu.valikov;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * RECORD.
+ * Record with title and description.
  *
  * @param title TITLE
  * @param description DESCRIPTION
