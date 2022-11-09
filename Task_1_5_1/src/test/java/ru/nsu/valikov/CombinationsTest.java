@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 /**
  * Combinations with degree and numbers.
+ * Checked with <a href="https://www.hackmath.net/en/calculator/complex-number">...</a>.
  */
 public class CombinationsTest {
     public static final double EPS = 1e-7;
@@ -27,7 +28,7 @@ public class CombinationsTest {
     @Test
     void complexAndDegree() {
         res = calc.parser("./combination/complexAndDegree.txt").replace("i", "").replace("-", " -")
-                  .replace("+", " +");
+                  .replace("+", " +").replace("E -", "E-");
         scanner = new Scanner(res).useLocale(Locale.US);
         double resD = scanner.nextDouble();
         double imD = scanner.nextDouble();
@@ -36,4 +37,19 @@ public class CombinationsTest {
         Assertions.assertEquals(expRe, resD, EPS);
         Assertions.assertEquals(expIm, imD, EPS);
     }
+
+    @Test
+    void combinationTest5() {
+        res = calc.parser("./combination/combinationTest5.txt").replace("i", "").replace("-", " -")
+                  .replace("+", " +").replace("E -", "E-");
+        System.out.println(res);
+        scanner = new Scanner(res).useLocale(Locale.US);
+        double resD = scanner.nextDouble();
+        double imD = scanner.nextDouble();
+        double expRe = 0.0023242;
+        double expIm = 0.0001963;
+        Assertions.assertEquals(expRe, resD, EPS);
+        Assertions.assertEquals(expIm, imD, EPS);
+    }
+
 }
