@@ -10,7 +10,6 @@ class DegreeTest {
     private static final double EPS = 1e-7;
     private final Calculator calc = new Calculator();
     private String res;
-    private String exp;
 
     @Test
     void plus() {
@@ -31,7 +30,7 @@ class DegreeTest {
     @Test
     void minus() {
         res = calc.parser("./degree/minus.txt");
-        exp = "903.5%";
+        String exp = "903.5%";
         Assertions.assertEquals(exp, res);
     }
 
