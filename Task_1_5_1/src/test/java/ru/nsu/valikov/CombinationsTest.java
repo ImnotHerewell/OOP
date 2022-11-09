@@ -52,4 +52,14 @@ public class CombinationsTest {
         Assertions.assertEquals(expIm, imD, EPS);
     }
 
+    @Test
+    void combinationTest4() {
+        res = calc.parser("./combination/combinationTest4.txt").replace("i", "").replace("-", " -")
+                  .replace("+", " +").replace("E -", "E-");
+        System.out.println(res);
+        scanner = new Scanner(res).useLocale(Locale.US);
+        double resD = scanner.nextDouble();
+        double expRe = 0.81486829;
+        Assertions.assertEquals(expRe, resD, EPS);
+    }
 }

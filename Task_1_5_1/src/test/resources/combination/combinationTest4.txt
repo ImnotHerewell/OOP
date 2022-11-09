@@ -1,0 +1,1 @@
+sin cos sqrt pow 567 + 1.8 -2.17
