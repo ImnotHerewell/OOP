@@ -41,7 +41,7 @@ public class Degree extends Expr {
      */
     @Override
     void plus(Pair number) {
-        if (number.b() == 0) {
+        if (number.b().equals(DataType.Complex)) {
             throw new IllegalArgumentException("Cannot perform operations with different types.");
         }
         value += number.a().getValue();
@@ -55,7 +55,7 @@ public class Degree extends Expr {
      */
     @Override
     void minus(Pair number) {
-        if (number.b() == 0) {
+        if (number.b().equals(DataType.Complex)) {
             throw new IllegalArgumentException("Cannot perform operations with different types.");
         }
         value -= number.a().getValue();
@@ -69,7 +69,7 @@ public class Degree extends Expr {
      */
     @Override
     void multiplication(Pair number) {
-        if (number.b() == 1 || number.a().getSecond() != 0) {
+        if (number.b().equals(DataType.Complex) || number.a().getSecond() != 0) {
             throw new IllegalArgumentException(
                     "Cannot multiply degrees with degrees or complex numbers.");
         }
@@ -84,7 +84,7 @@ public class Degree extends Expr {
      */
     @Override
     void division(Pair number) {
-        if (number.b() == 1 || number.a().getSecond() != 0) {
+        if (number.b().equals(DataType.Complex) || number.a().getSecond() != 0) {
             throw new IllegalArgumentException(
                     "Cannot divide degrees by degrees or complex numbers.");
         }
@@ -99,7 +99,7 @@ public class Degree extends Expr {
      */
     @Override
     void pow(Pair number) {
-        if (number.b() == 1 || number.a().getSecond() != 0) {
+        if (number.b().equals(DataType.Complex) || number.a().getSecond() != 0) {
             throw new IllegalArgumentException(
                     "Cannot raising degrees to degrees degree or complex number degree.");
         }

@@ -114,7 +114,7 @@ public class Calculator {
      * @return normal output value.
      */
     private static String outputFormat(Pair res) {
-        if (res.b() == 1) {
+        if (res.b().equals(DataType.Degree)) {
             return BigDecimal.valueOf(res.a().getValue()).doubleValue() + "%";
         }
         if (res.a().getSecond() == 0) {
@@ -132,7 +132,8 @@ public class Calculator {
      */
     private void addParseElem(String s) {
         if (isDouble(s)) {
-            arguments.addLast(new Pair(new ComplexNumber(Double.parseDouble(s), 0), 0));
+            arguments.addLast(
+                    new Pair(new ComplexNumber(Double.parseDouble(s), 0), DataType.Complex));
         } else if (isComplex(s)) {
             if (s.matches("(-?\\d+(.\\d+)?)([-|+](\\d+(.\\d+)?))[i$]")) {
                 /*
@@ -142,14 +143,16 @@ public class Calculator {
                 s = s.replace("-", " -");
                 s = s.replace("+", " ");
                 Scanner scan = new Scanner(s).useLocale(Locale.US);
-                arguments.addLast(
-                        new Pair(new ComplexNumber(scan.nextDouble(), scan.nextDouble()), 0));
+                arguments.addLast(new Pair(new ComplexNumber(scan.nextDouble(), scan.nextDouble()),
+                        DataType.Complex));
             } else if (s.matches("(-?(\\d+(.\\d+)?))[i$]")) {
                 s = s.replace("i", "");
-                arguments.addLast(new Pair(new ComplexNumber(0, Double.parseDouble(s)), 0));
+                arguments.addLast(
+                        new Pair(new ComplexNumber(0, Double.parseDouble(s)), DataType.Complex));
             }
         } else if (isDegree(s)) {
-            arguments.addLast(new Pair(new Degree(Double.parseDouble(s.replace("%", ""))), 1));
+            arguments.addLast(
+                    new Pair(new Degree(Double.parseDouble(s.replace("%", ""))), DataType.Degree));
         }
     }
 
@@ -159,14 +162,11 @@ public class Calculator {
      * @param function function's name.
      */
     private void singleFunctionExecution(String function) {
-        if (arguments.size() < 1) {
-            throw new MissingFormatArgumentException("Wrong arguments format!");
-        }
-        Pair arg = arguments.pollLast();
+        Pair arg = Objects.requireNonNull(arguments.pollLast());
         if (isSin(function)) {
-            arg = new Pair(Objects.requireNonNull(arg).a().sin(), 0);
+            arg = new Pair(Objects.requireNonNull(arg).a().sin(), DataType.Complex);
         } else if (isCos(function)) {
-            arg = new Pair(Objects.requireNonNull(arg).a().cos(), 0);
+            arg = new Pair(Objects.requireNonNull(arg).a().cos(), DataType.Complex);
         } else if (isLog(function)) {
             Objects.requireNonNull(arg).a().log();
         } else if (isSqrt(function)) {
@@ -181,11 +181,8 @@ public class Calculator {
      * @param function function's name.
      */
     private void doubleFunctionExecution(String function) {
-        if (arguments.size() < 2) {
-            throw new MissingFormatArgumentException("Wrong arguments format!");
-        }
-        Pair firstArg = arguments.pollLast();
-        Pair secondArg = arguments.pollLast();
+        Pair firstArg = Objects.requireNonNull(arguments.pollLast());
+        Pair secondArg = Objects.requireNonNull(arguments.pollLast());
         if (isPlus(function)) {
             Objects.requireNonNull(firstArg).a().plus(secondArg);
         } else if (isMinus(function)) {

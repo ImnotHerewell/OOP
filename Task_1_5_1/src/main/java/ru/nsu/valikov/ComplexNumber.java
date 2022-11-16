@@ -34,9 +34,8 @@ public class ComplexNumber extends Expr {
      */
     @Override
     void plus(Pair number) {
-        if (number.b() == 1) {
+        if (number.b().equals(DataType.Degree)) {
             throw new IllegalArgumentException("Cannot perform operations with different types.");
-
         }
         re += number.a().getValue();
         im += number.a().getSecond();
@@ -49,7 +48,7 @@ public class ComplexNumber extends Expr {
      */
     @Override
     void minus(Pair number) {
-        if (number.b() == 1) {
+        if (number.b().equals(DataType.Degree)) {
             throw new IllegalArgumentException("Cannot perform operations with different types.");
         }
         re -= number.a().getValue();
@@ -63,7 +62,7 @@ public class ComplexNumber extends Expr {
      */
     @Override
     void multiplication(Pair number) {
-        if (number.b() == 1) {
+        if (number.b().equals(DataType.Degree)) {
             throw new IllegalArgumentException("Cannot perform operations with different types.");
         }
         double reNew = (re * number.a().getValue() - im * number.a().getSecond());
@@ -78,7 +77,7 @@ public class ComplexNumber extends Expr {
      */
     @Override
     void division(Pair number) {
-        if (number.b() == 1
+        if (number.b().equals(DataType.Degree)
             || Math.pow(number.a().getValue(), 2) + Math.pow(number.a().getSecond(), 2) == 0) {
             throw new IllegalArgumentException("Cannot perform operations with different types.");
         }
@@ -96,7 +95,7 @@ public class ComplexNumber extends Expr {
      */
     @Override
     void pow(Pair number) {
-        if (number.b() == 1) {
+        if (number.b().equals(DataType.Degree)) {
             throw new IllegalArgumentException();
         }
         if (number.a().getSecond() == 0 && im == 0) {
