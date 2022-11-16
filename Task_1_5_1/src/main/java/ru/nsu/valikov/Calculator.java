@@ -184,7 +184,7 @@ public class Calculator {
         Pair firstArg = Objects.requireNonNull(arguments.pollLast());
         Pair secondArg = Objects.requireNonNull(arguments.pollLast());
         if (isPlus(function)) {
-            Objects.requireNonNull(firstArg).a().plus(secondArg);
+            firstArg.a().plus(secondArg);
         } else if (isMinus(function)) {
             Objects.requireNonNull(firstArg).a().minus(secondArg);
         } else if (isMultiplication(function)) {
