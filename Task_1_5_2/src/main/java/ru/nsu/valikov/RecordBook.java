@@ -7,10 +7,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.TreeMap;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -24,14 +26,24 @@ import org.apache.commons.cli.ParseException;
  * Notebook class for adding and removing notes.
  */
 public class RecordBook implements Book {
+    private static final Options parserOptions = new Options();
+    private static final Map<LocalDateTime, Record> records;
     /*
     Notes are stored here.
      */
-    public static final File stock = new File("stock.json");
-    private static final Options parserOptions = new Options();
-    private static final TreeMap<LocalDateTime, Record> records;
+    public static File stock = new File("stock.json"); // создавать новый файл
 
     static {
+        if (!stock.exists()) {
+            try {
+                stock.createNewFile();
+                PrintWriter writer = new PrintWriter(stock);
+                writer.write("{}");
+                writer.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
         addOpt("add", "Add a record. Usage: record book -add <'title'> <'description'>", 2);
         addOpt("rm", "Delete a record. Usage: record book -rm <'title'>", 1);
         addOpt("show",
