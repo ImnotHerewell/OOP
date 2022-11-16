@@ -164,13 +164,13 @@ public class Calculator {
     private void singleFunctionExecution(String function) {
         Pair arg = Objects.requireNonNull(arguments.pollLast());
         if (isSin(function)) {
-            arg = new Pair(Objects.requireNonNull(arg).a().sin(), DataType.Complex);
+            arg = new Pair(arg.a().sin(), DataType.Complex);
         } else if (isCos(function)) {
-            arg = new Pair(Objects.requireNonNull(arg).a().cos(), DataType.Complex);
+            arg = new Pair(arg.a().cos(), DataType.Complex);
         } else if (isLog(function)) {
-            Objects.requireNonNull(arg).a().log();
+            arg.a().log();
         } else if (isSqrt(function)) {
-            Objects.requireNonNull(arg).a().sqrt();
+            arg.a().sqrt();
         }
         arguments.addLast(arg);
     }
@@ -186,13 +186,13 @@ public class Calculator {
         if (isPlus(function)) {
             firstArg.a().plus(secondArg);
         } else if (isMinus(function)) {
-            Objects.requireNonNull(firstArg).a().minus(secondArg);
+            firstArg.a().minus(secondArg);
         } else if (isMultiplication(function)) {
-            Objects.requireNonNull(firstArg).a().multiplication(secondArg);
+            firstArg.a().multiplication(secondArg);
         } else if (isDiv(function)) {
-            Objects.requireNonNull(firstArg).a().division(secondArg);
+            firstArg.a().division(secondArg);
         } else if (isPow(function)) {
-            Objects.requireNonNull(firstArg).a().pow(secondArg);
+            firstArg.a().pow(secondArg);
         }
         arguments.addLast(firstArg);
     }
