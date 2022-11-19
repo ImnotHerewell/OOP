@@ -32,3 +32,10 @@ jacocoTestReport {
         xml.required = true
     }
 }
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'ru.nsu.valikov.RecordBook'
+        )
+    }
+}
