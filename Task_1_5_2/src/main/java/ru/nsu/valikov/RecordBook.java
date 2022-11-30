@@ -32,7 +32,7 @@ public class RecordBook implements Book {
     /*
     Notes are stored here.
      */
-    public static File stock = new File("stock.json"); // создавать новый файл
+    public static File stock = new File("stock.json");
 
     static {
         if (!stock.exists()) {
@@ -79,7 +79,7 @@ public class RecordBook implements Book {
             showHelp();
             return;
         }
-        records.put(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES),
+        records.put(LocalDateTime.now(),
                 new Record(arguments[0], arguments[1]));
     }
 
