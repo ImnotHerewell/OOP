@@ -9,7 +9,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -79,8 +78,7 @@ public class RecordBook implements Book {
             showHelp();
             return;
         }
-        records.put(LocalDateTime.now(),
-                new Record(arguments[0], arguments[1]));
+        records.put(LocalDateTime.now(), new Record(arguments[0], arguments[1]));
     }
 
     private static void removeRecord(CommandLine cmd) {
