@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"ru.nsu.valikov","l":"Primes"},{"p":"ru.nsu.valikov","l":"PrimeStatus"},{"p":"ru.nsu.valikov","l":"PrimeThread"}];updateSearchResults();
