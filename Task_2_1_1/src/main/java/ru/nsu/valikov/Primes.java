@@ -66,7 +66,6 @@ public class Primes {
             }
         } catch (InterruptedException ex) {
             threadsExecutor.shutdownNow();
-            Thread.currentThread().interrupt();
         }
 
         return results.stream().allMatch(threadResult -> {
