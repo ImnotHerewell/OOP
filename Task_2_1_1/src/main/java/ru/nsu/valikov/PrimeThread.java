@@ -2,16 +2,16 @@ package ru.nsu.valikov;
 
 import java.math.BigInteger;
 import java.util.List;
+import java.util.concurrent.Callable;
 import java.util.stream.IntStream;
 
 /**
  * Define thread that we used.
  */
-public class PrimeThread implements Runnable {
+public class PrimeThread implements Callable<Boolean> {
     private final List<Integer> listOfIntegers;
     private final int checkNumberStart;
     private final int checkNumberEnd;
-    private PrimeStatus primeStatus = PrimeStatus.NAN;
 
     /**
      * Constructor for thread.
@@ -31,14 +31,10 @@ public class PrimeThread implements Runnable {
      * Check numbers on primality in range(checkNumberStart, checkNumberEnd + 1).
      */
     @Override
-    public void run() {
-        primeStatus = IntStream.range(checkNumberStart, checkNumberEnd).allMatch(
-                number -> BigInteger.valueOf(listOfIntegers.get(number)).isProbablePrime(100))
-                ? PrimeStatus.TRUE : PrimeStatus.FALSE;
+    public Boolean call() {
+        return IntStream.range(checkNumberStart, checkNumberEnd).allMatch(
+                number -> BigInteger.valueOf(listOfIntegers.get(number)).isProbablePrime(100));
     }
 
-    public PrimeStatus isPrimes() {
-        return primeStatus;
-    }
 
 }

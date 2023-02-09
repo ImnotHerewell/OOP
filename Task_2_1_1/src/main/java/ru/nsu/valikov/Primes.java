@@ -3,8 +3,11 @@ package ru.nsu.valikov;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
 
 /**
@@ -43,22 +46,36 @@ public class Primes {
      * @param numberOfThreads how many threads we want to use
      * @return true if all numbers are prime, else false.
      */
-    public boolean threadsCheck(final int numberOfThreads) {
+    public boolean threadsCheck(final int numberOfThreads) throws InterruptedException {
         final int listSize = listOfIntegers.size();
         if (numberOfThreads > listSize) {
             throw new IllegalArgumentException(
                     "Number of threads must be lower than number of elements.");
         }
-        ExecutorService threadsExecutor = Executors.newFixedThreadPool(50);
+        ExecutorService threadsExecutor = Executors.newFixedThreadPool(numberOfThreads);
         List<PrimeThread> threadsList = new ArrayList<>();
         final int listSeparationValue = (listSize + numberOfThreads - 1) / numberOfThreads;
-        IntStream.range(0, numberOfThreads).forEach(threadIndex -> {
-            threadsList.add(new PrimeThread(listOfIntegers, threadIndex * listSeparationValue,
-                    Math.min((threadIndex + 1) * listSeparationValue, listSize)));
-            threadsExecutor.execute(threadsList.get(threadIndex));
-        });
+        IntStream.range(0, numberOfThreads).forEach(threadIndex -> threadsList.add(
+                new PrimeThread(listOfIntegers, threadIndex * listSeparationValue,
+                        Math.min((threadIndex + 1) * listSeparationValue, listSize))));
+        List<Future<Boolean>> results = threadsExecutor.invokeAll(threadsList);
         threadsExecutor.shutdown();
-        return threadsList.stream().allMatch(thread -> thread.isPrimes() != PrimeStatus.FALSE);
+        try {
+            if (!threadsExecutor.awaitTermination(600, TimeUnit.SECONDS)) {
+                threadsExecutor.shutdownNow();
+            }
+        } catch (InterruptedException ex) {
+            threadsExecutor.shutdownNow();
+            Thread.currentThread().interrupt();
+        }
+
+        return results.stream().allMatch(threadResult -> {
+            try {
+                return threadResult.get();
+            } catch (InterruptedException | ExecutionException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 
 }

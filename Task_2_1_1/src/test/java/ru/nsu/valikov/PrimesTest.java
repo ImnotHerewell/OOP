@@ -49,9 +49,9 @@ class PrimesTest {
         return listOfPrimes;
     }
 
-    private long timeCalculation(final long startTime) {
+    private void timeCalculation(final long startTime) {
         System.out.println((System.nanoTime() - startTime));
-        return System.nanoTime();
+//        return System.nanoTime();
     }
 
     @Test
@@ -69,21 +69,21 @@ class PrimesTest {
     }
 
     @Test
-    void checkTenThreadsThree() {
+    void checkTenThreadsThree() throws InterruptedException {
         long start = System.nanoTime();
         Assertions.assertTrue(testTen.threadsCheck(3));
         timeCalculation(start);
     }
 
     @Test
-    void checkTenThreadsFive() {
+    void checkTenThreadsFive() throws InterruptedException {
         long start = System.nanoTime();
         Assertions.assertTrue(testTen.threadsCheck(5));
         timeCalculation(start);
     }
 
     @Test
-    void checkTenThreadsTen() {
+    void checkTenThreadsTen() throws InterruptedException {
         long start = System.nanoTime();
         Assertions.assertTrue(testTen.threadsCheck(10));
         timeCalculation(start);
@@ -104,35 +104,36 @@ class PrimesTest {
     }
 
     @Test
-    void checkTenThousandsThreadsThree() {
+    void checkTenThousandsThreadsThree() throws InterruptedException {
         long start = System.nanoTime();
         Assertions.assertTrue(testTenThousands.threadsCheck(3));
         timeCalculation(start);
     }
-
+//255058200
+//297380300
     @Test
-    void checkTenThousandsThreadsFive() {
+    void checkTenThousandsThreadsFive() throws InterruptedException {
         long start = System.nanoTime();
         Assertions.assertTrue(testTenThousands.threadsCheck(5));
         timeCalculation(start);
     }
 
     @Test
-    void checkTenThousandsThreadsTen() {
+    void checkTenThousandsThreadsTen() throws InterruptedException {
         long start = System.nanoTime();
         Assertions.assertTrue(testTenThousands.threadsCheck(10));
         timeCalculation(start);
     }
 
     @Test
-    void checkTenThousandsThreadsTwenty() {
+    void checkTenThousandsThreadsTwenty() throws InterruptedException {
         long start = System.nanoTime();
         Assertions.assertTrue(testTenThousands.threadsCheck(20));
         timeCalculation(start);
     }
 
     @Test
-    void checkTenThousandsThreadsForty() {
+    void checkTenThousandsThreadsForty() throws InterruptedException {
         long start = System.nanoTime();
         Assertions.assertTrue(testTenThousands.threadsCheck(40));
         timeCalculation(start);
@@ -153,35 +154,35 @@ class PrimesTest {
     }
 
     @Test
-    void checkHundredThreadsThree() {
+    void checkHundredThreadsThree() throws InterruptedException {
         long start = System.nanoTime();
         Assertions.assertTrue(testHundred.threadsCheck(3));
         timeCalculation(start);
     }
 
     @Test
-    void checkHundredThreadsFive() {
+    void checkHundredThreadsFive() throws InterruptedException {
         long start = System.nanoTime();
         Assertions.assertTrue(testHundred.threadsCheck(5));
         timeCalculation(start);
     }
 
     @Test
-    void checkHundredThreadsTen() {
+    void checkHundredThreadsTen() throws InterruptedException {
         long start = System.nanoTime();
         Assertions.assertTrue(testHundred.threadsCheck(10));
         timeCalculation(start);
     }
 
     @Test
-    void checkHundredThreadsTwenty() {
+    void checkHundredThreadsTwenty() throws InterruptedException {
         long start = System.nanoTime();
         Assertions.assertTrue(testHundred.threadsCheck(20));
         timeCalculation(start);
     }
 
     @Test
-    void checkHundredThreadsForty() {
+    void checkHundredThreadsForty() throws InterruptedException {
         long start = System.nanoTime();
         Assertions.assertTrue(testHundred.threadsCheck(40));
         timeCalculation(start);
@@ -202,35 +203,35 @@ class PrimesTest {
     }
 
     @Test
-    void checkThousandThreadsThree() {
+    void checkThousandThreadsThree() throws InterruptedException {
         long start = System.nanoTime();
         Assertions.assertTrue(testThousand.threadsCheck(3));
         timeCalculation(start);
     }
 
     @Test
-    void checkThousandThreadsFive() {
+    void checkThousandThreadsFive() throws InterruptedException {
         long start = System.nanoTime();
         Assertions.assertTrue(testThousand.threadsCheck(5));
         timeCalculation(start);
     }
 
     @Test
-    void checkThousandThreadsTen() {
+    void checkThousandThreadsTen() throws InterruptedException {
         long start = System.nanoTime();
         Assertions.assertTrue(testThousand.threadsCheck(10));
         timeCalculation(start);
     }
 
     @Test
-    void checkThousandThreadsTwenty() {
+    void checkThousandThreadsTwenty() throws InterruptedException {
         long start = System.nanoTime();
         Assertions.assertTrue(testThousand.threadsCheck(20));
         timeCalculation(start);
     }
 
     @Test
-    void checkThousandThreadsForty() {
+    void checkThousandThreadsForty() throws InterruptedException {
         long start = System.nanoTime();
         Assertions.assertTrue(testThousand.threadsCheck(40));
         timeCalculation(start);
@@ -251,35 +252,35 @@ class PrimesTest {
     }
 
     @Test
-    void checkHundredThousandsThreadsThree() {
+    void checkHundredThousandsThreadsThree() throws InterruptedException {
         long start = System.nanoTime();
         Assertions.assertTrue(testHundredThousands.threadsCheck(3));
         timeCalculation(start);
     }
 
     @Test
-    void checkHundredThousandsThreadsFive() {
+    void checkHundredThousandsThreadsFive() throws InterruptedException {
         long start = System.nanoTime();
         Assertions.assertTrue(testHundredThousands.threadsCheck(5));
         timeCalculation(start);
     }
 
     @Test
-    void checkHundredThousandsThreadsTen() {
+    void checkHundredThousandsThreadsTen() throws InterruptedException {
         long start = System.nanoTime();
         Assertions.assertTrue(testHundredThousands.threadsCheck(10));
         timeCalculation(start);
     }
 
     @Test
-    void checkHundredThousandsThreadsTwenty() {
+    void checkHundredThousandsThreadsTwenty() throws InterruptedException {
         long start = System.nanoTime();
         Assertions.assertTrue(testHundredThousands.threadsCheck(20));
         timeCalculation(start);
     }
 
     @Test
-    void checkHundredThousandsThreadsForty() {
+    void checkHundredThousandsThreadsForty() throws InterruptedException {
         long start = System.nanoTime();
         Assertions.assertTrue(testHundredThousands.threadsCheck(40));
         timeCalculation(start);
@@ -300,37 +301,38 @@ class PrimesTest {
     }
 
     @Test
-    void checkFiveMillionThreadsThree() {
+    void checkFiveMillionThreadsThree() throws InterruptedException {
         long start = System.nanoTime();
         Assertions.assertTrue(testFiveMillion.threadsCheck(3));
         timeCalculation(start);
     }
 
     @Test
-    void checkFiveMillionThreadsFive() {
+    void checkFiveMillionThreadsFive() throws InterruptedException {
         long start = System.nanoTime();
         Assertions.assertTrue(testFiveMillion.threadsCheck(5));
         timeCalculation(start);
     }
 
     @Test
-    void checkFiveMillionThreadsTen() {
+    void checkFiveMillionThreadsTen() throws InterruptedException {
         long start = System.nanoTime();
         Assertions.assertTrue(testFiveMillion.threadsCheck(10));
         timeCalculation(start);
     }
 
     @Test
-    void checkFiveMillionThreadsTwenty() {
+    void checkFiveMillionThreadsTwenty() throws InterruptedException {
         long start = System.nanoTime();
         Assertions.assertTrue(testFiveMillion.threadsCheck(20));
         timeCalculation(start);
     }
 
     @Test
-    void checkFiveMillionThreadsForty() {
+    void checkFiveMillionThreadsForty() throws InterruptedException {
         long start = System.nanoTime();
-        Assertions.assertTrue(testFiveMillion.threadsCheck(40));
+        Assertions.assertTrue(testFiveMillion.
+                                                     threadsCheck(40));
         timeCalculation(start);
     }
 }
