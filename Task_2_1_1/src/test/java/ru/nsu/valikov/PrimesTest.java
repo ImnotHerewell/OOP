@@ -51,7 +51,7 @@ class PrimesTest {
 
     private void timeCalculation(final long startTime) {
         System.out.println((System.nanoTime() - startTime));
-//        return System.nanoTime();
+        //        return System.nanoTime();
     }
 
     @Test
@@ -109,8 +109,9 @@ class PrimesTest {
         Assertions.assertTrue(testTenThousands.threadsCheck(3));
         timeCalculation(start);
     }
-//255058200
-//297380300
+
+    //255058200
+    //297380300
     @Test
     void checkTenThousandsThreadsFive() throws InterruptedException {
         long start = System.nanoTime();
@@ -331,8 +332,7 @@ class PrimesTest {
     @Test
     void checkFiveMillionThreadsForty() throws InterruptedException {
         long start = System.nanoTime();
-        Assertions.assertTrue(testFiveMillion.
-                                                     threadsCheck(40));
+        Assertions.assertTrue(testFiveMillion.threadsCheck(40));
         timeCalculation(start);
     }
 }
