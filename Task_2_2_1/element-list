@@ -1,0 +1,16 @@
+ru.nsu.valikov.json
+ru.nsu.valikov.orders
+ru.nsu.valikov.orders.compare
+ru.nsu.valikov.orders.pizza
+ru.nsu.valikov.orders.services
+ru.nsu.valikov.orders.services.pop
+ru.nsu.valikov.orders.services.popForTime
+ru.nsu.valikov.orders.services.push
+ru.nsu.valikov.pizzeria
+ru.nsu.valikov.pizzeria.services
+ru.nsu.valikov.system
+ru.nsu.valikov.utils
+ru.nsu.valikov.workers.chef
+ru.nsu.valikov.workers.chef.services
+ru.nsu.valikov.workers.courier
+ru.nsu.valikov.workers.courier.services
