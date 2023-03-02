@@ -4,7 +4,7 @@ ru.nsu.valikov.orders.compare
 ru.nsu.valikov.orders.pizza
 ru.nsu.valikov.orders.services
 ru.nsu.valikov.orders.services.pop
-ru.nsu.valikov.orders.services.popForTime
+ru.nsu.valikov.orders.services.popfortime
 ru.nsu.valikov.orders.services.push
 ru.nsu.valikov.pizzeria
 ru.nsu.valikov.pizzeria.services
