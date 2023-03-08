@@ -8,7 +8,6 @@ ru.nsu.valikov.orders.services.popfortime
 ru.nsu.valikov.orders.services.push
 ru.nsu.valikov.pizzeria
 ru.nsu.valikov.pizzeria.services
-ru.nsu.valikov.system
 ru.nsu.valikov.utils
 ru.nsu.valikov.workers.chef
 ru.nsu.valikov.workers.chef.services

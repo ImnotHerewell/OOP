@@ -84,6 +84,7 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">PizzeriaCloser</span>
 <span class="extends-implements">extends <a href="../Pizzeria.html" title="class in ru.nsu.valikov.pizzeria">Pizzeria</a>
 implements <a href="Close.html" title="interface in ru.nsu.valikov.pizzeria.services">Close</a></span></div>
+<div class="block">Close a pizzeria.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -108,7 +109,9 @@ implements <a href="Close.html" title="interface in ru.nsu.valikov.pizzeria.serv
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../workers/chef/Chef.html" title="class in ru.nsu.valikov.workers.chef">Chef</a>&gt;&nbsp;workers,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/BlockingQueue.html" title="class or interface in java.util.concurrent" class="external-link">BlockingQueue</a>&lt;<a href="../../orders/Order.html" title="class in ru.nsu.valikov.orders">Order</a>&gt;&nbsp;orders,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/BlockingQueue.html" title="class or interface in java.util.concurrent" class="external-link">BlockingQueue</a>&lt;<a href="../../orders/Order.html" title="class in ru.nsu.valikov.orders">Order</a>&gt;&nbsp;stock)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Default constructor for destroying pizzeria.</div>
+</div>
 </div>
 </section>
 </li>
@@ -150,6 +153,14 @@ implements <a href="Close.html" title="interface in ru.nsu.valikov.pizzeria.serv
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../workers/chef/Chef.html" title="class in ru.nsu.valikov.workers.chef">Chef</a>&gt;&nbsp;workers,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/BlockingQueue.html" title="class or interface in java.util.concurrent" class="external-link">BlockingQueue</a>&lt;<a href="../../orders/Order.html" title="class in ru.nsu.valikov.orders">Order</a>&gt;&nbsp;orders,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/BlockingQueue.html" title="class or interface in java.util.concurrent" class="external-link">BlockingQueue</a>&lt;<a href="../../orders/Order.html" title="class in ru.nsu.valikov.orders">Order</a>&gt;&nbsp;stock)</span></div>
+<div class="block">Default constructor for destroying pizzeria.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>couriers</code> - which couriers should be fired</dd>
+<dd><code>workers</code> - which pizzeria workers should be fired</dd>
+<dd><code>orders</code> - which orders should be canceled</dd>
+<dd><code>stock</code> - which pizzaz should be destroyed</dd>
+</dl>
 </section>
 </li>
 </ul>
