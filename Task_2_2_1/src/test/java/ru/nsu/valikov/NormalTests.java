@@ -25,6 +25,10 @@ import ru.nsu.valikov.pizzeria.services.Start;
 import ru.nsu.valikov.workers.chef.Chef;
 import ru.nsu.valikov.workers.courier.Courier;
 
+/**
+ * Contains only one test.
+ * I can do more tests, but not sure that it is really necessary.
+ */
 public class NormalTests {
 
     @Test
