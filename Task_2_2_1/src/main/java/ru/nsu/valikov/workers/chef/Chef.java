@@ -38,7 +38,7 @@ public class Chef extends Thread {
     };
 
     /**
-     * Default constructor
+     * Default constructor.
      *
      * @param workEfficiency ECE of worker
      * @param stock          pizzeria stock
