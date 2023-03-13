@@ -9,7 +9,7 @@ import ru.nsu.valikov.utils.OrderStatus;
 /**
  * Class, where the courier tries to fill his/her/its/their/helicopters trunk.
  */
-public class CourierFill implements Fill {
+public class CourierFill{
     private int trunkCapacity;
     private final PoperForTime stock;
     private final Set<Order> takenOrders; // TreeSet
@@ -28,7 +28,6 @@ public class CourierFill implements Fill {
         this.takenOrders = takenOrders;
     }
 
-    @Override
     public void fill() throws InterruptedException {
         while (trunkCapacity-- > 0) {
             Order order = stock.popForTime(SECONDS_TO_WAIT);

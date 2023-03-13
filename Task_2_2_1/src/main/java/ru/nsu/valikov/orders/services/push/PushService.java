@@ -9,8 +9,8 @@ import ru.nsu.valikov.orders.services.QueueService;
  */
 public class PushService extends QueueService implements Pusher {
 
-    public PushService(BlockingQueue<Order> queue) {
-        super(queue);
+    public PushService(BlockingQueue<Order> queue, Order... orders) {
+        super(queue, orders);
     }
 
     @Override
