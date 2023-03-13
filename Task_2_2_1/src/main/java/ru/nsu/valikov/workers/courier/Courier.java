@@ -13,7 +13,7 @@ import ru.nsu.valikov.workers.courier.services.Fill;
  * Driver, takes pizzaz from the stock -> takes them to the clients -> returns.
  */
 public class Courier extends Thread {
-    private static boolean running = true;
+    private static volatile boolean running = true;
     private final int trunkCapacity;
     private final PoperForTime stock;
     private final Set<Order> takenOrders;
@@ -41,6 +41,7 @@ public class Courier extends Thread {
                 driver.drive();
                 takenOrders.clear();
             } catch (InterruptedException e) {
+                e.printStackTrace();
                 running = false;
             }
         }
