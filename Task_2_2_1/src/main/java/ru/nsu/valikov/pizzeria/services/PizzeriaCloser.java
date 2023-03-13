@@ -31,10 +31,10 @@ public class PizzeriaCloser extends Pizzeria implements Close {
 
     @Override
     public void close() {
-        couriers.forEach(Thread::interrupt);
-        workers.forEach(Thread::interrupt);
-        couriers.clear();
-        workers.clear();
+        getCouriers().forEach(Thread::interrupt);
+        getWorkers().forEach(Thread::interrupt);
+        getCouriers().clear();
+        getWorkers().clear();
         orders.clear();
         stock.clear();
     }

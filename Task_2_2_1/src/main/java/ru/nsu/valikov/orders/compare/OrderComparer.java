@@ -18,5 +18,4 @@ public class OrderComparer implements Calculable {
     public int compareCode() {
         return order.getPseudoLatitude() * MAX_COORDINATE + order.getPseudoLongitude();
     }
-
 }

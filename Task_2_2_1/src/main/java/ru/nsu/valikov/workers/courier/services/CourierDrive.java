@@ -30,7 +30,7 @@ public class CourierDrive implements Drive {
         for (int orderIndex = 0; orderIndex < orders.size(); orderIndex++) {
             Order order = orders.get(orderIndex);
             final int orderId = order.getOrderId();
-            Logger logger = new Logger(orderId, OrderStatus.DELIVERING);
+            Logger logger = new Logger(orderId, OrderStatus.AT_DELIVERING);
             logger.log();
             currentOrderComparer = new OrderComparer(orders.get(orderIndex)).compareCode();
             newOrderComparer = new OrderComparer(orderIndex == 0 ? new Pizza(-1, 0, 0) : orders.get(

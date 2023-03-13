@@ -2,13 +2,17 @@ package ru.nsu.valikov.json;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import lombok.Getter;
 
 /**
  * Just for reading from JSON.
  */
 public class PizzeriaSystem {
+    @Getter
     private final List<Integer> chefsWorkEfficiency;
+    @Getter
     private final List<Integer> couriersTrunkCapacity;
+    @Getter
     private final int stockCapacity;
 
     /**
@@ -25,17 +29,5 @@ public class PizzeriaSystem {
         this.chefsWorkEfficiency = chefsWorkEfficiency;
         this.couriersTrunkCapacity = couriersTrunkCapacity;
         this.stockCapacity = stockCapacity;
-    }
-
-    public int getStockCapacity() {
-        return stockCapacity;
-    }
-
-    public List<Integer> getChefsWorkEfficiency() {
-        return chefsWorkEfficiency;
-    }
-
-    public List<Integer> getCouriersTrunkCapacity() {
-        return couriersTrunkCapacity;
     }
 }

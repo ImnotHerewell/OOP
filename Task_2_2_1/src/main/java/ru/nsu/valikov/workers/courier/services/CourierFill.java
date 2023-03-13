@@ -36,7 +36,7 @@ public class CourierFill implements Fill {
                 return;
             }
             final int orderId = order.getOrderId();
-            Logger logger = new Logger(orderId, OrderStatus.TAKENBYCOURIER);
+            Logger logger = new Logger(orderId, OrderStatus.TAKEN_BY_COURIER);
             logger.log();
             takenOrders.add(order);
         }
