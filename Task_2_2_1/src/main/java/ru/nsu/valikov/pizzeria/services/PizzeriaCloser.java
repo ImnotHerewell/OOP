@@ -10,7 +10,7 @@ import ru.nsu.valikov.workers.courier.Courier;
 /**
  * Close a pizzeria.
  */
-public class PizzeriaCloser extends Pizzeria implements Close {
+public class PizzeriaCloser extends Pizzeria {
     private final BlockingQueue<Order> orders;
     private final BlockingQueue<Order> stock;
 
@@ -29,7 +29,6 @@ public class PizzeriaCloser extends Pizzeria implements Close {
         this.stock = stock;
     }
 
-    @Override
     public void close() {
         getCouriers().forEach(Thread::interrupt);
         getWorkers().forEach(Thread::interrupt);
