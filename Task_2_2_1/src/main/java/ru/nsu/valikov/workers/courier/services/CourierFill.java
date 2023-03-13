@@ -13,7 +13,7 @@ public class CourierFill implements Fill {
     private int trunkCapacity;
     private final PoperForTime stock;
     private final Set<Order> takenOrders; // TreeSet
-    private static final int WAITSECONDS = 10;
+    private static final int SECONDS_TO_WAIT = 10;
 
     /**
      * Default constructor, AGAIN.
@@ -31,7 +31,7 @@ public class CourierFill implements Fill {
     @Override
     public void fill() throws InterruptedException {
         while (trunkCapacity-- > 0) {
-            Order order = stock.popForTime(WAITSECONDS);
+            Order order = stock.popForTime(SECONDS_TO_WAIT);
             if (order == null) {
                 return;
             }
