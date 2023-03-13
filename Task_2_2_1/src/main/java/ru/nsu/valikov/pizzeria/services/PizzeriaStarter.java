@@ -17,8 +17,8 @@ public class PizzeriaStarter extends Pizzeria implements Start {
 
     @Override
     public void start() {
-        Executor executor = Executors.newFixedThreadPool(couriers.size() + workers.size());
-        workers.forEach(executor::execute);
-        couriers.forEach(executor::execute);
+        Executor executor = Executors.newFixedThreadPool(getCouriers().size() + getWorkers().size());
+        getWorkers().forEach(executor::execute);
+        getCouriers().forEach(executor::execute);
     }
 }

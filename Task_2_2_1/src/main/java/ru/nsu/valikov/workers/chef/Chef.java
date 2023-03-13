@@ -68,7 +68,7 @@ public class Chef extends Thread {
                 logger = new Logger(orderId, OrderStatus.COOKED);
                 logger.log();
                 stock.push(pizza);
-                logger = new Logger(orderId, OrderStatus.WAITINGFORDELIVERING);
+                logger = new Logger(orderId, OrderStatus.WAITING_FOR_DELIVERING);
                 logger.log();
             } catch (InterruptedException e) {
                 e.printStackTrace();

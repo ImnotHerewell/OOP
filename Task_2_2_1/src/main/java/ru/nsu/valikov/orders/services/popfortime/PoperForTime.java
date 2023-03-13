@@ -7,5 +7,4 @@ import ru.nsu.valikov.orders.Order;
  */
 public interface PoperForTime {
     Order popForTime(int seconds) throws InterruptedException;
-
 }

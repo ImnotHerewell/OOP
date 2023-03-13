@@ -5,16 +5,11 @@ package ru.nsu.valikov.utils;
  */
 public enum OrderStatus {
     ACCEPTED,
-    WAITINGFORCOOKING,
+    WAITING_FOR_COOKING,
     COOKING,
     COOKED,
-    WAITINGFORDELIVERING,
-    TAKENBYCOURIER,
-    DELIVERING,
+    WAITING_FOR_DELIVERING,
+    TAKEN_BY_COURIER,
+    AT_DELIVERING,
     DELIVERED;
-
-    @Override
-    public String toString() {
-        return super.toString();
-    }
 }
