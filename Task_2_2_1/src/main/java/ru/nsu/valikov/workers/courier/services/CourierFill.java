@@ -1,19 +1,21 @@
 package ru.nsu.valikov.workers.courier.services;
 
 import java.util.Set;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import ru.nsu.valikov.orders.Order;
 import ru.nsu.valikov.orders.services.popfortime.PoperForTime;
-import ru.nsu.valikov.utils.Logger;
-import ru.nsu.valikov.utils.OrderStatus;
+import ru.nsu.valikov.utils.LoggerHelper;
 
 /**
  * Class, where the courier tries to fill his/her/its/their/helicopters trunk.
  */
-public class CourierFill{
+public class CourierFill {
     private int trunkCapacity;
     private final PoperForTime stock;
     private final Set<Order> takenOrders; // TreeSet
     private static final int SECONDS_TO_WAIT = 10;
+    private static final Logger logger = LogManager.getLogger(CourierFill.class.getName());
 
     /**
      * Default constructor, AGAIN.
@@ -35,8 +37,8 @@ public class CourierFill{
                 return;
             }
             final int orderId = order.getOrderId();
-            Logger logger = new Logger(orderId, OrderStatus.TAKEN_BY_COURIER);
-            logger.log();
+            String loggerMessage = LoggerHelper.messageWithOrderId(orderId);
+            logger.info(loggerMessage + "has taken by courier.");
             takenOrders.add(order);
         }
     }

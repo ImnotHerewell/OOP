@@ -2,17 +2,19 @@ package ru.nsu.valikov.workers.courier.services;
 
 import java.util.List;
 import java.util.Set;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import ru.nsu.valikov.orders.Order;
 import ru.nsu.valikov.orders.compare.OrderComparer;
 import ru.nsu.valikov.orders.models.Pizza;
-import ru.nsu.valikov.utils.Logger;
-import ru.nsu.valikov.utils.OrderStatus;
+import ru.nsu.valikov.utils.LoggerHelper;
 
 /**
  * Class, where the courier tries to deliver all taken orders to clients.
  */
 public class CourierDrive {
     private final Set<Order> takenOrders;
+    private static final Logger logger = LogManager.getLogger(CourierDrive.class.getName());
 
     public CourierDrive(Set<Order> takenOrders) {
         this.takenOrders = takenOrders;
@@ -25,20 +27,19 @@ public class CourierDrive {
         }
         List<Order> orders = takenOrders.stream().toList();
         int currentOrderComparer = 0;
-        int newOrderComparer = 0;
+        int newOrderComparer;
         for (int orderIndex = 0; orderIndex < orders.size(); orderIndex++) {
             Order order = orders.get(orderIndex);
             final int orderId = order.getOrderId();
-            Logger logger = new Logger(orderId, OrderStatus.AT_DELIVERING);
-            logger.log();
+            String loggerMessage = LoggerHelper.messageWithOrderId(orderId);
+            logger.info(loggerMessage + "is delivering.");
             currentOrderComparer = new OrderComparer(orders.get(orderIndex)).compareCode();
             newOrderComparer = new OrderComparer(orderIndex == 0 ? new Pizza(-1, 0, 0) : orders.get(
                     orderIndex - 1)).compareCode();
             Thread.sleep(Math.abs(currentOrderComparer - newOrderComparer) / Order.MAX_COORDINATE
                          + Math.abs(currentOrderComparer - newOrderComparer)
                            % Order.MAX_COORDINATE);
-            logger = new Logger(orderId, OrderStatus.DELIVERED);
-            logger.log();
+            logger.info(loggerMessage + "has delivered.");
         }
         Thread.sleep(currentOrderComparer / Order.MAX_COORDINATE
                      + currentOrderComparer % Order.MAX_COORDINATE);
