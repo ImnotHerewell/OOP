@@ -30,6 +30,12 @@ public class CourierFill {
         this.takenOrders = takenOrders;
     }
 
+    /**
+     * Courier fills his/her/their trunk. He/she/they cannot wait forever for filling trunk,
+     * because customers will be angry when pizza doesn't deliver in time.
+     *
+     * @throws InterruptedException when courier ends his/her/their shift.
+     */
     public void fill() throws InterruptedException {
         while (trunkCapacity-- > 0) {
             Order order = stock.popForTime(SECONDS_TO_WAIT);
