@@ -32,8 +32,8 @@ public class PizzeriaCloser extends Pizzeria implements Close {
     @Override
     public void close() {
         couriers.forEach(Thread::interrupt);
-        couriers.clear();
         workers.forEach(Thread::interrupt);
+        couriers.clear();
         workers.clear();
         orders.clear();
         stock.clear();
