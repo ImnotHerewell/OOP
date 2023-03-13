@@ -3,7 +3,7 @@ package ru.nsu.valikov.workers.chef;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.MissingFormatArgumentException;
-import ru.nsu.valikov.orders.pizza.Pizza;
+import ru.nsu.valikov.orders.models.Pizza;
 import ru.nsu.valikov.orders.services.pop.Poper;
 import ru.nsu.valikov.orders.services.push.Pusher;
 import ru.nsu.valikov.utils.Logger;

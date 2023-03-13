@@ -1,4 +1,4 @@
-package ru.nsu.valikov.orders.pizza;
+package ru.nsu.valikov.orders.models;
 
 import ru.nsu.valikov.orders.Order;
 

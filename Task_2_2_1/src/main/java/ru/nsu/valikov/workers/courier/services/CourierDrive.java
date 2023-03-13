@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Set;
 import ru.nsu.valikov.orders.Order;
 import ru.nsu.valikov.orders.compare.OrderComparer;
-import ru.nsu.valikov.orders.pizza.Pizza;
+import ru.nsu.valikov.orders.models.Pizza;
 import ru.nsu.valikov.utils.Logger;
 import ru.nsu.valikov.utils.OrderStatus;
 
