@@ -1,6 +1,5 @@
 package ru.nsu.valikov.workers.chef;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.MissingFormatArgumentException;
 import ru.nsu.valikov.orders.models.Pizza;
@@ -15,27 +14,16 @@ import ru.nsu.valikov.workers.chef.services.CookService;
  * Cooker, takes an order from the queue -> cooks it -> sends it to the stock.
  */
 public class Chef extends Thread {
+
+    private static volatile boolean running = true;
     private final Poper orders;
     private final Pusher stock;
     private final int workEfficiency;
-    private static final boolean RUNNING = true;
     private static final int PIZZA_LOWER_ID = 0;
-    private static final int PIZZA_HIGHER_ID = 10;
-    private static final Map<Integer, Integer> PIZZAZ_POOL = new HashMap<>() {
-        {
-            put(0, 25);
-            put(1, 30);
-            put(2, 35);
-            put(3, 40);
-            put(4, 45);
-            put(5, 50);
-            put(6, 55);
-            put(7, 17);
-            put(8, 23);
-            put(9, 34);
-            put(10, 26);
-        }
-    };
+    private static final int PIZZA_HIGHER_ID = 9;
+    private static final Map<Integer, Integer> PIZZAZ_POOL = Map.of(0, 25, 1, 30, 2, 35, 3, 40, 4,
+                                                                    45, 5, 50, 6, 55, 7, 17, 8, 23,
+                                                                    9, 34);
 
     /**
      * Default constructor.
@@ -53,7 +41,7 @@ public class Chef extends Thread {
 
     @Override
     public void run() {
-        while (RUNNING) {
+        while (running) {
             try {
                 Pizza pizza = (Pizza) orders.pop();
                 final int pizzaId = pizza.getPizzaId();
@@ -72,6 +60,7 @@ public class Chef extends Thread {
                 logger.log();
             } catch (InterruptedException e) {
                 e.printStackTrace();
+                running = false;
             }
         }
     }
