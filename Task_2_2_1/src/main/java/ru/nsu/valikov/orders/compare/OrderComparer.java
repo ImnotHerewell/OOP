@@ -1,6 +1,6 @@
 package ru.nsu.valikov.orders.compare;
 
-import static ru.nsu.valikov.orders.Order.MAXCOORDINATE;
+import static ru.nsu.valikov.orders.Order.MAX_COORDINATE;
 
 import ru.nsu.valikov.orders.Order;
 
@@ -16,7 +16,7 @@ public class OrderComparer implements Calculable {
 
     @Override
     public int compareCode() {
-        return order.getPseudoLatitude() * MAXCOORDINATE + order.getPseudoLongitude();
+        return order.getPseudoLatitude() * MAX_COORDINATE + order.getPseudoLongitude();
     }
 
 }

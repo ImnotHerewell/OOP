@@ -35,12 +35,12 @@ public class CourierDrive implements Drive {
             currentOrderComparer = new OrderComparer(orders.get(orderIndex)).compareCode();
             newOrderComparer = new OrderComparer(orderIndex == 0 ? new Pizza(-1, 0, 0) : orders.get(
                     orderIndex - 1)).compareCode();
-            Thread.sleep(Math.abs(currentOrderComparer - newOrderComparer) / Order.MAXCOORDINATE
-                         + Math.abs(currentOrderComparer - newOrderComparer) % Order.MAXCOORDINATE);
+            Thread.sleep(Math.abs(currentOrderComparer - newOrderComparer) / Order.MAX_COORDINATE
+                         + Math.abs(currentOrderComparer - newOrderComparer) % Order.MAX_COORDINATE);
             logger = new Logger(orderId, OrderStatus.DELIVERED);
             logger.log();
         }
-        Thread.sleep(currentOrderComparer / Order.MAXCOORDINATE
-                     + currentOrderComparer % Order.MAXCOORDINATE);
+        Thread.sleep(currentOrderComparer / Order.MAX_COORDINATE
+                     + currentOrderComparer % Order.MAX_COORDINATE);
     }
 }
