@@ -19,9 +19,9 @@ public class Chef extends Thread {
     private final Pusher stock;
     private final int workEfficiency;
     private static final boolean RUNNING = true;
-    private static final int PIZZAIDFROM = 0;
-    private static final int PIZZAIDTO = 10;
-    private static final Map<Integer, Integer> pizzazPool = new HashMap<>() {
+    private static final int PIZZA_LOWER_ID = 0;
+    private static final int PIZZA_HIGHER_ID = 10;
+    private static final Map<Integer, Integer> PIZZAZ_POOL = new HashMap<>() {
         {
             put(0, 25);
             put(1, 30);
@@ -57,11 +57,11 @@ public class Chef extends Thread {
             try {
                 Pizza pizza = (Pizza) orders.pop();
                 final int pizzaId = pizza.getPizzaId();
-                if (pizzaId < PIZZAIDFROM || pizzaId > PIZZAIDTO) {
+                if (pizzaId < PIZZA_LOWER_ID || pizzaId > PIZZA_HIGHER_ID) {
                     throw new MissingFormatArgumentException("Wrong pizzaId");
                 }
                 final int orderId = pizza.getOrderId();
-                Cook cookService = new CookService(workEfficiency, pizzazPool.get(pizzaId));
+                Cook cookService = new CookService(workEfficiency, PIZZAZ_POOL.get(pizzaId));
                 Logger logger = new Logger(orderId, OrderStatus.COOKING);
                 logger.log();
                 cookService.cook();

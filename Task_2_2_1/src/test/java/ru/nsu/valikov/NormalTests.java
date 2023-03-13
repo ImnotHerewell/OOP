@@ -71,9 +71,4 @@ public class NormalTests {
             throw new RuntimeException(e);
         }
     }
-
-    //    @Test
-    //    void exampleOne() {
-    //
-    //    }
 }
