@@ -11,7 +11,7 @@ import ru.nsu.valikov.utils.OrderStatus;
 /**
  * Class, where the courier tries to deliver all taken orders to clients.
  */
-public class CourierDrive implements Drive {
+public class CourierDrive {
     private final Set<Order> takenOrders;
 
     public CourierDrive(Set<Order> takenOrders) {
@@ -19,7 +19,6 @@ public class CourierDrive implements Drive {
     }
 
 
-    @Override
     public void drive() throws InterruptedException {
         if (takenOrders.isEmpty()) {
             return;
@@ -36,7 +35,8 @@ public class CourierDrive implements Drive {
             newOrderComparer = new OrderComparer(orderIndex == 0 ? new Pizza(-1, 0, 0) : orders.get(
                     orderIndex - 1)).compareCode();
             Thread.sleep(Math.abs(currentOrderComparer - newOrderComparer) / Order.MAX_COORDINATE
-                         + Math.abs(currentOrderComparer - newOrderComparer) % Order.MAX_COORDINATE);
+                         + Math.abs(currentOrderComparer - newOrderComparer)
+                           % Order.MAX_COORDINATE);
             logger = new Logger(orderId, OrderStatus.DELIVERED);
             logger.log();
         }

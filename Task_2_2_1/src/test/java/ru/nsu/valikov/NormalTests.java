@@ -42,19 +42,10 @@ public class NormalTests {
             Pusher stockPush = new PushService(stock);
             PoperForTime stockPop = new PopForTimeService(stock);
             BlockingQueue<Order> orders = new LinkedBlockingDeque<>();
-            Pusher ordersPush = new PushService(orders) {
-                {
-                    push(new Pizza(1, 10, 20));
-                    push(new Pizza(1, 99, 17));
-                    push(new Pizza(2, 34, 78));
-                    push(new Pizza(3, 27, 1000));
-                    push(new Pizza(4, 8756, 347));
-                    push(new Pizza(5, 236, 512));
-                    push(new Pizza(6, 7452, 1032));
-                    push(new Pizza(7, 7, 7777));
-                    push(new Pizza(8, 642, 20));
-                }
-            };
+            Pusher ordersPush = new PushService(orders, new Pizza(1, 10, 20), new Pizza(2, 34, 78),
+                                                new Pizza(3, 27, 1000), new Pizza(4, 8756, 347),
+                                                new Pizza(5, 236, 512), new Pizza(6, 7452, 1032),
+                                                new Pizza(7, 7, 7777), new Pizza(8, 642, 20));
             Poper ordersPop = new PopService(orders);
             List<Courier> couriers = new ArrayList<>();
             List<Chef> chefs = new ArrayList<>();

@@ -15,7 +15,7 @@ import ru.nsu.valikov.workers.chef.services.CookService;
  */
 public class Chef extends Thread {
 
-    private static volatile boolean running = true;
+    private boolean running = true;
     private final Poper orders;
     private final Pusher stock;
     private final int workEfficiency;
@@ -36,6 +36,7 @@ public class Chef extends Thread {
         this.workEfficiency = workEfficiency;
         this.orders = orders;
         this.stock = stock;
+        running = true;
     }
 
 
