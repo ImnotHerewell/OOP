@@ -1,5 +1,6 @@
 package ru.nsu.valikov.orders;
 
+import lombok.Getter;
 import ru.nsu.valikov.orders.compare.OrderComparer;
 
 /**
@@ -7,8 +8,11 @@ import ru.nsu.valikov.orders.compare.OrderComparer;
  */
 public abstract class Order implements Comparable<Order> {
     private static int orderCount = 0;
+    @Getter
     private final int orderId;
+    @Getter
     private final int pseudoLatitude;
+    @Getter
     private final int pseudoLongitude;
     public static final int MAX_COORDINATE = (int) 1E4;
 
@@ -30,17 +34,5 @@ public abstract class Order implements Comparable<Order> {
         OrderComparer thisComparer = new OrderComparer(this);
         OrderComparer objectComparer = new OrderComparer(o);
         return thisComparer.compareCode() - objectComparer.compareCode();
-    }
-
-    public int getPseudoLatitude() {
-        return pseudoLatitude;
-    }
-
-    public int getPseudoLongitude() {
-        return pseudoLongitude;
-    }
-
-    public int getOrderId() {
-        return orderId;
     }
 }
