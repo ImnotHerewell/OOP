@@ -36,7 +36,7 @@ public class NormalTests {
         try (InputStream input = classLoader.getResourceAsStream("jsons/" + fileName + ".json")) {
             ObjectMapper mapper = new ObjectMapper();
             PizzeriaSystem system = mapper.readValue(input, PizzeriaSystem.class);
-            BlockingQueue<Order> stock = new ArrayBlockingQueue<>(system.getStockCapacity());
+            BlockingQueue<Order> stock = new ArrayBlockingQueue<>(system.stockCapacity());
             Pusher stockPush = new PushService(stock);
             PoperForTime stockPop = new PopForTimeService(stock);
             BlockingQueue<Order> orders = new LinkedBlockingDeque<>();
@@ -44,12 +44,13 @@ public class NormalTests {
                                                 Pizza.of(3, 27, 1000), Pizza.of(4, 8756, 347),
                                                 Pizza.of(5, 236, 512), Pizza.of(6, 7452, 1032),
                                                 Pizza.of(7, 7, 7777), Pizza.of(8, 642, 20));
+            ordersPush.push(Pizza.of(7, 7, 7));
             Poper ordersPop = new PopService(orders);
             List<Courier> couriers = new ArrayList<>();
             List<Chef> chefs = new ArrayList<>();
-            system.getChefsWorkEfficiency().forEach(
+            system.chefsWorkEfficiency().forEach(
                     efficiency -> chefs.add(new Chef(efficiency, stockPush, ordersPop)));
-            system.getCouriersTrunkCapacity().forEach(
+            system.couriersTrunkCapacity().forEach(
                     capacity -> couriers.add(new Courier(stockPop, capacity)));
             PizzeriaStarter starter = new PizzeriaStarter(couriers, chefs);
             starter.start();

@@ -6,6 +6,8 @@ package ru.nsu.valikov.workers.chef.services;
 public class CookService implements Cook {
     private final int workEfficiency;
     private final int time;
+    private static final int MAX_ECE = 101;
+    private static final long WAIT_MULTIPLIER = 10L;
 
     public CookService(int workEfficiency, int time) {
         this.workEfficiency = workEfficiency;
@@ -14,6 +16,6 @@ public class CookService implements Cook {
 
     @Override
     public void cook() throws InterruptedException {
-        Thread.sleep(time * 10L * (101 - workEfficiency));
+        Thread.sleep(time * WAIT_MULTIPLIER * (MAX_ECE - workEfficiency));
     }
 }

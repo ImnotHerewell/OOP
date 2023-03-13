@@ -14,6 +14,9 @@ import ru.nsu.valikov.utils.LoggerHelper;
  */
 public class CourierDrive {
     private final Set<Order> takenOrders;
+    private static final int IMAGINE_PIZZA_ID = -1;
+    private static final int IMAGINE_COORDINATE = 0;
+    private static final int START_COMPARE_VALUE = 0;
     private static final Logger logger = LogManager.getLogger(CourierDrive.class.getName());
 
     public CourierDrive(Set<Order> takenOrders) {
@@ -26,7 +29,7 @@ public class CourierDrive {
             return;
         }
         List<Order> orders = takenOrders.stream().toList();
-        int currentOrderComparer = 0;
+        int currentOrderComparer = START_COMPARE_VALUE;
         int newOrderComparer;
         for (int orderIndex = 0; orderIndex < orders.size(); orderIndex++) {
             Order order = orders.get(orderIndex);
@@ -34,8 +37,10 @@ public class CourierDrive {
             String loggerMessage = LoggerHelper.messageWithOrderId(orderId);
             logger.info(loggerMessage + "is delivering.");
             currentOrderComparer = new OrderComparer(orders.get(orderIndex)).compareCode();
-            newOrderComparer = new OrderComparer(orderIndex == 0 ? new Pizza(-1, 0, 0) : orders.get(
-                    orderIndex - 1)).compareCode();
+            newOrderComparer = new OrderComparer(
+                    orderIndex == 0 ? new Pizza(IMAGINE_PIZZA_ID, IMAGINE_COORDINATE,
+                                                IMAGINE_COORDINATE)
+                                    : orders.get(orderIndex - 1)).compareCode();
             Thread.sleep(Math.abs(currentOrderComparer - newOrderComparer) / Order.MAX_COORDINATE
                          + Math.abs(currentOrderComparer - newOrderComparer)
                            % Order.MAX_COORDINATE);

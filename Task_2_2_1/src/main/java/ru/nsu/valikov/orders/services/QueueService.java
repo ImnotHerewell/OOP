@@ -14,6 +14,6 @@ public abstract class QueueService {
 
     protected QueueService(BlockingQueue<Order> queue, Order... orders) {
         this.queue = queue;
-        Arrays.stream(orders).toList().forEach(queue::add);
+        queue.addAll(Arrays.stream(orders).toList());
     }
 }
