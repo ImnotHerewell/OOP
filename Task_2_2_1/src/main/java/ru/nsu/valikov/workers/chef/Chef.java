@@ -2,11 +2,12 @@ package ru.nsu.valikov.workers.chef;
 
 import java.util.Map;
 import java.util.MissingFormatArgumentException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import ru.nsu.valikov.orders.models.Pizza;
 import ru.nsu.valikov.orders.services.pop.Poper;
 import ru.nsu.valikov.orders.services.push.Pusher;
-import ru.nsu.valikov.utils.Logger;
-import ru.nsu.valikov.utils.OrderStatus;
+import ru.nsu.valikov.utils.LoggerHelper;
 import ru.nsu.valikov.workers.chef.services.Cook;
 import ru.nsu.valikov.workers.chef.services.CookService;
 
@@ -19,8 +20,10 @@ public class Chef extends Thread {
     private final Poper orders;
     private final Pusher stock;
     private final int workEfficiency;
+    private static final String STANDARD_LOGGER_MESSAGE = "Pizza with id ";
     private static final int PIZZA_LOWER_ID = 0;
     private static final int PIZZA_HIGHER_ID = 9;
+    private static final Logger logger = LogManager.getLogger(Chef.class.getName());
     private static final Map<Integer, Integer> PIZZAZ_POOL = Map.of(0, 25, 1, 30, 2, 35, 3, 40, 4,
                                                                     45, 5, 50, 6, 55, 7, 17, 8, 23,
                                                                     9, 34);
@@ -50,15 +53,13 @@ public class Chef extends Thread {
                     throw new MissingFormatArgumentException("Wrong pizzaId");
                 }
                 final int orderId = pizza.getOrderId();
+                final String loggerMessage = LoggerHelper.messageWithOrderId(orderId);
                 Cook cookService = new CookService(workEfficiency, PIZZAZ_POOL.get(pizzaId));
-                Logger logger = new Logger(orderId, OrderStatus.COOKING);
-                logger.log();
+                logger.info(loggerMessage + "is cooking.");
                 cookService.cook();
-                logger = new Logger(orderId, OrderStatus.COOKED);
-                logger.log();
+                logger.info(loggerMessage + "has cooked.");
                 stock.push(pizza);
-                logger = new Logger(orderId, OrderStatus.WAITING_FOR_DELIVERING);
-                logger.log();
+                logger.info(loggerMessage + "is waiting for delivering");
             } catch (InterruptedException e) {
                 e.printStackTrace();
                 running = false;
