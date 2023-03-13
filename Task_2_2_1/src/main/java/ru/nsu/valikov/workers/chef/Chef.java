@@ -16,11 +16,10 @@ import ru.nsu.valikov.workers.chef.services.CookService;
  */
 public class Chef extends Thread {
 
-    private boolean running = true;
+    private boolean running;
     private final Poper orders;
     private final Pusher stock;
     private final int workEfficiency;
-    private static final String STANDARD_LOGGER_MESSAGE = "Pizza with id ";
     private static final int PIZZA_LOWER_ID = 0;
     private static final int PIZZA_HIGHER_ID = 9;
     private static final Logger logger = LogManager.getLogger(Chef.class.getName());
