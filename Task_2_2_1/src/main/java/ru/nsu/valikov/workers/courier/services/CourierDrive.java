@@ -24,6 +24,13 @@ public class CourierDrive {
     }
 
 
+    /**
+     * Courier delivers pizzaz from his/her/their trunk to customers. He has some order, it's
+     * why we have `newOrderComparer` and `currentOrderComparer`. Without order delivering is too
+     * insufficient.
+     *
+     * @throws InterruptedException when courier ends his/her/their shift.
+     */
     public void drive() throws InterruptedException {
         if (takenOrders.isEmpty()) {
             return;

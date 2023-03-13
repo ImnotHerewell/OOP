@@ -29,6 +29,9 @@ public class PizzeriaCloser extends Pizzeria {
         this.stock = stock;
     }
 
+    /**
+     * `Kill` all threads that are associated with pizzeria.
+     */
     public void close() {
         getCouriers().forEach(Thread::interrupt);
         getWorkers().forEach(Thread::interrupt);

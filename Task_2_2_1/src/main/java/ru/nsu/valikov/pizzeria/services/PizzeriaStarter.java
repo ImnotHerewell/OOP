@@ -15,6 +15,9 @@ public class PizzeriaStarter extends Pizzeria {
         super(couriers, workers);
     }
 
+    /**
+     * Start all threads that are associated with pizzeria.
+     */
     public void start() {
         Executor executor = Executors.newFixedThreadPool(
                 getCouriers().size() + getWorkers().size());

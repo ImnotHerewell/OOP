@@ -6,7 +6,7 @@ import ru.nsu.valikov.orders.Order;
 /**
  * Pizza object, what customers buy.
  */
-public class Pizza extends Order{
+public class Pizza extends Order {
     @Getter
     private final int pizzaId;
 
