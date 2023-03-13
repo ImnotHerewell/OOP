@@ -10,7 +10,7 @@ public abstract class Order implements Comparable<Order> {
     private final int orderId;
     private final int pseudoLatitude;
     private final int pseudoLongitude;
-    public static final int MAXCOORDINATE = (int) 1E4;
+    public static final int MAX_COORDINATE = (int) 1E4;
 
     /**
      * Default constructor, from interesting - it performs increasing of orderId, it is for
@@ -23,10 +23,6 @@ public abstract class Order implements Comparable<Order> {
         this.orderId = ++orderCount;
         this.pseudoLatitude = pseudoLatitude;
         this.pseudoLongitude = pseudoLongitude;
-    }
-
-    public static int getOrderCount() {
-        return orderCount;
     }
 
     @Override
