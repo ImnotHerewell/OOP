@@ -11,7 +11,7 @@ import java.util.concurrent.LinkedBlockingDeque;
 import org.junit.jupiter.api.Test;
 import ru.nsu.valikov.json.PizzeriaSystem;
 import ru.nsu.valikov.orders.Order;
-import ru.nsu.valikov.orders.pizza.Pizza;
+import ru.nsu.valikov.orders.models.Pizza;
 import ru.nsu.valikov.orders.services.pop.PopService;
 import ru.nsu.valikov.orders.services.pop.Poper;
 import ru.nsu.valikov.orders.services.popfortime.PopForTimeService;
