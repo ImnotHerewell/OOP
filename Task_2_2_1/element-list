@@ -1,7 +1,7 @@
 ru.nsu.valikov.json
 ru.nsu.valikov.orders
 ru.nsu.valikov.orders.compare
-ru.nsu.valikov.orders.pizza
+ru.nsu.valikov.orders.models
 ru.nsu.valikov.orders.services
 ru.nsu.valikov.orders.services.pop
 ru.nsu.valikov.orders.services.popfortime

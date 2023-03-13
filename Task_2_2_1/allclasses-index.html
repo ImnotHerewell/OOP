@@ -54,7 +54,7 @@ loadScripts(document, 'script');</script>
 <h1 title="All Classes and Interfaces" class="title">All Classes and Interfaces</h1>
 </div>
 <div id="all-classes-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="all-classes-table-tab0" role="tab" aria-selected="true" aria-controls="all-classes-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="all-classes-table-tab1" role="tab" aria-selected="false" aria-controls="all-classes-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table-tab1', 2)" class="table-tab">Interfaces</button><button id="all-classes-table-tab2" role="tab" aria-selected="false" aria-controls="all-classes-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table-tab2', 2)" class="table-tab">Classes</button><button id="all-classes-table-tab3" role="tab" aria-selected="false" aria-controls="all-classes-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table-tab3', 2)" class="table-tab">Enum Classes</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="all-classes-table-tab0" role="tab" aria-selected="true" aria-controls="all-classes-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="all-classes-table-tab1" role="tab" aria-selected="false" aria-controls="all-classes-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table-tab1', 2)" class="table-tab">Interfaces</button><button id="all-classes-table-tab2" role="tab" aria-selected="false" aria-controls="all-classes-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table-tab2', 2)" class="table-tab">Classes</button><button id="all-classes-table-tab4" role="tab" aria-selected="false" aria-controls="all-classes-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table-tab4', 2)" class="table-tab">Record Classes</button></div>
 <div id="all-classes-table.tabpanel" role="tabpanel">
 <div class="summary-table two-column-summary" aria-labelledby="all-classes-table-tab0">
 <div class="table-header col-first">Class</div>
@@ -67,55 +67,39 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Cooker, takes an order from the queue -> cooks it -> sends it to the stock.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="ru/nsu/valikov/pizzeria/services/Close.html" title="interface in ru.nsu.valikov.pizzeria.services">Close</a></div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="ru/nsu/valikov/workers/chef/services/Cook.html" title="interface in ru.nsu.valikov.workers.chef.services">Cook</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab1">
-<div class="block">Closable.</div>
-</div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="ru/nsu/valikov/workers/chef/services/Cook.html" title="interface in ru.nsu.valikov.workers.chef.services">Cook</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
 <div class="block">It could be named as Cookable but who cares.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/valikov/workers/chef/services/CookService.html" title="class in ru.nsu.valikov.workers.chef.services">CookService</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/valikov/workers/chef/services/CookService.html" title="class in ru.nsu.valikov.workers.chef.services">CookService</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Yea, it cooks.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/valikov/workers/courier/Courier.html" title="class in ru.nsu.valikov.workers.courier">Courier</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/valikov/workers/courier/Courier.html" title="class in ru.nsu.valikov.workers.courier">Courier</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Driver, takes pizzaz from the stock -> takes them to the clients -> returns.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/valikov/workers/courier/services/CourierDrive.html" title="class in ru.nsu.valikov.workers.courier.services">CourierDrive</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/valikov/workers/courier/services/CourierDrive.html" title="class in ru.nsu.valikov.workers.courier.services">CourierDrive</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Class, where the courier tries to deliver all taken orders to clients.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/valikov/workers/courier/services/CourierFill.html" title="class in ru.nsu.valikov.workers.courier.services">CourierFill</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/valikov/workers/courier/services/CourierFill.html" title="class in ru.nsu.valikov.workers.courier.services">CourierFill</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Class, where the courier tries to fill his/her/its/their/helicopters trunk.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="ru/nsu/valikov/workers/courier/services/Drive.html" title="interface in ru.nsu.valikov.workers.courier.services">Drive</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
-<div class="block">Driveable.</div>
-</div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="ru/nsu/valikov/workers/courier/services/Fill.html" title="interface in ru.nsu.valikov.workers.courier.services">Fill</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
-<div class="block">Fillable.</div>
-</div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/valikov/utils/Logger.html" title="class in ru.nsu.valikov.utils">Logger</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/valikov/utils/LoggerHelper.html" title="class in ru.nsu.valikov.utils">LoggerHelper</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Souts everything.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/valikov/orders/Order.html" title="class in ru.nsu.valikov.orders">Order</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/valikov/orders/Order.html" title="class in ru.nsu.valikov.orders">Order</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Father for all types of orders, not just pizza.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/valikov/orders/compare/OrderComparer.html" title="class in ru.nsu.valikov.orders.compare">OrderComparer</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/valikov/orders/compare/OrderComparer.html" title="class in ru.nsu.valikov.orders.compare">OrderComparer</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Calculates numeric value for order object.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab3"><a href="ru/nsu/valikov/utils/OrderStatus.html" title="enum class in ru.nsu.valikov.utils">OrderStatus</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab3">
-<div class="block">Order status for logging and performing reading code without magic strings.</div>
-</div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/valikov/orders/pizza/Pizza.html" title="class in ru.nsu.valikov.orders.pizza">Pizza</a></div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/valikov/orders/models/Pizza.html" title="class in ru.nsu.valikov.orders.models">Pizza</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Pizza object, what customers buy.</div>
 </div>
@@ -131,8 +115,8 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Opens a pizzeria.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/valikov/json/PizzeriaSystem.html" title="class in ru.nsu.valikov.json">PizzeriaSystem</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab4"><a href="ru/nsu/valikov/json/PizzeriaSystem.html" title="class in ru.nsu.valikov.json">PizzeriaSystem</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab4">
 <div class="block">Just for reading from JSON.</div>
 </div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="ru/nsu/valikov/orders/services/pop/Poper.html" title="interface in ru.nsu.valikov.orders.services.pop">Poper</a></div>
@@ -162,10 +146,6 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/valikov/orders/services/QueueService.html" title="class in ru.nsu.valikov.orders.services">QueueService</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Father for all queues.</div>
-</div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="ru/nsu/valikov/pizzeria/services/Start.html" title="interface in ru.nsu.valikov.pizzeria.services">Start</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
-<div class="block">Startable.</div>
 </div>
 </div>
 </div>
