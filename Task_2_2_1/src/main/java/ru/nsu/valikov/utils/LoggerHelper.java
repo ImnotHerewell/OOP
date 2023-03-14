@@ -4,7 +4,7 @@ package ru.nsu.valikov.utils;
  * Souts everything.
  */
 public class LoggerHelper {
-    public static final String STANDARD_LOGGER_MESSAGE = "Pizza with id ";
+    private static final String STANDARD_LOGGER_MESSAGE = "Pizza with id ";
 
     private LoggerHelper() {
         throw new AssertionError();
