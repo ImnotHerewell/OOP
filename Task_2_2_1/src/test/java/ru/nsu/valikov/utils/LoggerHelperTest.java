@@ -19,5 +19,4 @@ class LoggerHelperTest {
     void messageWithOrderIdRandomThird() {
         Assertions.assertEquals(LoggerHelper.messageWithOrderId(-777), "Pizza with id -777 ");
     }
-
 }
