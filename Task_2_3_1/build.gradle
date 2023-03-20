@@ -1,15 +1,22 @@
 plugins {
     id 'java'
-    id 'application'
     id 'jacoco'
+    id 'application'
     id 'io.freefair.lombok' version "8.0.0-rc2"
     id 'org.javamodularity.moduleplugin' version '1.8.12'
     id 'org.openjfx.javafxplugin' version '0.0.13'
     id 'org.beryx.jlink' version '2.25.0'
 }
 
+jacocoTestReport {
+    reports {
+        xml.required = true
+    }
+}
+
 group 'ru.nsu.valikov'
 version '1.0-SNAPSHOT'
+
 
 repositories {
     mavenCentral()
@@ -18,12 +25,6 @@ repositories {
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(17)
-    }
-}
-
-jacocoTestReport {
-    reports {
-        xml.required = true
     }
 }
 
