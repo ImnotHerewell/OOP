@@ -6,147 +6,116 @@ import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.app.GameSettings;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.entity.Entity;
-import com.almasb.fxgl.entity.components.CollidableComponent;
-import com.almasb.fxgl.physics.CollisionHandler;
+import com.almasb.fxgl.physics.PhysicsWorld;
 import java.util.Map;
 import javafx.scene.input.KeyCode;
-import lombok.Getter;
+import javafx.stage.Stage;
+import ru.nsu.valikov.petukhon.components.Direction;
+import ru.nsu.valikov.petukhon.components.SnakeHeadComponent;
 import ru.nsu.valikov.petukhon.factories.CellFactory;
 import ru.nsu.valikov.petukhon.factories.DecorationFactory;
 import ru.nsu.valikov.petukhon.factories.FactoryUtils;
 import ru.nsu.valikov.petukhon.factories.FoodFactory;
-import ru.nsu.valikov.petukhon.factories.SnakeFactory;
+import ru.nsu.valikov.petukhon.factories.SnakeHeadFactory;
+import ru.nsu.valikov.petukhon.factories.SnakeTailFactory;
+import ru.nsu.valikov.petukhon.handlers.Collisions;
+import ru.nsu.valikov.petukhon.view.Artist;
 
+/**
+ * Main Game Class.
+ */
 public class PetukhonApplication extends GameApplication {
 
-    @Getter
+    private Stage stage;
     private Entity player;
 
     public static void main(String[] args) {
         launch(args);
     }
 
-    //    private Parent createContent() {
-    //        TextField input = new TextField();
-    //        Text output = new Text();
-    //        Button button = new Button("Press");
-    //        button.setOnAction(e -> {
-    //            output.setText(input.getText());
-    //        });
-    //        VBox root = new VBox(input, button, output);
-    //        root.setPrefSize(900, 1600);
-    //        return root;
-    //    }
-
-    @Override
-    protected void initSettings(GameSettings settings) {
-        settings.setWidth(GameUtils.FIELD_WIDTH);
-        settings.setHeight(GameUtils.FIELD_HEIGHT);
-        settings.setTitle("Petukhon!");
-        settings.setVersion("01.03.2023");
-    }
-
-    @Override
-    protected void initInput() {
-        //        FXGL.getInput().addAction(new UserAction("Right") {
-        //            @Override
-        //            protected void onAction() {
-        //                player.getComponent(AnimationComponent.class).moveRight();
-        //            }
-        //        }, KeyCode.D);
-
-        //        FXGL.getInput().addAction(new UserAction("Left") {
-        //            @Override
-        //            protected void onAction() {
-        //                player.getComponent(AnimationComponent.class).moveLeft();
-        //            }
-        //        }, KeyCode.A);
-        FXGL.onKeyDown(KeyCode.F, () -> {
-            FXGL.play("убил сам себя.wav");
-        });
-        FXGL.onKey(KeyCode.W, () -> {
-            player.translateY(-1);
-            FXGL.inc("SnakeCoordY", +1);
-        });
-
-        FXGL.onKey(KeyCode.A, () -> {
-            player.translateX(-1);
-            FXGL.inc("SnakeCoordX", -1);
-        });
-
-        FXGL.onKey(KeyCode.S, () -> {
-            player.translateY(1);
-            FXGL.inc("SnakeCoordY", -1);
-        });
-
-        FXGL.onKey(KeyCode.D, () -> {
-            player.translateX(1);
-            FXGL.inc("SnakeCoordX", +1);
-        });
-
+    public Entity getPlayer() {
+        return player;
     }
 
     @Override
     protected void initGameVars(Map<String, Object> vars) {
-        vars.put("SnakeIsCreated", 0);
-        vars.put("SnakeCoordX", 0);
-        vars.put("SnakeCoordY", 0);
+        vars.put("ScoreToWin", 10);
+        vars.put("Level", 0);
+        vars.put("CurrentScore", 1);
+    }
+
+    @Override
+    protected void initSettings(GameSettings settings) {
+        settings.setWidth(GameUtils.FIELD_WIDTH + GameUtils.SCORE_WIDTH);
+        settings.setHeight(GameUtils.FIELD_HEIGHT);
+        settings.setTicksPerSecond(20);
+        settings.setTitle("Petukhon!");
+        settings.setVersion("09.04.2023");
+    }
+
+    @Override
+    protected void initInput() {
+        FXGL.onKeyDown(KeyCode.W,
+            () -> {
+                player.getComponent(SnakeHeadComponent.class).setDirection(Direction.UP);
+            });
+        FXGL.onKeyDown(KeyCode.A,
+            () -> {
+                player.getComponent(SnakeHeadComponent.class).setDirection(Direction.LEFT);
+            });
+
+        FXGL.onKeyDown(KeyCode.S,
+            () -> {
+                player.getComponent(SnakeHeadComponent.class).setDirection(Direction.DOWN);
+            });
+
+        FXGL.onKeyDown(KeyCode.D,
+            () -> {
+                player.getComponent(SnakeHeadComponent.class).setDirection(Direction.RIGHT);
+            });
+
     }
 
     @Override
     protected void initGame() {
         getGameWorld().addEntityFactory(new DecorationFactory());
-        getGameWorld().addEntityFactory(new SnakeFactory());
+        getGameWorld().addEntityFactory(new SnakeHeadFactory());
         getGameWorld().addEntityFactory(new FoodFactory());
         getGameWorld().addEntityFactory(new CellFactory());
+        getGameWorld().addEntityFactory(new SnakeTailFactory());
         getGameWorld().spawn(FoodFactory.NAME);
-        player = FXGL.entityBuilder().type(PetukhonType.SNAKE).viewWithBBox(FXGL.getAssetLoader()
-                .loadTexture("snake"
-                        +
-                        "/enemy"
-                        +
-                        ".png",
-                    FactoryUtils.DEFAULT_WIDTH,
-                    FactoryUtils.DEFAULT_HEIGHT))
-            .at(300, 300).with(new CollidableComponent(true)).buildAndAttach();
-        //        FXGL.entityBuilder().type(PetukhonzType.FOOD).at(500, 200).viewWithBBox("brick2
-        //        .png").with(
-        //                new CollidableComponent(true)).buildAndAttach();
-        //        player.addComponent(new MoveSpeedComponent()); есть вары в мапе
+        getGameWorld().spawn(DecorationFactory.NAME);
+        getGameWorld().spawn(DecorationFactory.NAME);
+        getGameWorld().spawn(DecorationFactory.NAME);
+        getGameWorld().spawn(DecorationFactory.NAME);
+        //getGameWorld().spawn(SnakeHeadFactory.NAME);
+        player = FactoryUtils.createThePlayer();
+        //как синглтон надо
     }
 
-    /**
-     *
-     */
     @Override
     protected void initPhysics() {
-        FXGL.getPhysicsWorld().addCollisionHandler(
-            new CollisionHandler(PetukhonType.SNAKE, PetukhonType.FOOD) {
-
-                @Override
-                protected void onCollisionBegin(Entity snake, Entity food) {
-                    food.removeFromWorld();
-                    getGameWorld().spawn(FoodFactory.NAME);
-                    //                        if (snake.hasComponent())
-                }
-            });
+        final PhysicsWorld world = FXGL.getPhysicsWorld();
+        world.addCollisionHandler(
+            Collisions.clashBetweenHeadAndFood());
+        world.addCollisionHandler(
+            Collisions.clashBetweenHeadAndDecoration());
+        world.addCollisionHandler(
+            Collisions.clashBetweenHeadAndTail());
     }
 
-    /**
-     * левели здесь делаем
-     */
     @Override
     protected void initUI() {
+        Artist.textWithBindedValue("Current score", 20, 20, 150, "CurrentScore");
+        Artist.textWithBindedValue("Score to win", 20, 50, 150, "ScoreToWin");
+        Artist.textWithBindedValue("Level", 20, 80, 150, "Level");
+
         for (int coordinateX = 0; coordinateX <= GameUtils.FIELD_WIDTH;
-            coordinateX += FactoryUtils.DEFAULT_WIDTH) {
+            coordinateX += GameUtils.DEFAULT_WIDTH) {
             for (int coordinateY = 0; coordinateY <= GameUtils.FIELD_HEIGHT;
-                coordinateY += FactoryUtils.DEFAULT_HEIGHT) {
-                getGameWorld().spawn(CellFactory.NAME, coordinateX + 1, coordinateY + 1);
+                coordinateY += GameUtils.DEFAULT_HEIGHT) {
+                getGameWorld().spawn(CellFactory.NAME, coordinateX, coordinateY);
             }
         }
-        //        var brickTexture = FXGL.getAssetLoader().loadTexture("brick.png");
-        //        brickTexture.setTranslateX(50);
-        //        brickTexture.setTranslateY(450);
-        //        FXGL.getGameScene().addUINode(brickTexture);
     }
 }

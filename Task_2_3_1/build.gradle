@@ -2,7 +2,6 @@ plugins {
     id 'java'
     id 'jacoco'
     id 'application'
-    id 'io.freefair.lombok' version "8.0.0-rc2"
     id 'org.javamodularity.moduleplugin' version '1.8.12'
     id 'org.openjfx.javafxplugin' version '0.0.13'
     id 'org.beryx.jlink' version '2.25.0'
@@ -55,7 +54,6 @@ dependencies {
     implementation('com.github.almasb:fxgl:17.2') {
         exclude(group: 'org.openjfx')
     }
-    implementation('org.projectlombok:lombok:1.18.26')
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 }

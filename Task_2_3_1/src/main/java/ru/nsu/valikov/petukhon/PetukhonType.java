@@ -1,8 +1,13 @@
 package ru.nsu.valikov.petukhon;
 
+/**
+ * Entities Enum.
+ */
 public enum PetukhonType {
-    SNAKE,
-    FOOD,
+    CELL,
     DECORATION,
-    CELL
+    FOOD,
+    SNAKE_HEAD,
+    SNAKE_TAIL
+
 }

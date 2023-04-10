@@ -1,58 +1,47 @@
 package ru.nsu.valikov.petukhon.factories;
 
-import com.almasb.fxgl.core.math.FXGLMath;
 import com.almasb.fxgl.dsl.FXGL;
+import com.almasb.fxgl.dsl.components.AutoRotationComponent;
 import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.entity.EntityFactory;
 import com.almasb.fxgl.entity.SpawnData;
 import com.almasb.fxgl.entity.Spawns;
 import com.almasb.fxgl.entity.components.CollidableComponent;
-import java.util.SortedMap;
-import java.util.TreeMap;
 import ru.nsu.valikov.petukhon.GameUtils;
 import ru.nsu.valikov.petukhon.PetukhonType;
+import ru.nsu.valikov.petukhon.components.SnakeHeadComponent;
+import ru.nsu.valikov.petukhon.components.SnakeType;
 
 /**
- * Food creator.
+ * Enemy's head creator.
  */
-public class FoodFactory implements EntityFactory {
+public class SnakeHeadFactory implements EntityFactory {
 
-    public static final String NAME = "food";
-
-    private static final SortedMap<Integer, String> IMAGE_NAMES = new TreeMap<>() {
-        {
-            put(0, "blank");
-            put(this.lastKey() + 1, "C++");
-            put(this.lastKey() + 1, "Rust");
-            put(this.lastKey() + 1, "Java");
-            put(this.lastKey() + 1, "Haskell");
-            put(this.lastKey() + 1, "Smalltalk");
-        }
-    };
-    private static final String LOGO = "_logo";
-
+    public static final String NAME = "snake_head";
 
     /**
      * Just a builder.
      *
      * @param data data to spawn
-     * @return new food entity
+     * @return new evil snake head entity
      */
     @Spawns(NAME)
-    public Entity newFood(SpawnData data) {
-        final int number = FXGLMath.random(1, IMAGE_NAMES.size() - 1);
+    public Entity newSnakeHead(SpawnData data) {
+        final String head = "enemy";
         return FXGL.entityBuilder(data)
-            .type(PetukhonType.FOOD)
+            .type(PetukhonType.SNAKE_HEAD)
             .viewWithBBox(FXGL.getAssetLoader().loadTexture(NAME
                     + '/'
-                    + IMAGE_NAMES.get(number)
-                    + LOGO
+                    + head
                     + FactoryUtils.FORMAT_PNG,
                 (double) (GameUtils.DEFAULT_WIDTH * 9) / 10,
                 (double) (GameUtils.DEFAULT_HEIGHT * 9) / 10))
             .with(new CollidableComponent(true))
+            .with(new SnakeHeadComponent(SnakeType.ENEMY))
+            .with(new AutoRotationComponent())
             .at(FactoryUtils.getRandomNonOverlappingPoint())
             .zIndex(1)
             .buildAndAttach();
     }
 }
+
