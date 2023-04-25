@@ -23,8 +23,8 @@ public class GameUtils {
     public static final int LEVELS_COUNT = 5;
     public static final int FIELD_WIDTH = 700;
     public static final int SCORE_WIDTH = 200;
+    public static final int FIELD_HEIGHT = 700;
     private static final LevelLoader levelLoader = new LevelLoader();
-    public static int FIELD_HEIGHT = 700;
 
     /**
      * When a snake moves out of the game's board, this method generates a new coordinate to
