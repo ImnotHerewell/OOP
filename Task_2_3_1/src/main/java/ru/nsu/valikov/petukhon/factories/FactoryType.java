@@ -1,9 +1,9 @@
-package ru.nsu.valikov.petukhon;
+package ru.nsu.valikov.petukhon.factories;
 
 /**
  * Entities Enum.
  */
-public enum PetukhonType {
+public enum FactoryType {
     CELL,
     DECORATION,
     FOOD,

@@ -12,7 +12,6 @@ import com.almasb.fxgl.entity.components.CollidableComponent;
 import java.util.function.Supplier;
 import javafx.geometry.Point2D;
 import ru.nsu.valikov.petukhon.GameUtils;
-import ru.nsu.valikov.petukhon.PetukhonType;
 import ru.nsu.valikov.petukhon.components.SnakeHeadComponent;
 import ru.nsu.valikov.petukhon.components.SnakeType;
 
@@ -22,7 +21,7 @@ import ru.nsu.valikov.petukhon.components.SnakeType;
 public class FactoryUtils {
 
     public static final String FORMAT_PNG = ".png";
-
+    public static final double SPAWN_COEFFICIENT = 9 / 10.;
 
     private FactoryUtils() {
         throw new AssertionError();
@@ -56,7 +55,7 @@ public class FactoryUtils {
      */
     public static Entity createThePlayer() {
         return FXGL.entityBuilder()
-            .type(PetukhonType.SNAKE_HEAD)
+            .type(FactoryType.SNAKE_HEAD)
             .viewWithBBox(FXGL.getAssetLoader().loadTexture(SnakeHeadFactory.NAME
                     +
                     "/player"
@@ -69,6 +68,6 @@ public class FactoryUtils {
             .with(new AutoRotationComponent())
             .with(new SnakeHeadComponent(SnakeType.PLAYER))
             .zIndex(1)
-            .buildAndAttach();
+            .build();
     }
 }

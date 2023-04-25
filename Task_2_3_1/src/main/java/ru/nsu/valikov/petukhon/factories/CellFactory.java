@@ -6,7 +6,6 @@ import com.almasb.fxgl.entity.EntityFactory;
 import com.almasb.fxgl.entity.SpawnData;
 import com.almasb.fxgl.entity.Spawns;
 import ru.nsu.valikov.petukhon.GameUtils;
-import ru.nsu.valikov.petukhon.PetukhonType;
 
 /**
  * Creator of cells.
@@ -25,7 +24,7 @@ public class CellFactory implements EntityFactory {
     public Entity newCell(SpawnData data) {
         final String cell = "grey";
         return FXGL.entityBuilder(data)
-            .type(PetukhonType.CELL)
+            .type(FactoryType.CELL)
             .viewWithBBox(FXGL.getAssetLoader().loadTexture(NAME + '/'
                     + cell
                     + FactoryUtils.FORMAT_PNG,
