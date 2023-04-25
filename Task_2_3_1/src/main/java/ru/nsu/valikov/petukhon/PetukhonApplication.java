@@ -5,6 +5,9 @@ import static com.almasb.fxgl.dsl.FXGLForKtKt.getWorldProperties;
 
 import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.app.GameSettings;
+import com.almasb.fxgl.app.scene.FXGLMenu;
+import com.almasb.fxgl.app.scene.SceneFactory;
+import com.almasb.fxgl.core.collection.PropertyMap;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.physics.PhysicsWorld;
@@ -26,6 +29,7 @@ import ru.nsu.valikov.petukhon.view.Artist;
 public class PetukhonApplication extends GameApplication {
 
     private static Entity player;
+    private static PropertyMap properties = new PropertyMap();
 
     public static void main(String[] args) {
         launch(args);
@@ -35,12 +39,18 @@ public class PetukhonApplication extends GameApplication {
         player = newPlayer;
     }
 
+    public static void setIntProperty(String key, int value) {
+        properties.setValue(key, value);
+    }
+
     @Override
     protected void initGameVars(Map<String, Object> vars) {
-        vars.put("ScoreToWin", 10);
+        vars.put("ScoreToWin", properties.getInt("ScoreToWin"));
         vars.put("Level", 1);
         vars.put("CurrentScore", 0);
+
     }
+
 
     @Override
     protected void initSettings(GameSettings settings) {
@@ -50,18 +60,24 @@ public class PetukhonApplication extends GameApplication {
         settings.setTitle("Petukhon!");
         settings.setVersion("25.04.2023");
         settings.setMainMenuEnabled(true);
+        settings.setSceneFactory(new SceneFactory() {
+            @Override
+            public FXGLMenu newMainMenu() {
+                //return new SimpleGameMenu();
+                return new PetukhonMainMenu();
+            }
+        });
     }
 
     @Override
     protected void initInput() {
-        FXGL.onKeyDown(KeyCode.W,
+        FXGL.onKeyDown(KeyCode.W, "UP",
             () -> player.getComponent(SnakeHeadComponent.class).setDirection(Direction.UP));
-        FXGL.onKeyDown(KeyCode.A,
+        FXGL.onKeyDown(KeyCode.A, "LEFT",
             () -> player.getComponent(SnakeHeadComponent.class).setDirection(Direction.LEFT));
-        FXGL.onKeyDown(KeyCode.S,
+        FXGL.onKeyDown(KeyCode.S, "DOWN",
             () -> player.getComponent(SnakeHeadComponent.class).setDirection(Direction.DOWN));
-
-        FXGL.onKeyDown(KeyCode.D,
+        FXGL.onKeyDown(KeyCode.D, "RIGHT",
             () -> player.getComponent(SnakeHeadComponent.class).setDirection(Direction.RIGHT));
 
     }
