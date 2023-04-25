@@ -12,6 +12,7 @@ import ru.nsu.valikov.petukhon.components.SnakeTailComponent;
 import ru.nsu.valikov.petukhon.components.SnakeType;
 import ru.nsu.valikov.petukhon.factories.FactoryType;
 import ru.nsu.valikov.petukhon.factories.FoodFactory;
+import ru.nsu.valikov.petukhon.view.Artist;
 
 /**
  * Contain collision handler methods.
@@ -49,7 +50,7 @@ public class Collisions {
                 snakeHead.removeFromWorld();
                 if (snakeHead.getComponent(SnakeHeadComponent.class).getType()
                     .equals(SnakeType.PLAYER)) {
-                    System.exit(0);
+                    Artist.gameOver(false);
                 }
             }
         };
@@ -105,7 +106,7 @@ public class Collisions {
                     head.eat();
                 }
                 if (!headOfAnotherSnake.getEntity().hasComponent(AiComponent.class)) {
-                    System.exit(0);
+                    Artist.gameOver(false);
                 }
                 headOfAnotherSnake.getEntity().removeFromWorld();
             }
@@ -116,7 +117,7 @@ public class Collisions {
         Entity snakeHead) {
         if (tail.getTailParts().contains(snakeTail) && tail.getTailParts().size() > 2) {
             if (tail.getType() == SnakeType.PLAYER) {
-                System.exit(0);
+                Artist.gameOver(false);
             }
             tail.getTailParts().forEach(Entity::removeFromWorld);
             snakeHead.removeFromWorld();

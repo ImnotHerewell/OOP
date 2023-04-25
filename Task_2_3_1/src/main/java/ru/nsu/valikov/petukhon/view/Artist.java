@@ -4,6 +4,7 @@ import static com.almasb.fxgl.dsl.FXGLForKtKt.getGameScene;
 import static com.almasb.fxgl.dsl.FXGLForKtKt.getUIFactoryService;
 import static com.almasb.fxgl.dsl.FXGLForKtKt.getWorldProperties;
 
+import com.almasb.fxgl.dsl.FXGL;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import ru.nsu.valikov.petukhon.GameUtils;
@@ -36,6 +37,24 @@ public class Artist {
         value.textProperty()
             .bind(getWorldProperties().intProperty(propertyName).asString());
         getGameScene().addUINodes(label, value);
+    }
+
+    /**
+     * Set GAME OVER screen.
+     *
+     * @param isItEnd is it win of lose.
+     */
+    public static void gameOver(boolean isItEnd) {
+        StringBuilder builder = new StringBuilder();
+        builder.append("Game Over!\n\n");
+        if (isItEnd) {
+            builder.append("You have reached the end of the game!\n\n");
+        }
+        builder
+            .append("Final level: ")
+            .append(FXGL.geti("Level"));
+        FXGL.getDialogService()
+            .showMessageBox(builder.toString(), () -> FXGL.getGameController().gotoMainMenu());
     }
 
 }

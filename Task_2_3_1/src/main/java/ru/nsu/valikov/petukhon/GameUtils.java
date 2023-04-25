@@ -11,6 +11,7 @@ import javafx.geometry.Point2D;
 import ru.nsu.valikov.petukhon.components.AiType;
 import ru.nsu.valikov.petukhon.factories.CellFactory;
 import ru.nsu.valikov.petukhon.factories.FactoryUtils;
+import ru.nsu.valikov.petukhon.view.Artist;
 
 /**
  * Contains common data for all game's components.
@@ -63,7 +64,7 @@ public class GameUtils {
      */
     public static void setDefaultLevelFromFile(int level) {
         if (level >= LEVELS_COUNT) {
-            throw new IllegalArgumentException();
+            Artist.gameOver(true);
         }
         var entities = levelLoader.takeEntities(String.valueOf(level));
         var player = FactoryUtils.createThePlayer();
