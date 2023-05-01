@@ -3,6 +3,13 @@ plugins {
     id 'jacoco'
 }
 
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
 group 'valikov.grlib'
 version '1.0-SNAPSHOT'
 
