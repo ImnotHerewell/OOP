@@ -1,0 +1,1549 @@
+17:03:56.564 [main                     ] DEBUG Logger               - Configured Logger
+17:03:56.587 [main                     ] DEBUG GameApplication      - Logging settings
+Title: Petukhon!
+Version: 25.04.2023
+Width: 900
+Height: 700
+Fullscreen: false
+Intro: false
+Profiling: false
+Single step:false
+App Mode: DEVELOPER
+Menu Key: ESCAPE
+Stage Style: DECORATED
+Scene Factory: class ru.nsu.valikov.petukhon.PetukhonApplication$1
+
+17:03:56.810 [JavaFX Application Thread] DEBUG FXGLApplication      - Initializing FXGL
+17:03:56.814 [JavaFX Application Thread] INFO  Engine               - FXGL-17.2 (20.08.2022 16.50) on WINDOWS (J:18.0.1.1 FX:17.0.2-ea)
+17:03:56.815 [JavaFX Application Thread] DEBUG Engine               - JRE Vendor Name: Oracle Corporation
+17:03:56.815 [JavaFX Application Thread] DEBUG Engine               - Running on OS: Windows 10 version 10.0
+17:03:56.815 [JavaFX Application Thread] DEBUG Engine               - Architecture: amd64
+17:03:56.815 [JavaFX Application Thread] INFO  Engine               - Source code and latest versions at: https://github.com/AlmasB/FXGL
+17:03:56.815 [JavaFX Application Thread] INFO  Engine               -       Ask questions and discuss at: https://github.com/AlmasB/FXGL/discussions
+17:03:56.815 [JavaFX Application Thread] INFO  Engine               -              Join the FXGL chat at: https://gitter.im/AlmasB/FXGL
+17:03:56.877 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Creating a JavaFX scene
+17:03:56.908 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Target settings size: 900.0 x 700.0
+17:03:56.909 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Scaled scene size:    900.0 x 700.0
+17:03:56.909 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Scaled ratio: (1.0, 1.0)
+17:03:56.910 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Set initial scene to FXGLStartupScene
+17:03:56.915 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Opening main window
+17:03:56.971 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Window border size: (14.4000244140625, 37.5999755859375)
+17:03:56.971 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Scaled size: 900.0 x 700.0
+17:03:56.971 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Scaled ratio: (1.0, 1.0)
+17:03:56.972 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Scene size: 900.0 x 700.0
+17:03:56.972 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Stage size: 914.4000244140625 x 737.5999755859375
+17:03:56.977 [FXGL Background Thread 1 ] DEBUG Engine               - Initializing environment variables
+17:03:57.020 [FXGL Background Thread 1 ] DEBUG FXGLAssetLoaderServi - User app class for loading assets: class ru.nsu.valikov.petukhon.PetukhonApplication
+17:03:57.021 [FXGL Background Thread 1 ] DEBUG GameApplicationServi - Applying CSS: fxgl_dark.css
+17:03:57.021 [FXGL Background Thread 1 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:///C:/Users/nickolas/.gradle/caches/modules-2/files-2.1/com.github.almasb/fxgl/17.2/35db6ae960eec2dcfd19262d3b7f9c42f0e95bc3/fxgl-17.2.jar!/fxglassets/ui/css/fxgl_dark.css
+17:03:57.057 [FXGL Background Thread 1 ] DEBUG GameApplicationServi - Initializing application scenes
+17:03:57.086 [FXGL Background Thread 1 ] DEBUG GameWorld            - Game world initialized
+17:03:57.137 [FXGL Background Thread 1 ] DEBUG PhysicsWorld         - Physics world initialized: appHeight=700, physics.ppm=50,0
+17:03:57.137 [FXGL Background Thread 1 ] DEBUG PhysicsWorld         - Using strategy: BRUTE_FORCE
+17:03:57.140 [FXGL Background Thread 1 ] DEBUG GameScene            - Game scene initialized: 900x700
+17:03:57.148 [FXGL Background Thread 1 ] DEBUG FXGL.DefaultMenu     - createMenuBodyMainMenu()
+17:03:57.158 [FXGL Background Thread 1 ] DEBUG FXGL.DefaultMenu     - createOptionsMenu()
+17:03:57.165 [FXGL Background Thread 1 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:///C:/Users/nickolas/.gradle/caches/modules-2/files-2.1/com.github.almasb/fxgl/17.2/35db6ae960eec2dcfd19262d3b7f9c42f0e95bc3/fxgl-17.2.jar!/fxglassets/textures/particles/smoke.png
+17:03:57.231 [FXGL Background Thread 1 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:///C:/Users/nickolas/.gradle/caches/modules-2/files-2.1/com.github.almasb/fxgl/17.2/35db6ae960eec2dcfd19262d3b7f9c42f0e95bc3/fxgl-17.2.jar!/fxglassets/textures/particles/trace_horizontal.png
+17:03:57.262 [FXGL Background Thread 1 ] DEBUG FXGL.DefaultMenu     - createMenuBodyGameMenu()
+17:03:57.263 [FXGL Background Thread 1 ] DEBUG FXGL.DefaultMenu     - createOptionsMenu()
+17:03:57.273 [FXGL Background Thread 1 ] DEBUG GameApplicationServi - Application scenes initialized
+17:03:57.281 [FXGL Background Thread 1 ] DEBUG SystemBundleService  - Loading FXGL system data
+17:03:57.285 [FXGL Background Thread 1 ] DEBUG FileSystemAccess     - Reading from: C:\Users\nickolas\Documents\GitHub\OOP\Task_2_3_1\system\fxgl.bundle
+17:03:57.293 [FXGL Background Thread 1 ] DEBUG SystemBundleService  - Bundle FXGL: {}
+17:03:57.293 [FXGL Background Thread 1 ] DEBUG UpdaterService       - Checking for updates
+17:03:57.296 [FXGL Background Thread 4 ] DEBUG FXGLApplication      - Loading fonts
+17:03:57.296 [FXGL Background Thread 1 ] DEBUG FXGLApplication      - Loading default localization
+17:03:57.296 [FXGL Background Thread 4 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:///C:/Users/nickolas/.gradle/caches/modules-2/files-2.1/com.github.almasb/fxgl/17.2/35db6ae960eec2dcfd19262d3b7f9c42f0e95bc3/fxgl-17.2.jar!/fxglassets/ui/fonts/VarelaRound-Regular.ttf
+17:03:57.296 [FXGL Background Thread 1 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:///C:/Users/nickolas/.gradle/caches/modules-2/files-2.1/com.github.almasb/fxgl/17.2/35db6ae960eec2dcfd19262d3b7f9c42f0e95bc3/fxgl-17.2.jar!/fxglassets/languages/english.lang
+17:03:57.311 [FXGL Background Thread 1 ] INFO  FXGLApplication      - FXGL initialization took: 0,334 sec
+17:03:57.324 [JavaFX Application Thread] DEBUG Input                - Registered new binding: UP - W
+17:03:57.324 [JavaFX Application Thread] DEBUG Input                - Registered new binding: LEFT - A
+17:03:57.325 [JavaFX Application Thread] DEBUG Input                - Registered new binding: DOWN - S
+17:03:57.325 [JavaFX Application Thread] DEBUG Input                - Registered new binding: RIGHT - D
+17:03:57.325 [JavaFX Application Thread] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:///C:/Users/nickolas/.gradle/caches/modules-2/files-2.1/com.github.almasb/fxgl/17.2/35db6ae960eec2dcfd19262d3b7f9c42f0e95bc3/fxgl-17.2.jar!/fxglassets/textures/fxgl_icon.png
+17:03:57.355 [JavaFX Application Thread] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:///C:/Users/nickolas/.gradle/caches/modules-2/files-2.1/com.github.almasb/fxgl/17.2/35db6ae960eec2dcfd19262d3b7f9c42f0e95bc3/fxgl-17.2.jar!/fxglassets/textures/fxgl_default_cursor.png
+17:03:57.358 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Screenshot - CTRL+8
+17:03:57.358 [JavaFX Application Thread] DEBUG Input                - Registered new binding: System info dump - CTRL+9
+17:03:57.359 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Restart - CTRL+R
+17:03:57.359 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Toggle Debug Camera - CTRL+7
+17:03:57.362 [JavaFX Application Thread] DEBUG LoopRunner           - Starting loop
+17:03:57.362 [JavaFX Application Thread] DEBUG LoopRunner           - Initializing ScheduledExecutorLoop with fps: 60
+17:03:57.365 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+17:03:57.370 [FXGL Background Thread 4 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:///C:/Users/nickolas/.gradle/caches/modules-2/files-2.1/com.github.almasb/fxgl/17.2/35db6ae960eec2dcfd19262d3b7f9c42f0e95bc3/fxgl-17.2.jar!/fxglassets/ui/fonts/Abel-Regular.ttf
+17:03:57.373 [FXGL Background Thread 4 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:///C:/Users/nickolas/.gradle/caches/modules-2/files-2.1/com.github.almasb/fxgl/17.2/35db6ae960eec2dcfd19262d3b7f9c42f0e95bc3/fxgl-17.2.jar!/fxglassets/ui/fonts/TerminalLandMono-Regular.otf
+17:03:57.375 [JavaFX Application Thread] DEBUG GameApplicationServi - Removing overlay from FXGLStartupScene and adding to FXGLMainMenuDummyScene
+17:03:57.376 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - FXGLStartupScene -> FXGLMainMenuDummyScene
+17:03:57.376 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Push state: PetukhonMainMenu
+17:03:57.378 [FXGL Background Thread 4 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:///C:/Users/nickolas/.gradle/caches/modules-2/files-2.1/com.github.almasb/fxgl/17.2/35db6ae960eec2dcfd19262d3b7f9c42f0e95bc3/fxgl-17.2.jar!/fxglassets/ui/fonts/Courier-Prime.ttf
+17:03:57.379 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+17:03:57.386 [JavaFX Application Thread] DEBUG GameApplicationServi - Removing overlay from FXGLMainMenuDummyScene and adding to PetukhonMainMenu
+17:03:57.387 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - FXGLMainMenuDummyScene -> PetukhonMainMenu
+17:03:57.445 [JavaFX Application Thread] DEBUG FXGLApplication      - Registering font factories with UI factory
+17:03:58.014 [FXGL Background Thread 2 ] INFO  UpdaterService       - Your current version:  17.2
+17:03:58.014 [FXGL Background Thread 2 ] INFO  UpdaterService       - Latest stable version: 17.3
+17:04:00.297 [FXGL Background Thread 3 ] DEBUG Engine               - Logging environment variables
+17:04:00.297 [FXGL Background Thread 3 ] DEBUG Engine               - achievements: []
+17:04:00.297 [FXGL Background Thread 3 ] DEBUG Engine               - actualHeight: 700.0
+17:04:00.297 [FXGL Background Thread 3 ] DEBUG Engine               - actualHeightProperty: ReadOnlyDoubleProperty [value: 700.0]
+17:04:00.297 [FXGL Background Thread 3 ] DEBUG Engine               - actualWidth: 900.0
+17:04:00.298 [FXGL Background Thread 3 ] DEBUG Engine               - actualWidthProperty: ReadOnlyDoubleProperty [value: 900.0]
+17:04:00.298 [FXGL Background Thread 3 ] DEBUG Engine               - appIcon: fxgl_icon.png
+17:04:00.298 [FXGL Background Thread 3 ] DEBUG Engine               - applicationMode: DEVELOPER
+17:04:00.298 [FXGL Background Thread 3 ] DEBUG Engine               - cSSList: [fxgl_dark.css]
+17:04:00.298 [FXGL Background Thread 3 ] DEBUG Engine               - collisionDetectionStrategy: BRUTE_FORCE
+17:04:00.298 [FXGL Background Thread 3 ] DEBUG Engine               - configClass: Optional.empty
+17:04:00.298 [FXGL Background Thread 3 ] DEBUG Engine               - credits: []
+17:04:00.298 [FXGL Background Thread 3 ] DEBUG Engine               - defaultCursor: CursorInfo(imageName=fxgl_default_cursor.png, hotspotX=7.0, hotspotY=6.0)
+17:04:00.298 [FXGL Background Thread 3 ] DEBUG Engine               - devBBoxColorProperty: ObjectProperty [value: 0xff0000ff]
+17:04:00.298 [FXGL Background Thread 3 ] DEBUG Engine               - devEnableDebugCameraProperty: BooleanProperty [value: false]
+17:04:00.298 [FXGL Background Thread 3 ] DEBUG Engine               - devSensorColorProperty: ObjectProperty [value: 0xffff00ff]
+17:04:00.298 [FXGL Background Thread 3 ] DEBUG Engine               - devShowBBoxProperty: BooleanProperty [value: false]
+17:04:00.298 [FXGL Background Thread 3 ] DEBUG Engine               - devShowPositionProperty: BooleanProperty [value: false]
+17:04:00.298 [FXGL Background Thread 3 ] DEBUG Engine               - enabledMenuItems: []
+17:04:00.299 [FXGL Background Thread 3 ] DEBUG Engine               - engineServices: [class com.almasb.fxgl.app.services.FXGLAssetLoaderService, class com.almasb.fxgl.app.FXGLApplication$GameApplicationService, class com.almasb.fxgl.app.services.FXGLDialogService, class com.almasb.fxgl.app.services.IOTaskExecutorService, class com.almasb.fxgl.io.FileSystemService, class com.almasb.fxgl.localization.LocalizationService, class com.almasb.fxgl.app.services.SystemBundleService, class com.almasb.fxgl.profile.SaveLoadService, class com.almasb.fxgl.ui.FXGLUIFactoryServiceProvider, class com.almasb.fxgl.ui.FXGLDialogFactoryServiceProvider, class com.almasb.fxgl.audio.AudioPlayer, class com.almasb.fxgl.notification.impl.NotificationServiceProvider, class com.almasb.fxgl.achievement.AchievementService, class com.almasb.fxgl.cutscene.CutsceneService, class com.almasb.fxgl.minigames.MiniGameService, class com.almasb.fxgl.net.NetService, class com.almasb.fxgl.app.services.UpdaterService, class com.almasb.fxgl.dev.DevService]
+17:04:00.299 [FXGL Background Thread 3 ] DEBUG Engine               - fontGame: Abel-Regular.ttf
+17:04:00.299 [FXGL Background Thread 3 ] DEBUG Engine               - fontMono: TerminalLandMono-Regular.otf
+17:04:00.299 [FXGL Background Thread 3 ] DEBUG Engine               - fontText: Courier-Prime.ttf
+17:04:00.299 [FXGL Background Thread 3 ] DEBUG Engine               - fontUI: VarelaRound-Regular.ttf
+17:04:00.299 [FXGL Background Thread 3 ] DEBUG Engine               - fullScreen: BooleanProperty [value: false]
+17:04:00.299 [FXGL Background Thread 3 ] DEBUG Engine               - gameDifficulty: MEDIUM
+17:04:00.299 [FXGL Background Thread 3 ] DEBUG Engine               - gameDifficultyProperty: ObjectProperty [value: MEDIUM]
+17:04:00.299 [FXGL Background Thread 3 ] DEBUG Engine               - globalMusicVolume: 0.5
+17:04:00.299 [FXGL Background Thread 3 ] DEBUG Engine               - globalMusicVolumeProperty: DoubleProperty [value: 0.5]
+17:04:00.299 [FXGL Background Thread 3 ] DEBUG Engine               - globalSoundVolume: 0.5
+17:04:00.299 [FXGL Background Thread 3 ] DEBUG Engine               - globalSoundVolumeProperty: DoubleProperty [value: 0.5]
+17:04:00.299 [FXGL Background Thread 3 ] DEBUG Engine               - height: 700
+17:04:00.299 [FXGL Background Thread 3 ] DEBUG Engine               - is3D: false
+17:04:00.299 [FXGL Background Thread 3 ] DEBUG Engine               - isAndroid: false
+17:04:00.299 [FXGL Background Thread 3 ] DEBUG Engine               - isBrowser: false
+17:04:00.299 [FXGL Background Thread 3 ] DEBUG Engine               - isClickFeedbackEnabled: false
+17:04:00.299 [FXGL Background Thread 3 ] DEBUG Engine               - isCloseConfirmation: false
+17:04:00.299 [FXGL Background Thread 3 ] DEBUG Engine               - isDesktop: true
+17:04:00.299 [FXGL Background Thread 3 ] DEBUG Engine               - isDeveloperMenuEnabled: false
+17:04:00.300 [FXGL Background Thread 3 ] DEBUG Engine               - isEmbedded: false
+17:04:00.300 [FXGL Background Thread 3 ] DEBUG Engine               - isEntityPreloadEnabled: true
+17:04:00.300 [FXGL Background Thread 3 ] DEBUG Engine               - isExperimentalTiledLargeMap: false
+17:04:00.300 [FXGL Background Thread 3 ] DEBUG Engine               - isFileSystemWriteAllowed: true
+17:04:00.300 [FXGL Background Thread 3 ] DEBUG Engine               - isFullScreenAllowed: false
+17:04:00.300 [FXGL Background Thread 3 ] DEBUG Engine               - isFullScreenFromStart: false
+17:04:00.300 [FXGL Background Thread 3 ] DEBUG Engine               - isGameMenuEnabled: true
+17:04:00.300 [FXGL Background Thread 3 ] DEBUG Engine               - isIOS: false
+17:04:00.300 [FXGL Background Thread 3 ] DEBUG Engine               - isIntroEnabled: false
+17:04:00.300 [FXGL Background Thread 3 ] DEBUG Engine               - isLinux: false
+17:04:00.300 [FXGL Background Thread 3 ] DEBUG Engine               - isMac: false
+17:04:00.300 [FXGL Background Thread 3 ] DEBUG Engine               - isMainMenuEnabled: true
+17:04:00.300 [FXGL Background Thread 3 ] DEBUG Engine               - isManualResizeEnabled: false
+17:04:00.300 [FXGL Background Thread 3 ] DEBUG Engine               - isMobile: false
+17:04:00.300 [FXGL Background Thread 3 ] DEBUG Engine               - isNative: false
+17:04:00.300 [FXGL Background Thread 3 ] DEBUG Engine               - isPauseMusicWhenMinimized: true
+17:04:00.300 [FXGL Background Thread 3 ] DEBUG Engine               - isPreserveResizeRatio: false
+17:04:00.300 [FXGL Background Thread 3 ] DEBUG Engine               - isProfilingEnabled: false
+17:04:00.300 [FXGL Background Thread 3 ] DEBUG Engine               - isScaleAffectedOnResize: true
+17:04:00.300 [FXGL Background Thread 3 ] DEBUG Engine               - isSingleStep: false
+17:04:00.300 [FXGL Background Thread 3 ] DEBUG Engine               - isUserProfileEnabled: false
+17:04:00.300 [FXGL Background Thread 3 ] DEBUG Engine               - isWindows: true
+17:04:00.300 [FXGL Background Thread 3 ] DEBUG Engine               - language: ObjectProperty [value: ENGLISH]
+17:04:00.300 [FXGL Background Thread 3 ] DEBUG Engine               - menuKey: ESCAPE
+17:04:00.301 [FXGL Background Thread 3 ] DEBUG Engine               - mouseSensitivity: 0.2
+17:04:00.301 [FXGL Background Thread 3 ] DEBUG Engine               - notificationViewClass: class com.almasb.fxgl.notification.view.XboxNotificationView
+17:04:00.301 [FXGL Background Thread 3 ] DEBUG Engine               - pixelsPerMeter: 50.0
+17:04:00.301 [FXGL Background Thread 3 ] DEBUG Engine               - platform: WINDOWS
+17:04:00.301 [FXGL Background Thread 3 ] DEBUG Engine               - prefHeightProperty: ReadOnlyDoubleProperty [value: 700.0]
+17:04:00.301 [FXGL Background Thread 3 ] DEBUG Engine               - prefWidthProperty: ReadOnlyDoubleProperty [value: 900.0]
+17:04:00.301 [FXGL Background Thread 3 ] DEBUG Engine               - profileDir: profiles/
+17:04:00.301 [FXGL Background Thread 3 ] DEBUG Engine               - profileName: StringProperty [value: DEFAULT]
+17:04:00.301 [FXGL Background Thread 3 ] DEBUG Engine               - randomSeed: -1
+17:04:00.301 [FXGL Background Thread 3 ] DEBUG Engine               - runtimeInfo: RuntimeInfo(platform=WINDOWS, version=17.2, build=20.08.2022 16.50)
+17:04:00.301 [FXGL Background Thread 3 ] DEBUG Engine               - saveFileExt: sav
+17:04:00.301 [FXGL Background Thread 3 ] DEBUG Engine               - scaledHeightProp$fxgl: DoubleProperty [bound, value: 700.0]
+17:04:00.301 [FXGL Background Thread 3 ] DEBUG Engine               - scaledWidthProp$fxgl: DoubleProperty [bound, value: 900.0]
+17:04:00.301 [FXGL Background Thread 3 ] DEBUG Engine               - sceneFactory: ru.nsu.valikov.petukhon.PetukhonApplication$1@7dd38d81
+17:04:00.301 [FXGL Background Thread 3 ] DEBUG Engine               - secondsIn24h: 60
+17:04:00.301 [FXGL Background Thread 3 ] DEBUG Engine               - soundMenuBack: menu/back.wav
+17:04:00.301 [FXGL Background Thread 3 ] DEBUG Engine               - soundMenuPress: menu/press.wav
+17:04:00.301 [FXGL Background Thread 3 ] DEBUG Engine               - soundMenuSelect: menu/select.wav
+17:04:00.301 [FXGL Background Thread 3 ] DEBUG Engine               - soundNotification: core/notification.wav
+17:04:00.302 [FXGL Background Thread 3 ] DEBUG Engine               - stageStyle: DECORATED
+17:04:00.302 [FXGL Background Thread 3 ] DEBUG Engine               - supportedLanguages: [ENGLISH, FRENCH, GERMAN, HUNGARIAN, RUSSIAN]
+17:04:00.302 [FXGL Background Thread 3 ] DEBUG Engine               - ticksPerSecond: 60
+17:04:00.302 [FXGL Background Thread 3 ] DEBUG Engine               - title: Petukhon!
+17:04:00.302 [FXGL Background Thread 3 ] DEBUG Engine               - urlGithub: https://github.com/AlmasB/FXGL
+17:04:00.302 [FXGL Background Thread 3 ] DEBUG Engine               - urlLeaderboard: http://fxgl-top.herokuapp.com/
+17:04:00.302 [FXGL Background Thread 3 ] DEBUG Engine               - urlPOM: https://raw.githubusercontent.com/AlmasB/FXGL/release/README.md
+17:04:00.302 [FXGL Background Thread 3 ] DEBUG Engine               - userAppClass: class ru.nsu.valikov.petukhon.PetukhonApplication
+17:04:00.302 [FXGL Background Thread 3 ] DEBUG Engine               - version: 25.04.2023
+17:04:00.302 [FXGL Background Thread 3 ] DEBUG Engine               - versionCheckDays: 7
+17:04:00.302 [FXGL Background Thread 3 ] DEBUG Engine               - width: 900
+17:04:00.302 [FXGL Background Thread 3 ] DEBUG Engine               - Logging services
+17:04:00.302 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.app.services.FXGLAssetLoaderService
+17:04:00.302 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.app.FXGLApplication$GameApplicationService
+17:04:00.302 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.app.services.FXGLDialogService
+17:04:00.302 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.app.services.IOTaskExecutorService
+17:04:00.302 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.io.FileSystemService
+17:04:00.302 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.localization.LocalizationService
+17:04:00.302 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.app.services.SystemBundleService
+17:04:00.302 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.profile.SaveLoadService
+17:04:00.302 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.ui.FXGLUIFactoryServiceProvider
+17:04:00.302 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.ui.FXGLDialogFactoryServiceProvider
+17:04:00.302 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.audio.AudioPlayer
+17:04:00.302 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.notification.impl.NotificationServiceProvider
+17:04:00.302 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.achievement.AchievementService
+17:04:00.302 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.cutscene.CutsceneService
+17:04:00.302 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.minigames.MiniGameService
+17:04:00.302 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.net.NetService
+17:04:00.302 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.app.services.UpdaterService
+17:04:00.303 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.dev.DevService
+17:04:09.479 [JavaFX Application Thread] DEBUG Menu                 - fireNewGame()
+17:04:09.479 [JavaFX Application Thread] DEBUG GameApplicationServi - Starting new game
+17:04:09.481 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Pop state: PetukhonMainMenu
+17:04:09.481 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+17:04:09.481 [JavaFX Application Thread] DEBUG GameApplicationServi - Removing overlay from PetukhonMainMenu and adding to FXGLMainMenuDummyScene
+17:04:09.482 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - FXGLMainMenuDummyScene <- PetukhonMainMenu
+17:04:09.482 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+17:04:09.486 [JavaFX Application Thread] DEBUG GameApplicationServi - Removing overlay from FXGLMainMenuDummyScene and adding to FXGLLoadingScene
+17:04:09.486 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - FXGLMainMenuDummyScene -> FXGLLoadingScene
+17:04:09.486 [JavaFX Application Thread] DEBUG GameApplicationServi - Clearing previous game
+17:04:09.486 [JavaFX Application Thread] DEBUG GameScene            - Clearing game scene
+17:04:09.486 [JavaFX Application Thread] DEBUG GameWorld            - Clearing game world
+17:04:09.486 [JavaFX Application Thread] DEBUG PhysicsWorld         - Clearing physics world
+17:04:09.487 [FXGL Background Thread 2 ] DEBUG FXGLApplication      - Initializing game
+17:04:09.498 [FXGL Background Thread 2 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:///C:/Users/nickolas/Documents/GitHub/OOP/Task_2_3_1/build/libs/petukhon-1.0-SNAPSHOT.jar!/assets/textures/snake_head/player.png
+17:04:09.511 [FXGL Background Thread 2 ] DEBUG GameWorld            - Clearing removable entities
+17:04:09.511 [FXGL Background Thread 2 ] DEBUG GameWorld            - Setting level: com.almasb.fxgl.entity.level.Level@63d81a5f
+17:04:09.513 [FXGL Background Thread 2 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:///C:/Users/nickolas/Documents/GitHub/OOP/Task_2_3_1/build/libs/petukhon-1.0-SNAPSHOT.jar!/assets/textures/cell/grey.png
+17:04:09.528 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.528 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.529 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.529 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.529 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.530 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.530 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.531 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.531 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.531 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.532 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.532 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.532 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.533 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.533 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.533 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.534 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.534 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.534 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.535 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.535 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.535 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.536 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.536 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.536 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.537 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.537 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.537 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.538 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.539 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.539 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.539 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.540 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.540 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.540 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.541 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.541 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.541 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.541 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.542 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.542 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.542 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.543 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.543 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.543 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.544 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.544 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.544 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.545 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.545 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.546 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.546 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.546 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.547 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.547 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.547 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.548 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.548 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.548 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.549 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.549 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.549 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.549 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.550 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.550 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.550 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.551 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.551 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.551 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.551 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.552 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.552 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.552 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.553 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.553 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.553 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.554 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.554 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.554 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.554 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.555 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.555 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.555 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.556 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.556 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.556 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.556 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.557 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.557 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.557 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.558 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.558 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.558 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.559 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.559 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.559 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.560 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.560 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.560 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.560 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.561 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.561 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.561 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.562 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.562 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.562 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.562 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.563 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.563 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.563 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.564 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.564 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.564 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.564 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.565 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.565 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.565 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.566 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.566 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.566 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.567 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.567 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.568 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.568 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.568 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.568 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.569 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.569 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.570 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.570 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.570 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.571 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.571 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.571 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.572 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.572 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.572 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.573 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.573 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.573 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.574 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.574 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.574 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.574 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.575 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.575 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.575 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.576 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.576 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.576 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.577 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.577 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.577 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.578 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.578 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.578 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.578 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.579 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.579 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.579 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.580 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.580 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.580 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.581 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.581 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.581 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.582 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.582 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.582 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.583 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.583 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.583 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.584 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.584 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.584 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.584 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.585 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.585 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.585 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.586 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.586 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.586 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.587 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.587 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.587 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.588 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.588 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.588 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.589 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.589 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.589 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.589 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.590 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.590 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.590 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.590 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.591 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.591 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.591 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.591 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.592 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.592 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.592 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.592 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.592 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.593 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.593 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.593 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.594 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.594 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.594 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.594 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.594 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.595 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.595 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.595 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.595 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.595 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.596 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.596 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.596 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.596 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.597 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.597 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.597 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.597 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.597 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.598 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.598 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.598 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.598 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.599 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.599 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.599 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.599 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.600 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.600 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.600 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.601 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.601 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.601 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.601 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.601 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.602 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.602 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.602 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.603 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.603 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.603 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.603 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.603 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.604 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.604 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.604 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.604 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.605 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.605 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.605 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.605 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.605 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.606 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.606 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.606 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.607 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.607 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.607 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.608 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.608 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.608 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.608 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.609 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.609 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.609 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.609 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.610 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.610 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.610 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.610 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.611 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.611 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.611 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.611 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.611 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.612 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.612 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.612 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.612 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.612 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.613 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.613 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.613 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.613 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.614 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.614 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.614 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.615 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.615 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.615 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.615 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.615 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.616 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.616 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.616 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.616 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.616 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.617 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.617 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.617 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.617 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.617 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.618 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.618 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.618 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.618 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.618 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.619 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.619 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.619 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.619 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.620 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.620 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.620 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.620 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.621 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.621 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.621 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.621 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.622 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.622 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.622 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.622 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.623 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.623 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.623 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.623 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.623 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.624 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.624 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.624 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.624 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.624 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.625 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.625 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.625 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.625 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.626 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.626 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.626 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.626 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.627 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.627 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.627 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.628 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.628 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.628 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.628 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.629 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.629 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.629 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.629 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.629 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.630 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.630 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.630 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.630 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.631 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.631 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.631 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.631 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.631 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.632 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.632 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.632 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.632 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.632 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.633 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.633 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.633 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.633 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.634 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.634 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.634 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.634 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.635 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.635 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.635 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.636 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.636 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.636 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.636 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.636 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.637 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.637 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.637 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.637 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.638 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.638 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.638 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.638 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.638 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.639 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.639 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.639 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.639 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.639 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.640 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.640 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.640 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.640 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.640 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.641 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.641 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.641 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.641 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.641 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.642 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.642 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.642 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.642 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.643 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.643 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.643 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.643 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.643 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.643 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.644 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.644 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.644 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.644 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.644 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.645 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.645 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.645 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.645 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.645 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.645 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.646 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.646 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.646 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.646 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.646 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.646 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.647 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.647 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.647 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.647 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.647 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.655 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.656 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.656 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.657 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.657 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.657 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.657 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.658 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.658 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.658 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.658 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.658 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.659 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.659 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.659 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.659 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.659 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.660 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.660 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.660 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.660 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.660 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.660 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.661 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.661 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.661 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.661 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.662 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.662 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.662 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.662 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.663 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.663 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.663 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.663 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.664 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.664 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.664 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.664 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.664 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.665 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.665 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.665 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.665 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.666 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.666 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.666 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.666 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.667 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.667 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.667 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.667 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.668 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.668 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.668 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.669 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.669 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.669 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.669 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.669 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.670 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.670 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.670 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.670 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.671 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.671 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.671 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.671 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.672 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.672 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.672 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.672 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.672 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.673 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.673 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.673 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.673 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.673 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.673 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.674 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.674 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.674 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.674 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.674 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.674 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.675 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.675 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.675 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.675 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.675 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.676 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.676 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.676 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.676 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.676 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.677 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.677 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.677 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.677 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.677 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.678 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.678 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.678 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.678 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.678 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.678 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.679 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.679 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.679 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.679 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.679 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.679 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.680 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.680 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.680 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.680 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.680 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.680 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.681 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.681 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.681 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.681 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.681 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.681 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.682 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.682 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.682 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.682 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.683 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.683 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.683 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.683 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.684 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.684 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.684 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.684 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.685 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.685 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.685 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.685 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.685 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.685 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.686 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.686 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.686 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.686 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.686 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.686 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.687 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.687 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.687 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.687 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.687 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.687 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.688 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.688 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.688 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.688 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.688 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.688 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.689 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.689 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.689 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.689 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.689 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.689 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.689 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.690 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.690 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.690 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.690 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.690 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.690 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.691 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.691 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.691 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.691 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.691 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.691 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.692 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.692 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.692 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.692 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.692 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.692 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.692 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.693 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.693 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.693 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.693 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.693 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.694 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.694 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.694 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.694 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.694 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.694 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.695 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.695 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.695 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.695 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.695 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.695 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.696 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.696 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.696 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.696 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.696 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.697 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.697 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.697 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.697 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.697 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.698 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.698 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.698 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.698 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.698 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.699 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.699 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.699 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.699 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.699 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.699 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.700 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.700 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.700 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.700 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.700 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.700 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.701 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.701 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.701 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.701 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.701 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.701 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.701 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.701 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.702 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.702 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.702 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.702 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.702 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.702 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.702 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.703 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.703 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.703 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.703 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.703 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.703 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.704 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.704 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.704 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.704 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.704 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.704 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.705 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.705 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.705 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.705 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.705 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.705 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.706 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.706 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.706 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.706 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.706 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.706 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.706 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.707 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.707 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.707 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.707 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.707 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.707 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.707 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.708 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.708 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.708 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.708 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.708 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.708 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.708 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.708 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.709 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.709 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.709 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.709 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.709 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.709 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.709 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.710 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.710 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.710 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.710 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.710 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.710 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.710 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.711 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.711 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.711 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.711 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.711 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.712 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.712 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.712 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.712 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.712 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.712 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.712 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.713 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.713 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.713 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.713 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.713 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.713 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.714 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.714 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.714 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.714 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.714 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.714 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.715 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.715 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.715 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.715 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.715 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.715 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.715 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.716 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.716 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.716 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.716 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.716 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.716 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.717 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.717 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.717 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.717 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.717 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.717 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.718 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.718 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.718 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.718 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.719 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.719 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.719 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.719 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.720 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.720 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.720 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.720 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.720 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.720 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.721 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.721 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.721 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.721 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.721 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.721 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.721 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.721 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.722 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.722 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.722 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.722 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.722 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.722 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.722 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.729 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.730 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.730 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.730 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.730 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.730 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.730 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.731 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.731 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.731 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.731 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.731 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.731 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.731 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.732 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.732 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.732 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.732 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.732 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.732 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.733 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.733 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.733 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.733 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.733 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.733 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.733 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.733 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.734 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.734 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.734 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.734 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.734 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.734 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.734 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.735 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.735 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.735 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.735 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.735 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.735 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.735 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.735 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.736 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.736 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.736 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.736 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.736 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.736 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.736 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.737 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.737 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.737 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.737 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.737 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.737 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.737 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.738 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.738 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.738 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.738 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.738 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.739 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.739 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.739 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.739 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.739 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.739 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.740 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.740 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.740 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.740 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.740 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.740 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.741 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.741 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.741 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.741 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.742 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.742 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.742 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.742 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.742 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.742 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.742 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.743 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.743 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.743 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.743 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.743 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.743 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.743 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.744 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.744 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.744 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.744 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.744 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.744 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.745 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.745 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.745 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.745 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.745 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.745 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.745 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.746 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.746 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.746 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.746 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.746 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.746 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.747 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.747 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.747 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.747 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.747 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.747 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.747 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.747 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.748 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.748 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.748 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.748 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.748 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.751 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.752 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.753 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.753 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.753 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.754 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.754 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.754 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.755 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.755 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.755 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.755 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.755 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.756 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.756 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.756 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.756 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.756 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.756 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.757 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.757 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.757 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.757 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.757 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.757 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.758 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.758 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.758 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.758 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.758 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.758 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.759 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.759 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.759 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.759 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.759 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.760 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.760 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.760 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.760 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.760 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.760 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.761 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.761 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.761 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.761 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.761 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.761 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.762 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.762 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.762 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.762 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.762 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.763 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.763 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.763 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.763 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.763 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.763 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.764 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.764 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.764 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.764 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.764 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.764 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.765 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.765 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.765 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.765 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.765 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.765 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.766 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.766 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.766 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.766 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.767 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.767 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.767 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.767 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.767 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.768 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.768 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.768 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.768 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.768 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.769 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.769 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.769 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.769 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.769 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.769 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.770 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.770 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.770 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.770 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.770 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.770 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.771 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.771 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.771 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.771 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.771 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.772 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.772 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.772 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.772 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.772 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.773 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.773 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.773 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.773 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.773 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.773 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.774 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.774 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.774 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.774 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.774 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.775 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.775 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.775 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.775 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.776 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.776 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.776 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.776 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.776 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.781 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.782 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.782 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.783 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.783 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.783 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.784 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.784 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.784 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.784 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.785 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.785 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.785 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.785 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.785 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.786 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.786 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.786 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.786 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.787 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.787 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.787 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.787 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.788 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.788 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.788 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.791 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.791 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.791 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.792 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.792 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.792 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.792 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.793 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.793 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.793 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.793 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.793 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.793 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.794 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.794 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.794 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.794 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.794 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.794 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.795 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.795 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.795 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.796 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.796 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.796 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.796 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.796 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.796 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.797 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.797 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.797 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.797 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.797 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.797 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.798 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.798 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.798 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.802 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.802 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.803 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.803 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.803 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.804 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.804 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.804 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.804 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.804 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.805 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.805 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.805 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.805 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.805 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.805 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.806 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.806 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.806 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.806 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.806 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.806 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.807 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.807 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.807 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.807 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.807 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.808 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.808 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.808 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.808 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.808 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.809 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.809 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.809 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.809 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.809 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.810 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.810 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.810 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.810 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.810 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.810 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.810 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.810 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.811 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.811 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.811 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.811 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.811 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.811 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.811 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.812 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.812 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.812 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.812 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.812 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.812 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.812 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.812 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.812 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.813 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.813 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.813 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.813 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.813 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.813 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.814 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.814 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.814 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.814 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.814 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.815 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.815 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.815 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.815 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.815 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.815 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.816 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.816 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.816 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.816 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.816 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.816 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.816 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.817 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.817 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.817 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.817 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.817 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.817 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.817 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.817 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.818 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.818 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.818 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.818 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.818 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.818 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.818 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.818 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.819 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.819 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.819 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.819 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.819 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.819 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.819 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.819 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.820 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.820 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.820 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.820 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.820 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.820 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.820 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.820 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.820 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.820 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.820 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.821 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.821 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.821 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.821 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.821 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.821 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.821 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.822 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.825 [FXGL Background Thread 2 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:///C:/Users/nickolas/Documents/GitHub/OOP/Task_2_3_1/build/libs/petukhon-1.0-SNAPSHOT.jar!/assets/textures/food/Smalltalk_logo.png
+17:04:09.852 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.852 [FXGL Background Thread 2 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:///C:/Users/nickolas/Documents/GitHub/OOP/Task_2_3_1/build/libs/petukhon-1.0-SNAPSHOT.jar!/assets/textures/food/Haskell_logo.png
+17:04:09.858 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.858 [FXGL Background Thread 2 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:///C:/Users/nickolas/Documents/GitHub/OOP/Task_2_3_1/build/libs/petukhon-1.0-SNAPSHOT.jar!/assets/textures/food/Java_logo.png
+17:04:09.866 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.868 [FXGL Background Thread 2 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:///C:/Users/nickolas/Documents/GitHub/OOP/Task_2_3_1/build/libs/petukhon-1.0-SNAPSHOT.jar!/assets/textures/snake_head/enemy.png
+17:04:09.874 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.875 [FXGL Background Thread 2 ] WARN  GameWorld            - Entity is already attached to world
+17:04:09.879 [FXGL Background Thread 2 ] INFO  FXGLApplication      - Game initialization took: 0,391 sec
+17:04:09.879 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+17:04:09.894 [JavaFX Application Thread] DEBUG GameApplicationServi - Removing overlay from FXGLLoadingScene and adding to GameScene
+17:04:09.895 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - FXGLLoadingScene -> GameScene
+17:04:10.402 [JavaFX Application Thread] WARN  GameWorld            - Entity is already attached to world
+17:04:10.403 [JavaFX Application Thread] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:///C:/Users/nickolas/Documents/GitHub/OOP/Task_2_3_1/build/libs/petukhon-1.0-SNAPSHOT.jar!/assets/textures/snake_tail/enemy.png
+17:04:10.407 [JavaFX Application Thread] WARN  GameWorld            - Entity is already attached to world
+17:04:12.732 [JavaFX Application Thread] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:///C:/Users/nickolas/Documents/GitHub/OOP/Task_2_3_1/build/libs/petukhon-1.0-SNAPSHOT.jar!/assets/textures/food/Rust_logo.png
+17:04:12.738 [JavaFX Application Thread] WARN  GameWorld            - Entity is already attached to world
+17:04:12.738 [JavaFX Application Thread] WARN  GameWorld            - Entity is already attached to world
+17:04:13.068 [JavaFX Application Thread] WARN  GameWorld            - Entity is already attached to world
+17:04:13.069 [JavaFX Application Thread] WARN  GameWorld            - Entity is already attached to world
+17:04:15.567 [JavaFX Application Thread] WARN  GameWorld            - Entity is already attached to world
+17:04:15.568 [JavaFX Application Thread] WARN  GameWorld            - Entity is already attached to world
+17:04:16.567 [JavaFX Application Thread] WARN  GameWorld            - Entity is already attached to world
+17:04:16.568 [JavaFX Application Thread] WARN  GameWorld            - Entity is already attached to world
+17:04:19.234 [JavaFX Application Thread] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:///C:/Users/nickolas/Documents/GitHub/OOP/Task_2_3_1/build/libs/petukhon-1.0-SNAPSHOT.jar!/assets/textures/food/C++_logo.png
+17:04:19.245 [JavaFX Application Thread] WARN  GameWorld            - Entity is already attached to world
+17:04:19.246 [JavaFX Application Thread] WARN  GameWorld            - Entity is already attached to world
+17:04:24.233 [JavaFX Application Thread] WARN  GameWorld            - Entity is already attached to world
+17:04:24.234 [JavaFX Application Thread] WARN  GameWorld            - Entity is already attached to world
+17:04:28.733 [JavaFX Application Thread] WARN  GameWorld            - Entity is already attached to world
+17:04:28.734 [JavaFX Application Thread] WARN  GameWorld            - Entity is already attached to world
+17:04:31.900 [JavaFX Application Thread] WARN  GameWorld            - Entity is already attached to world
+17:04:31.901 [JavaFX Application Thread] WARN  GameWorld            - Entity is already attached to world
+17:04:33.566 [JavaFX Application Thread] WARN  GameWorld            - Entity is already attached to world
+17:04:33.566 [JavaFX Application Thread] WARN  GameWorld            - Entity is already attached to world
+17:04:33.899 [JavaFX Application Thread] WARN  GameWorld            - Entity is already attached to world
+17:04:33.899 [JavaFX Application Thread] WARN  GameWorld            - Entity is already attached to world
+17:04:33.900 [JavaFX Application Thread] WARN  GameWorld            - Entity is already attached to world
+17:04:33.901 [JavaFX Application Thread] WARN  GameWorld            - Entity is already attached to world
+17:04:36.567 [JavaFX Application Thread] WARN  GameWorld            - Entity is already attached to world
+17:04:36.567 [JavaFX Application Thread] WARN  GameWorld            - Entity is already attached to world
+17:04:39.899 [JavaFX Application Thread] WARN  GameWorld            - Entity is already attached to world
+17:04:39.900 [JavaFX Application Thread] WARN  GameWorld            - Entity is already attached to world
+17:04:42.767 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Push state: DialogSubScene
+17:04:42.767 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+17:04:42.768 [JavaFX Application Thread] DEBUG GameApplicationServi - Removing overlay from GameScene and adding to DialogSubScene
+17:04:42.768 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - GameScene -> DialogSubScene
+17:04:44.172 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Pop state: DialogSubScene
+17:04:44.172 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+17:04:44.172 [JavaFX Application Thread] DEBUG GameApplicationServi - Removing overlay from DialogSubScene and adding to GameScene
+17:04:44.172 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - GameScene <- DialogSubScene
+17:04:44.172 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+17:04:44.179 [JavaFX Application Thread] DEBUG GameApplicationServi - Removing overlay from GameScene and adding to FXGLMainMenuDummyScene
+17:04:44.179 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - GameScene -> FXGLMainMenuDummyScene
+17:04:44.179 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Push state: PetukhonMainMenu
+17:04:44.179 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+17:04:44.182 [JavaFX Application Thread] DEBUG GameApplicationServi - Removing overlay from FXGLMainMenuDummyScene and adding to PetukhonMainMenu
+17:04:44.182 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - FXGLMainMenuDummyScene -> PetukhonMainMenu
+17:04:46.262 [JavaFX Application Thread] DEBUG Menu                 - fireExit()
+17:04:46.264 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Push state: DialogSubScene
+17:04:46.264 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+17:04:46.264 [JavaFX Application Thread] DEBUG GameApplicationServi - Removing overlay from PetukhonMainMenu and adding to DialogSubScene
+17:04:46.264 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - PetukhonMainMenu -> DialogSubScene
+17:04:46.833 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Pop state: DialogSubScene
+17:04:46.833 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+17:04:46.833 [JavaFX Application Thread] DEBUG GameApplicationServi - Removing overlay from DialogSubScene and adding to PetukhonMainMenu
+17:04:46.833 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - PetukhonMainMenu <- DialogSubScene
+17:04:46.833 [JavaFX Application Thread] DEBUG FXGLApplication      - Exiting FXGL
+17:04:46.833 [JavaFX Application Thread] DEBUG LoopRunner           - Stopping loop
+17:04:46.833 [JavaFX Application Thread] DEBUG SystemBundleService  - Saving FXGL system data
+17:04:46.834 [JavaFX Application Thread] DEBUG FileSystemAccess     - Writing to: C:\Users\nickolas\Documents\GitHub\OOP\Task_2_3_1\system\fxgl.bundle
+17:04:46.836 [JavaFX Application Thread] DEBUG Async                - Shutting down background threads
+17:04:46.836 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Closing main window
+17:04:46.844 [JavaFX Application Thread] DEBUG Logger               - Closing Logger
