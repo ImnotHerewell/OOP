@@ -1,0 +1,18 @@
+{
+  "chefsWorkEfficiency": [
+    100,
+    90,
+    80,
+    70,
+    60
+  ],
+  "couriersTrunkCapacity": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "stockCapacity": 10
+}

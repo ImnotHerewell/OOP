@@ -1,0 +1,55 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+interface Calculable << interface >>
+class Chef
+interface Close << interface >>
+interface Cook << interface >>
+class CookService
+class Courier
+class CourierDrive
+class CourierFill
+interface Drive << interface >>
+interface Fill << interface >>
+class Logger
+class Order
+class OrderComparer
+enum OrderStatus << enumeration >>
+class Pizza
+class Pizzeria
+class PizzeriaCloser
+class PizzeriaSetup
+class PizzeriaStarter
+class PizzeriaSystem
+class PopForTimeService
+class PopService
+interface Poper << interface >>
+interface PoperForTime << interface >>
+class PushService
+interface Pusher << interface >>
+class QueueService
+interface Setup << interface >>
+interface Start << interface >>
+class SystemHandler
+
+CookService        -[#008200,dashed]-^  Cook              
+CourierDrive       -[#008200,dashed]-^  Drive             
+CourierFill        -[#008200,dashed]-^  Fill              
+OrderComparer      -[#008200,dashed]-^  Calculable        
+Pizza              -[#000082,plain]-^  Order             
+PizzeriaCloser     -[#008200,dashed]-^  Close             
+PizzeriaCloser     -[#000082,plain]-^  Pizzeria          
+PizzeriaSetup      -[#008200,dashed]-^  Setup             
+PizzeriaSetup      -[#000082,plain]-^  SystemHandler     
+PizzeriaStarter    -[#000082,plain]-^  Pizzeria          
+PizzeriaStarter    -[#008200,dashed]-^  Start             
+PopForTimeService  -[#008200,dashed]-^  PoperForTime      
+PopForTimeService  -[#000082,plain]-^  QueueService      
+PopService         -[#008200,dashed]-^  Poper             
+PopService         -[#000082,plain]-^  QueueService      
+PushService        -[#008200,dashed]-^  Pusher            
+PushService        -[#000082,plain]-^  QueueService      
+@enduml
