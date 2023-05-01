@@ -2,6 +2,7 @@ package valikov.grlib;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import valikov.grlib.defgraph.NodeValue;
 
 class NodeValueTest {
 
