@@ -1,6 +1,5 @@
 package ru.nsu.valikov.models;
 
-import java.net.URL;
 import java.util.HashSet;
 import lombok.AccessLevel;
 import lombok.Data;
@@ -23,5 +22,7 @@ public class Student {
     @NonNull
     String realName;
     @NonNull
-    URL branchName;
+    String repositoryName;
+    @NonNull
+    String branchName = DEFAULT_BRANCH_NAME;
 }

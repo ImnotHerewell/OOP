@@ -18,5 +18,5 @@ public class Task {
     @NonNull
     String name;
     @NonNull
-    int score;
+    Integer score;
 }
