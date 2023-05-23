@@ -1,6 +1,6 @@
 package ru.nsu.valikov.models;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Getter;
@@ -17,7 +17,13 @@ public class IssuedTask {
 
     static int idCounter = 0;
     @Getter(lazy = true)
-    final Integer taskId = idCounter++;
+    final Integer id = idCounter++;
     @NonNull
-    LocalDateTime deadline;
+    Integer taskId;
+    @NonNull
+    LocalDate deadline;
+
+    public IssuedTask(@NonNull String stringDate) {
+        deadline = LocalDate.parse(stringDate);
+    }
 }
