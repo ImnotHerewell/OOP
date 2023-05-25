@@ -20,8 +20,9 @@ public class CheckPoint {
     String name;
     @NonNull
     LocalDate date;
-    public CheckPoint(@NonNull String stringDate){
-        this.date= LocalDate.parse(stringDate);
+
+    public CheckPoint(@NonNull String stringDate) {
+        this.date = LocalDate.parse(stringDate);
     }
 
 }
