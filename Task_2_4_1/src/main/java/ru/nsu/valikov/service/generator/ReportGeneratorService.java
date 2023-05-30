@@ -34,7 +34,7 @@ public class ReportGeneratorService {
         Table.render(mappings.toArray(new AttendanceGeneratorEntity[0]),
                 AttendanceGeneratorEntity.class).html().withAlign(VerticalAlign.Right)
             .withAlign(1, VerticalAlign.Left)
-            .toFile("build/sample.html")
+            .toFile("build/" + groupId + ".html")
             .run();
         log.info("Attendance report has been successfully generated");
     }

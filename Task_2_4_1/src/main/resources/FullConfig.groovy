@@ -93,6 +93,9 @@ attendance {
     day("2023-06-23") {
         studentNickNames = ["aboba", "deril"]
     }
+    day("2023-07-23") {
+        studentNickNames = ["aboba", "deril", "martin"]
+    }
 }
 
 checkpoints {
