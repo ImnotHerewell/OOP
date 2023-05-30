@@ -1,7 +1,8 @@
 package ru.nsu.valikov.models;
 
-import java.util.HashSet;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,8 +17,7 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor(force = true)
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Group {
-
-    static final HashSet<Integer> IDS = new HashSet<>();
+    public static final Map<Integer, Group> groups=new HashMap<>();
     @NonNull
     List<String> students;
     @NonNull

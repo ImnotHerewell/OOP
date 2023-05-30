@@ -1,6 +1,7 @@
 package ru.nsu.valikov.models;
 
-import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Map;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,6 +10,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.experimental.Accessors;
 import lombok.experimental.FieldDefaults;
 
+/**
+ * Здесь хранятся основные и БОНУСНЫЕ задания, я не разделяю эти сущности.
+ */
 @Data
 @RequiredArgsConstructor
 @NoArgsConstructor(force = true)
@@ -16,7 +20,8 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Task {
 
-    static final HashSet<Integer> IDS = new HashSet<>();
+    public static final Map<Integer, Task> taskMap = new HashMap<>();
+
     @NonNull
     Integer id;
     @NonNull

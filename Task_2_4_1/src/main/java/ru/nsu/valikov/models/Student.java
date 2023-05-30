@@ -1,6 +1,9 @@
 package ru.nsu.valikov.models;
 
-import java.util.HashSet;
+import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,7 +20,9 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Student {
 
-    static final HashSet<String> NICKNAMES = new HashSet<>();
+    public static final Map<String, Set<LocalDate>> attendanceMap = new HashMap<>();
+    public static final Map<String, Student> studentMap = new HashMap<>();
+
     static final String DEFAULT_BRANCH_NAME = "master";
     @NonNull
     String nickName;
