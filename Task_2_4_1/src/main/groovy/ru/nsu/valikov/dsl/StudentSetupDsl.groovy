@@ -6,6 +6,8 @@ import ru.nsu.valikov.models.Student
 import static groovy.lang.Closure.DELEGATE_ONLY
 
 class StudentSetupDsl {
+    public static final Map<String, Student> studentMap = Student.studentMap
+
     static void students(@DelegatesTo(value = StudentsDsl, strategy = DELEGATE_ONLY) Closure closure) {
         var studentsDsl = new StudentsDsl()
         closure.delegate = studentsDsl
@@ -14,8 +16,6 @@ class StudentSetupDsl {
     }
 
     static class StudentsDsl {
-        protected static final Map<String, Student> studentMap = new HashMap<>()
-
         static void student(@DelegatesTo(value = Student, strategy = DELEGATE_ONLY) Closure closure) {
             var student = new Student()
             closure.delegate = student

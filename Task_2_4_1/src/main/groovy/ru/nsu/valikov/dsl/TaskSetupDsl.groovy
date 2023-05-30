@@ -6,6 +6,8 @@ import ru.nsu.valikov.models.Task
 import static groovy.lang.Closure.DELEGATE_ONLY
 
 class TaskSetupDsl {
+    public static final var taskMap = Task.taskMap
+
     static void tasks(@DelegatesTo(value = TasksDsl, strategy = DELEGATE_ONLY) Closure closure) {
         var taskDsl = new TasksDsl()
         closure.delegate = taskDsl
@@ -14,7 +16,6 @@ class TaskSetupDsl {
     }
 
     static class TasksDsl {
-        protected static final Map<Integer, Task> taskMap = new HashMap<>()
 
         static void task(@DelegatesTo(value = Task, strategy = DELEGATE_ONLY) Closure closure) {
             var task = new Task()
