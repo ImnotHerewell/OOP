@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"ru.nsu.valikov"},{"l":"ru.nsu.valikov.dsl.vlasov.entites"},{"l":"ru.nsu.valikov.models"},{"l":"ru.nsu.valikov.service"},{"l":"ru.nsu.valikov.service.dto"},{"l":"ru.nsu.valikov.service.generator"}];updateSearchResults();
