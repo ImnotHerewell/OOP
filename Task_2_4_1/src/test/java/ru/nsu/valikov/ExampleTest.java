@@ -10,8 +10,4 @@ public class ExampleTest {
     public void testik() {
         assertTrue(true);
     }
-//    @Test
-//    public void falseTest(){
-//        assertTrue(false);
-//    }
 }
