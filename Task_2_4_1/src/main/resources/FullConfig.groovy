@@ -12,18 +12,18 @@ import static ru.nsu.valikov.dsl.vlasov.CompleteTaskOptionDsl.completed
 students {
     student {
         nickName = "deril"
-        realName = "who cares"
+        realName = "зелебоба 1"
         repositoryUrl = "https://github.com/nocarend/OOP"
     }
     student {
         nickName = "martin"
-        realName = "who cares"
+        realName = "зелебоба2 "
         repositoryUrl = "https://github.com/nocarend/oop_workshop"
         branchName = "main"
     }
     student {
         nickName = "aboba"
-        realName = "who cares"
+        realName = "небла"
         repositoryUrl = "https://github.com/nocarend/OOP"
     }
 }
@@ -87,6 +87,7 @@ completed {
 lessons {
     lesson("2023-06-23")
     lesson("2023-07-23")
+    lesson("2022-09-22")
 }
 
 attendance {
