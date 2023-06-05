@@ -92,8 +92,11 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#cloneProject(ru.nsu.valikov.service.dto.CloneProjectRequest)" class="member-name-link">cloneProject</a><wbr>(<a href="dto/CloneProjectRequest.html" title="class in ru.nsu.valikov.service.dto">CloneProjectRequest</a>&nbsp;cloneProjectRequest)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isAttended(ru.nsu.valikov.service.dto.AttendAtLessonRequest)" class="member-name-link">isAttended</a><wbr>(@NonNull <a href="dto/AttendAtLessonRequest.html" title="class in ru.nsu.valikov.service.dto">AttendAtLessonRequest</a>&nbsp;attendAtLessonRequest)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isClonedProject(ru.nsu.valikov.service.dto.CloneProjectRequest)" class="member-name-link">isClonedProject</a><wbr>(@NonNull <a href="dto/CloneProjectRequest.html" title="class in ru.nsu.valikov.service.dto">CloneProjectRequest</a>&nbsp;cloneProjectRequest)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -112,14 +115,22 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="cloneProject(ru.nsu.valikov.service.dto.CloneProjectRequest)">
-<h3>cloneProject</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">cloneProject</span><wbr><span class="parameters">(<a href="dto/CloneProjectRequest.html" title="class in ru.nsu.valikov.service.dto">CloneProjectRequest</a>&nbsp;cloneProjectRequest)</span>
-                            throws <span class="exceptions">org.eclipse.jgit.api.errors.GitAPIException</span></div>
+<section class="detail" id="isClonedProject(ru.nsu.valikov.service.dto.CloneProjectRequest)">
+<h3>isClonedProject</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isClonedProject</span><wbr><span class="parameters">(@NonNull
+ @NonNull <a href="dto/CloneProjectRequest.html" title="class in ru.nsu.valikov.service.dto">CloneProjectRequest</a>&nbsp;cloneProjectRequest)</span>
+                               throws <span class="exceptions">org.eclipse.jgit.api.errors.GitAPIException</span></div>
 <dl class="notes">
 <dt>Throws:</dt>
 <dd><code>org.eclipse.jgit.api.errors.GitAPIException</code></dd>
 </dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isAttended(ru.nsu.valikov.service.dto.AttendAtLessonRequest)">
+<h3>isAttended</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isAttended</span><wbr><span class="parameters">(@NonNull
+ @NonNull <a href="dto/AttendAtLessonRequest.html" title="class in ru.nsu.valikov.service.dto">AttendAtLessonRequest</a>&nbsp;attendAtLessonRequest)</span></div>
 </section>
 </li>
 </ul>
