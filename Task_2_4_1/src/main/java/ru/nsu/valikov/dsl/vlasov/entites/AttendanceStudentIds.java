@@ -9,6 +9,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.experimental.Accessors;
 import lombok.experimental.FieldDefaults;
 
+/**
+ * Dto for vlasov.
+ */
 @Data
 @RequiredArgsConstructor
 @Accessors(chain = true)

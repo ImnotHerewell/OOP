@@ -11,6 +11,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.experimental.Accessors;
 import lombok.experimental.FieldDefaults;
 
+/**
+ * Task that issued to some student.
+ */
 @Data
 @RequiredArgsConstructor
 @Accessors(chain = true)
@@ -18,6 +21,7 @@ import lombok.experimental.FieldDefaults;
 public class IssuedTask {
 
     public static final Map<Integer, IssuedTask> taskMap = new HashMap<>();
+    public static final Map<String, Map<Integer, Double>> studentBallsMap = new HashMap<>();
     @NonNull
     Integer taskId;
     @NonNull

@@ -1,52 +1,45 @@
 package ru.nsu.valikov;
 
-import java.io.File;
-import lombok.val;
+import java.util.concurrent.Callable;
 import org.eclipse.jgit.api.errors.GitAPIException;
+import picocli.CommandLine;
+import picocli.CommandLine.Command;
+import picocli.CommandLine.Option;
 import ru.nsu.valikov.models.Group;
 import ru.nsu.valikov.models.IssuedTask;
-import ru.nsu.valikov.models.Student;
-import ru.nsu.valikov.models.Task;
-import ru.nsu.valikov.service.GitService;
-import ru.nsu.valikov.service.GradleService;
 import ru.nsu.valikov.service.GroovyExecutor;
-import ru.nsu.valikov.service.dto.CheckTestsRequest;
-import ru.nsu.valikov.service.dto.CloneProjectRequest;
-import ru.nsu.valikov.service.dto.CompileProjectRequest;
-import ru.nsu.valikov.service.dto.GenerateDocumentationRequest;
 import ru.nsu.valikov.service.generator.ReportGeneratorService;
 
-public class Main {
+@Command(name = "vlasov_lab", mixinStandardHelpOptions = true, description = "Task pass")
+public class Main implements Callable<Integer> {
 
-    public static void main(String[] args) throws GitAPIException {
+    @Option(names = {"-a",
+        "--attentance"}, description = "Should we track and generate an attendance report?")
+    private Boolean attendance = false;
+    @Option(names = {"-s", "--score"}, description = "Should we generate a score report?")
+    private Boolean scoreReport = false;
+    @Option(names = {"-f", "--file"}, description = "Path to the/a config file.")
+    private String filename;
+
+    public static void main(String... args) {
+        int exitCode = new CommandLine(new Main()).execute(args);
+        System.exit(exitCode);
+    }
+
+    @Override
+    public Integer call() throws GitAPIException {
         try {
-            GroovyExecutor.execute("FullConfig.groovy");
-            val students = Student.studentMap;
-            var tasks = IssuedTask.taskMap;
-            for (val task : tasks.values()) {
-                val taskStudents = task.getStudents();
-                for (val student : taskStudents) {
-                    val info = students.get(student);
-                    val isCloned = GitService.cloneProject(
-                        new CloneProjectRequest(info.getRepositoryUrl(), info.getBranchName(),
-                            info.getNickName()));
-                    val projectName =
-                        info.getNickName() + "/" + Task.taskMap.get(task.getTaskId()).getName();
-                    val isCompiled = GradleService.compileProject(new CompileProjectRequest(
-                        projectName));
-                    val isDocumented = GradleService.generateDocumentation(
-                        new GenerateDocumentationRequest(projectName));
-                    val testValue = GradleService.getCoefficientOfPassedTests(
-                        new CheckTestsRequest(projectName));
-//                    val checkStyleValue = GradleService.getCoefficientOfCheckStyle(
-//                        new CheckTestsRequest(projectName));
-                    Utils.deleteDirectory(
-                        new File(Configuration.DEFAULT_TASKS_DIRECTORY + "/" + info.getNickName()));
-                }
+            GroovyExecutor.execute(filename);
+            if (scoreReport) {
+                IssuedTask.taskMap.keySet().forEach(ReportGeneratorService::generateScore);
+                Group.groups.keySet().forEach(ReportGeneratorService::generateGroupScore);
             }
-            Group.groups.keySet().forEach(ReportGeneratorService::generateAttendance);
+            if (attendance) {
+                Group.groups.keySet().forEach(ReportGeneratorService::generateGroupAttendance);
+            }
         } finally {
             Utils.deleteDirectory(Configuration.DEFAULT_TASKS_DIRECTORY);
         }
+        return 0;
     }
 }

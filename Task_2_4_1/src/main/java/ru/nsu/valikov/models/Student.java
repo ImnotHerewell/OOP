@@ -13,6 +13,9 @@ import lombok.experimental.Accessors;
 import lombok.experimental.FieldDefaults;
 
 
+/**
+ * Student info.
+ */
 @Data
 @RequiredArgsConstructor
 @Accessors(chain = true)

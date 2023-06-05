@@ -16,6 +16,9 @@ import ru.nsu.valikov.models.IssuedTask;
 import ru.nsu.valikov.models.Task;
 
 
+/**
+ * Real entity, that calculates score by info of completed task.
+ */
 @Data
 @RequiredArgsConstructor
 @Accessors(chain = true)
@@ -32,6 +35,8 @@ public class CompletedTask {
     final LocalDate date;
 
     /**
+     * Calculates score of completed task.
+     *
      * @return balls ну типа болз
      */
     public double toBalls() {

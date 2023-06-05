@@ -5,12 +5,15 @@ import ru.nsu.valikov.dsl.TaskSetupDsl
 import ru.nsu.valikov.dsl.vlasov.entites.AttendanceStudentIds
 import ru.nsu.valikov.dsl.vlasov.entites.CompletedTask
 import ru.nsu.valikov.dsl.vlasov.entites.CompletedTaskByStudentIds
+import ru.nsu.valikov.models.IssuedTask
 
 import java.time.LocalDate
 
 import static groovy.lang.Closure.DELEGATE_ONLY
 
 class CompleteTaskOptionDsl {
+    public static final Map<String, Map<Integer, Double>> studentBallsMap = IssuedTask.studentBallsMap
+
     static void completed(@DelegatesTo(value = CompletedDsl, strategy = DELEGATE_ONLY) Closure closure) {
         var completedDsl = new CompletedDsl()
         closure.delegate = completedDsl
@@ -19,7 +22,6 @@ class CompleteTaskOptionDsl {
     }
 
     static class CompletedDsl {
-        public static final Map<String, Map<Integer, Double>> studentBallsMap = new HashMap<>();
 
         static void task(Integer id, double coefficient, String date, @DelegatesTo(value = AttendanceStudentIds, strategy = DELEGATE_ONLY) Closure closure) {
             if (!TaskSetupDsl.taskMap.containsKey(id)) {

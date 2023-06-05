@@ -22,13 +22,15 @@ import org.gradle.tooling.GradleConnectionException;
 import org.gradle.tooling.GradleConnector;
 import org.gradle.tooling.ProjectConnection;
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 import ru.nsu.valikov.service.dto.CheckTestsRequest;
 import ru.nsu.valikov.service.dto.CompileProjectRequest;
 import ru.nsu.valikov.service.dto.GenerateDocumentationRequest;
 
+/**
+ * Service class that handles all gradle features.
+ */
 @UtilityClass
 @Log
 public class GradleService {
@@ -45,7 +47,7 @@ public class GradleService {
     private static final String REPORTS = "reports";
 
     private static ProjectConnection openGradleConnection(String projectPath) {
-        return GradleConnector.newConnector()
+        return GradleConnector.newConnector().useGradleVersion("8.0")
             .forProjectDirectory(new File(DEFAULT_TASKS_DIRECTORY + SLASH + projectPath)).connect();
     }
 
@@ -79,9 +81,17 @@ public class GradleService {
         }
     }
 
+    /**
+     * Get ration of successfully passed tests.
+     *
+     * @param checkTestsRequest dto containing project that we want to check
+     * @return ratio between passed and all tests
+     */
     @SneakyThrows
     public static double getCoefficientOfPassedTests(@NonNull CheckTestsRequest checkTestsRequest) {
-        executeTests(checkTestsRequest);
+        if (executeTests(checkTestsRequest)) {
+            return 1;
+        }
         return coefficientOfPassedTests(checkTestsRequest);
     }
 
@@ -98,7 +108,13 @@ public class GradleService {
     }
 
 
-    public double getCoefficientOfCheckStyle(@NonNull CheckTestsRequest checkTestsRequest) {
+    /**
+     * Methods name displays all necessary information.
+     *
+     * @param checkTestsRequest dto containing project that we want to check
+     * @return number of problems in code style checking
+     */
+    public int getNumberOfCheckStyleProblems(@NonNull CheckTestsRequest checkTestsRequest) {
         val project = checkTestsRequest.project();
         if (!addCheckstylePluginToProjectGradle(project) || !copyCheckstyleConfigToProject(
             project) || !executeCheckStyle(checkTestsRequest)) {
@@ -117,17 +133,12 @@ public class GradleService {
             return 0;
         }
         var badReports = 0;
-        for (val file : Objects.requireNonNull(reportsDirectory.listFiles())) {
+        for (val file : Objects.requireNonNull(
+            reportsDirectory.listFiles())) { //проще самому парсер высрать
             try {
                 val document = builder.parse(file);
-                document.getDocumentElement().normalize();
-                NodeList nodeList = document.getElementsByTagName("file");
-                System.out.println(nodeList);
-                for (int index = 0; index < nodeList.getLength(); index++) {
-                    Node node = nodeList.item(index);
-                    Node tagValue = node.getChildNodes().item(0);
-                    badReports += tagValue == null ? 0 : 1;
-                }
+                NodeList errorNodes = document.getElementsByTagName("error");
+                badReports += errorNodes.getLength();
             } catch (IOException | SAXException e) {
                 log.warning(file.getName() + " has not been read");
             }
@@ -151,11 +162,11 @@ public class GradleService {
 
     @SneakyThrows
     private boolean addCheckstylePluginToProjectGradle(@NonNull String project) {
-        final List<String> CHECKSTYLE_PLUGIN = new ArrayList<>(
+        val checkstylePlugin = new ArrayList<>(
             List.of("plugins\n{\nid 'checkstyle'\n}"));
         val file = new File(DEFAULT_TASKS_DIRECTORY + SLASH + project + SLASH + BUILD_GRADLE);
-        CHECKSTYLE_PLUGIN.addAll(FileUtils.readLines(file, StandardCharsets.UTF_8));
-        FileUtils.writeLines(file, CHECKSTYLE_PLUGIN);
+        checkstylePlugin.addAll(FileUtils.readLines(file, StandardCharsets.UTF_8));
+        FileUtils.writeLines(file, checkstylePlugin);
         return true;
     }
 
@@ -165,8 +176,10 @@ public class GradleService {
         val source = new File(path);
         val destination = new File(DEFAULT_TASKS_DIRECTORY + SLASH + project + SLASH + path);
         if (destination.exists()) {
-            destination.delete();
+            val isSuccessfully = destination.delete();
             log.warning(project + " already contains checkstyle.xml");
+            log.info(isSuccessfully ? "old checkstyle was deleted"
+                : "unexpected error during deletion.");
         }
         FileUtils.copyFile(source, destination);
         return true;

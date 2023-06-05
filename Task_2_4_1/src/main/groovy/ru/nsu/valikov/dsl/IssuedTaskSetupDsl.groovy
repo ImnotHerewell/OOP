@@ -7,6 +7,7 @@ import static groovy.lang.Closure.DELEGATE_ONLY
 class IssuedTaskSetupDsl {
     public static final var taskMap = IssuedTask.taskMap
 
+
     static void issuedTasks(@DelegatesTo(value = IssuedTasksDsl, strategy = DELEGATE_ONLY) Closure closure) {
         var issuedTasksDsl = new IssuedTasksDsl()
         closure.delegate = issuedTasksDsl

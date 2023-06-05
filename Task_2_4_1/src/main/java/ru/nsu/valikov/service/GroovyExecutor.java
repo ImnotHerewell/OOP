@@ -2,7 +2,7 @@ package ru.nsu.valikov.service;
 
 import groovy.lang.GroovyShell;
 import groovy.lang.Script;
-import java.net.URISyntaxException;
+import java.nio.file.NoSuchFileException;
 import java.util.Objects;
 import lombok.NonNull;
 import lombok.SneakyThrows;
@@ -14,9 +14,13 @@ public class GroovyExecutor {
     @SneakyThrows
     public void execute(@NonNull String filename) {
         GroovyShell shell = new GroovyShell();
-        Script script = shell.parse(
-            Objects.requireNonNull(
-                GroovyExecutor.class.getClassLoader().getResource(filename)).toURI());
-        script.run();
+        try {
+            Script script = shell.parse(
+                Objects.requireNonNull(
+                    GroovyExecutor.class.getClassLoader().getResource(filename)).toURI());
+            script.run();
+        } catch (NullPointerException e) {
+            throw new NoSuchFileException(filename + " is not presented at resources folder.");
+        }
     }
 }

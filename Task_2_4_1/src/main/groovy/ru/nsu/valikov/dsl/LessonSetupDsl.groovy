@@ -8,7 +8,7 @@ import java.time.LocalDate
 import static groovy.lang.Closure.DELEGATE_ONLY
 
 class LessonSetupDsl {
-    public static final Set<LocalDate> datesSet = new TreeSet<>()
+    public static final Set<LocalDate> datesSet = Lesson.datesSet;
 
     static void lessons(@DelegatesTo(value = LessonsDsl, strategy = DELEGATE_ONLY) Closure closure) {
         var lessonsDsl = new LessonsDsl()

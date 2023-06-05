@@ -9,6 +9,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.experimental.Accessors;
 import lombok.experimental.FieldDefaults;
 
+/**
+ * Useless entity, but let it be.
+ */
 @Data
 @RequiredArgsConstructor
 @NoArgsConstructor(force = true)

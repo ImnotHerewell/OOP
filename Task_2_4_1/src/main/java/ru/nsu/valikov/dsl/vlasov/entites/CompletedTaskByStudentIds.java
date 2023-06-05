@@ -9,6 +9,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.experimental.Accessors;
 import lombok.experimental.FieldDefaults;
 
+/**
+ * Vlasovs dto, just watch classname.
+ */
 @Data
 @RequiredArgsConstructor
 @Accessors(chain = true)
